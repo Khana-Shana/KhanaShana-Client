@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "@babel/env", {
+        "targets": ">0.05%"
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread"
+  ]
+}
