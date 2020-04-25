@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="303" height="319" viewBox="0 0 303 319">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#pattern);
+      }
+    </style>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 285 300">
+      <image width="285" height="300" xlink:href="Image%202-image.png"/>
+    </pattern>
+  </defs>
+  <rect id="Image_2" data-name="Image 2" class="cls-1" width="303" height="319" rx="2"/>
+</svg>
