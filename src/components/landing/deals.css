@@ -1,0 +1,637 @@
+.deals {
+  background-color: #bcc7b8;
+}
+
+#GFG {
+  text-decoration: none;
+  color: inherit;
+  color: white;
+}
+
+.grid-container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "wheel wheel deal deal" "wheel wheel weekly weekly" ". . . .";
+}
+
+.wheel {
+  grid-area: wheel;
+}
+
+.deal {
+  grid-area: deal;
+}
+
+.weekly {
+  grid-area: weekly;
+}
+
+.wheelitem {
+  background-color: #bcc7b8;
+  grid-area: wheel;
+}
+.wheeltitle {
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  color: #b0463d;
+  font-size: 50pt;
+  font-family: "brandon_grotesqueblack";
+}
+.dailydeals {
+  background-color: #bcc7b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: ddeal;
+}
+.dealcard {
+  width: 80%;
+  height: 90%;
+
+  background-color: #b0a79d;
+}
+
+.weeklydeals {
+  background-color: #bcc7b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: wdeal;
+}
+.ddealimgfirst {
+  max-width: 45%;
+
+  margin-left: 27.5%;
+  margin-top: 5%;
+}
+
+.ddealbtn {
+  margin: 0 auto;
+  margin-top: 4%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.ddealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.wdealimgfirst {
+  display: inline;
+
+  max-width: 40%;
+
+  margin-left: 2%;
+  margin-top: 5%;
+}
+
+.wdealimgsecond {
+  float: right;
+  max-width: 40%;
+
+  margin-right: 2%;
+  margin-top: 5%;
+}
+
+.wheeldealbtn {
+  margin-top: 8%;
+  margin-left: 35%;
+  margin-right: 35%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.wheeldealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.wdealbtn {
+  margin: 0 auto;
+  margin-top: 6%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.wdealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.plus {
+  margin-left: 3.5%;
+  margin-top: 5%;
+}
+
+.button-error {
+  color: white;
+  width: 300px;
+  font-size: 25pt;
+  font-family: "PT Sans", sans-serif;
+  border-radius: 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #b0463d;
+}
+
+.deals {
+  background-color: #bcc7b8;
+}
+
+.wheelitem {
+  background-color: #bcc7b8;
+  grid-area: wheel;
+}
+.wheeltitle {
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  color: #b0463d;
+  font-size: 50pt;
+  font-family: "brandon_grotesqueblack";
+}
+.dailydeals {
+  background-color: #bcc7b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: ddeal;
+}
+.dealcard {
+  width: 80%;
+  height: 90%;
+
+  background-color: #b0a79d;
+}
+
+.weeklydeals {
+  background-color: #bcc7b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: wdeal;
+}
+.ddealimgfirst {
+  max-width: 45%;
+
+  margin-left: 27.5%;
+  margin-top: 5%;
+}
+
+.ddealbtn {
+  margin: 0 auto;
+  margin-top: 4%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.ddealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.wdealimgfirst {
+  display: inline;
+
+  max-width: 40%;
+
+  margin-left: 2%;
+  margin-top: 5%;
+}
+
+.wdealimgsecond {
+  float: right;
+  max-width: 40%;
+
+  margin-right: 2%;
+  margin-top: 5%;
+}
+
+.wheeldealbtn {
+  margin-top: 8%;
+  margin-left: 35%;
+  margin-right: 35%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.wheeldealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.wdealbtn {
+  margin: 0 auto;
+  margin-top: 6%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.wdealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.Text {
+  margin: 0 auto;
+  margin-top: 0%;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  text-align: center;
+  color: #b0463d;
+  font-size: 30pt;
+  font-family: "Caveat", cursive;
+}
+
+.orderbtn {
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 10pt;
+  font-family: "PT Sans", sans-serif;
+}
+
+.button-error {
+  color: white;
+  width: 300px;
+  font-size: 25pt;
+  font-family: "PT Sans", sans-serif;
+  border-radius: 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #b0463d;
+}
+
+.grid-container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "wheel wheel deal deal" "wheel wheel weekly weekly" ". . . .";
+}
+
+.wheel {
+  grid-area: wheel;
+}
+
+.deal {
+  grid-area: deal;
+}
+
+.weekly {
+  grid-area: weekly;
+}
+
+.card {
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 400px;
+  height: 350px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  background-color: #955f61;
+}
+.bottomcards {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+
+  margin-top: 150px;
+  margin-right: 120px;
+}
+.topcards {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+
+  margin-top: 5px;
+  margin-right: 120px;
+}
+#GFG {
+  text-decoration: none;
+  color: inherit;
+  color: white;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0px;
+  grid-template-areas:
+    "wheel ddeal"
+    "wheel wdeal";
+}
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheelitem {
+  background-color: #bcc7b8;
+  grid-area: wheel;
+}
+.wheeltitle {
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  color: #b0463d;
+  font-size: 50pt;
+  font-family: "brandon_grotesqueblack";
+}
+.dailydeals {
+  background-color: #bcc7b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: ddeal;
+}
+.dealcard {
+  width: 80%;
+  height: 90%;
+
+  background-color: #b0a79d;
+}
+
+.weeklydeals {
+  background-color: #bcc7b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: wdeal;
+}
+.ddealimgfirst {
+  max-width: 45%;
+
+  margin-left: 27.5%;
+  margin-top: 5%;
+}
+
+.ddealbtn {
+  margin: 0 auto;
+  margin-top: 4%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.ddealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.wdealimgfirst {
+  display: inline;
+
+  max-width: 40%;
+
+  margin-left: 2%;
+  margin-top: 5%;
+}
+
+.wdealimgsecond {
+  float: right;
+  max-width: 40%;
+
+  margin-right: 2%;
+  margin-top: 5%;
+}
+
+.wheeldealbtn {
+  margin-top: 8%;
+  margin-left: 35%;
+  margin-right: 35%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.wheeldealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.wdealbtn {
+  margin: 0 auto;
+  margin-top: 6%;
+  margin-left: 30%;
+  margin-right: 30%;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 2rem;
+  font-family: "PT Sans", sans-serif;
+}
+.wdealbtn:hover {
+  box-shadow: 0 8px 16px 0 #955f61;
+}
+
+.plus {
+  margin-left: 3.5%;
+  margin-top: 5%;
+}
+
+:root {
+  --wheel-font: "Lato", "Quicksand", sans-serif;
+  --wheel-size: 500px;
+  --wheel-slice-spacing: 50px;
+  --wheel-border-size: 5px;
+  --wheel-color: #b0463d;
+  --neutral-color: white;
+  --PI: 3.14159265358979;
+  --nb-item: 0;
+  --item-nb: 0;
+  --selected-item: 0;
+  --nb-turn: 5;
+  --spinning-duration: 4s;
+  --reset-duration: 0.25s;
+}
+
+.wheel-container {
+  display: block;
+  position: relative;
+  box-sizing: content-box;
+  width: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
+  height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
+  padding: 3px;
+  margin: auto;
+  background-color: var(--neutral-color);
+  border: solid var(--wheel-color) 3px;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.wheel-container::before,
+.wheel-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border: solid transparent 20px;
+  border-left-width: 0;
+}
+
+.wheel-container::before {
+  right: 0px;
+  border-right-color: var(--wheel-color);
+}
+
+.wheel-container::after {
+  right: -5px;
+  border-right-color: var(--neutral-color);
+}
+
+.wheel {
+  display: block;
+  position: relative;
+  box-sizing: content-box;
+  margin: auto;
+  width: var(--wheel-size);
+  height: var(--wheel-size);
+  overflow: hidden;
+  border-radius: 50%;
+  border: solid var(--wheel-color) var(--wheel-border-size);
+  background-color: var(--wheel-color);
+  transition: transform var(--reset-duration);
+  transform: rotate(0deg);
+  cursor: pointer;
+}
+
+.wheel.spinning {
+  transition: transform var(--spinning-duration);
+  transform: rotate(
+    calc(
+      var(--nb-turn) * 360deg +
+        (-360deg * var(--selected-item) / var(--nb-item, 1))
+    )
+  );
+}
+
+.wheel::after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: var(--neutral-color);
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.wheel-item {
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform-origin: center left;
+  transform: translateY(-50%)
+    rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
+
+  color: var(--neutral-color);
+  text-align: right;
+  padding: 0 25px 0 50px;
+  font-family: var(--wheel-font);
+  font-size: 2rem;
+}
+
+.wheel-item:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 0px;
+  opacity: 0.25;
+
+  --slice-max-width: calc(
+    var(--PI) * var(--wheel-size) + var(--wheel-size) / 2
+  );
+  --slice-width: calc(
+    (var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing)
+  );
+  border: solid transparent calc(var(--slice-width) / 2);
+  border-left: solid transparent 0;
+
+  border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
+}
+:root {
+  --app-font: "Quicksand", "Lato", sans-serif;
+  --neutral-color: white;
+}
+
+.App {
+  font-family: var(--app-font);
+  text-align: center;
+  background: var(--neutral-color);
+  user-select: none;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: acumin-pro, system-ui, sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  font-size: 14px;
+  background-color: #f4f4f4;
+  align-items: start;
+  min-height: 100vh;
+}

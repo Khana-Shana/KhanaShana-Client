@@ -1,0 +1,126 @@
+.aboutus {
+  background-color: #fbf4f3;
+  position: relative;
+}
+.aboutustitle {
+  text-align: left;
+  padding-left: 5%;
+  width: 45%;
+
+  color: #b0463d;
+  font-size: 50pt;
+  font-family: "brandon_grotesqueblack";
+  margin-top: 3%;
+  border-color: #b0463d;
+  border-style: solid;
+  border-right: 2px;
+  border-top: 2px;
+
+  margin-left: 4%;
+  margin-bottom: 5%;
+}
+.uzma-img {
+  margin-left: 10%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  width: 25%;
+  display: flex;
+  float: left;
+}
+.sign-img {
+  margin-left: 6%;
+  margin-right: 26%;
+  margin-bottom: 3%;
+  margin-top: 10%;
+  width: 27%;
+  float: right;
+}
+
+.textabout {
+  text-align: justify;
+  color: #b0463d;
+  font-size: 20pt;
+  margin-top: 4%;
+  margin-right: 6%;
+  margin-left: 4%;
+  font-family: "PT Sans", sans-serif;
+}
+.grid-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+  grid-template-areas: "text pic";
+}
+
+.about-text {
+  grid-area: text;
+}
+
+.about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: pic;
+
+  margin-left: 2%;
+}
+
+@import url(https:
+.otro-blockquote) {
+  font-size: 1.4em;
+  width: 60%;
+ 
+  font-family: Open Sans;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #78c0a8;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+
+  margin-right: 10px;
+  margin-left: 4%;
+  width: 90%;
+}
+
+.otro-blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: #78c0a8;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+.otro-blockquote::after {
+  content: "";
+}
+
+.otro-blockquote span {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 5%;
+ 
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+#womancook {
+  display: block;
+  position: relative;
+  margin-top: autos;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+  padding-left: 100px;
+  padding-right: 10px;
+  width: 70%;
+};;;

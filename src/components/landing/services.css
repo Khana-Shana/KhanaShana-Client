@@ -1,0 +1,170 @@
+.services {
+  background-color: #fbf4f3;
+  position: relative;
+}
+
+.rectangle {
+  float: left;
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 140px;
+  width: 21px;
+  background-color: #b0463d;
+}
+
+.leftext {
+  display: block;
+}
+
+.textdetailsleft {
+  float: left;
+  text-align: left;
+  color: #b0463d;
+  margin-top: 10px;
+  font-size: 45pt;
+  font-family: "brandon_grotesqueblack";
+  margin-left: 50px;
+}
+
+.textdetailsright {
+  margin-top: 30px;
+  margin-right: 30px;
+  text-align: right;
+  color: #b0463d;
+  font-size: 25pt;
+  font-family: "PT Sans", sans-serif;
+}
+
+.righttext {
+  display: block;
+}
+
+.right-services {
+  display: block;
+
+  width: 100%;
+  padding-top: 0;
+}
+.left-services {
+  display: block;
+
+  width: 100%;
+}
+
+.prebook {
+  background-color: #f1ece9;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-right: 30px;
+
+  height: 700px;
+}
+
+.takeaway {
+  background-color: #f1ece9;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+  margin-left: 30px;
+
+  height: 340px;
+}
+#fryaunty {
+  position: absolute;
+  margin-left: 30px;
+  max-height: 340px;
+  max-width: 300px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.delivery {
+  background-color: #f1ece9;
+  border-radius: 10px;
+  margin-top: 2%;
+  margin-left: 30px;
+
+  height: 340px;
+}
+#rider {
+  max-height: 340px;
+  max-width: 300px;
+
+  position: absolute;
+  padding-top: 10px;
+}
+
+#family {
+  display: block;
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 500px;
+  width: 500px;
+}
+.servicestitleright {
+  text-align: left;
+  color: #b0463d;
+  font-size: 50pt;
+  font-family: "brandon_grotesqueblack";
+}
+.servicestitleleft {
+  text-align: center;
+  color: #b0463d;
+  font-size: 50pt;
+  font-family: "brandon_grotesqueblack";
+}
+
+.one {
+  height: 340px;
+  width: 500px;
+  margin-right: 10px;
+
+  float: right;
+  display: block;
+}
+
+.two {
+  height: 340px;
+  display: block;
+  width: 340px;
+}
+
+.servicedetails {
+  text-align: left;
+  color: #b0463d;
+  font-size: 20pt;
+  font-family: "PT Sans", sans-serif;
+}
+
+.container {
+  width: 80%;
+  height: 340px;
+
+  margin: auto;
+  padding: 10px;
+  display: block;
+}
+
+.orderbtn {
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  text-align: center;
+  background-color: B0463D;
+  font-size: 10pt;
+  font-family: "PT Sans", sans-serif;
+}
+
+.button-error {
+  color: white;
+  width: 300px;
+  font-size: 25pt;
+  font-family: "PT Sans", sans-serif;
+  border-radius: 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #b0463d;
+}
