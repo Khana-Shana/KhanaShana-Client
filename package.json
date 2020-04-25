@@ -1,0 +1,64 @@
+{
+  "name": "khanaweb",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.11",
+    "@material-ui/icons": "^4.9.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "bootstrap": "^4.4.1",
+    "bootstrap-icons": "^1.0.0-alpha3",
+    "firebase": "^7.14.1",
+    "rc-progress": "^2.5.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
+    "react-card-flip": "^1.0.10",
+    "react-dom": "^16.13.1",
+    "react-flipcard": "^0.2.1",
+    "react-flippy": "^0.1.5",
+    "react-hook-form": "^5.5.3",
+    "react-icons": "^3.10.0",
+    "react-multistep": "^4.0.1",
+    "react-native-animated-multistep": "^1.0.8",
+    "react-redux": "^7.2.0",
+    "react-redux-firebase": "^3.3.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-scroll": "^1.7.16",
+    "react-scrollchor": "^6.0.0",
+    "react-social-login-buttons": "^3.0.0",
+    "react-step-progress-bar": "^1.0.3",
+    "react-step-wizard": "^5.3.2",
+    "react-stepzilla": "^6.0.2",
+    "reactstrap": "^8.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-firestore": "^0.13.0",
+    "redux-thunk": "^2.3.0",
+    "rsuite": "^4.3.4",
+    "startbootstrap-scrolling-nav": "^4.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
