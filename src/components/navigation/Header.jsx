@@ -1,6 +1,6 @@
 import React from "react";
 import ReactBootstrap, {Nav, Button, Navbar,NavDropdown,Form,FormControl} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import GuestLinks from './guestlinks';
 import LoginLinks from './loginlinks';
 import firebase_integration from '../fire';

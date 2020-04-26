@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+/* ------ Feedback ------- */
+
+.feedback-title {
+  text-align: center;
+  font-size: 4rem;
+  color: #626e60;
+  font-family: "Montserrat", sans-serif;
+  margin-top: auto;
+}
+
+.feedback-form {
+  background-color: #dac4c4;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  width: 72rem;
+}
+
+.message-area {
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  height: 10rem;
+  width: 66rem;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+}
+
+.subject-title,
+.message-title {
+  color: #955f61;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 1rem;
+}
+
+input[name="subject"] {
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  height: 2.75rem;
+  width: 66rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+input[name="rating"] {
+  display: none;
+}
+
+.stars {
+  margin-left: 2.5rem;
+}

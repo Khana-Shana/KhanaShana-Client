@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    background-color: #FBF4F3;
+    /* padding: 0 16px; */
+}
+
+header {
+    background-color: #955F61;   
+    /* margin: -16px -16px; */
+    /* padding: 16px 32px; */
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.card-outline,
+.home-outline{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Style all font awesome icons */
+.fa {
+    /* padding: 20px; */
+    font-size: 30px;
+    width: 32px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #955F61;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .fa-instagram {
+    background: #955F61;
+    color: white;
+    margin-top: 10px;
+  }
+
+  .fa-search {
+    background: #955F61;
+    color: white;
+    margin-right: -3px;
+    
+  }
+  
+  .nav-link{
+    background: #955F61;
+    color: white;
+  }
+  .nav-item-active{
+      margin-right: 5px;
+  }
+  #hc-butts {
+    background-color: #626E60 !important;
+    color: white !important;
+    border-color: white !important;
+    width: 10rem;
+  }
+
+.btn-primary > ion-icon  {
+    font-size: 2rem;
+    vertical-align: middle;
+    float: left;
+    margin-left: auto;
+}
+
+.card-outline{
+  display: flex;
+  text-align: center;
+}
+
+  .nav-item-active{
+
+    background-color: #626E60;
+    color: white;
+
+  }
+
+  .cards {
+      display: inline-flex;
+      margin-top: 3%;
+      margin-left: 5%;
+      margin-right: 5%;
+  }
+
+  .singlecard1 {
+    width: 30rem;
+    position: relative;
+  }
+
+  .container-menu{
+    width: 100%;
+  }
+
+  .card-image {
+
+    width: 70%;
+    height: 228.6px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .card-content {
+
+    background-color: #955F61;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5.5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .dish-name {
+
+    float: left;
+    text-align: left;
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 2%;
+  }
+
+  .buttdiv{
+    text-align: center;
+    float: right;
+    margin-top:2.5%;
+    display: flex;
+    margin-right: 2%;
+    display: flex;
+  }
+
+  .card-button {
+    background-color: #626E60;
+    color: white;
+    border: #626E60;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .dish-price {
+    text-align: right;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 2%;
+  }
+
+  .icon {
+      float: left;
+      margin-left: 2%;
+      margin-top: 3%;  
+      display: flex;  
+  }
+
+.dish-time {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    margin-left: 3%;
+    margin-top: 3.5%; 
+    display: flex;
+    float: left;
+}
+
+.pagination > li > a {
+    color: #B0463D;
+    background-color: #DAC4C4;
+}
+
+.pagination {
+    margin-top: 3%;
+}
+
+.menuuu {
+    text-align: center;
+    font-size: 4rem;
+    color: #626E60;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: auto;
+}
+
+.btn-group > a{
+    color: #B0463D;
+    background-color: #DAC4C4;
+    border-color: white;
+    margin-top: 1%;
+}
+
+/* ---------- Cart --------- */
+
+.order-details {
+  text-align: center;
+  font-size: 4rem;
+  color: #626E60;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: auto;
+}
+
+.container-products ion-icon {
+font-size: 25px;
+  color: blue;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.container-products {
+  background-color: #DAC4C4;
+  width: 82rem;
+  float: left;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  margin-left: 8.5rem;
+  margin-right: 2rem;
+}
+
+.container-bill{
+  background-color: #DAC4C4;
+  width: 41rem;
+  float: left;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.basketTotalContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.basketTotalTitle {
+  color: #B0463D;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 11.75rem;
+  text-align: center;
+  margin-right: 0.2rem;
+}
+
+.basketTotal {
+  color: #B0463D;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  width: 11.75rem;
+  text-align: left;
+  margin-left: 3rem;
+}
+
+.check{
+  width: 96%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.checkout{
+  background-color: #626E60;
+  color: white;
+}
+
+.imgcolumn {
+  margin-top: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  height: 20rem;
+  width: 26rem;
+  border-radius: 1rem;
+}
+
+.pname{
+  font-size: 2rem;
+  color: #B0463D;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 90%;
+}
+
+.quantity{
+  font-size: 2rem;
+  color: #955F61;
+  font-family: 'Montserrat', sans-serif;
+  float: left;
+  margin-right: 11%;
+  margin-top: 6rem;
+}
+
+.padding-0{
+  padding-right:0;
+  padding-left:0;
+}
+
+.name-col{
+  width: 10%;
+  height: 20rem;
+  margin-right: 40%;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.remove {
+  cursor: pointer;
+  color: #B0463D;
+  size: 3rem;
+  margin-left: 3rem;
+  margin-top: 10rem;
+}
+
+.product ion-icon {
+  cursor: pointer;
+  color: #B0463D;
+}
+
+.remove{
+  size: 4rem;
+}
+
+.ion-div ion-icon{
+  margin-left: 2rem;
+}
+
+.price-col{
+  height: 20rem;
+  margin-top: 2%;
+}
+
+.priceee{
+  font-size: 2rem;
+  color: #B0463D;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.timerrr{
+  margin-top: 13rem;
+  font-size: 1.5rem;
+  color: #955F61;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.order-now{
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  color: #B0463D;
+  font-family: 'Montserrat', sans-serif;  
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.item-name{
+  width: 14rem;
+  margin-left: 1rem;
+  margin-right: 6rem;
+}
+
+.nums{
+  margin-right: 6rem;
+}
+
+.subtotal{
+  margin-left: 1rem;
+}
+
+.item-name,
+.nums,
+.subtotal{
+  font-size: 2rem;
+  color: #955F61;
+  font-family: 'Montserrat', sans-serif;  
+  text-align: center; 
+}
+
+.delivery{
+  margin-left: 2.5rem;
+  font-size: 2rem;
+  color: #955F61;
+  font-family: 'Montserrat', sans-serif;
+  width: 10rem;
+}
+
+.delivery-cost{
+  font-size: 2rem;
+  color: #955F61;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 17rem;
+}
+
+.ddetails{
+  display: flex;
+}
+
+
+/* -------- Check Out ------ */
+
+.checkout-title {
+  text-align: center;
+  font-size: 4rem;
+  color: #626E60;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: auto;
+}
+
+.delivery-details {
+  margin-left: 3rem;
+  color: #955F61;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h3{
+  color: #955F61;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 3rem;
+  padding-top: 1rem;
+}
+
+.forms{
+  background-color: #DAC4C4;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  width: 72rem;
+}
+
+form > input{
+
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  height: 2.5rem;
+  width: 30rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+.text-area {
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  height: 10rem;
+  width: 66rem;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+}
+
+.payment{
+  display: flex;
+}
+
+input[type=radio] {
+  width: 1.2rem;
+  height: 1rem;
+  margin-left: 3rem;
+}
+
+label{
+  color: #955F61;
+  font-size: 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  vertical-align: auto;
+}
+
+
+.confirm{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-success {
+  background-color: #B0463D !important;
+  color: white !important;
+  border-color: white !important;
+  border-radius: 2rem !important;
+  width: 12rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ------ Feedback ------- */
+
+.feedback-title {
+  text-align: center;
+  font-size: 4rem;
+  color: #626E60;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: auto;
+}
+
+.feedback-form{
+  background-color: #DAC4C4;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  width: 72rem;
+}
+
+.message-area {
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  height: 10rem;
+  width: 66rem;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+}
+
+.subject-title,
+.message-title{
+    color: #955F61;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 1rem;
+  
+}
+
+input[name=subject]{
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  height: 2.75rem;
+  width: 66rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+input[name=rating]{
+  display: none;
+}
+
+.stars{
+  margin-left: 2.5rem;
+}

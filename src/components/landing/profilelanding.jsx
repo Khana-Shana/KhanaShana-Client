@@ -5,7 +5,7 @@ import Deals from './Deals';
 import Services from './Services';
 import Menu from './Menu';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ProfileLanding() {
     

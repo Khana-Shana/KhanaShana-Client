@@ -1,6 +1,6 @@
 import React from "react";
 import ReactBootstrap, {Nav, Button, Navbar,NavDropdown,Form,FormControl} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Scrollchor from 'react-scrollchor';
 import "./header.css";
 

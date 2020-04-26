@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha3",
+    "emailjs-com": "^2.4.1",
     "firebase": "^7.14.1",
     "rc-progress": "^2.5.2",
     "react": "^16.13.1",

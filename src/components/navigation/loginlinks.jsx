@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 import ReactBootstrap, {Nav, Button, Navbar,NavDropdown,Form,FormControl} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Scrollchor from 'react-scrollchor';
 import firebase_integration from '../fire';
 import {withRouter} from 'react-router-dom';
