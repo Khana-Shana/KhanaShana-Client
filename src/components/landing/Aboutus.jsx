@@ -2,6 +2,7 @@ import React from "react";
 import Footer from '../navigation/footer.jsx';
 import './aboutus.css';
 
+
 function Aboutus() {
   return (
     <div>

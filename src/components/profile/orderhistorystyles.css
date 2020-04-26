@@ -1,0 +1,21 @@
+#orderhistorypage{
+    background-color: #99AA93;
+    height: 100vh;
+}
+#orderhistorybox {
+    margin-top: 5%;
+    background-color: #F6E7E7;
+    border-radius: 2rem;
+    padding: 2%;
+}
+#boxheading {
+    color: #576271;
+    font-size: 2vw;
+    margin-left: 3%;
+    margin-bottom: 3%;
+}
+.redbox{
+    background-color: #B74852;
+    color: white;
+    padding: 1.5% 10%; 
+}

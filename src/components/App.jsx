@@ -2,9 +2,9 @@ import React from "react";
 import LandingPage from "./landing/landingpage";
 import Login from "./login/login";
 // import MenuScreen from "./order/fullmenu";
-// import ThankYou from "./order/ThankYou";
-// import OrderHistory from './profile/OrderHistory';
-// import  ProfileScreen from './profile/profilescreen';
+import ThankYou from "./order/ThankYou";
+import OrderHistory from './profile/OrderHistory';
+import  CustomerProfile from './profile/CustomerProfile';
 import CSupport from './profile/custsupport';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -15,8 +15,6 @@ import Menu from './order/menu.jsx';
 import firebase_integration from "./fire";
 import { Provider } from 'react-redux';
 import store from './order/store.jsx';
-
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -35,12 +33,14 @@ function App() {
           <Route exact path="/" exact component={LandingPage} />
           <Route exact path="/loginpage" component={Login} />
           <Route exact path="/fullmenu" component={Menu} />
-          {/* <Route exact path = "/orderconfirmed" component = {ThankYou}/> */}
-          {/* <Route exact path = "/orderhistory" component = {OrderHistory}/> */}
-          {/* <Route exact path = "/myprofile" component = { ProfileScreen}/> */}
+          <Route exact path = "/orderconfirmed" component = {ThankYou}/>
+          <Route exact path = "/orderhistory" component = {OrderHistory}/>
+          <Route exact path = "/myprofile" component = { CustomerProfile}/>
           <Route exact path = "/feedback" component = { CSupport}/>
           <Route exact path = "/cart" component = {Cart} />
           <Route exact path = "/checkout" component = {Checkout} />
+          {/* <Route exact path = "/prebooking" component = {PdfScreen} /> */}
+
         </Switch>
       </Router>
     </div>

@@ -21,7 +21,7 @@ function Checkout() {
                     <input type="radio" checked='checked' name = "method"/>
                     <label>Cash on Delivery</label>                   
                     <div class = "confirm">
-                        <button type="button" class="btn btn-success btn-lg">CONFIRM</button>
+                        <a href = "/orderconfirmed" type="button" class="btn btn-success btn-lg">CONFIRM</a>
                     </div>
                     <br/>
                 </div>
