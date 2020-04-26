@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="409.724" height="287.405" viewBox="0 0 409.724 287.405">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#pattern);
+      }
+    </style>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 4000 3000">
+      <image width="4000" height="3000" xlink:href="../../../../Spring%202020/SE/PROJ/SDS/New%20folder/cooked-food-2092897.jpg"/>
+    </pattern>
+  </defs>
+  <path id="cooked-food-2092897" class="cls-1" d="M474.454,154.417V411.425H64.73V154.417a30.572,30.572,0,0,1,30.742-30.4H443.733A30.568,30.568,0,0,1,474.454,154.417Z" transform="translate(-64.73 -124.02)"/>
+</svg>

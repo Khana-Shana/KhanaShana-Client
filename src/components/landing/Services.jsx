@@ -27,7 +27,7 @@ function Services() {
         <div className="col">
           <div className="left-services">
             <div className="takeaway">
-              <section className="container">
+              {/* <section className="container"> */}
                 <div className="one">
                   <div className="servicestitleright">TAKEAWAY</div>
                   <div className="servicedetails">
@@ -44,10 +44,10 @@ function Services() {
                     alt="fryaunty"
                   />
                 </div>
-              </section>
+              {/* </section> */}
             </div>
             <div className="delivery">
-              <section className="container">
+              {/* <section className="container"> */}
                 <div className="one">
                   <div className="servicestitleright">DELIVERY</div>
                   <div className="servicedetails">
@@ -64,7 +64,7 @@ function Services() {
                     alt="rider"
                   />
                 </div>
-              </section>
+              {/* </section> */}
             </div>
           </div>
         </div>

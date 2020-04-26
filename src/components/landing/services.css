@@ -1,14 +1,16 @@
 .services {
   background-color: #fbf4f3;
   position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
 .rectangle {
   float: left;
-  margin-top: 30px;
-  margin-left: 30px;
-  height: 140px;
-  width: 21px;
+  margin-top: 2%;
+  margin-left: 4%;
+  height: 75%;
+  width: 2%;
   background-color: #b0463d;
 }
 
@@ -20,10 +22,10 @@
   float: left;
   text-align: left;
   color: #b0463d;
-  margin-top: 10px;
-  font-size: 45pt;
+  /* margin-top: 1%; */
+  font-size: 3rem;
   font-family: "brandon_grotesqueblack";
-  margin-left: 50px;
+  margin-left: 4%;
 }
 
 .textdetailsright {
@@ -31,7 +33,7 @@
   margin-right: 30px;
   text-align: right;
   color: #b0463d;
-  font-size: 25pt;
+  font-size: 1.5rem;
   font-family: "PT Sans", sans-serif;
 }
 
@@ -43,54 +45,56 @@
   display: block;
 
   width: 100%;
-  padding-top: 0;
+  height: 90%;
+  padding-top: 2%;
 }
 .left-services {
   display: block;
-
+  height:45%;
   width: 100%;
+  padding-top: 2%;
 }
 
 .prebook {
   background-color: #f1ece9;
   border-radius: 10px;
-  margin-top: 10px;
+  /* margin-top: 0; */
   margin-right: 30px;
 
-  height: 700px;
+  height: 100%;
 }
 
 .takeaway {
   background-color: #f1ece9;
   border-radius: 10px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   position: relative;
   margin-left: 30px;
 
-  height: 340px;
+  height: 100%;
 }
 #fryaunty {
   position: absolute;
-  margin-left: 30px;
-  max-height: 340px;
-  max-width: 300px;
-  padding-top: 10px;
-  padding-bottom: 5px;
+  margin-left: 7%;
+  /* max-height: 70%; */
+  height: auto;
+  max-width: 22%;
+  padding-top: 1%;
+  /* padding-bottom: 5px; */
 }
 .delivery {
   background-color: #f1ece9;
   border-radius: 10px;
   margin-top: 2%;
   margin-left: 30px;
-
-  height: 340px;
+  height: 100%;
 }
 #rider {
-  max-height: 340px;
-  max-width: 300px;
+  max-height: 70%;
+  max-width: 30%;
 
   position: absolute;
-  padding-top: 10px;
+  padding-top: 3%;
 }
 
 #family {
@@ -100,27 +104,30 @@
   margin-left: auto;
   margin-right: auto;
 
-  height: 500px;
-  width: 500px;
+  height: 70%;
+  width: 70%;
 }
 .servicestitleright {
   text-align: left;
   color: #b0463d;
-  font-size: 50pt;
+  font-size: 3.5rem;
+  margin-left: 5%;
+  /* margin-bottom: 5%; */
   font-family: "brandon_grotesqueblack";
 }
 .servicestitleleft {
   text-align: center;
   color: #b0463d;
-  font-size: 50pt;
+  font-size: 2rem;
   font-family: "brandon_grotesqueblack";
 }
 
 .one {
-  height: 340px;
+  /* height: 340px; */
   width: 500px;
   margin-right: 10px;
-
+  margin-top: 0%;
+  /* font-size: 1rem; */
   float: right;
   display: block;
 }
@@ -133,19 +140,21 @@
 
 .servicedetails {
   text-align: left;
+  margin-left: 6%;
+  /* margin-top: 1%; */
   color: #b0463d;
-  font-size: 20pt;
+  font-size: 1.7rem;
   font-family: "PT Sans", sans-serif;
 }
 
-.container {
+/* .container {
   width: 80%;
-  height: 340px;
+  height: 50%;
 
   margin: auto;
   padding: 10px;
-  display: block;
-}
+  display: block; */
+/* } */
 
 .orderbtn {
   margin: 0 auto;

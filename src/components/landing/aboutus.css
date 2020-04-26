@@ -1,6 +1,7 @@
 .aboutus {
   background-color: #fbf4f3;
   position: relative;
+  height: 100vh;
 }
 .aboutustitle {
   text-align: left;
@@ -22,7 +23,7 @@
 .uzma-img {
   margin-left: 10%;
   margin-bottom: 3%;
-  margin-top: 3%;
+  margin-top: 2%;
   width: 25%;
   display: flex;
   float: left;
@@ -39,8 +40,8 @@
 .textabout {
   text-align: justify;
   color: #b0463d;
-  font-size: 20pt;
-  margin-top: 4%;
+  font-size: 1.5rem;
+  /* margin-top: 2%; */
   margin-right: 6%;
   margin-left: 4%;
   font-family: "PT Sans", sans-serif;
@@ -65,48 +66,42 @@
   margin-left: 2%;
 }
 
-@import url(https:
-.otro-blockquote) {
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+.otro-blockquote{
   font-size: 1.4em;
-  width: 60%;
- 
-  font-family: Open Sans;
-  font-style: italic;
+  width:92%;
+  margin:50px auto;
+  font-family:Open Sans;
+  font-style:italic;
   color: #555555;
-  padding: 1.2em 30px 1.2em 75px;
-  border-left: 8px solid #78c0a8;
-  line-height: 1.6;
+  padding:1.2em 30px 1.2em 75px;
+  border-left:8px solid #78C0A8 ;
+  line-height:1.6;
   position: relative;
-  background: #ededed;
-
-  margin-right: 10px;
-  margin-left: 4%;
-  width: 90%;
+  background:#EDEDED;
 }
 
-.otro-blockquote::before {
-  font-family: Arial;
+.otro-blockquote::before{
+  font-family:Arial;
   content: "\201C";
-  color: #78c0a8;
-  font-size: 4em;
+  color:#78C0A8;
+  font-size:4em;
   position: absolute;
   left: 10px;
-  top: -10px;
+  top:-10px;
 }
 
-.otro-blockquote::after {
-  content: "";
+.otro-blockquote::after{
+  content: '';
 }
 
-.otro-blockquote span {
-  display: block;
-  color: #333333;
+.otro-blockquote span{
+  display:block;
+  color:#333333;
   font-style: normal;
   font-weight: bold;
-  margin-top: 5%;
- 
+  margin-top:1em;
 }
-
 *,
 *:before,
 *:after {

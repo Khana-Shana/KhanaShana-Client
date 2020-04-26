@@ -11,6 +11,8 @@
   -o-background-size: cover;
   background-size: cover;
   position: relative;
+  height: 90vh;
+  width: 100%;
 }
 
 .left-side {
