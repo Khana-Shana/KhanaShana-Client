@@ -16,7 +16,8 @@ function CustomerProfile() {
     const [gender, setgender] = React.useState()
 
     React.useEffect(() => {
-        firebase_integration.database.collection('CustomerDatabase').where("CustomerID", "==", 1).onSnapshot((snapshot) => {
+        firebase_integration.database.collection('CustomerDatabase').where("CustomerID", "==", firebase_integration.auth.currentUser.uid.toString()).onSnapshot((snapshot) => {
+            console.log(firebase_integration.auth.currentUser)
             var customerdata = {};
             snapshot.docs.forEach(doc => {
                 customerdata = doc.data()
@@ -25,33 +26,48 @@ function CustomerProfile() {
             setname(customerdata.Name)
             setemail(customerdata.Email)
             setnumber(customerdata.ContactNo)
-            setdob(customerdata.DOB.toDate().getDate()+"-"+customerdata.DOB.toDate().getMonth()+"-"+customerdata.DOB.toDate().getFullYear())
+            setdob(customerdata.DOB.toDate().getDate()+"-"+customerdata.DOB.toDate().getMonth()+1+"-"+customerdata.DOB.toDate().getFullYear())
             setpassword(customerdata.Password)
             setgender(customerdata.Gender)
         })
     },[ID]);
+
     async function updatename(CustomerID, value){
-        firebase_integration.database.collection("CustomerDatabase").doc(CustomerID).update({
-            Name : value
-        })
+        firebase_integration.auth.currentUser.updateProfile({
+            displayName: value,
+          }).then(function() {
+                firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
+                    Name : value
+                })
+          }).catch(function(error) {
+            alert(error.message);
+          });
+        
     }
     async function updateemail(CustomerID, value){
-        firebase_integration.database.collection("CustomerDatabase").doc(CustomerID).update({
-            Email : value
-        })
+        firebase_integration.auth.currentUser.updateEmail(value).then(function() {
+            firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
+                Email : value
+            })
+        }).catch(function(error) {
+            alert(error.message);
+        });
+        
     }
     async function updatenumber(CustomerID, value){
-        firebase_integration.database.collection("CustomerDatabase").doc(CustomerID).update({
+        firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
             ContactNo : value
         })
     }
     async function updatepassword(CustomerID, value){
-        firebase_integration.database.collection("CustomerDatabase").doc(CustomerID).update({
-            Password : value
-        })
+        firebase_integration.auth.currentUser.updatePassword(value).then(function() {
+            alert("Your password has been updated");
+          }).catch(function(error) {
+            alert(error.message);
+          });
     }
     async function updategender(CustomerID, value){
-        firebase_integration.database.collection("CustomerDatabase").doc(CustomerID).update({
+        firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
             Gender : value
         })
     }          
@@ -131,7 +147,7 @@ function CustomerProfile() {
                                     <input type="text" class="form-control" placeholder="Enter password" aria-label="Recipient's username" aria-describedby="button-addon2" value = {number}  onChange={(e) => setnumber(e.target.value)}/>
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button" id="button-addon2" onClick={() => {seteditnumber(false) 
-                                            updatenumber(ID,number)}}>Save</button>
+                                            updatenumber(ID, number)}}>Save</button>
                                     </div>
                                 </div>
                             }

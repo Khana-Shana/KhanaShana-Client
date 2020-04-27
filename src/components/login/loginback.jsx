@@ -101,20 +101,19 @@ function LoginBack(props) {
                           firebase_integration.doSignInWithFacebook()
                             .then((socialAuthUser) => {
                               var year = socialAuthUser.additionalUserInfo.profile.birthday.substring(6, 10) 
-                              var month = parseInt(socialAuthUser.additionalUserInfo.profile.birthday.substring(0, 2)-1).toString()
-                              var day = socialAuthUser.additionalUserInfo.profile.birthday.substring(3, 5)
-                              var date = new Date(Date.UTC(year, month, day))
+                                var month = parseInt(socialAuthUser.additionalUserInfo.profile.birthday.substring(0, 2)-1).toString()
+                                var day = socialAuthUser.additionalUserInfo.profile.birthday.substring(3, 5)
+                                var date = new Date(Date.UTC(year, month, day))
 
-                              firebase_integration.database.collection("CustomerDatabase").doc(socialAuthUser.user.uid.toString()).set({
-                                ContactNo: "",
-                                CustomerID: socialAuthUser.user.uid,
-                                DOB: date,
-                                Email: socialAuthUser.additionalUserInfo.profile.email,
-                                Gender: socialAuthUser.additionalUserInfo.profile.gender,
-                                Name: socialAuthUser.additionalUserInfo.profile.name,
-                                isFacebookUser: true
-                            })
-
+                                firebase_integration.database.collection("CustomerDatabase").doc(socialAuthUser.user.uid.toString()).set({
+                                  ContactNo: "",
+                                  CustomerID: socialAuthUser.user.uid,
+                                  DOB: date,
+                                  Email: socialAuthUser.additionalUserInfo.profile.email,
+                                  Gender: socialAuthUser.additionalUserInfo.profile.gender,
+                                  Name: socialAuthUser.additionalUserInfo.profile.name,
+                                  isFacebookUser: true
+                                })
                               setError({ error: null });
                               alert(error);
                               props.history.replace("/");
@@ -157,7 +156,7 @@ function LoginBack(props) {
       alert("logged in");
       props.history.replace("/");
     } catch (error) {
-      alert(error.message);
+      alert("Invalid Email/Password");
     }
   }
 }

@@ -22,23 +22,21 @@ const StepTwo = (props) => {
   const continuefwd = (e) => {
     // e.preventDefault();
     if (checkInputField(props.values)) {
-      var year = props.values.dob.substring(0, 4) 
-      var month = parseInt(props.values.dob.substring(5, 7)-1).toString()
-      var day = props.values.dob.substring(8, 10)
+      var year = values.dob.substring(0, 4) 
+      var month = parseInt(values.dob.substring(5, 7)-1).toString()
+      var day = values.dob.substring(8, 10)
       var date = new Date(Date.UTC(year, month, day))
-
+      
       // console.log(firebase_integration.auth.currentUser.uid)
       firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).set({
-          ContactNo: props.values.number,
+          ContactNo: values.number,
           CustomerID: firebase_integration.auth.currentUser.uid,
           DOB: date,
-          Email: props.values.email,
-          Gender: props.values.gender,
-          Name: props.values.name,
-          isFacebookUser: false
+          Email: values.email,
+          Gender: values.gender,
+          Name: values.name,
       })
-
-      props.nextStep();
+        props.nextStep();
     }
   };
 
@@ -127,11 +125,12 @@ const StepTwo = (props) => {
 
   async function onRegister() {
     try {
-      await firebase_integration.register(values.name, values.email, values.password);
+      firebase_integration.register(values.name, values.email, values.password);
       // await firebase.addQuote(quote)
       // props.history.replace('./')
       continuefwd();
     } catch (error) {
+      console.log(values)
       alert(error.message);
     }
   }
