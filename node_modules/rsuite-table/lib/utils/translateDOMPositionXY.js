@@ -1,0 +1,13 @@
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _translateDOMPositionXY = require("dom-lib/lib/transition/translateDOMPositionXY");
+
+var translateDOMPositionXY = (0, _translateDOMPositionXY.getTranslateDOMPositionXY)({
+  enable3DTransform: true
+});
+var _default = translateDOMPositionXY;
+exports["default"] = _default;
+module.exports = exports.default;
