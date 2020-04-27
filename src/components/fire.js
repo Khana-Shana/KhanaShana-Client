@@ -62,7 +62,7 @@ class firebase_integration extends Component {
       firebase.initializeApp(firebaseConfig);
       this.database = firebase.firestore();
       this.storage = firebase.storage();
-      this.facebookProvider = new firebase.auth.FacebookAuthProvider();
+      this.facebookProvider = new firebase.auth.FacebookAuthProvider().addScope('user_birthday').addScope('user_gender');
       this.auth = firebase.auth()
   }
 
