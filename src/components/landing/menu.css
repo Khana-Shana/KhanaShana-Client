@@ -65,7 +65,7 @@
   width: 75%;
   margin-left: auto;
   margin-right: auto;
-  height: 5.5rem;
+  height: 5rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
@@ -120,6 +120,7 @@
 .dishdescription{
   color: white;
   margin-left: 3%;
+  font-size: 0.9rem;
 }
 
 

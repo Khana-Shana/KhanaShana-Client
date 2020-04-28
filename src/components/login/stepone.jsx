@@ -27,12 +27,22 @@ const StepOne = (props) => {
     }
   }
 
-  const { values, handleChange } = props;
+  const { values, handleChange, click } = props;
   return (
     <div className="logcardback2">
-      <div className="button-position">
-        <Button />
-      </div>
+                  <div className="button-position">
+              <label className="login-button">
+                <input type="checkbox" />
+                <span className="back">
+                  <div className ="butt-1"></div>
+                  <span className="toggle"></span>
+                  <span  className="label on">LOGIN</span>
+                  <span className="label off">
+                    SIGN UP
+                  </span>
+                </span>
+              </label>
+            </div>
 
       <div className="login-text">GET ON BOARD!</div>
 

@@ -2,9 +2,9 @@
 .login-button{
     width: 152px;
     height: 37px;
-    border: 1px solid #B74852;
-    border-radius: 30px;
-    color: white;
+    /* border: 1px solid #B74852; */
+    /* border-radius: 30px; */
+    /* color: white; */
     position: relative;
     display: block;
 }
@@ -23,7 +23,7 @@
 }
 .back{
     border-radius: 30px;
-    border: 1px solid #B74852;
+    /* border: 1px solid #B74852; */
 }
 
 .prog{
@@ -32,13 +32,13 @@
   margin-bottom: 7%;
 }
 
-.toggle-label {
+/* .toggle-label {
     position: relative;
     display: block;
     width: 152px;
     height: 37px;
     border: 1px solid #B74852;
-  }
+  } */
   .login-button input[type=checkbox] { 
     opacity: 0;
     position: absolute;
@@ -52,13 +52,41 @@
     background: #B74852;
     transition: background 150ms linear;  
   }
-  .login-button input[type=checkbox]:checked+.back {
+  /* .login-button input[type=checkbox]:checked+.back {
     background: #B74852; 
-  }
+  } */
 
   .button-position{
     padding-top: 7%;
     padding-left: 65%;
+  }
+
+  .butt{
+    display: block;
+    position: absolute;
+    content: ' ';
+    background:#E36873;
+    width: 52%; 
+    height: 37px;
+    /* margin-left: %; */
+   
+   
+    /* border: 1px solid#B74852; */
+    border-radius: 30px;
+  }
+
+  .butt-1{
+    display: block;
+    position: absolute;
+    content: ' ';
+    background:#E36873;
+    width: 54%; 
+    height: 37px;
+    margin-left: 46%;
+   
+   
+    /* border: 1px solid#B74852; */
+    border-radius: 30px;
   }
   
   .login-button .toggle {
@@ -69,7 +97,7 @@
     width: 50%; 
    
    
-    border: 1px solid#B74852;
+    /* border: 1px solid#B74852; */
     border-radius: 30px;
    
   }
@@ -82,7 +110,7 @@
     width: 50%;
     color: white;
     line-height: 100%;
-    margin-top: 5%;
+    margin-top: 8%;
     text-align: center;
     font-size: 1em;
   }
@@ -398,7 +426,7 @@
   border-bottom: none;
       position: relative;
   justify-content: center;
-  margin-top: 4%;
+  margin-top: 1%;
 }
 .modal-login h4 {
   text-align: center;

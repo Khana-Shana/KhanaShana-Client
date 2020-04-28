@@ -31,9 +31,10 @@ function LoginBack(props) {
               <label className="login-button">
                 <input type="checkbox" />
                 <span className="back">
+                  <div className ="butt"></div>
                   <span className="toggle"></span>
                   <span className="label on">LOGIN</span>
-                  <span onClick={handleClick} className="label off">
+                  <span className="label off">
                     SIGN UP
                   </span>
                 </span>
@@ -81,22 +82,12 @@ function LoginBack(props) {
                         />
                       </div>
                     </form>
-                    <p className="hint-text small">
+                    <p className="hint-text medium">
                       <a onClick={firebase_integration.passwordreset} href="#">
                         Forgot Your Password?
                       </a>
                     </p>
-                    <div className="hint-text small">
-                      Don't have an account?{" "}
-                      <a
-                        type="button"
-                        onClick={handleClick}
-                        href="#"
-                        className="text-col"
-                      >
-                        Sign Up!
-                      </a>
-                      <FacebookLoginButton
+                    <FacebookLoginButton
                         onClick={() =>
                           firebase_integration.doSignInWithFacebook()
                             .then((socialAuthUser) => {
@@ -124,6 +115,16 @@ function LoginBack(props) {
                             })
                         }
                       />
+                    <div className="hint-text medium">
+                      Don't have an account?{" "}
+                      <a
+                        type="button"
+                        onClick={handleClick}
+                        href="#"
+                        className="text-col"
+                      >
+                        Sign Up!
+                      </a>
                     </div>
                   </div>
                 </div>

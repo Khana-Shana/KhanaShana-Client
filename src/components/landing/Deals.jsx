@@ -12,9 +12,7 @@ class Deals extends Component {
     firebase_integration.getImageURL('deal1', 'Mehreen', '', 'hamburger-beside-fries-2271107.png')
     firebase_integration.getImageURL('deal2', 'Mehreen', '', 'hamburger-beside-fries-2271107.png')
     firebase_integration.getImageURL('dealwheel1', 'Mehreen', '', 'club-sandwich-served-on-chopping-board-1600711.png')
-    firebase_integration.storage.ref('Mehreen').child('Group 11845.svg').getDownloadURL().then(function(url) {
-      console.log("REQUIRED: ", url)
-  });
+   
     
     return (
       <div className="grid-container">

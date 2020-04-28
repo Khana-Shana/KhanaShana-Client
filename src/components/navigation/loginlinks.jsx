@@ -17,10 +17,10 @@ function LoginLinks(props){
         <Nav className="mr-auto">  {/* for the left side of navbar*/}
   
               <li className="nav-item active">
-              <Scrollchor  className="nav-link" to="to-menu" style={{background: "#955F61",color: "white",marginTop:"11%"}}>Menu</Scrollchor >
+              <Scrollchor  className="nav-link" to="to-menu" style={{background: "#955F61",color: "white",marginTop:"16%"}}>Menu</Scrollchor >
             </li>
             <li className="nav-item">
-              <Scrollchor  className="nav-link" to="to-services" style={{background: "#955F61",color: "white",marginTop:"11%"}}>Services</Scrollchor >
+              <Scrollchor  className="nav-link" to="to-services" style={{background: "#955F61",color: "white",marginTop:"12%"}}>Services</Scrollchor >
             </li>
             <li className="nav-item">
               <Scrollchor  className="nav-link" to="to-about" style={{background: "#955F61",color: "white", marginTop:"11%"}}>About Us</Scrollchor >
@@ -30,7 +30,7 @@ function LoginLinks(props){
              
              <Nav className="ml-auto">  
               <li className="nav-item active">
-              <Scrollchor  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",marginTop:"11%"}}>Deals</Scrollchor >
+              <Scrollchor  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",marginTop:"15%"}}>Deals</Scrollchor >
             </li>
             <li className="nav-item active">
               <a  className="nav-link" href="/myprofile" style={{background: "#955F61",color: "white",marginTop:"11%"}}>{firebase_integration.getDisplayName()}</a >
