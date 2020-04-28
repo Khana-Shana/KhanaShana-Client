@@ -104,8 +104,8 @@ function LoginBack(props) {
                                 var month = parseInt(socialAuthUser.additionalUserInfo.profile.birthday.substring(0, 2)-1).toString()
                                 var day = socialAuthUser.additionalUserInfo.profile.birthday.substring(3, 5)
                                 var date = new Date(Date.UTC(year, month, day))
-
-                                firebase_integration.database.collection("CustomerDatabase").doc(socialAuthUser.user.uid.toString()).set({
+                                var customerID = socialAuthUser.user.uid
+                                firebase_integration.database.collection("CustomerDatabase").doc(customerID.toString()).set({
                                   ContactNo: "",
                                   CustomerID: socialAuthUser.user.uid,
                                   DOB: date,
@@ -157,6 +157,7 @@ function LoginBack(props) {
       props.history.replace("/");
     } catch (error) {
       alert("Invalid Email/Password");
+      console.log("loginbackerror", error.message)
     }
   }
 }

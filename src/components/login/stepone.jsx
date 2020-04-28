@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Line, Circle } from "rc-progress";
 
 const checkInputField = (values) => {
-  console.log(values);
   if (
     values.name === "" ||
     values.email === "" ||

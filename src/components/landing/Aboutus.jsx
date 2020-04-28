@@ -1,9 +1,12 @@
 import React from "react";
 import Footer from '../navigation/footer.jsx';
 import './aboutus.css';
-
+import firebase_integration from '../fire.js'
 
 function Aboutus() {
+  firebase_integration.getImageURL('owner1', 'Mehreen', '', 'Image 2-image.png')
+  firebase_integration.getImageURL('owner2', 'Mehreen', '', 'sign.jpg')
+  firebase_integration.getImageURL('womancook1', 'Mehreen', '', 'auntytest.svg')
   return (
     <div>
     <div className="aboutus grid-cont">
@@ -27,26 +30,23 @@ function Aboutus() {
         </div>
         <div className="uzma-img">
         <img
-          id="owner"
+          id="owner1"
           className="img-fluid"
-          src="./images/Image 2-image.png"
           alt="Woman Cooking"
         /> 
         </div>
         <div className="sign-img">
         <img
-          id="owner"
+          id="owner2"
           className="img-fluid"
-          src="./images/sign.jpg"
           alt="Woman Cooking"
         /> 
         </div>
       </div>
       <div className="about-img">
         <img
-          id="womancook"
+          id="womancook1"
           className="img-fluid"
-          src="./images/auntytest.svg"
           alt="Woman Cooking"
         />
       </div>
