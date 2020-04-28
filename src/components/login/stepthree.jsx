@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import firebase_integration from "../fire";
-
 import { Line, Circle } from "rc-progress";
 
 const StepThree = (props) => {
+  firebase_integration.getImageURL('verifyimage1', 'Mehreen', '', 'verify.svg')
   return (
     <div className="logcardback2">
       <div className="sign-text">WELCOME!</div>
@@ -17,7 +17,7 @@ const StepThree = (props) => {
         />
       </div>
       <div>
-        <img className="verify" src="/images/verify.svg" alt="" />
+        <img id = "verifyimage1" className="verify" alt="" />
       </div>
       <div>
         <a href="#" className="button" role="button">

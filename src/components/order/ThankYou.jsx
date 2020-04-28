@@ -2,8 +2,10 @@ import React from 'react';
 import Footer from '../navigation/footer';
 import Header from './navbar';
 import './tystyles.css';
+import firebase_integration from '../fire.js'
 
 function ThankYou() {
+   firebase_integration.getImageURL('aunty', 'Mehreen', '', 'aunty.svg')
     return (
       <div id = "tybackground">
         <Header/>
@@ -17,7 +19,7 @@ function ThankYou() {
               </div>
             </div>
             <div className= "col-6">
-              <img id="aunty" className = "img-fluid" src="./images/aunty.svg" alt="aunty" />
+              <img id="aunty" className = "img-fluid" alt="aunty" />
             </div>
           </div>
         </div>

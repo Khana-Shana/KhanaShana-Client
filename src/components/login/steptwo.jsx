@@ -4,7 +4,6 @@ import firebase_integration from "../fire";
 import './loginstyles.css';
 
 const checkInputField = (values) => {
-  console.log(values);
   // return true;
   if (values.number === "" || values.gender === "" || values.dob === "") {
     alert("Please fill in all the fields.");
@@ -26,9 +25,9 @@ const StepTwo = (props) => {
       var month = parseInt(values.dob.substring(5, 7)-1).toString()
       var day = values.dob.substring(8, 10)
       var date = new Date(Date.UTC(year, month, day))
+      var customerID = firebase_integration.auth.currentUser.uid
       
-      // console.log(firebase_integration.auth.currentUser.uid)
-      firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).set({
+        firebase_integration.database.collection("CustomerDatabase").doc(customerID.toString()).set({
           ContactNo: values.number,
           CustomerID: firebase_integration.auth.currentUser.uid,
           DOB: date,
@@ -36,7 +35,7 @@ const StepTwo = (props) => {
           Gender: values.gender,
           Name: values.name,
       })
-        props.nextStep();
+      props.nextStep();
     }
   };
 
@@ -130,8 +129,8 @@ const StepTwo = (props) => {
       // props.history.replace('./')
       continuefwd();
     } catch (error) {
-      console.log(values)
-      alert(error.message);
+      alert("An error occured while signing up. Please Try Again!");
+      console.log(error.message)
     }
   }
 };

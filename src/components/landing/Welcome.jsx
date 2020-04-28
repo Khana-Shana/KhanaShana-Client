@@ -1,8 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./welcome.css";
+import firebase_integration from '../fire.js'
 
 function Welcome() {
+  firebase_integration.getImageURL('womancookwelcome', 'Mehreen', '', 'WomanCook.svg')
+
   return (
     <div className="container-fluid welcome">
       <div className="row">
@@ -28,8 +31,7 @@ function Welcome() {
         <div className="col-sm">
           <div className="right-side">
             <img
-              id="womancook"
-              src="./images/WomanCook.svg"
+              id="womancookwelcome"
               className="img-fluid"
               alt="Woman Cooking"
             />

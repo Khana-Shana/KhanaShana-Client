@@ -1,6 +1,7 @@
 import React from "react";
 import FrontCard from "./frontcard";
 import './loginstyles.css';
+import firebase_integration from '../fire.js'
 function SignupFront() {
   return (
     <div>
@@ -9,7 +10,7 @@ function SignupFront() {
         text1="SIGN UP"
         text2="WITH"
         text3="KHANA SHANA"
-        imgpath="./images/Group 10580.svg"
+        imgpath="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2FGroup%2010580.svg?alt=media&token=068250f1-5466-4799-8037-3654d8c798e6"
       />
     </div>
   );

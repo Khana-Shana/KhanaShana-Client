@@ -1,7 +1,13 @@
 import React from "react";
 import "./services.css";
 import Prebook from './prebook.pdf';
+import firebase_integration from '../fire.js'
+
 function Services() {
+  firebase_integration.getImageURL('fryaunty', 'Mehreen', '', 'fryaunty.svg')
+  firebase_integration.getImageURL('rider', 'Mehreen', '', 'rider.svg')
+  firebase_integration.getImageURL('family', 'Mehreen', '', 'family.svg')
+
   return (
     <div className="container-fluid services">
       <div className="row">
@@ -41,7 +47,6 @@ function Services() {
                   <img
                     id="fryaunty"
                     className="img-fluid"
-                    src="./images/fryaunty.svg"
                     alt="fryaunty"
                   />
                 </div>
@@ -61,7 +66,6 @@ function Services() {
                   <img
                     id="rider"
                     className="img-fluid"
-                    src="./images/rider.svg"
                     alt="rider"
                   />
                 </div>
@@ -76,7 +80,6 @@ function Services() {
               <img
                 id="family"
                 className="img-fluid"
-                src="./images/family.svg"
                 alt="Family"
               />
               <div className="orderbtn">

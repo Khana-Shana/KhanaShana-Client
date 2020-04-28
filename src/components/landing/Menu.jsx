@@ -1,14 +1,22 @@
 import React from "react";
 import "./menu.css";
+import firebase_integration from '../fire.js'
 
 function Menu() {
+  firebase_integration.getImageURL('menuimg1', 'Mehreen', '', 'taylor-kiser-POFG828-GQc-unsplash.jpg')
+  firebase_integration.getImageURL('menuimg2', 'Mehreen', '', 'hamburger-beside-fries-2271107.jpg')
+  firebase_integration.getImageURL('menuimg3', 'Mehreen', '', 'club-sandwich-served-on-chopping-board-1600711.jpg')
+  firebase_integration.getImageURL('menuimg4', 'Mehreen', '', 'appetizer-bowl-chili-close-up-286283.jpg')
+  firebase_integration.getImageURL('menuimg5', 'Mehreen', '', 'bread-with-soup-2474661.jpg')
+  firebase_integration.getImageURL('menuimg6', 'Mehreen', '', 'flat-lay-photography-of-pasta-served-in-white-plate-1487511.jpg')
+
   return (
     <div className="menu">
       <div className="servicestitleleft">MENU</div>
       <div className="cards">
         <div className="singlecard1">
           <img
-            src="./images/taylor-kiser-POFG828-GQc-unsplash.jpg"
+            id = "menuimg1"
             className="card-image"
           />
           <div className="card-content">
@@ -23,7 +31,7 @@ function Menu() {
 
         <div className="singlecard2">
           <img
-            src="./images/hamburger-beside-fries-2271107.jpg"
+            id = "menuimg2"
             className="card-image"
           />
           <div className="card-content">
@@ -38,7 +46,7 @@ function Menu() {
 
         <div className="singlecard3">
           <img
-            src="./images/club-sandwich-served-on-chopping-board-1600711.jpg"
+            id = "menuimg3"
             className="card-image"
           />
           <div className="card-content">
@@ -53,7 +61,7 @@ function Menu() {
 
         <div className="singlecard4">
           <img
-            src="./images/appetizer-bowl-chili-close-up-286283.jpg"
+            id = "menuimg4"
             className="card-image"
           />
           <div className="card-content">
@@ -68,7 +76,7 @@ function Menu() {
 
         <div className="singlecard5">
           <img
-            src="./images/bread-with-soup-2474661.jpg"
+            id = "menuimg5"
             className="card-image"
           />
           <div className="card-content">
@@ -83,7 +91,7 @@ function Menu() {
 
         <div className="singlecard6">
           <img
-            src="./images/flat-lay-photography-of-pasta-served-in-white-plate-1487511.jpg"
+            id = "menuimg6"
             className="card-image"
           />
           <div className="card-content">

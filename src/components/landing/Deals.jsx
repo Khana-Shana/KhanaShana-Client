@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Wheel from "./Wheel";
 import './deals.css';
+import firebase_integration from '../fire.js'
 
 class Deals extends Component {
   constructor() {
@@ -8,6 +9,13 @@ class Deals extends Component {
     this.places = ["10%", "20%", "30%", "40%", "50%", "60%"];
   }
   render() {
+    firebase_integration.getImageURL('deal1', 'Mehreen', '', 'hamburger-beside-fries-2271107.png')
+    firebase_integration.getImageURL('deal2', 'Mehreen', '', 'hamburger-beside-fries-2271107.png')
+    firebase_integration.getImageURL('dealwheel1', 'Mehreen', '', 'club-sandwich-served-on-chopping-board-1600711.png')
+    firebase_integration.storage.ref('Mehreen').child('Group 11845.svg').getDownloadURL().then(function(url) {
+      console.log("REQUIRED: ", url)
+  });
+    
     return (
       <div className="grid-container">
         <div className="wheelitem">
@@ -27,8 +35,8 @@ class Deals extends Component {
         <div className="dailydeals">
           <div className="dealcard rounded">
             <img
+              id = "deal1"
               className="ddealimgfirst"
-              src="./images/hamburger-beside-fries-2271107.png"
               alt="food-deal"
             />
 
@@ -45,8 +53,8 @@ class Deals extends Component {
         <div className="weeklydeals">
           <div className="dealcard rounded">
             <img
+              id = "deal2"
               className="wdealimgfirst"
-              src="./images/hamburger-beside-fries-2271107.png"
               alt="food-deal"
             />
             <svg
@@ -74,8 +82,8 @@ class Deals extends Component {
               />
             </svg>
             <img
+              id = "dealwheel1"
               className="wdealimgsecond"
-              src="./images/club-sandwich-served-on-chopping-board-1600711.png"
               alt="food-deal"
             />
             <a
