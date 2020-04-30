@@ -117,7 +117,7 @@ function CustomerProfile() {
                             {editname === false?
                                 <div className="info">{name}</div>:
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control" placeholder="Enter name"aria-label="Recipient's username" aria-describedby="button-addon2" value = {name} onChange={(e) => setname(e.target.value)}/>
+                                    <input type="text" className="form-control" placeholder="Enter Name"aria-label="Recipient's username" aria-describedby="button-addon2" value = {name} onChange={(e) => setname(e.target.value)}/>
                                     <div className="input-group-append">
                                         <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={() => {seteditname(false) 
                                             updatename(name)}}>Save</button>
@@ -133,7 +133,7 @@ function CustomerProfile() {
                             {editemail === false?
                                 <div className="info">{email}</div>:
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control" placeholder="Enter email" aria-label="Recipient's username" aria-describedby="button-addon2" value = {email}  onChange={(e) => setemail(e.target.value)}/>
+                                    <input type="text" className="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="button-addon2" value = {email}  onChange={(e) => setemail(e.target.value)}/>
                                     <div className="input-group-append">
                                         <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={() => {seteditemail(false) 
                                             updateemail(email)}}>Save</button>
@@ -148,7 +148,7 @@ function CustomerProfile() {
                             {editnumber === false?
                                 <div className="info">{number}</div>:
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control" placeholder="Enter password" aria-label="Recipient's username" aria-describedby="button-addon2" value = {number}  onChange={(e) => setnumber(e.target.value)}/>
+                                    <input type="text" className="form-control" placeholder="Enter Phone Number" aria-label="Recipient's username" aria-describedby="button-addon2" value = {number}  onChange={(e) => setnumber(e.target.value)}/>
                                     <div className="input-group-append">
                                         <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={() => {seteditnumber(false) 
                                             updatenumber( number)}}>Save</button>
@@ -182,7 +182,7 @@ function CustomerProfile() {
                             {editgender === false?
                                 <div className="info">{gender}</div>:
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control" placeholder={gender} aria-label="Recipient's username" aria-describedby="button-addon2" value = {gender}  onChange={(e) => setgender(e.target.value)}/>
+                                    <input type="text" className="form-control" placeholder="Enter Gender" aria-label="Recipient's username" aria-describedby="button-addon2" value = {gender}  onChange={(e) => setgender(e.target.value)}/>
                                     <div className="input-group-append">
                                         <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={() => {seteditgender(false) 
                                             updategender(gender)}}>Save</button>
