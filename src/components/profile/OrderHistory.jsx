@@ -8,7 +8,7 @@ function OrderHistory() {
     const [orders, setorders] = useState([]) 
     
     useEffect(() => {
-        firebase_integration.database.collection('RegularOrder').where("CustomerID", "==", 1).onSnapshot((snapshot) => {
+        firebase_integration.database.collection('RegularOrder').where("CustomerID", "==", firebase_integration.auth.currentUser.uid.toString()).onSnapshot((snapshot) => {
             var order_arr = []
             snapshot.docs.forEach(doc => {
                 order_arr.push(doc.data())
@@ -50,7 +50,7 @@ function OrderHistory() {
                                                 <td><button className = "btn btn-danger redbox" disabled>{orders[i].Tracking}</button></td>
                                                 <td><button className = "btn btn-danger redbox">Order Details</button></td>
                                                 <td><button className = "btn btn-danger redbox">Reorder</button></td>
-                                                {orders[i].Tracking === "Cancelled" || orders[i].Tracking === "Completed"?
+                                                {orders[i].Tracking === "Cancelled" || orders[i].Tracking === "Completed" || orders[i].Tracking === "Done" || orders[i].Tracking === "Rejected"?
                                                     <td><button className = "btn btn-danger redbox" disabled>Cancel</button></td>:
                                                     <td><button className = "btn btn-danger redbox" onClick = {() => {
                                                         updateDBcancel(orders[i].OrderID)

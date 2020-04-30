@@ -9,7 +9,7 @@ function Menu() {
   firebase_integration.getImageURL('menuimg4', 'Mehreen', '', 'appetizer-bowl-chili-close-up-286283.jpg')
   firebase_integration.getImageURL('menuimg5', 'Mehreen', '', 'bread-with-soup-2474661.jpg')
   firebase_integration.getImageURL('menuimg6', 'Mehreen', '', 'flat-lay-photography-of-pasta-served-in-white-plate-1487511.jpg')
-
+  
   return (
     <div className="menu">
       <div className="servicestitleleft">MENU</div>
