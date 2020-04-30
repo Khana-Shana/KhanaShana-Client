@@ -70,11 +70,7 @@ function CustomerProfile() {
         firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
             Gender : value
         })
-    }
-    // var vHeight = $(window).height(),
-    // vWidth = $(window).width(),
-    // wholepage = $('#wholepage');
-    // wholepage.css({"height":vHeight,"width":vWidth});          
+    }        
     return (
         <div id="wholepage" className="container-fluid">
             <div className="row">
