@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import StarRating from './starrating.jsx';
 import emailjs from 'emailjs-com';
 import './feedbackstyles.css';
-
+import firebase_integration from '../fire.js'
 
 
 //  emailjs.send(service_id, template_id, template_params,user_id);
 
 function CSupport() {
-
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [rating, setRating] = useState(null);
@@ -26,7 +25,6 @@ function CSupport() {
 
 
     function sendEmail(e){
-
         e.preventDefault();
 
         var template_params = {
@@ -35,18 +33,8 @@ function CSupport() {
             "rating": rating
          }
 
-         var service_id = "default_service";
-         var template_id = "feedback";
-         var user_id = "user_Rl2pGhDXLZmjSItbRINai";
-       
-        emailjs.send(service_id,template_id,template_params,user_id)
-        .then((resp)=> {
-            alert('YES!',resp.status,resp.text);
-        },(err)=> {
-            alert(':(...',err);
-        });
-
-        // resetForm();
+        var todaysdate = new Date()
+        firebase_integration.addFeedback(firebase_integration.auth.currentUser.uid, todaysdate, parseInt(template_params.rating), template_params.subject, template_params.message)
     }
 
     // const values = {rating};

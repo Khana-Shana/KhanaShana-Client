@@ -127,6 +127,16 @@ doSendEmailVerification = () =>
     this.auth.currentUser.sendEmailVerification({
         url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
     });
+
+addFeedback(CustomerID_par, Date_par, Rating_par, Subject_par, Message_par){
+    this.database.collection('CustomerSupport').add({
+        CustomerID: CustomerID_par,
+        Date: Date_par,
+        Rating: Rating_par,
+        Subject: Subject_par,
+        Message: Message_par
+    });
+	}
 }
 
 export default new firebase_integration();
