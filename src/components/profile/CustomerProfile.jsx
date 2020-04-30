@@ -194,7 +194,7 @@ function CustomerProfile() {
                 </div>
                 <div id = "r2c3" className ="col d-flex justify-content-center">
                     <img id="profileaunty" className = "img-fluid" alt="ProfileAunty" />
-                    {firebase_integration.getImageURL('profileaunty', 'CustomerProfile', '', 'aunty.svg')}
+                    {firebase_integration.getImageURL('profileaunty', 'CustomerProfile', '', 'profileaunty.svg')}
                 </div>
             </div>
         </div>
