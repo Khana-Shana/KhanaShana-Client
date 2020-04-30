@@ -58,6 +58,7 @@ header {
 
   .singlecard111 {
     width: 30rem;
+    margin-bottom:7%;
     /* position: relative; */
   }
 
@@ -154,6 +155,11 @@ header {
     color: #626E60;
     font-family: 'Montserrat', sans-serif;
     margin-top: auto;
+    margin-bottom: 3%;
+}
+
+.row{
+  margin-bottom: 5% !important;
 }
 
 .btn-group > a{
