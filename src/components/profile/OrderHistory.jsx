@@ -70,7 +70,9 @@ function OrderHistory() {
     async function updateDBcancel(OrderID){
         firebase_integration.database.collection("RegularOrder").doc(OrderID.toString()).update({
             Tracking: "Cancelled"
-        })
+        }).catch(function(error) {
+            alert(error.message)
+        });
     }
 }
 

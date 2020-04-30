@@ -2,6 +2,8 @@ import React from 'react';
 import firebase_integration from '../fire.js';
 import './profilestyles.css';
 function CustomerProfile() {
+    console.log(firebase_integration.auth.currentUser)
+
     const [editname, seteditname] = React.useState(false)
     const [editemail, seteditemail] = React.useState(false)
     const [editnumber, seteditnumber] = React.useState(false)
@@ -57,7 +59,9 @@ function CustomerProfile() {
     async function updatenumber(CustomerID, value){
         firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
             ContactNo : value
-        })
+        }).catch(function(error) {
+            alert(error.message)
+        });
     }
     async function updatepassword(CustomerID, value){
         firebase_integration.auth.currentUser.updatePassword(value).then(function() {
@@ -69,7 +73,9 @@ function CustomerProfile() {
     async function updategender(CustomerID, value){
         firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
             Gender : value
-        })
+        }).catch(function(error) {
+            alert(error.message)
+        });
     }          
     return (
         <div id="wholepage" className="container-fluid">

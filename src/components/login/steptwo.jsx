@@ -34,7 +34,10 @@ const StepTwo = (props) => {
           Email: values.email,
           Gender: values.gender,
           Name: values.name,
-      })
+          isFacebookUser: false
+      }).catch(function(error) {
+        alert(error.message)
+    });
       props.nextStep();
     }
   };

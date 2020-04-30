@@ -69,7 +69,7 @@ class firebase_integration extends Component {
   getImageURL(divID, mainreferencefolder, path, imagename) {
     this.storage.ref(mainreferencefolder).child(path+'/'+imagename).getDownloadURL().then(function(url) {
         document.getElementById(divID).src = url;
-    });
+    })
   }
 
   login(email, password) {
@@ -93,8 +93,8 @@ async register(name, email, password) {
 passwordreset() {
     return this.auth.sendPasswordResetEmail(this.auth.currentUser.email).then(function () {
         alert("Email Sent!")
-    }).catch(function (error) {
-        // An error happened.
+    }).catch(function(error) {
+        alert(error.message)
     });
 }
 
@@ -135,7 +135,9 @@ addFeedback(CustomerID_par, Date_par, Rating_par, Subject_par, Message_par){
         Rating: Rating_par,
         Subject: Subject_par,
         Message: Message_par
-    });
+    }).catch(function(error) {
+            alert(error.message)
+        });
 	}
 }
 

@@ -11,7 +11,7 @@ function CSupport() {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [rating, setRating] = useState(null);
-    
+    const [check, setCheck] = useState(false);
 
     function resetForm(){
         setSubject("");
@@ -25,16 +25,19 @@ function CSupport() {
 
 
     function sendEmail(e){
-        e.preventDefault();
+        if(check == false){
+            setCheck(true)
+            e.preventDefault();
 
-        var template_params = {
-            "subject": subject,
-            "message": message,
-            "rating": rating
-         }
+            var template_params = {
+                "subject": subject,
+                "message": message,
+                "rating": rating
+            }
 
-        var todaysdate = new Date()
-        firebase_integration.addFeedback(firebase_integration.auth.currentUser.uid, todaysdate, parseInt(template_params.rating), template_params.subject, template_params.message)
+            var todaysdate = new Date()
+            firebase_integration.addFeedback(firebase_integration.auth.currentUser.uid, todaysdate, parseInt(template_params.rating), template_params.subject, template_params.message)
+        }
     }
 
     // const values = {rating};
