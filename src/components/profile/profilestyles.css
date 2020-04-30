@@ -1,6 +1,10 @@
+/* body {
+    background-color: #EEF1ED;
+} */
 #wholepage{
     background-color: #EEF1ED;
-    background-size: contain;
+    /* background-size: contain; */
+    min-height: 100vh;
 }
 #r1c2 {
     border-left: solid;
