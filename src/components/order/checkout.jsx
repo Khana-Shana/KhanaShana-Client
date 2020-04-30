@@ -1,8 +1,12 @@
 import React, { Fragment } from 'react';
 import './orderstyles.css';
+import Header from './navbar';
+import Footer from '../navigation/footer';
+
 function Checkout() {
     return (
         <div>
+            <Header/>
             <div class = "checkout-title">CHECK OUT</div>
             <div class = "forms">
                 <div name = "your-details"><h3><strong>Your Details:</strong></h3></div>
@@ -27,6 +31,8 @@ function Checkout() {
                 </div>
 
             </div>
+            <br/> <br/>
+            <Footer/>
         </div>
     )
 }

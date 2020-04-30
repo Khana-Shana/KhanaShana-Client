@@ -1,15 +1,21 @@
 import React, {useState,useEffect} from 'react';
 import {connect} from 'react-redux';
-import {addBasket} from '../actions/addAction.jsx';
+import { addToCart } from './actions/cart-actions';
 import './orderstyles.css';
+
+
 function Card (props){
+
+    const handleClick = (id)=>{
+        props.addToCart(id); 
+    }
     
     return (
-                <div class = "singlecard111">
+                <div class = "singlecard111" key = {props.id}>
                     <img src = {props.img} class = "card-image"/>
                     <div class = "card-content">
-                        <div class = "dish-name"> {props.name} </div>
-                        <div class = "dish-price"> {props.price} </div>
+                        <div class = "dish-name"> {props.title} </div>
+                        <div class = "dish-price"> Rs {props.price} </div>
                         <div class = "timer">
                             <div class = "icon">
                             <svg class="bi bi-clock-history" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -18,17 +24,23 @@ function Card (props){
                                 <path fill-rule="evenodd" d="M7.5 3a.5.5 0 01.5.5v5.21l3.248 1.856a.5.5 0 01-.496.868l-3.5-2A.5.5 0 017 9V3.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
                             </svg>
                             </div>
-                            <span class = "dish-time">30 mins</span>
+                            <span class = "dish-time">{props.desc}</span>
                         </div>
                         
                         <div class = "buttdiv">
-                        <button onClick = {() => props.addBasket(props.id)} type = "button" class = "card-button">
+                        <button onClick={()=>{handleClick(props.id)}} type = "button" class = "card-button">
                                 Add To Cart
-                            </button>
+                        </button>
                         </div>
                     </div>
                 </div>
     );
 }
 
-export default connect(null,{addBasket})(Card);
+const mapDispatchToProps= (dispatch)=>{
+    
+    return{
+        addToCart: (id)=>{dispatch(addToCart(id))}
+    }
+}
+export default connect(null,mapDispatchToProps)(Card)

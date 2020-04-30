@@ -1,67 +1,69 @@
-import React, { Fragment } from 'react';
-import { connect } from 'react-redux';
-import {productQuantity, clearProducts} from '../actions/productQuantity';
-import {Link} from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { removeItem,addQuantity,subtractQuantity} from './actions/cart-actions'
 import './orderstyles.css';
-function Cart({props, productQuantity,clearProducts}) {
+import Header from './navbar';
+
+
+function Cart(props) {
     
-    console.log(props);
+    function handleRemove(id){
+        props.removeItem(id);
+    }
+    //to add the quantity
+    function handleAddQuantity(id){
+        props.addQuantity(id);
+    }
+    //to substruct from the quantity
+    function handleSubtractQuantity(id){
+        props.subtractQuantity(id);
+    }
 
-    let productsinCart = [];
-    let productsBill = [];
-
-    Object.keys(props.products).forEach(function(item){
-        console.log(item);
-        console.log(props.products[item].inCart);
-        if(props.products[item].inCart) {
-            productsinCart.push(props.products[item])
-            productsBill.push(props.products[item])
-        }
-    })
-
-    productsinCart = productsinCart.map((product) => {
+    let productsinCart = props.items.map((item) => {
         return (
+            <div>
             <Fragment>
-            <div class = "product row no-gutters">
-                <div class = "delete-icon col-sm- padding-0">
-                    <ion-icon onClick={() => clearProducts(product.key)} name="trash-outline" class = "remove"></ion-icon>
+            
+            <div class = "product row">
+                <div class = "delete-icon col-sm-">
+                    <ion-icon onClick={()=>{handleRemove(item.id)}} name="trash-outline" class = "remove"></ion-icon>
                 </div>
-                <div class = "col-md- padding-0">
-                    <img class = "imgcolumn" src = {product.image} />
+                <div class = "col-md-">
+                    <img class = "imgcolumn" src = {item.img} />
                 </div>
-                <div class = "name-col col-md- padding-0">
-                    <div class = "pname">{product.name}</div>
+                <div class = "name-col col-md-">
+                    <div class = "pname">{item.title}</div>
                     <div class = "quantity">
-                        <ion-icon onClick = {() => productQuantity('increase',product.key)} name = "add-circle-outline" class = "increase">+</ion-icon>
-                            {product.numbers}
-                        <ion-icon onClick = {() => productQuantity('decrease',product.key)} name = "remove-circle-outline" class = "decrease">-</ion-icon>
+                        <ion-icon onClick={()=>{handleAddQuantity(item.id)}} name = "add-circle-outline" class = "increase">+</ion-icon>
+                            {item.quantity}
+                        <ion-icon onClick={()=>{handleSubtractQuantity(item.id)}} name = "remove-circle-outline" class = "decrease">-</ion-icon>
                     </div>                     
                 </div>
-                <div class ="price-col col-md- padding-0">
-                    <div class = "priceee">Rs {product.price}</div>
-                    <div class = "timerrr">{product.preptime}</div>
+                <div class ="price-col col-md-">
+                    <div class = "priceee">Rs {item.price}</div>
+                    <div class = "timerrr">{item.desc}</div>
                     
                 </div>
-                <line color = "#fff"/>
             </div>
             </Fragment>
-            
+            </div>
         )
     });
 
 
-    productsBill = productsBill.map((product) => {
+    let productsBill = props.items.map((item) => {
         return(
             <Fragment>
                 <div class = "product-bill row">
                     <div class = "item col-md-">
-                        <div class = "item-name">{product.name}</div>
+                        <div class = "item-name">{item.title}</div>
                     </div>
                     <div class = "item-nums col-md-">
-                        <div class = "nums">x {product.numbers}</div>
+                        <div class = "nums">x {item.quantity}</div>
                     </div>
                     <div class = "item-subtotal col-md-">
-                        <div class = "subtotal">Rs {product.numbers*product.price}</div>
+                        <div class = "subtotal">Rs {item.quantity*item.price}</div>
                     </div>
                 </div>
             </Fragment>
@@ -73,7 +75,7 @@ function Cart({props, productQuantity,clearProducts}) {
 
     <div class = "order">
         <div class = "order-details01">ORDER DETAILS</div>
-        <div class = "container-prods">
+        <div class = "container-products">
             <div class = "products">
                 {productsinCart}
             </div>
@@ -90,7 +92,7 @@ function Cart({props, productQuantity,clearProducts}) {
             </div>
             <div class = "basketTotalContainer">
                 <h4 class = "basketTotalTitle">TOTAL BILL</h4>
-                <h4 class = "basketTotal">Rs {props.cartCost+100}</h4>
+                <h4 class = "basketTotal">Rs {props.total+100}</h4>
             </div>
             <br/>
             <Link to = "/checkout">
@@ -104,8 +106,18 @@ function Cart({props, productQuantity,clearProducts}) {
     )
 }
 
-const mapStateToProps = state => ({
-    props: state.basketState
-});
-
-export default connect(mapStateToProps,{productQuantity,clearProducts})(Cart);
+const mapStateToProps = (state)=>{
+    return{
+        items: state.cart,
+        addedItems: state.addedItems,
+        total: state.total
+    }
+}
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        removeItem: (id)=>{dispatch(removeItem(id))},
+        addQuantity: (id)=>{dispatch(addQuantity(id))},
+        subtractQuantity: (id)=>{dispatch(subtractQuantity(id))}
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Cart)

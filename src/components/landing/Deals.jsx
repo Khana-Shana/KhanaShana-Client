@@ -12,7 +12,8 @@ class Deals extends Component {
     firebase_integration.getImageURL('deal1', 'Mehreen', '', 'hamburger-beside-fries-2271107.png')
     firebase_integration.getImageURL('deal2', 'Mehreen', '', 'hamburger-beside-fries-2271107.png')
     firebase_integration.getImageURL('dealwheel1', 'Mehreen', '', 'club-sandwich-served-on-chopping-board-1600711.png')
-       
+   
+    
     return (
       <div className="grid-container">
         <div className="wheelitem">

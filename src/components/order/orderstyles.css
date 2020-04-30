@@ -14,19 +14,17 @@ header {
     position: relative;
 }
 
-.card-outline01,
-.home-outline01{
+.hullo,
+.cullo{
   font-family: 'Montserrat', sans-serif;
+  width: 6rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
 }
   
-  .nav-link01{
+  .nav-link{
     background: #955F61;
     color: white;
-  }
-  .nav-item-active01{
-      margin-right: 5px;
-      background-color: #626E60;
-      color: white;
   }
 
   #hc-butts {
@@ -34,16 +32,17 @@ header {
     color: white !important;
     border-color: white !important;
     width: 10rem;
+    height: 4rem;
   }
 
 .btn-primary > ion-icon  {
-    font-size: 2rem;
+    font-size: 1.75rem;
     vertical-align: middle;
     float: left;
-    margin-left: auto;
+    
 }
 
-.card-outline01{
+.card-outline{
   display: flex;
   text-align: center;
 }
@@ -95,6 +94,7 @@ header {
     color: white;
     font-size: 1.5rem;
     margin-left: 2%;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .buttdiv{
@@ -111,6 +111,15 @@ header {
     color: white;
     border: #626E60;
     padding: 0.25rem 0.5rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    color: white; 
+    border-radius: 1rem;
+  }
+
+  .card-button:hover{
+    background-color: white;
+    color:#955F61;
   }
 
   .dish-price {
@@ -118,6 +127,7 @@ header {
     color: white;
     font-size: 1.5rem;
     margin-right: 2%;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .icon {
@@ -135,15 +145,7 @@ header {
     margin-top: 3.5%; 
     display: flex;
     float: left;
-}
-
-.pagination > li > a {
-    color: #B0463D;
-    background-color: #DAC4C4;
-}
-
-.pagination {
-    margin-top: 3%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .menuuu {
@@ -171,21 +173,21 @@ header {
   margin-top: auto;
 }
 
-.container-prods ion-icon {
-font-size: 25px;
+.container-products ion-icon {
+  font-size: 25px;
   color: blue;
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;
 }
 
-.container-prods {
+.container-products {
   background-color: #DAC4C4;
-  width: 82rem;
+  width: 65rem;
   float: left;
   border-radius: 2rem;
   margin-top: 2rem;
-  margin-left: 8.5rem;
+  margin-left: 3rem;
   margin-right: 2rem;
 }
 
@@ -217,7 +219,7 @@ font-size: 25px;
   color: #B0463D;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
-  width: 11.75rem;
+  width: 11rem;
   text-align: left;
   margin-left: 3rem;
 }
@@ -249,6 +251,7 @@ font-size: 25px;
   color: #B0463D;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 90%;
+  width: 15rem;
 }
 
 .quantity{
@@ -257,18 +260,13 @@ font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   float: left;
   margin-right: 11%;
-  margin-top: 6rem;
-}
-
-.padding-0{
-  padding-right:0;
-  padding-left:0;
+  margin-top: 7rem;
+  width: 10rem;
 }
 
 .name-col{
   width: 10%;
   height: 20rem;
-  margin-right: 40%;
   margin-left: 5%;
   margin-top: 2%;
 }
@@ -277,8 +275,11 @@ font-size: 25px;
   cursor: pointer;
   color: #B0463D;
   size: 3rem;
-  margin-left: 3rem;
   margin-top: 10rem;
+}
+
+.delete-icon ion-icon{
+  margin-left: 1.5rem;
 }
 
 .product ion-icon {
@@ -297,6 +298,7 @@ font-size: 25px;
 .price-col{
   height: 20rem;
   margin-top: 2%;
+  margin-left: 19rem;
 }
 
 .priceee{
@@ -323,12 +325,13 @@ font-size: 25px;
 
 .item-name{
   width: 14rem;
-  margin-left: 1rem;
-  margin-right: 6rem;
+  margin-left: 2rem;
+  margin-right: 3.5rem;
 }
 
 .nums{
-  margin-right: 6rem;
+  margin-right: 3rem;
+  width: 7.5rem;
 }
 
 .subtotal{
@@ -345,18 +348,21 @@ font-size: 25px;
 }
 
 .delivery{
-  margin-left: 2.5rem;
+  margin-left: 2rem;
   font-size: 2rem;
   color: #955F61;
   font-family: 'Montserrat', sans-serif;
-  width: 10rem;
+  background-color: #DAC4C4;
 }
 
 .delivery-cost{
   font-size: 2rem;
   color: #955F61;
   font-family: 'Montserrat', sans-serif;
-  margin-left: 17rem;
+  margin-left: 10rem;
+  width: 34rem;
+  margin-top: 1rem;
+
 }
 
 .ddetails{
@@ -371,7 +377,7 @@ font-size: 25px;
   font-size: 4rem;
   color: #626E60;
   font-family: 'Montserrat', sans-serif;
-  margin-top: auto;
+  margin-top: 2rem;
 }
 
 .delivery-details {
@@ -447,6 +453,17 @@ label{
   border-color: white !important;
   border-radius: 2rem !important;
   width: 12rem;
+  font-size: large !important;
   font-family: 'Montserrat', sans-serif;
 }
 
+
+.check :hover{
+  background-color: #626E60 !important;
+  color: white !important;
+}
+
+.confirm :hover{
+  background-color: #626E60 !important;
+  color: white !important;
+}

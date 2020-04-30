@@ -2,40 +2,31 @@ import React,{useEffect} from "react";
 import ReactBootstrap, {Nav, Button, Navbar,NavDropdown,Form,FormControl} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {connect} from 'react-redux';
-import { getNumbers } from '../actions/getAction';
 import {Link} from 'react-router-dom';
 import './orderstyles.css';
 
 function Header(props) {
-    console.log(props);
-    useEffect(() => {
-        getNumbers();
-    }, []);
+
     
     return (
         <div> 
-        <Navbar className="nav-link01" expand="lg">
+        <Navbar className="nav-link" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
 
              <Nav className="ml-auto">  {/* for the right side of navbar*/}
-              <li class="nav-item-active01">
-              <Link to = "/feedback">
+              <Link to = "/">
               <button type = "button" id = "hc-butts" class="btn btn-primary btn-lg">
-              <ion-icon name="home-outline01"></ion-icon>
-                HOME
+              <ion-icon name="home-outline"></ion-icon>
+              <div className = "hullo">HOME</div>
               </button>
               </Link>
-            </li>
-            <li class="nav-item-active01">
               <Link to = "/cart">
               <button type = "button" id = "hc-butts" class="btn btn-primary btn-lg">
-              <ion-icon name="cart-outline01"></ion-icon>
-                  CART
-              <span> {props.basketProps.basketNumbers} </span>
+              <ion-icon name="cart-outline"></ion-icon>
+              <div className = "cullo">CART</div>
               </button>
-              </Link>
-            </li>    
+              </Link>    
             </Nav>
             
           </Navbar.Collapse>
@@ -44,8 +35,4 @@ function Header(props) {
     );
 }
 
-const mapStateToProps = state => ({
-    basketProps: state.basketState
-})
-
-export default connect(mapStateToProps,{getNumbers})(Header);
+export default Header;
