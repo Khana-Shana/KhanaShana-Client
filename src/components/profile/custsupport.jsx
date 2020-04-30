@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com';
 import './feedbackstyles.css';
 import Header from '../order/navbar';
 import Footer from '../navigation/footer';
+import firebase_integration from '../fire'
 
 
 //  emailjs.send(service_id, template_id, template_params,user_id);
@@ -13,7 +14,7 @@ function CSupport() {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [rating, setRating] = useState(null);
-    
+    const [check, setCheck] = useState(false);
 
     function resetForm(){
         setSubject("");
@@ -27,27 +28,19 @@ function CSupport() {
 
 
     function sendEmail(e){
+        if(check == false){
+            setCheck(true)
+            e.preventDefault();
 
-        e.preventDefault();
+            var template_params = {
+                "subject": subject,
+                "message": message,
+                "rating": rating
+            }
 
-        var template_params = {
-            "subject": subject,
-            "message": message,
-            "rating": rating
-         }
-
-         var service_id = "default_service";
-         var template_id = "feedback";
-         var user_id = "user_Rl2pGhDXLZmjSItbRINai";
-       
-        emailjs.send(service_id,template_id,template_params,user_id)
-        .then((resp)=> {
-            alert('YES!',resp.status,resp.text);
-        },(err)=> {
-            alert(':(...',err);
-        });
-
-        // resetForm();
+            var todaysdate = new Date()
+            firebase_integration.addFeedback(firebase_integration.auth.currentUser.uid, todaysdate, parseInt(template_params.rating), template_params.subject, template_params.message)
+        }
     }
 
     // const values = {rating};
