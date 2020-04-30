@@ -73,15 +73,10 @@ function CustomerProfile() {
     async function updategender(value){
         firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
             Gender : value
-<<<<<<< HEAD
         }).catch(function(error) {
             alert(error.message)
         });
     }          
-=======
-        })
-    }        
->>>>>>> customer-profile
     return (
         <div id="wholepage" className="container-fluid">
             <div className="row">
