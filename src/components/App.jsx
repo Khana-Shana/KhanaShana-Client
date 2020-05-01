@@ -15,6 +15,7 @@ import MenuScreen from './order/menuscreen';
 import firebase_integration from "./fire";
 import { Provider } from 'react-redux';
 import store from './stores/store'
+import DiscountContextProvider from './context/discount';
 
 function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -27,23 +28,29 @@ function App() {
 
   return firebaseInitialized !== false ? (
     <Provider store = {store}>
+      
     <div>
       <Router>
         <Switch>
-          <Route exact path="/" exact component={LandingPage} />
+         
           <Route exact path="/loginpage" component={Login} />
+          <DiscountContextProvider>
+          <Route exact path="/" exact component={LandingPage} />
           <Route exact path="/fullmenu" component={MenuScreen} />
+          <Route exact path = "/cart" component = {CartScreen} />
+          </DiscountContextProvider>
           <Route exact path = "/orderconfirmed" component = {ThankYou}/>
           <Route exact path = "/orderhistory" component = {OrderHistory}/>
           <Route exact path = "/myprofile" component = { CustomerProfile}/>
           <Route exact path = "/feedback" component = { CSupport}/>
-          <Route exact path = "/cart" component = {CartScreen} />
+          
           <Route exact path = "/checkout" component = {Checkout} />
           {/* <Route exact path = "/prebooking" component = {PdfScreen} /> */}
 
         </Switch>
       </Router>
     </div>
+    {/* </DiscountContextProvider> */}
    </Provider>
   ) : (
     <div id="loader">

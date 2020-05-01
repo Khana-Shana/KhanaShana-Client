@@ -5,6 +5,7 @@ import Deals from "./Deals";
 import Services from "./Services";
 import Menu from "./Menu";
 import Aboutus from "./Aboutus";
+import DiscountContextProvider from '../context/discount';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -17,6 +18,7 @@ function LandingPage() {
       <div id="">
         <Welcome />
       </div>
+      {/* <DiscountContextProvider> */}
       <div id="to-deals">
         <Deals />
       </div>
@@ -26,6 +28,7 @@ function LandingPage() {
       <div id="to-menu">
         <Menu />
       </div>
+      {/* </DiscountContextProvider> */}
       <div id="to-about">
         <Aboutus />
       </div>

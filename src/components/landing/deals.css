@@ -484,8 +484,8 @@
   --item-nb: 0;
   --selected-item: 0;
   --nb-turn: 5;
-  --spinning-duration: 4s;
-  --reset-duration: 0.25s;
+  --spinning-duration: 5s;
+  --reset-duration: 0s;
 }
 
 .wheel-container {
@@ -537,7 +537,7 @@
   border-radius: 50%;
   border: solid var(--wheel-color) var(--wheel-border-size);
   background-color: var(--wheel-color);
-  transition: transform var(--reset-duration);
+  /* transition: transform var(--spinning-duration); */
   transform: rotate(0deg);
   cursor: pointer;
 }

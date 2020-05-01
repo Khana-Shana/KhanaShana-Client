@@ -17,14 +17,15 @@ function Welcome() {
               not! We are sincerely for your service. Welcome your arrival!
             </div>
             <div className="orderbtn">
-              <a
+            <Link to = "/cart">
+              <button
                 id="GFG"
                 type="button"
-                href="/fullmenu"
                 className="button-error pure-button"
               >
                 Place Order!
-              </a>
+              </button>
+              </Link>
             </div>
           </div>
         </div>

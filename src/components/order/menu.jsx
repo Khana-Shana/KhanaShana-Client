@@ -24,10 +24,15 @@ const Menu = (props) => {
     })
   }, fooditems)
   
+  data = fooditems;
+
+
+
 
   return (
     <div className="container-fluid">
-      {console.log(fooditems)}
+      {console.log(props.items)}
+      
       <div className="menuuu">MENU</div>
       <div>
           
@@ -46,11 +51,12 @@ const Menu = (props) => {
                     <div class=" text-center col-md-3 ml-5 mr-5">
                       <div>
                         <Card
-                          id={item.id}
-                          title={item.title}
-                          desc={item.desc}
-                          price={item.price}
-                          img={item.img}
+                          id={item.DishID}
+                          title={item.Name}
+                          desc={item.PrepTime}
+                          price={item.SalePrice}
+                          img={item.URL}
+                          items = {data}
                         />
                       </div>
                     </div>

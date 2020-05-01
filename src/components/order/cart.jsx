@@ -1,12 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useContext } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeItem,addQuantity,subtractQuantity} from './actions/cart-actions'
 import './orderstyles.css';
 import Header from './navbar';
-
+import DiscountContext from '../context/context';
 
 function Cart(props) {
+    const {discount, setDiscount} = useContext(DiscountContext);
+    console.log(discount)
+    
     
     function handleRemove(id){
         props.removeItem(id);
@@ -24,6 +27,7 @@ function Cart(props) {
         return (
             <div>
             <Fragment>
+                
             
             <div class = "product row">
                 <div class = "delete-icon col-sm-">
@@ -74,6 +78,8 @@ function Cart(props) {
     return (
 
     <div class = "order">
+        {/* {setDiscount(100)} */}
+        {console.log(discount)}
         <div class = "order-details01">ORDER DETAILS</div>
         <div class = "container-products">
             <div class = "products">

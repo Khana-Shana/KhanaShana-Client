@@ -1,60 +1,56 @@
 import React, { Component } from "react";
 import Wheel from "./Wheel";
-import './deals.css';
-import firebase_integration from '../fire.js'
+import "./deals.css";
+import firebase_integration from "../fire.js";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 class Deals extends Component {
   constructor() {
     super();
-    this.places = ["10%", "20%", "30%", "40%", "50%", "60%"];
+    this.places = ["10%", "20%", "30%", "10%", "20%", "30%"];
   }
   render() {
-    firebase_integration.getImageURL('deal1', 'Mehreen', '', 'hamburger-beside-fries-2271107.png')
-    firebase_integration.getImageURL('deal2', 'Mehreen', '', 'hamburger-beside-fries-2271107.png')
-    firebase_integration.getImageURL('dealwheel1', 'Mehreen', '', 'club-sandwich-served-on-chopping-board-1600711.png')
-   
-    
+    firebase_integration.getImageURL(
+      "deal1",
+      "Mehreen",
+      "",
+      "hamburger-beside-fries-2271107.png"
+    );
+    firebase_integration.getImageURL(
+      "deal2",
+      "Mehreen",
+      "",
+      "hamburger-beside-fries-2271107.png"
+    );
+    firebase_integration.getImageURL(
+      "dealwheel1",
+      "Mehreen",
+      "",
+      "club-sandwich-served-on-chopping-board-1600711.png"
+    );
     return (
       <div className="grid-container">
         <div className="wheelitem">
           <div className="wheeltitle">TRY YOUR LUCK</div>
           <div>
             <Wheel items={this.places} />
+            {/* <wheel/> */}
+       
+
+         
+          
           </div>
-          <a
-            type="button"
-            id="GFG"
-            href="/fullmenu"
-            className="wheeldealbtn button-error pure-button "
-          >
-            Avail Discount
-          </a>
+
         </div>
         <div className="dailydeals">
           <div className="dealcard rounded">
-            <img
-              id = "deal1"
-              className="ddealimgfirst"
-              alt="food-deal"
-            />
-
-            <a
-              href="/fullmenu"
-              type="button"
-              id="GFG"
-              className=" ddealbtn button-error pure-button"
-            >
-              Daily Deal
-            </a>
+            <img id="deal1" className="ddealimgfirst" alt="food-deal" />
           </div>
         </div>
         <div className="weeklydeals">
           <div className="dealcard rounded">
-            <img
-              id = "deal2"
-              className="wdealimgfirst"
-              alt="food-deal"
-            />
+            <img id="deal2" className="wdealimgfirst" alt="food-deal" />
             <svg
               className="bi bi-plus-circle plus"
               width="4em"
@@ -79,19 +75,17 @@ class Deals extends Component {
                 clip-rule="evenodd"
               />
             </svg>
-            <img
-              id = "dealwheel1"
-              className="wdealimgsecond"
-              alt="food-deal"
-            />
-            <a
-              href="/fullmenu"
+            <img id="dealwheel1" className="wdealimgsecond" alt="food-deal" />
+            <Link to = "/fullmenu">
+            <button
+              // href="/fullmenu"
               type="button"
               id="GFG"
               className=" wdealbtn button-error pure-button "
             >
               Weekly Deal
-            </a>
+            </button>
+            </Link>
           </div>
         </div>
       </div>
