@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Card from "./Card.jsx";
 import { Container } from "react-bootstrap";
@@ -7,14 +7,27 @@ import FilterResults from "react-filter-search";
 
 const Menu = (props) => {
   let data = props.items;
-  const [fooditems, setFooditems] = useState(data);
+  const [fooditems, setFooditems] = useState([]);
   const [value, setValue] = useState("");
   function handleChange(event) {
     const { value } = event.target;
     setValue(value);
   }
+
+  useEffect(() => {
+    firebase_integration.database.collection('Menu').onSnapshot((snapshot) => {
+      var menu_items = []
+      snapshot.docs.forEach(doc => {
+          menu_items.push(doc.data())
+      });
+      setFooditems(menu_items)
+    })
+  }, fooditems)
+  
+
   return (
     <div className="container-fluid">
+      {console.log(fooditems)}
       <div className="menuuu">MENU</div>
       <div>
           
