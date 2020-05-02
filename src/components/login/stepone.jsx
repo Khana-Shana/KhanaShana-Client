@@ -20,11 +20,16 @@ const checkInputField = (values) => {
 };
 
 const StepOne = (props) => {
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   function continuefwd(e) {
     e.preventDefault();
     if (checkInputField(props.values)) {
       props.nextStep();
-    }
+    }                                
   }
 
   const { values, handleChange, click } = props;
@@ -36,27 +41,27 @@ const StepOne = (props) => {
                 <span className="back">
                   <div className ="butt-1"></div>
                   <span className="toggle"></span>
-                  <span  className="label on">LOGIN</span>
+                  <span  onClick = {refreshPage} className="label on">LOGIN</span>
                   <span className="label off">
                     SIGN UP
                   </span>
                 </span>
               </label>
             </div>
-
       <div className="login-text">GET ON BOARD!</div>
 
       <div className="form-div">
         <div className="modal-dialog modal-login">
           <div className="modal-content">
             <div className="prog">
-              <Line
+              {/* <Line
                 percent="40"
                 strokeWidth="2"
                 strokeColor="#B74852"
                 trailWidth="1"
                 trailColor="white"
-              />
+              /> */}
+              <img src ="./images/step1.svg"/>
             </div>
             <div className="modal-body">
               <form
@@ -122,3 +127,4 @@ const StepOne = (props) => {
 };
 
 export default StepOne;
+

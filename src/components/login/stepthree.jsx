@@ -8,13 +8,14 @@ const StepThree = (props) => {
     <div className="logcardback2">
       <div className="sign-text">WELCOME!</div>
       <div className="prog">
-        <Line
+        {/* <Line
           percent="100"
           strokeWidth="2"
           strokeColor="#B74852"
           trailWidth="1"
           trailColor="white"
-        />
+        /> */}
+        <img src ="./images/step3.svg"/>
       </div>
       <div>
         <img id = "verifyimage1" className="verify" alt="" />

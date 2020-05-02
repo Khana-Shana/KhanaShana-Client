@@ -34,7 +34,7 @@ function LoginBack(props) {
                   <div className ="butt"></div>
                   <span className="toggle"></span>
                   <span className="label on">LOGIN</span>
-                  <span className="label off">
+                  <span onClick = {handleClick} className="label off">
                     SIGN UP
                   </span>
                 </span>

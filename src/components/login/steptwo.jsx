@@ -51,6 +51,7 @@ const StepTwo = (props) => {
 
   return (
     <div className="logcardback2">
+ 
       <div className="box">
         <div className="sign1-text">HALF WAY THROUGH!</div>
 
@@ -58,13 +59,14 @@ const StepTwo = (props) => {
           <div className="modal-dialog modal-login">
             <div className="modal-content">
               <div className="prog">
-                <Line
+                {/* <Line
                   percent="70"
                   strokeWidth="2"
                   strokeColor="#B74852"
                   trailWidth="1"
                   trailColor="white"
-                />
+                /> */}
+                <img src ="./images/step2.svg"/>
               </div>
               <div className="modal-body">
                 <form
@@ -109,14 +111,17 @@ const StepTwo = (props) => {
                       value="SIGN UP"
                       onClick={onRegister}
                     />
-                    <input
+                    {/* <input
                       type="submit"
                       className="btn btn-primary btn-block btn-lg"
                       value="BACK"
                       onClick={back}
-                    />
+                    /> */}
                   </div>
                 </form>
+                <span onClick = {back}>
+              <img src = "./images/back.svg"/>
+            </span>
               </div>
             </div>
           </div>
