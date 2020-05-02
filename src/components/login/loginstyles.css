@@ -26,7 +26,7 @@
 .prog {
   width: 50%;
   margin-left: 25%;
-  margin-bottom: 7%;
+  /* margin-bottom: 7%; */
 }
 
 /* .toggle-label {
@@ -194,7 +194,7 @@ span {
 }
 
 .login-back {
-  height: 110vh;
+  /* height: 110vh; */
   width: 100%;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2FGroup%2011845.svg?alt=media&token=99cb57bc-6d64-4c9a-82ea-338240c4fda1");
 
@@ -370,7 +370,7 @@ span {
   font-size: 20px;
 }
 .modal-login .form-group {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .modal-login .form-control,
 .modal-login .btn {
