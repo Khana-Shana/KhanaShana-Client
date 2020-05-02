@@ -18,8 +18,9 @@ header {
 .cullo{
   font-family: 'Montserrat', sans-serif;
   width: 6rem;
-  font-size: 1.2rem;
-  vertical-align: middle;
+  font-size: 1rem;
+  /* vertical-align: middle; */
+  /* margin-top: 0%; */
 }
   
   .nav-link{
@@ -31,17 +32,26 @@ header {
     background-color: #626E60 !important;
     color: white !important;
     border-color: white !important;
-    width: 10rem;
-    height: 4rem;
+    width: 9rem;
+    height: 1rem;
+    /* margin-top: %; */
   }
 
 .btn-primary > ion-icon  {
-    font-size: 1.75rem;
-    vertical-align: middle;
+    font-size: 1.5rem;
+    /* vertical-align: middle; */
     float: left;
     
 }
+i{
+  margin-top: 4% !important;
+  float: left;
+  font-size: 1rem;
+}
 
+.home-outline{
+  margin-top: 2%;
+}
 .card-outline{
   display: flex;
   text-align: center;

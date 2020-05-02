@@ -7,7 +7,7 @@ function CartScreen() {
     return(
         <div>
             {/* <DiscountContextProvider> */}
-            <Header/>
+            <Header link = "/fullmenu"/>
             <Cart/>
             {/* </DiscountContextProvider> */}
         </div>

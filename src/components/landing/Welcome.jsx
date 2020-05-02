@@ -17,7 +17,7 @@ function Welcome() {
               not! We are sincerely for your service. Welcome your arrival!
             </div>
             <div className="orderbtn">
-            <Link to = "/cart">
+            <Link to = "/fullmenu">
               <button
                 id="GFG"
                 type="button"

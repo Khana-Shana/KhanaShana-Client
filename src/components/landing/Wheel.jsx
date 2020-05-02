@@ -89,7 +89,8 @@ export default class Wheel extends React.Component {
 
          
         </div>
-        <a
+        <Link to = "/fullmenu">
+        <button
             type="button"
             id="GFG"
             // href="/fullmenu"
@@ -97,7 +98,8 @@ export default class Wheel extends React.Component {
             onClick = {givediscount}
           >
             Avail Discount
-          </a>
+          </button>
+          </Link>
       </div>
        
     );
