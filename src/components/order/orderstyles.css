@@ -6,6 +6,7 @@ body {
     background-color: #FBF4F3;
 }
 
+
 header {
     background-color: #955F61;   
     /* margin: -16px -16px; */
@@ -74,7 +75,30 @@ i{
 
   .container-menuuu{
     width: 100%;
+    height: auto;
   }
+
+  .menuback{
+    background-image: url(./images//menuback.svg);
+    /* background-position: center; */
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: top;
+    width: 100%;
+    /* height: 200vh; */
+  }
+
+  .cartback{
+    background-image: url(./images//menuback.svg);
+    /* background-position: center; */
+    /* background-repeat: repeat; */
+    background-size: contain;
+
+    /* background-position: top; */
+    width: 100%;
+    height: 200vh;
+  }
+
 
   .card-image {
 
@@ -169,7 +193,7 @@ i{
 }
 
 .row{
-  margin-bottom: 5% !important;
+  margin-top: 3% !important;
 }
 
 .btn-group > a{
@@ -491,5 +515,6 @@ label{
 .search{
   width: 85%;
   margin-left: 10%;
+  padding-top: 3%;
   /* margin-bottom: 10/%; */
 }

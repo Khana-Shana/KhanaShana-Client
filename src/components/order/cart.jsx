@@ -76,7 +76,7 @@ function Cart(props) {
 
 
     return (
-
+        
     <div class = "order">
         {/* {setDiscount(100)} */}
         {console.log(discount)}
@@ -108,6 +108,7 @@ function Cart(props) {
             </Link>
         </div>
      </div>
+   
      
     )
 }

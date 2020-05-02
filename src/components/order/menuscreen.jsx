@@ -5,7 +5,7 @@ import Menu from './menu';
 function MenuScreen(){
     return(
         <div>
-        <Header link = "/"/>
+        <Header title = "MENU" link = "/"/>
         <Menu/>
         </div>
     );

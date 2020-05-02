@@ -38,13 +38,13 @@ function App() {
           <Route exact path="/" exact component={LandingPage} />
           <Route exact path="/fullmenu" component={MenuScreen} />
           <Route exact path = "/cart" component = {CartScreen} />
+          <Route exact path = "/checkout" component = {Checkout} />
           </DiscountContextProvider>
           <Route exact path = "/orderconfirmed" component = {ThankYou}/>
           <Route exact path = "/orderhistory" component = {OrderHistory}/>
           <Route exact path = "/myprofile" component = { CustomerProfile}/>
           <Route exact path = "/feedback" component = { CSupport}/>
           
-          <Route exact path = "/checkout" component = {Checkout} />
           {/* <Route exact path = "/prebooking" component = {PdfScreen} /> */}
 
         </Switch>

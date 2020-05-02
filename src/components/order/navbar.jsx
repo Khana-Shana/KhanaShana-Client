@@ -29,6 +29,7 @@ function Header(props) {
                     width: "100%",
                     height: "20%",
                     marginTop: "3%",
+                    marginRight:"100%"
                   }}
                 >
                   <i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>BACK
@@ -36,6 +37,9 @@ function Header(props) {
               </li>
             </Link>
           </Nav>
+          <div style = {{paddingLeft:"4%", fontSize:"2rem", fontFamily:"Montserrat", letterSpacing:"0.1em"}}class = "mx-auto">
+            <b>{props.title}</b>
+          </div>
 
           <Nav className="ml-auto">
             <Link to="/">

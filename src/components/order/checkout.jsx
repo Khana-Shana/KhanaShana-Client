@@ -5,9 +5,8 @@ import Footer from '../navigation/footer';
 
 function Checkout() {
     return (
-        <div>
-            <Header/>
-            <div class = "checkout-title">CHECK OUT</div>
+        <div class = "menuback">
+            <Header title = "CHECKOUT" link = "/cart"/>
             <div class = "forms">
                 <div name = "your-details"><h3><strong>Your Details:</strong></h3></div>
                 <form action="/action_page.php">

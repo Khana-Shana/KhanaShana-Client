@@ -30,10 +30,9 @@ const Menu = (props) => {
 
 
   return (
+    <div class = "menuback">
     <div className="container-fluid">
       {console.log(props.items)}
-      
-      <div className="menuuu">MENU</div>
       <div>
           
       <div class=" search active-pink-3 active-pink-4 mb-4">
@@ -67,6 +66,7 @@ const Menu = (props) => {
           )}
         />
       </div>
+    </div>
     </div>
   );
 };
