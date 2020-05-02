@@ -16,6 +16,7 @@ import firebase_integration from "./fire";
 import { Provider } from 'react-redux';
 import store from './stores/store'
 import DiscountContextProvider from './context/discount';
+import ForgotPassword from './login/forgotpassword';
 
 function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -34,6 +35,7 @@ function App() {
         <Switch>
          
           <Route exact path="/loginpage" component={Login} />
+          <Route exact path="/resetpassword" component={ForgotPassword} />
           <DiscountContextProvider>
           <Route exact path="/" exact component={LandingPage} />
           <Route exact path="/fullmenu" component={MenuScreen} />

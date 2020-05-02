@@ -83,9 +83,11 @@ function LoginBack(props) {
                       </div>
                     </form>
                     <p className="hint-text medium">
-                      <a onClick={firebase_integration.passwordreset} href="#">
+                      <Link to = "/resetpassword">
+                      <a>
                         Forgot Your Password?
                       </a>
+                      </Link>
                     </p>
                     <FacebookLoginButton
                         onClick={() =>
