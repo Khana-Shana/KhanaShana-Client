@@ -301,11 +301,14 @@ span {
   transition: all 0.8s;
 }
 .verify {
-  margin-top: 10%;
-  margin-left: 17%;
+  margin-top: 5%;
+  margin-left: 19%;
   margin-right: 17%;
   margin-bottom: 5%;
+  height: 50%;
+  width: 60%;
 }
+
 .logcardback2 {
   width: 500px;
   height: 800px;
@@ -423,53 +426,16 @@ span {
   background-color: #b74852 !important;
   border-color: #b74852 !important;
 }
-.container {
-  width: 100%;
+.prog{
+  margin-left: 20%;
 }
 
-.progressbar {
-  counter-reset: step;
+.prog1{
+  margin-left: 25%;
+  margin-top: 5%;
 }
-.progressbar li {
-  list-style: none;
-  display: inline-block;
-  width: 30.33%;
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-}
-.progressbar li:before {
-  content: counter(step);
-  counter-increment: step;
-  width: 30px;
-  height: 30px;
-  line-height : 30px;
-  border: 1px solid #ddd;
-  border-radius: 100%;
-  display: block;
-  text-align: center;
-  margin: 0 auto 10px auto;
-  background-color: #fff;
-}
-.progressbar li:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: #ddd;
-  top: 15px;
-  left: -50%;
-  z-index : -1;
-}
-.progressbar li:first-child:after {
-  content: none;
-}
-.progressbar li.active {
-  color: green;
-}
-.progressbar li.active:before {
-  border-color: green;
-} 
-.progressbar li.active + li:after {
-  background-color: green;
+
+.back{
+  margin-top: 19%;
+  margin-left:1%
 }

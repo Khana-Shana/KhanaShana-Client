@@ -119,10 +119,10 @@ const StepTwo = (props) => {
                     /> */}
                   </div>
                 </form>
-                <span onClick = {back}>
+              </div>
+              <span className = "back" onClick = {back}>
               <img src = "./images/back.svg"/>
             </span>
-              </div>
             </div>
           </div>
         </div>

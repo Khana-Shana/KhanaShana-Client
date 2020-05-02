@@ -7,7 +7,7 @@ const StepThree = (props) => {
   return (
     <div className="logcardback2">
       <div className="sign-text">WELCOME!</div>
-      <div className="prog">
+      <div className="prog1">
         {/* <Line
           percent="100"
           strokeWidth="2"
