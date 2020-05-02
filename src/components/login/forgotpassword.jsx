@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./passwordstyles.css";
 import firebase_integration from "../fire";
 import { Alert, AlertTitle } from "@material-ui/lab";
+import {Link} from 'react-router-dom';
 export default function ForgotPassword(props) {
   const [email, setEmail] = useState("");
   const checkInputField = (value) => {
@@ -14,6 +15,12 @@ export default function ForgotPassword(props) {
 
   return (
     <div class="pass-back">
+       <Link to = "/">
+      <span>
+              <img  className = "main-back" src = "./images/back.svg"/>
+            </span>
+            </Link>
+        <div class = "top">
       <div class="passcard">
         <div className="pass-text">
           FORGOT
@@ -70,6 +77,7 @@ export default function ForgotPassword(props) {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

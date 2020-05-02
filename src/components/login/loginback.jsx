@@ -23,7 +23,8 @@ function LoginBack(props) {
   }
 
   return (
-    <div className="cont row">
+    <div className = "cont">
+    <div className="row">
       <div className="col-lg- leftcard">
         <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
           <div className="logcardback1">
@@ -150,6 +151,7 @@ function LoginBack(props) {
           </ReactCardFlip>
         </div>
       </div>
+    </div>
     </div>
   );
 

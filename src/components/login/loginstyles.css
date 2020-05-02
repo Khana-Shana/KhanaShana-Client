@@ -164,7 +164,7 @@ span {
   padding-top: 20%;
 }
 .cont {
-  margin-top: 2%;
+  margin-top: 0.5%;
 }
 
 .box {
@@ -438,4 +438,9 @@ span {
 .back{
   margin-top: 19%;
   margin-left:1%
+}
+
+.main-back{
+  padding-top: 1%;
+  padding-left:2%;
 }
