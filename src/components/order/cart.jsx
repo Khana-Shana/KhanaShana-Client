@@ -6,10 +6,18 @@ import './orderstyles.css';
 import Header from './navbar';
 import DiscountContext from '../context/context';
 
+var discount_price = "";
+var discount_bill = 0;
+
 function Cart(props) {
     const {discount, setDiscount} = useContext(DiscountContext);
-    console.log(discount)
-    
+
+    if(discount === null){
+        discount_price = "0%";
+        discount_price = parseInt(discount_price.split("%",1));
+    } else {
+        discount_price = parseInt(discount.split("%",1));
+    }
     
     function handleRemove(id){
         props.removeItem(id);
@@ -57,6 +65,7 @@ function Cart(props) {
 
 
     let productsBill = props.items.map((item) => {
+
         return(
             <Fragment>
                 <div class = "product-bill row">
@@ -74,12 +83,14 @@ function Cart(props) {
         )
     });
 
+    discount_bill = ((100-discount_price)*(props.total+100))/100;
+    console.log(discount_bill)
 
     return (
         
     <div class = "order">
         {/* {setDiscount(100)} */}
-        {console.log(discount)}
+        {/* {console.log(discount)} */}
         <div class = "order-details01">ORDER DETAILS</div>
         <div class = "container-products">
             <div class = "products">
@@ -96,9 +107,17 @@ function Cart(props) {
                 <div class = "delivery"> Delivery</div>
                 <p class = "delivery-cost">Rs 100</p>
             </div>
+            <div class = "discount">
+                <div class = "discount-title">Discount</div>
+                <p class = "discount-price">{discount_price}%</p>"
+            </div>
             <div class = "basketTotalContainer">
-                <h4 class = "basketTotalTitle">TOTAL BILL</h4>
-                <h4 class = "basketTotal">Rs {props.total+100}</h4>
+                <p class = "basketTotalTitle">ORIGINAL BILL</p>
+                <p class = "basketTotal">Rs {props.total+100}</p>
+            </div>
+            <div class = "discountContainer">
+                <p class = "discountedBill">DISCOUNTED BILL</p>
+                <p class = "discountedTotal">Rs {discount_bill}</p>
             </div>
             <br/>
             <Link to = "/checkout">
