@@ -16,6 +16,7 @@ import firebase_integration from "./fire";
 import { Provider } from 'react-redux';
 import store from './stores/store'
 import DiscountContextProvider from './context/discount';
+import CheckoutContextProvider from './context/checkoutdetails';
 import ForgotPassword from './login/forgotpassword';
 
 function App() {
@@ -39,9 +40,11 @@ function App() {
           <DiscountContextProvider>
           <Route exact path="/" exact component={LandingPage} />
           <Route exact path="/fullmenu" component={MenuScreen} />
+          <CheckoutContextProvider>
           <Route exact path = "/cart" component = {CartScreen} />
           <Route exact path = "/checkout" component = {Checkout} />
           <Route exact path = "/orderconfirmed" component = {ThankYou}/>
+          </CheckoutContextProvider>
           <Route exact path = "/orderhistory" component = {OrderHistory}/>
           <Route exact path = "/myprofile" component = { CustomerProfile}/>
           <Route exact path = "/feedback" component = { CSupport}/>
