@@ -52,7 +52,8 @@ function Checkout() {
                         console.log(address);
                         console.log(area);
                         console.log(floor); 
-                        console.log(deliverytype)}}
+                        console.log(deliverytype)
+                    console.log(paymentMethod)}}
                             // href = "/orderconfirmed"
                              type="button" class="btn btn-success btn-lg">CONFIRM</a>
                     </div>
