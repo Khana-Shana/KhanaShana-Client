@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useContext } from 'react';
+import React, { Component, Fragment, useContext, useState } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeItem,addQuantity,subtractQuantity} from './actions/cart-actions'
@@ -7,8 +7,10 @@ import Header from './navbar';
 import DiscountContext from '../context/context';
 
 function Cart(props) {
-    const {discount, setDiscount} = useContext(DiscountContext);
-    console.log(discount)
+
+    // const {discount} = useContext(DiscountContext);
+    // const [itemsadded,setitemsadded] = useState([])
+    console.log("hello")
     
     
     function handleRemove(id){
@@ -31,22 +33,22 @@ function Cart(props) {
             
             <div class = "product row">
                 <div class = "delete-icon col-sm-">
-                    <ion-icon onClick={()=>{handleRemove(item.id)}} name="trash-outline" class = "remove"></ion-icon>
+                    <ion-icon onClick={()=>{handleRemove(item.DishID)}} name="trash-outline" class = "remove"></ion-icon>
                 </div>
                 <div class = "col-md-">
-                    <img class = "imgcolumn" src = {item.img} />
+                    <img class = "imgcolumn" src = {item.URL} />
                 </div>
                 <div class = "name-col col-md-">
-                    <div class = "pname">{item.title}</div>
+                    <div class = "pname">{item.Name}</div>
                     <div class = "quantity">
-                        <ion-icon onClick={()=>{handleAddQuantity(item.id)}} name = "add-circle-outline" class = "increase">+</ion-icon>
+                        <ion-icon onClick={()=>{handleAddQuantity(item.DishID)}} name = "add-circle-outline" class = "increase">+</ion-icon>
                             {item.quantity}
-                        <ion-icon onClick={()=>{handleSubtractQuantity(item.id)}} name = "remove-circle-outline" class = "decrease">-</ion-icon>
+                        <ion-icon onClick={()=>{handleSubtractQuantity(item.DishID)}} name = "remove-circle-outline" class = "decrease">-</ion-icon>
                     </div>                     
                 </div>
                 <div class ="price-col col-md-">
-                    <div class = "priceee">Rs {item.price}</div>
-                    <div class = "timerrr">{item.desc}</div>
+                    <div class = "priceee">Rs {item.SalePrice}</div>
+                    <div class = "timerrr">{item.PrepTime}</div>
                     
                 </div>
             </div>
@@ -61,13 +63,13 @@ function Cart(props) {
             <Fragment>
                 <div class = "product-bill row">
                     <div class = "item col-md-">
-                        <div class = "item-name">{item.title}</div>
+                        <div class = "item-name">{item.Name}</div>
                     </div>
                     <div class = "item-nums col-md-">
                         <div class = "nums">x {item.quantity}</div>
                     </div>
                     <div class = "item-subtotal col-md-">
-                        <div class = "subtotal">Rs {item.quantity*item.price}</div>
+                        <div class = "subtotal">Rs {item.quantity*item.SalePrice}</div>
                     </div>
                 </div>
             </Fragment>
@@ -79,7 +81,7 @@ function Cart(props) {
         
     <div class = "order">
         {/* {setDiscount(100)} */}
-        {console.log(discount)}
+        {/* {console.log(discount)} */}
         <div class = "order-details01">ORDER DETAILS</div>
         <div class = "container-products">
             <div class = "products">

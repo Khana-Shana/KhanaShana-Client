@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_ITEM,DEC_CART,INC_CART } from '../actions/cart-action-types';
+import { ADD_TO_CART,REMOVE_ITEM,DEC_CART,INC_CART, FETCH_ITEMS } from '../actions/cart-action-types';
 import img1 from '../images/4.jpg'
 import img2 from '../images/8.jpg'
 import img3 from '../images/9.jpg'
@@ -9,14 +9,7 @@ import img6 from '../images/7.jpg'
 
 
 const initState = {
-    items: [
-        {id:1,title:'Winter body', desc: "30mins", price:110, img:img1},
-        {id:2,title:'Adidas', desc: "30mins", price:80,img:img2},
-        {id:3,title:'Vans', desc: "30mins",price:120,img:img3},
-        {id:4,title:'White', desc: "30mins", price:260,img:img4},
-        {id:5,title:'Cropped-sho', desc: "30mins", price:160,img:img5},
-        {id:6,title:'Blues', desc: "30mins",price:90,img:img6}
-    ],
+    items: [],
     cart:[],
     total: 0
 
@@ -26,21 +19,24 @@ const cartReducer= (state = initState,action)=>{
    
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
-          let fooditem = state.items.find(item=> item.id === action.payload)
+        console.log(state.items)
+          let fooditem = state.items.find(item=> item.DishID === action.payload)
+        //   console.log(action.payload);
+        //   console.log(item.DishID);
           //check if the action.payload exists in the cart
-         let existed_item= state.cart.find(item=> action.payload === item.id)
+         let existed_item= state.cart.find(item=> action.payload === item.DishID)
          if(existed_item)
          {
             fooditem.quantity += 1 
              return{
                 ...state,
-                 total: state.total + fooditem.price 
+                 total: state.total + fooditem.SalePrice 
                   }
         }
          else{
             fooditem.quantity = 1;
             //calculating the total
-            let newTotal = state.total + fooditem.price 
+            let newTotal = state.total + fooditem.SalePrice 
             
             return{
                 ...state,
@@ -51,11 +47,11 @@ const cartReducer= (state = initState,action)=>{
         }
     }
     if(action.type === REMOVE_ITEM){
-        let itemToRemove= state.cart.find(item=> action.payload === item.id)
-        let new_items = state.cart.filter(item=> action.payload !== item.id)
+        let itemToRemove= state.cart.find(item=> action.payload === item.DishID)
+        let new_items = state.cart.filter(item=> action.payload !== item.DishID)
         
         //calculating the total
-        let newTotal = state.total - (itemToRemove.price * itemToRemove.quantity )
+        let newTotal = state.total - (itemToRemove.SalePrice * itemToRemove.quantity )
         console.log(itemToRemove)
         return{
             ...state,
@@ -65,20 +61,22 @@ const cartReducer= (state = initState,action)=>{
     }
     //INSIDE CART COMPONENT
     if(action.type=== INC_CART){
-        let fooditem = state.items.find(item=> item.id === action.payload)
+        // console.log(action.payload)
+        let fooditem = state.items.find(item=> item.DishID === action.payload)
           fooditem.quantity += 1 
-          let newTotal = state.total + fooditem.price
+          console.log(fooditem);
+          let newTotal = state.total + fooditem.SalePrice
           return{
               ...state,
               total: newTotal
           }
     }
     if(action.type=== DEC_CART){  
-        let fooditem = state.items.find(item=> item.id === action.payload) 
+        let fooditem = state.items.find(item=> item.DishID === action.payload) 
         //if the qt == 0 then it should be removed
         if(fooditem.quantity === 1){
-            let new_items = state.cart.filter(item=>item.id !== action.payload)
-            let newTotal = state.total - fooditem.price
+            let new_items = state.cart.filter(item=>item.DishID !== action.payload)
+            let newTotal = state.total - fooditem.SalePrice
             return{
                 ...state,
                 cart: new_items,
@@ -87,13 +85,20 @@ const cartReducer= (state = initState,action)=>{
         }
         else {
             fooditem.quantity -= 1
-            let newTotal = state.total - fooditem.price
+            let newTotal = state.total - fooditem.SalePrice
             return{
                 ...state,
                 total: newTotal
             }
         }
         
+    }
+    if(action.type=== FETCH_ITEMS)
+    {
+        return{
+            ...state,
+            items: action.payload
+        }
     }
     
   else{
