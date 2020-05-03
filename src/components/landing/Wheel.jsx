@@ -2,7 +2,8 @@ import React from "react";
 import DiscountContext from "../context/context";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './deals.css';
-
+import firebase_integration from '../fire.js'
+import firebase from '../fire';
 
 // import './index.css';
 
@@ -13,12 +14,14 @@ export default class Wheel extends React.Component {
     super(props, context);
     this.state = {
       selectedItem: null,
+      button: false
     };
     this.selectItem = this.selectItem.bind(this);
     // this.givediscount = this.givediscount.bind(this);
     this.run = false;
     this.value = 0;
     this.i = 0;
+    this.buttondisable = false
     // this.context.setDiscount();
   }
 
@@ -46,7 +49,8 @@ export default class Wheel extends React.Component {
   render() {
     // const { setDiscount } = this.context;
     // console.log(this.context)
-    const { selectedItem } = this.state;
+    const { selectedItem, button } = this.state;
+    // const { button } = this.state;
     const { items } = this.props;
 
     const wheelVars = {
@@ -54,12 +58,21 @@ export default class Wheel extends React.Component {
       "--selected-item": selectedItem,
     };
     const spinning = selectedItem !== null ? "spinning" : "";
+    console.log(this.context)
 
     
-  const givediscount = () => {
-    // console.log(this.value);
-    this.context.setDiscount(this.props.items[this.value]);
-    console.log(this.context);
+  const givediscount = (resolvepromise) => {
+    if(resolvepromise === true) {
+      console.log(this.value);
+      this.context.setDiscount(this.props.items[this.value]);
+      console.log(this.context);
+    }
+    else {
+      alert("Discount already availed. Please try again next week!")
+      console.log(this.value);
+      // this.context.setDiscount(0);
+      console.log(this.context);
+    }
   };
 
     return (
@@ -68,9 +81,40 @@ export default class Wheel extends React.Component {
           className={`wheel ${spinning}`}
           style={wheelVars}
           onClick={() => {
-            let promise = new Promise (() => {this.selectItem()})
-            promise.then(givediscount())
-          }}
+
+            
+            if(!firebase.getCurrentUsername()) {
+            // not logged in
+            alert('Please login first')
+            this.props.history.replace('/loginpage')
+            return null
+            }
+            else{
+            var UserID = firebase_integration.auth.currentUser.uid
+            firebase_integration.database.collection("CustomerDatabase").where("CustomerID", "==", UserID.toString()).get().then((docs) => {
+              var mydata = 0              
+              docs.forEach((doc) => {
+                mydata = doc.data()
+              });
+              if(mydata.WheelUsed === false){
+                let promise = new Promise (() => {this.selectItem()})
+                console.log("Allow Discount")
+                promise.then(givediscount(true))
+                firebase_integration.database.collection("CustomerDatabase").doc(UserID.toString()).update({
+                  WheelUsed: true
+                })
+                this.setState({ button: true });
+
+              }
+              else if (mydata.WheelUsed === true){
+                console.log("Don't Allow Discount")
+                this.context.setDiscount("0%")
+                alert("Discount already availed. Try again next week!")
+                // this.buttondisable = true
+                this.setState({ button: false });
+              }
+            })
+          }}}
         >
           {items.map((item, index) => (
             <div
@@ -84,17 +128,29 @@ export default class Wheel extends React.Component {
 
          
         </div>
-        <Link to = "/fullmenu">
-        <button
+        
+          {button ?         
+          <Link to = "/fullmenu">
+          <button
             type="button"
             id="GFG"
             // href="/fullmenu"
             className="wheeldealbtn button-error pure-button "
-            onClick = {givediscount}
+            // onClick = {givediscount}
           >
             Avail Discount
           </button>
           </Link>
+          :
+          <button
+            type="button"
+            id="GFG"
+            className="wheeldealbtn button-error pure-button "
+          disabled>
+            Avail Discount
+          </button>}
+
+          
       </div>
        
     );

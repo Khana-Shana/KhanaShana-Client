@@ -1,9 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import './orderstyles.css';
 import Header from './navbar';
 import Footer from '../navigation/footer';
+import DiscountContext from '../context/context';
 
 function Checkout() {
+
+    const {discount, setDiscount} = useContext(DiscountContext);
+    
+
+
     return (
         <div class = "menuback">
             <Header title = "CHECKOUT" link = "/cart"/>
@@ -24,7 +30,9 @@ function Checkout() {
                     <input type="radio" checked='checked' name = "method"/>
                     <label>Cash on Delivery</label>                   
                     <div class = "confirm">
-                        <a href = "/orderconfirmed" type="button" class="btn btn-success btn-lg">CONFIRM</a>
+                        <a onClick = {() => {
+                            setDiscount("hello")
+                            console.log(discount)}} href = "/orderconfirmed" type="button" class="btn btn-success btn-lg">CONFIRM</a>
                     </div>
                     <br/>
                 </div>

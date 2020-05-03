@@ -12,20 +12,13 @@ var discount_bill = 0;
 function Cart(props) {
     const {discount, setDiscount} = useContext(DiscountContext);
 
-    if(discount === null){
+    if(discount === "0%"){
         discount_price = "0%";
         discount_price = parseInt(discount_price.split("%",1));
     } else {
         discount_price = parseInt(discount.split("%",1));
     }
     
-    if(discount === null){
-        discount_price = "0%";
-        discount_price = parseInt(discount_price.split("%",1));
-    } else {
-        discount_price = parseInt(discount.split("%",1));
-    }
-
     function handleRemove(id){
         props.removeItem(id);
     }

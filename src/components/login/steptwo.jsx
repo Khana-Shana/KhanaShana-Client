@@ -34,7 +34,8 @@ const StepTwo = (props) => {
           Email: values.email,
           Gender: values.gender,
           Name: values.name,
-          isFacebookUser: false
+          isFacebookUser: false,
+          WheelUsed: false
       }).catch(function(error) {
         alert(error.message)
     });
