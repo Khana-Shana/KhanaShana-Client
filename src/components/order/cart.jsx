@@ -5,17 +5,24 @@ import { removeItem,addQuantity,subtractQuantity} from './actions/cart-actions'
 import './orderstyles.css';
 import Header from './navbar';
 import DiscountContext from '../context/context';
+import CheckoutContext from '../context/checkoutcontext';
 
 var discount_price = "";
 var discount_bill = 0;
+var string_discount = "";
 
 function Cart(props) {
     const {discount, setDiscount} = useContext(DiscountContext);
+    const {orderdetails, setCart, setOrderDiscount} = useContext(CheckoutContext);
+    
 
-    if(discount === "0%"){
+    if(discount === null){
+        
         discount_price = "0%";
+        string_discount = "0%";
         discount_price = parseInt(discount_price.split("%",1));
     } else {
+        string_discount = discount;
         discount_price = parseInt(discount.split("%",1));
     }
     
@@ -123,7 +130,19 @@ function Cart(props) {
             <br/>
             <Link to = "/checkout">
             <div class = "check">
-            <button type="button" class="btn btn-success btn-lg">CHECKOUT</button>
+            <button onClick = {
+                ()=>{
+                    
+    // if(discount_price === "0%"){
+    //     setOrderDiscount("0%")
+    // } else {
+    //     setOrderDiscount(discount)
+    // }
+    setOrderDiscount(string_discount)
+                setCart(props.items)
+                console.log(props.items)           
+            
+            }} type="button" class="btn btn-success btn-lg">CHECKOUT</button>
             </div>
             </Link>
         </div>

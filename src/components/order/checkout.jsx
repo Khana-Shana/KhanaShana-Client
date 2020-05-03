@@ -8,8 +8,6 @@ function Checkout() {
 
     const {discount, setDiscount} = useContext(DiscountContext);
     
-
-
     return (
         <div class = "menuback">
             <Header title = "CHECKOUT" link = "/cart"/>
@@ -25,13 +23,20 @@ function Checkout() {
                 <div class = "instructions"><h3><strong>Special Instructions:</strong></h3></div>
                 <textarea class = "text-area" placeholder="   Write your text here"></textarea>
                 <br/> <br/>
+                {/* { <div><h3><strong>Order Type:</strong></h3></div> */}
+                <div name = "order-type-checkout">
+                    <input type="radio" name = "method"/>
+                    <label>Delivery</label>
+                    <input type="radio" name = "method"/>
+                    <label>Cash on Delivery</label>
+                </div>
                 <div><h3><strong>Select a payment method:</strong></h3></div>
                 <div name = "payment">
                     <input type="radio" checked='checked' name = "method"/>
                     <label>Cash on Delivery</label>                   
                     <div class = "confirm">
                         <a onClick = {() => {
-                            setDiscount("hello")
+                            setDiscount("0%")
                             console.log(discount)}} href = "/orderconfirmed" type="button" class="btn btn-success btn-lg">CONFIRM</a>
                     </div>
                     <br/>
