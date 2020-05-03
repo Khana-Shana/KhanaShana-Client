@@ -1,5 +1,6 @@
 import Button from "./loginbutton";
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import { Line, Circle } from "rc-progress";
 
 const checkInputField = (values) => {
@@ -41,7 +42,9 @@ const StepOne = (props) => {
                 <span className="back">
                   <div className ="butt-1"></div>
                   <span className="toggle"></span>
-                  <span  onClick = {refreshPage} className="label on">LOGIN</span>
+                  <Link to= "/loginpage">
+                  <span className="label on">LOGIN</span>
+                  </Link>
                   <span className="label off">
                     SIGN UP
                   </span>
