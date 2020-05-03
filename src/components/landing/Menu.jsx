@@ -106,14 +106,16 @@ function Menu() {
         </div>
       </div>
       <div className="menubtn">
+        <Link to = "/fullmenu">
         <a
-          href="/fullmenu"
+          // href="/fullmenu"
           type="button"
           id="GFG"
           className="button-menu pure-button"
         >
           Full Menu
         </a>
+        </Link>
       </div>
     </div>
   );
