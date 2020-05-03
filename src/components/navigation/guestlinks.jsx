@@ -3,6 +3,7 @@ import ReactBootstrap, {Nav, Button, Navbar,NavDropdown,Form,FormControl} from '
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Scrollchor from 'react-scrollchor';
 import "./header.css";
+import {Link} from 'react-router-dom';
 
 function GuestLinks() {
     return(
@@ -11,7 +12,9 @@ function GuestLinks() {
     
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <a style={{background: "#955F61",color: "white",marginTop:"6px"}} className="navbar-brand" href="/">Khana Shana </a>
+          <Link to = "/">
+          <a style={{background: "#955F61",color: "white",marginTop:"6px"}} className="navbar-brand">Khana Shana </a>
+          </Link>
         <Nav className="mr-auto">  {/* for the left side of navbar*/}
   
               <li className="nav-item active">
@@ -28,9 +31,11 @@ function GuestLinks() {
               <li className="nav-item active">
               <Scrollchor  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",marginTop:"8px"}}>Deals</Scrollchor >
             </li>
+            <Link to = "/loginpage">
             <li className="nav-item active">
-              <a  className="nav-link" href="/loginpage" style={{background: "#955F61",color: "white",marginTop:"7px"}}>Login</a >
+              <a  className="nav-link" style={{background: "#955F61",color: "white",marginTop:"7px"}}>Login</a >
             </li>
+            </Link>
             <li className="nav-item">
             {/* <i class="fa fa-facebook"></i> */}
               <a type = "button" id = "GFG" href="https://www.facebook.com/uzmascuisine/" className="fa fa-facebook fa-xs" style={{background: "#955F61",color: "white"}}></a >

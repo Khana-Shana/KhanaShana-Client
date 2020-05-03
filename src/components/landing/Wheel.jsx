@@ -1,13 +1,13 @@
 import React from "react";
 import DiscountContext from "../context/context";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './deals.css';
 import firebase_integration from '../fire.js'
 import firebase from '../fire';
-
+import { Link, withRouter } from "react-router-dom";
 // import './index.css';
 
-export default class Wheel extends React.Component {
+class Wheel extends React.Component {
   static contextType = DiscountContext;
 
   constructor(props, context) {
@@ -51,7 +51,7 @@ export default class Wheel extends React.Component {
     // console.log(this.context)
     const { selectedItem, button } = this.state;
     // const { button } = this.state;
-    const { items } = this.props;
+    const { history, items } = this.props;
 
     const wheelVars = {
       "--nb-item": items.length,
@@ -156,3 +156,5 @@ export default class Wheel extends React.Component {
     );
   }
 }
+
+export default withRouter(Wheel);

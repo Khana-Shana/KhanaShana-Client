@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import StarRating from './starrating.jsx';
 import emailjs from 'emailjs-com';
 import './feedbackstyles.css';
-import Header from '../order/navbar';
+import Header from '../navigation/Header';
 import Footer from '../navigation/footer';
 import firebase_integration from '../fire'
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase_integration from '../fire.js';
 import './profilestyles.css';
+import Header from '../navigation/Header';
 function CustomerProfile() {
     const [editname, seteditname] = React.useState(false)
     const [editemail, seteditemail] = React.useState(false)
@@ -72,6 +73,8 @@ function CustomerProfile() {
         })
     }        
     return (
+        <div>
+        <Header/>
         <div id="wholepage" className="container-fluid">
             <div className="row">
                 <div className ="col-2 d-flex justify-content-center">
@@ -193,6 +196,7 @@ function CustomerProfile() {
                     {firebase_integration.getImageURL('profileaunty', 'CustomerProfile', '', 'profileaunty.svg')}
                 </div>
             </div>
+        </div>
         </div>
     );
 }

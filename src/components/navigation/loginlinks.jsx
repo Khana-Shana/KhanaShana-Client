@@ -5,6 +5,7 @@ import ReactBootstrap, {Nav, Button, Navbar,NavDropdown,Form,FormControl} from '
 import Scrollchor from 'react-scrollchor';
 import firebase_integration from '../fire';
 import {withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function LoginLinks(props){
     return(
@@ -13,7 +14,9 @@ function LoginLinks(props){
     
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <a style={{background: "#955F61",color: "white", marginTop:"6px"}} className="navbar-brand" href="/">Khana Shana </a>
+        <Link to = "/">
+          <a style={{background: "#955F61",color: "white",marginTop:"6px"}} className="navbar-brand">Khana Shana </a>
+          </Link>
         <Nav className="mr-auto">  {/* for the left side of navbar*/}
   
               <li className="nav-item active">
@@ -32,9 +35,11 @@ function LoginLinks(props){
               <li className="nav-item active">
               <Scrollchor  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",marginTop:"15%"}}>Deals</Scrollchor >
             </li>
+            <Link to = "/myprofile">
             <li className="nav-item active">
-              <a  className="nav-link" href="/myprofile" style={{background: "#955F61",color: "white",marginTop:"11%"}}>{firebase_integration.getDisplayName()}</a >
+              <a  className="nav-link" style={{background: "#955F61",color: "white",marginTop:"11%"}}>{firebase_integration.getDisplayName()}</a >
             </li>
+            </Link>
             <li className = "nav-item">
               <button className="btn" onClick={logout} style={{background: "#955F61",color: "white",marginTop: "11%"}}>Log Out</button>
             </li>
