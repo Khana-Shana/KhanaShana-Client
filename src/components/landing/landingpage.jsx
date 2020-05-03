@@ -5,6 +5,7 @@ import Deals from "./Deals";
 import Services from "./Services";
 import Menu from "./Menu";
 import Aboutus from "./Aboutus";
+import Carousel from "./Reviews"
 import DiscountContextProvider from '../context/discount';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -31,6 +32,9 @@ function LandingPage() {
       {/* </DiscountContextProvider> */}
       <div id="to-about">
         <Aboutus />
+      </div>
+      <div id="to-reviews">
+        <Carousel />
       </div>
       {/* <Contact/> */}
       {/* <Login/> */}

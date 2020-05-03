@@ -2,8 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
-  color: #af473c;
-  background-color: #bcc7b8;
+  background-color: #955F61 !important;
  
 }
 
@@ -36,7 +35,6 @@
 
 .footer address {
   font-style: normal;
-  color: #af473c;
 }
 
 .footer__btn {
@@ -47,7 +45,7 @@
   max-width: max-content;
   background-color: rgb(33, 33, 33, 0.07);
   border-radius: 100px;
-  color: #af473c;
+  color: white;
   line-height: 0;
   margin: 0.6em 0;
   font-size: 1rem;
@@ -77,15 +75,10 @@
   margin-right: 1.25em;
 }
 
-.nav__ul a {
-  color: #af473c;
- 
-}
-
 .legal {
   display: flex;
   flex-wrap: wrap;
-  color: #af473c;
+  color: white;
 }
 
 .legal__links {
@@ -94,7 +87,7 @@
 }
 
 .heart {
-  color: #af473c;
+  color: white;
 }
 
 @media screen and (min-width: 24.375em) {
@@ -123,4 +116,14 @@
 
 .footerdiv {
   width: 100%;
+}
+
+h1,
+h2,
+.legal p,
+.footer address,
+.footer__logo,
+.footer li,
+.nav__ul a{
+  color: white !important;
 }
