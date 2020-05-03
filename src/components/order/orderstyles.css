@@ -240,22 +240,31 @@ i{
   margin-left: 2rem;
 }
 
-.basketTotalContainer {
+.basketTotalContainer{
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
 }
 
-.basketTotalTitle {
-  color: #B0463D;
-  font-size: 2rem;
-  font-family: 'Montserrat', sans-serif;
-  width: 11.75rem;
-  text-align: center;
-  margin-right: 0.2rem;
+.discountContainer{
+  width: 100%;
+  display: flex;
+  /* justify-content: flex-end; */
 }
 
-.basketTotal {
+.basketTotalTitle,
+.discountedBill{
+    color: #B0463D;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 20rem;
+    margin-right: 3rem;
+    /* align-items: flex-start; */
+    margin-left: 3rem;
+}
+
+.basketTotal,
+.discountedTotal{
   color: #B0463D;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
@@ -365,13 +374,13 @@ i{
 
 .item-name{
   width: 14rem;
-  margin-left: 2rem;
+  margin-left: 4rem;
   margin-right: 3.5rem;
 }
 
 .nums{
   margin-right: 3rem;
-  width: 7.5rem;
+  width: 5rem;
 }
 
 .subtotal{
@@ -384,28 +393,36 @@ i{
   font-size: 2rem;
   color: #955F61;
   font-family: 'Montserrat', sans-serif;  
-  text-align: center; 
+  text-align: left; 
 }
 
-.delivery{
-  margin-left: 2rem;
+.delivery,
+.discount-title{
+  margin-left: 3rem !important;
   font-size: 2rem;
   color: #955F61;
   font-family: 'Montserrat', sans-serif;
   background-color: #DAC4C4;
 }
 
-.delivery-cost{
+.delivery-cost,
+.discount-price{
   font-size: 2rem;
   color: #955F61;
   font-family: 'Montserrat', sans-serif;
-  margin-left: 10rem;
+  margin-left: 11rem;
   width: 34rem;
   margin-top: 1rem;
-
+  text-align: end;
+  margin-right: 5rem;
 }
 
-.ddetails{
+.discount-price{
+  margin-top: 0rem !important;
+}
+
+.ddetails,
+.discount{
   display: flex;
 }
 
