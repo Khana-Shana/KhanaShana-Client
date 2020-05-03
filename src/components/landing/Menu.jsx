@@ -1,6 +1,7 @@
 import React from "react";
 import "./menu.css";
 import firebase_integration from '../fire.js'
+import DiscountContext from "../context/context";
 
 function Menu() {
   firebase_integration.getImageURL('menuimg1', 'Mehreen', '', 'taylor-kiser-POFG828-GQc-unsplash.jpg')

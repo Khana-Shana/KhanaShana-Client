@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from '../navigation/footer.jsx';
 import './aboutus.css';
 import firebase_integration from '../fire.js'
 
@@ -51,7 +50,6 @@ function Aboutus() {
         />
       </div>
     </div>
-    <Footer/>
     </div>
 
   );

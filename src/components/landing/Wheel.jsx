@@ -57,15 +57,10 @@ export default class Wheel extends React.Component {
 
     
   const givediscount = () => {
-    console.log(this.value);
+    // console.log(this.value);
     this.context.setDiscount(this.props.items[this.value]);
     console.log(this.context);
   };
-
-    
-
-      
-    
 
     return (
       <div className="wheel-container">      
