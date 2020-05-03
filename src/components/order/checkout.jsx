@@ -4,6 +4,7 @@ import Header from './navbar';
 import Footer from '../navigation/footer';
 import DiscountContext from '../context/context';
 import CheckoutContext from '../context/checkoutcontext';
+import {Link} from 'react-router-dom';
 
 function Checkout() {
 
@@ -43,8 +44,10 @@ function Checkout() {
                 <div><h3><strong>Select a payment method:</strong></h3></div>
                 <div name = "payment">
                     <input type="radio" checked='checked' name = "method"/>
-                    <label>Cash on Delivery</label>                   
+                    <label>Cash on Delivery</label>   
+                    <Link to = "/orderconfirmed">              
                     <div class = "confirm">
+                        
                         <a
                          onClick = {() => {setDiscount("0%");
                          console.log(discount)
@@ -56,7 +59,9 @@ function Checkout() {
                     console.log(paymentMethod)}}
                             // href = "/orderconfirmed"
                              type="button" class="btn btn-success btn-lg">CONFIRM</a>
+                             
                     </div>
+                    </Link>  
                     <br/>
                 </div>
 
