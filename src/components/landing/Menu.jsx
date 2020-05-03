@@ -2,7 +2,7 @@ import React from "react";
 import "./menu.css";
 import firebase_integration from '../fire.js'
 import DiscountContext from "../context/context";
-
+import {Link} from 'react-router-dom';
 function Menu() {
   firebase_integration.getImageURL('menuimg1', 'Mehreen', '', 'taylor-kiser-POFG828-GQc-unsplash.jpg')
   firebase_integration.getImageURL('menuimg2', 'Mehreen', '', 'hamburger-beside-fries-2271107.jpg')
