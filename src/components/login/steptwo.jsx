@@ -30,7 +30,6 @@ const StepTwo = (props) => {
       var day = values.dob.substring(8, 10)
       var date = new Date(Date.UTC(year, month, day))
       var customerID = firebase_integration.auth.currentUser.uid
-      
         firebase_integration.database.collection("CustomerDatabase").doc(customerID.toString()).set({
           ContactNo: values.number,
           CustomerID: firebase_integration.auth.currentUser.uid,
@@ -39,7 +38,9 @@ const StepTwo = (props) => {
           Gender: values.gender,
           Name: values.name,
           isFacebookUser: false,
-          WheelUsed: false
+          WheelUsed: false,
+          DateWheelUsed: new Date(),
+          Discount: 0
       }).catch(function(error) {
         alert.show(error.message)
     });

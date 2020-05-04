@@ -2,8 +2,26 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./welcome.css";
 import firebase_integration from '../fire.js'
+import firebase from '../fire';
 
 function Welcome() {
+  
+  if(firebase.getCurrentUsername()) {
+    var todaysdate = new Date()
+    firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).get().then((snapshot)=>{
+      var wheeluseddate = snapshot.data().DateWheelUsed.seconds
+      var processing1 = new Date(wheeluseddate*1000)
+      var processing2 = processing1.setDate(processing1.getDate()+7)
+      var sevenlater = new Date(processing2)
+      if(todaysdate >= sevenlater){
+        firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).update({
+          WheelUsed: false,
+          Discount: 0
+        })
+      }
+    })
+  }
+
   return (
     <div className="container-fluid welcome">
       <div className="row">
