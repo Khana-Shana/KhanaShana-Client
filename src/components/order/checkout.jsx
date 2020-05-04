@@ -18,7 +18,7 @@ function Checkout() {
     const [paymentMethod] = useState("Cash on Delivery")
     var orderid = ""
 
-    const {orderdetails} = useContext(CheckoutContext);
+    const {orderdetails, setOrderID} = useContext(CheckoutContext);
     console.log(orderdetails)
     
     async function PlaceOrder(){
@@ -53,7 +53,8 @@ function Checkout() {
             SpecialInstruction: instructions,
             OrderID: "Not Assigned"
         }).then(function(docRef){
-            orderid = docRef.id
+            let promise = new Promise(() => {orderid = docRef.id})
+            promise.then(setOrderID(docRef.id));
             firebase_integration.database.collection("RegularOrder").doc(orderid.toString()).update({
                 OrderID: orderid
             })
