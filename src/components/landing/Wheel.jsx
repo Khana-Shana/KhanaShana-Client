@@ -132,8 +132,10 @@ class Wheel extends React.Component {
 
          
         </div>
-        
-          {button ?         
+
+        <div>
+          
+        {button ?         
           <Link to = "/fullmenu">
           <button
             type="button"
@@ -153,7 +155,7 @@ class Wheel extends React.Component {
           disabled>
             Avail Discount
           </button>}
-
+        </div>
           
       </div>
        

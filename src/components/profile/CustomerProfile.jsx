@@ -433,12 +433,12 @@ function CustomerProfile() {
               alt="ProfilePicture"
               src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/CustomerProfile%2Fprofilepic.svg?alt=media&token=ee543aa0-18be-4d30-a73c-1c53d838ac7c"
             />
-            {firebase_integration.getImageURL(
+            {/* {firebase_integration.getImageURL(
               "profilepic",
               "CustomerProfile",
               "",
               "profilepic.svg"
-            )}
+            )} */}
           </div>
         </div>
       </div>

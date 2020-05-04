@@ -3,9 +3,9 @@ $black: #161616;
 .reviews-title{
   text-align: left;
   padding-left: 2%;
-  width: 20% !important;
+  width: 47% !important;
   color: #b0463d;
-  font-size: 50pt;
+  font-size: 4rem;
   font-family: "brandon_grotesqueblack";
   margin-top: 3%;
   border-color: #b0463d;
@@ -45,12 +45,13 @@ a {
   justify-content: center;
   overflow: hidden;
   width: 100%;
+  // height: auto;
   background-color: #bcc7b8;
 }
 
 .carousel-container {
   position: relative;
-  width: 60%;
+  width: 70%;
   align-self: center;
 }
 
@@ -59,8 +60,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  // overflow: hidden;
-  height: 60rem;
+  height:23rem;
 }
 
 .carousel-slide-item {
@@ -69,10 +69,11 @@ a {
   position: absolute;
   transition: all 0.5s ease;
   width: 28rem;
-  height: 50%;
+  padding-bottom: 5%;
+  height: 100%;
   background-color: #DAC4C4;
   border-radius: 2rem;
-  // slide item initial state
+
   &.s4 {
     transform: translateX(-60rem);
     opacity: 0;
@@ -155,9 +156,9 @@ a {
   position: relative;
 
   h4 {
-    margin: 0.7rem 0 0 0;
+    margin: 0.1rem 0 0 0;
     text-transform: uppercase;
-    margin-top: 6rem;
+    margin-top: 3rem;
     margin-left: 2rem;
     margin-right: 2rem;
     margin-bottom: 3rem;
@@ -227,7 +228,8 @@ a {
     background: #955F61;
     border: 0;
     border-radius: 50%;
-    margin: 0 0.3rem;
+    margin: 0.5rem 0.3rem;
+    margin-top: 2rem;
     outline: none;
     transform: scale(0.5);
     cursor: pointer;

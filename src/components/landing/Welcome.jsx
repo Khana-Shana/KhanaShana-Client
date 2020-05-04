@@ -25,10 +25,10 @@ function Welcome() {
   return (
     <div className="container-fluid welcome">
       <div className="row">
-        <div className="col-sm">
-          <div className="left-side h-75">
+        <div className="col-lg-6">
+        <div className="left-side">
             <div className="Title">KHANA SHANA</div>
-            <div className="Text">
+            <div className="container Textwelc">
               Do you want to eat something delicious, special and healthy? Worry
               not! We are sincerely for your service. Welcome your arrival!
             </div>
@@ -45,7 +45,7 @@ function Welcome() {
             </div>
           </div>
         </div>
-        <div className="col-sm">
+        <div className="col-lg-6">
           <div className="right-side">
             <img
               id="womancookwelcome"
