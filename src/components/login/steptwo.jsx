@@ -2,22 +2,26 @@ import React, { Component } from "react";
 import { Line, Circle } from "rc-progress";
 import firebase_integration from "../fire";
 import './loginstyles.css';
+import { useAlert } from 'react-alert'
 
-const checkInputField = (values) => {
-  // return true;
-  if (values.number === "" || values.gender === "" || values.dob === "") {
-    alert("Please fill in all the fields.");
-    return false;
-  } else {
-    // if(values.password === values.confirmpswd)
-    // {
-    return true;
-    // }
-    // alert("Passwords don't match.");
-  }
-};
 
 const StepTwo = (props) => {
+  const alert = useAlert()
+
+  const checkInputField = (values) => {
+    // return true;
+    if (values.number === "" || values.gender === "" || values.dob === "") {
+      alert.show("Please fill in all the fields.");
+      return false;
+    } else {
+      // if(values.password === values.confirmpswd)
+      // {
+      return true;
+      // }
+      // alert("Passwords don't match.");
+    }
+  };
+  
   const continuefwd = (e) => {
     // e.preventDefault();
     if (checkInputField(props.values)) {
@@ -37,7 +41,7 @@ const StepTwo = (props) => {
           isFacebookUser: false,
           WheelUsed: false
       }).catch(function(error) {
-        alert(error.message)
+        alert.show(error.message)
     });
       props.nextStep();
     }
@@ -138,7 +142,7 @@ const StepTwo = (props) => {
       // props.history.replace('./')
       continuefwd();
     } catch (error) {
-      alert("An error occured while signing up. Please Try Again!");
+      alert.show("An error occured while signing up. Please Try Again!");
       console.log(error.message)
     }
   }

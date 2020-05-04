@@ -18,9 +18,24 @@ import store from './stores/store'
 import DiscountContextProvider from './context/discount';
 import CheckoutContextProvider from './context/checkoutdetails';
 import ForgotPassword from './login/forgotpassword';
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic';
 
 function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
+
+  // optional cofiguration
+const options = {
+  // you can also just use 'bottom center'
+  position: positions.TOP_CENTER,
+  timeout: 5000,
+  offset: '30px',
+  // you can also just use 'scale'
+  transition: transitions.SCALE,
+  containerStyle: {
+    zIndex: 100
+  }
+}
 
   useEffect(() => {
     firebase_integration.isInitialized().then((val) => {
@@ -29,6 +44,7 @@ function App() {
   });
 
   return firebaseInitialized !== false ? (
+    <AlertProvider template={AlertTemplate} {...options}>
     <Provider store = {store}>
       
     <div>
@@ -58,6 +74,7 @@ function App() {
     </div>
     {/* </DiscountContextProvider> */}
    </Provider>
+   </AlertProvider>
   ) : (
     <div id="loader">
       <CircularProgress />

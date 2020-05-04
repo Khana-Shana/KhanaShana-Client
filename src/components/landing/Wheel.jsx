@@ -5,6 +5,7 @@ import './deals.css';
 import firebase_integration from '../fire.js'
 import firebase from '../fire';
 import { Link, withRouter } from "react-router-dom";
+import { withAlert } from 'react-alert'
 // import './index.css';
 
 class Wheel extends React.Component {
@@ -49,6 +50,7 @@ class Wheel extends React.Component {
   render() {
     // const { setDiscount } = this.context;
     // console.log(this.context)
+    const alert = this.props.alert;
     const { selectedItem, button } = this.state;
     // const { button } = this.state;
     const { history, items } = this.props;
@@ -68,7 +70,7 @@ class Wheel extends React.Component {
       console.log(this.context);
     }
     else {
-      alert("Discount already availed. Please try again next week!")
+      alert.show("Discount already availed. Please try again next week!")
       console.log(this.value);
       // this.context.setDiscount(0);
       console.log(this.context);
@@ -85,7 +87,7 @@ class Wheel extends React.Component {
             
             if(!firebase.getCurrentUsername()) {
             // not logged in
-            alert('Please login first')
+            alert.show('Please login first')
             this.props.history.replace('/loginpage')
             return null
             }
@@ -109,7 +111,7 @@ class Wheel extends React.Component {
               else if (mydata.WheelUsed === true){
                 console.log("Don't Allow Discount")
                 this.context.setDiscount("0%")
-                alert("Discount already availed. Try again next week!")
+                alert.show("Discount already availed. Try again next week!")
                 // this.buttondisable = true
                 this.setState({ button: false });
               }
@@ -157,4 +159,4 @@ class Wheel extends React.Component {
   }
 }
 
-export default withRouter(Wheel);
+export default withRouter(withAlert()(Wheel));

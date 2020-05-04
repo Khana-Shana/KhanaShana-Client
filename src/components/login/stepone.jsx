@@ -1,25 +1,28 @@
 import Button from "./loginbutton";
-import React, { Component } from "react";
-import { Line, Circle } from "rc-progress";
+import React, {useState } from "react";
+import { useAlert } from 'react-alert'
 
-const checkInputField = (values) => {
-  if (
-    values.name === "" ||
-    values.email === "" ||
-    values.password === "" ||
-    values.confirmpswd === ""
-  ) {
-    alert("Please fill in all the fields.");
-    return false;
-  } else {
-    if (values.password === values.confirmpswd) {
-      return true;
-    }
-    alert("Passwords don't match.");
-  }
-};
 
 const StepOne = (props) => {
+  const alert = useAlert();
+  const [show, setShow] = useState(true);
+
+  const checkInputField = (values) => {
+    if (
+      values.name === "" ||
+      values.email === "" ||
+      values.password === "" ||
+      values.confirmpswd === ""
+    ) {
+      alert.show("Please fill in all the fields.");
+      return false;
+    } else {
+      if (values.password === values.confirmpswd) {
+        return true;
+      }
+      alert.show("Passwords don't match.");
+    }
+  };
 
   function refreshPage() {
     window.location.reload(false);
@@ -29,7 +32,7 @@ const StepOne = (props) => {
     e.preventDefault();
     if (checkInputField(props.values)) {
       props.nextStep();
-    }                                
+    }                             
   }
 
   const { values, handleChange, click } = props;
@@ -43,8 +46,7 @@ const StepOne = (props) => {
                   <span className="toggle"></span>
                   <span onClick = {refreshPage} className="label on">LOGIN</span>
                   <span className="label off">
-                    SIGN UP
-                  </span>
+                    SIGN UP </span>
                 </span>
               </label>
             </div>
@@ -117,6 +119,7 @@ const StepOne = (props) => {
                     onClick={continuefwd}
                   />
                 </div>
+                
               </form>
             </div>
           </div>
