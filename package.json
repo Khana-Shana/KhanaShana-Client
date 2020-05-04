@@ -13,17 +13,14 @@
     "bootstrap-icons": "^1.0.0-alpha3",
     "emailjs-com": "^2.4.1",
     "firebase": "^7.14.1",
+    "formik": "^2.1.4",
     "lottery-wheel": "^2.1.0",
     "node-sass": "^4.14.0",
     "rc-progress": "^2.5.2",
     "react": "^16.13.1",
-<<<<<<< HEAD
-    "react-bootstrap": "^1.0.0",
-=======
     "react-alert": "^7.0.0",
     "react-alert-template-basic": "^1.0.0",
     "react-bootstrap": "^1.0.1",
->>>>>>> 869488ff705c88f1dd8ab0f64b33cc368f5d9cff
     "react-bootstrap-tabs": "^1.0.2",
     "react-card-flip": "^1.0.10",
     "react-dom": "^16.13.1",

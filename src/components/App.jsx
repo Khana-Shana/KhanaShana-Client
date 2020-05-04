@@ -4,6 +4,7 @@ import Login from "./login/login";
 // import MenuScreen from "./order/fullmenu";
 import ThankYou from "./order/ThankYou";
 import OrderHistory from './profile/OrderHistory';
+import OrderDetails from './profile/OrderDetails';
 import  CustomerProfile from './profile/CustomerProfile';
 import CSupport from './profile/custsupport';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ import { Provider } from 'react-redux';
 import store from './stores/store'
 import DiscountContextProvider from './context/discount';
 import CheckoutContextProvider from './context/checkoutdetails';
+import OrderHistContextProvider from './context/orderhistdetails'
 import ForgotPassword from './login/forgotpassword';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic';
@@ -61,7 +63,10 @@ const options = {
           <Route exact path = "/checkout" component = {Checkout} />
           <Route exact path = "/orderconfirmed" component = {ThankYou}/>
           </CheckoutContextProvider>
+          <OrderHistContextProvider>
           <Route exact path = "/orderhistory" component = {OrderHistory}/>
+          <Route exact path = "/orderdetails" component = {OrderDetails}/>
+          </OrderHistContextProvider>
           <Route exact path = "/myprofile" component = { CustomerProfile}/>
           <Route exact path = "/feedback" component = { CSupport}/>
           </DiscountContextProvider>
