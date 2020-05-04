@@ -74,7 +74,7 @@ function Checkout() {
                 </form> 
                 <br/> <br/>
                 <div class = "instructions"><h3><strong>Special Instructions:</strong></h3></div>
-                <textarea id="instruction-box" class = "text-area" placeholder="   Write your text here"></textarea>
+                <textarea maxlength="700" id="instruction-box" class = "text-area" placeholder="   Write your text here"></textarea>
                 <br/> <br/>
                 <div><h3><strong>Order Type:</strong></h3></div>
                 <div name = "order-type-checkout">
