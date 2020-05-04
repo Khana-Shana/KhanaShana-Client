@@ -1,7 +1,8 @@
 .aboutus {
   background-color: #fbf4f3;
   position: relative;
-  height: 100vh;
+  height: auto;
+  width: 100%;
 }
 .aboutustitle {
   text-align: left;
@@ -9,7 +10,7 @@
   width: 45%;
 
   color: #b0463d;
-  font-size: 50pt;
+  font-size: 3.7rem;
   font-family: "brandon_grotesqueblack";
   margin-top: 3%;
   border-color: #b0463d;
@@ -17,12 +18,12 @@
   border-right: 2px;
   border-top: 2px;
 
-  margin-left: 4%;
+  margin-left: 10%;
   margin-bottom: 5%;
 }
 .uzma-img {
   margin-left: 10%;
-  margin-bottom: 3%;
+  padding-bottom: 5%;
   margin-top: 2%;
   width: 25%;
   display: flex;
@@ -31,7 +32,7 @@
 .sign-img {
   margin-left: 6%;
   margin-right: 26%;
-  margin-bottom: 3%;
+  padding-bottom: 5%;
   margin-top: 10%;
   width: 27%;
   float: right;
@@ -40,37 +41,28 @@
 .textabout {
   text-align: justify;
   color: #b0463d;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   /* margin-top: 2%; */
-  margin-right: 6%;
-  margin-left: 4%;
+  margin-right: 5%;
+  margin-left: 10%;
   font-family: "PT Sans", sans-serif;
-}
-.grid-cont {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0px;
-  grid-template-areas: "text pic";
-}
-
-.about-text {
-  grid-area: text;
 }
 
 .about-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-area: pic;
 
   margin-left: 2%;
+  margin-bottom: 5%;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
 .otro-blockquote{
-  font-size: 1.4em;
-  width:92%;
-  margin:50px auto;
+  font-size: 1.2rem;
+  width:85%;
+  margin-left: 10%;
+  /* margin:40px auto; */
   font-family:Open Sans;
   font-style:italic;
   color: #555555;
@@ -101,6 +93,7 @@
   font-style: normal;
   font-weight: bold;
   margin-top:1em;
+  /* padding-left: 5%; */
 }
 *,
 *:before,
@@ -129,6 +122,12 @@
   padding-top: 200px;
   padding-left: 100px;
   padding-right: 10px;
-  width: 70%;
+  width: 90%;
 }
-;;;
+
+
+@media (max-width:629px) {
+  img#womancook1 {
+    display: none;
+  }
+}

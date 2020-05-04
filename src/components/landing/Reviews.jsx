@@ -51,9 +51,7 @@ const Carousel = () => {
       <div className="carousel-wrap">
         <div className = "reviewstext">
         <div className = "reviews-title">
-          CUSTOMER
-          <br/> 
-          REVIEWS
+          CUSTOMER REVIEWS
           </div>
         </div>
         <div className="carousel-container">

@@ -432,12 +432,12 @@ function CustomerProfile() {
               className="mx-auto img-fluid img-circle d-block"
               alt="ProfilePicture"
             />
-            {firebase_integration.getImageURL(
+            {/* {firebase_integration.getImageURL(
               "profilepic",
               "CustomerProfile",
               "",
               "profilepic.svg"
-            )}
+            )} */}
           </div>
         </div>
       </div>

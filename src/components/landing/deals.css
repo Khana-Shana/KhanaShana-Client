@@ -1,141 +1,7 @@
 .deals {
   background-color: #bcc7b8;
-  width: 100%;
-  height: 100vh;
-}
-
-#GFG {
-  text-decoration: none;
-  color: inherit;
-  color: white;
-}
-
-.grid-container {
-  /* height: 100vh;
-  width: 100%; */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 1px 1px;
-  grid-template-areas: "wheel wheel deal deal" "wheel wheel weekly weekly" ". . . .";
-}
-
-.wheel {
-  grid-area: wheel;
-}
-
-.deal {
-  grid-area: deal;
-}
-
-.weekly {
-  grid-area: weekly;
-}
-
-.wheelitem {
-  background-color: #bcc7b8;
-  grid-area: wheel;
-}
-.wheeltitle {
-  text-align: center;
-  margin-top: 3%;
-  margin-bottom: 5%;
-  color: #b0463d;
-  font-size: 50pt;
-  font-family: "brandon_grotesqueblack";
-}
-.dailydeals {
-  background-color: #bcc7b8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: ddeal;
-}
-.dealcard {
-  width: 80%;
-  height: 90%;
-
-  background-color: #b0a79d;
-}
-
-.weeklydeals {
-  background-color: #bcc7b8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: wdeal;
-}
-.ddealimgfirst {
-  max-width: 45%;
-
-  margin-left: 27.5%;
-  margin-top: 5%;
-}
-
-.ddealbtn {
-  margin: 0 auto;
-  margin-top: 4%;
-  margin-left: 30%;
-  margin-right: 30%;
-
-  text-align: center;
-  background-color: B0463D;
-  font-size: 2rem;
-  font-family: "PT Sans", sans-serif;
-}
-.ddealbtn:hover {
-  box-shadow: 0 8px 16px 0 #955f61;
-}
-
-.wdealimgfirst {
-  display: inline;
-
-  max-width: 40%;
-
-  margin-left: 2%;
-  margin-top: 5%;
-}
-
-.wdealimgsecond {
-  float: right;
-  max-width: 40%;
-
-  margin-right: 2%;
-  margin-top: 5%;
-}
-
-.wheeldealbtn {
-  margin-top: 8%;
-  margin-left: 35%;
-  margin-right: 35%;
-
-  text-align: center;
-  background-color: B0463D;
-  font-size: 2rem;
-  font-family: "PT Sans", sans-serif;
-}
-.wheeldealbtn:hover {
-  box-shadow: 0 8px 16px 0 #955f61;
-}
-
-.wdealbtn {
-  margin: 0 auto;
-  margin-top: 6%;
-  margin-left: 30%;
-  margin-right: 30%;
-
-  text-align: center;
-  background-color: B0463D;
-  font-size: 2rem;
-  font-family: "PT Sans", sans-serif;
-}
-.wdealbtn:hover {
-  box-shadow: 0 8px 16px 0 #955f61;
-}
-
-.plus {
-  margin-left: 3.5%;
-  margin-top: 5%;
+  width: auto;
+  height: auto;
 }
 
 .button-error {
@@ -148,166 +14,6 @@
   background: #b0463d;
 }
 
-.deals {
-  background-color: #bcc7b8;
-}
-
-.wheelitem {
-  background-color: #bcc7b8;
-  grid-area: wheel;
-}
-.wheeltitle {
-  text-align: center;
-  margin-top: 3%;
-  margin-bottom: 5%;
-  color: #b0463d;
-  font-size: 50pt;
-  font-family: "brandon_grotesqueblack";
-}
-.dailydeals {
-  background-color: #bcc7b8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: ddeal;
-}
-.dealcard {
-  width: 80%;
-  height: 90%;
-
-  background-color: #b0a79d;
-}
-
-.weeklydeals {
-  background-color: #bcc7b8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: wdeal;
-}
-.ddealimgfirst {
-  max-width: 45%;
-
-  margin-left: 27.5%;
-  margin-top: 5%;
-}
-
-.ddealbtn {
-  margin: 0 auto;
-  margin-top: 4%;
-  margin-left: 30%;
-  margin-right: 30%;
-
-  text-align: center;
-  background-color: B0463D;
-  font-size: 2rem;
-  font-family: "PT Sans", sans-serif;
-}
-.ddealbtn:hover {
-  box-shadow: 0 8px 16px 0 #955f61;
-}
-
-.wdealimgfirst {
-  display: inline;
-
-  max-width: 40%;
-
-  margin-left: 2%;
-  margin-top: 5%;
-}
-
-.wdealimgsecond {
-  float: right;
-  max-width: 40%;
-
-  margin-right: 2%;
-  margin-top: 5%;
-}
-
-.wheeldealbtn {
-  margin-top: 8%;
-  margin-left: 35%;
-  margin-right: 35%;
-
-  text-align: center;
-  background-color: B0463D;
-  font-size: 2rem;
-  font-family: "PT Sans", sans-serif;
-}
-.wheeldealbtn:hover {
-  box-shadow: 0 8px 16px 0 #955f61;
-}
-
-.wdealbtn {
-  margin: 0 auto;
-  margin-top: 6%;
-  margin-left: 30%;
-  margin-right: 30%;
-
-  text-align: center;
-  background-color: B0463D;
-  font-size: 2rem;
-  font-family: "PT Sans", sans-serif;
-}
-.wdealbtn:hover {
-  box-shadow: 0 8px 16px 0 #955f61;
-}
-
-.Text {
-  margin: 0 auto;
-  margin-top: 0%;
-  margin-left: 50px;
-  margin-right: 50px;
-
-  text-align: center;
-  color: #b0463d;
-  font-size: 30pt;
-  font-family: "Caveat", cursive;
-}
-
-.orderbtn {
-  margin: 0 auto;
-  margin-top: 3%;
-  margin-left: 50px;
-  margin-right: 50px;
-
-  text-align: center;
-  background-color: B0463D;
-  font-size: 10pt;
-  font-family: "PT Sans", sans-serif;
-}
-
-.button-error {
-  color: white;
-  width: 300px;
-  font-size: 25pt;
-  font-family: "PT Sans", sans-serif;
-  border-radius: 10px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background: #b0463d;
-}
-
-.grid-container {
-  height: 100vh;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 1px 1px;
-  grid-template-areas: "wheel wheel deal deal" "wheel wheel weekly weekly" ". . . .";
-}
-
-.wheel {
-  grid-area: wheel;
-}
-
-.deal {
-  grid-area: deal;
-}
-
-.weekly {
-  grid-area: weekly;
-}
 
 .card {
   float: left;
@@ -329,7 +35,7 @@
   margin-right: 120px;
 }
 .topcards {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
 
@@ -342,19 +48,7 @@
   color: white;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 #955f61;
-}
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 0px;
-  grid-template-areas:
-    "wheel ddeal"
-    "wheel wdeal";
-}
 #loader {
   position: fixed;
   top: 0;
@@ -420,7 +114,9 @@
 .ddealbtn:hover {
   box-shadow: 0 8px 16px 0 #955f61;
 }
-
+/* .row {
+  height: 110vh;
+} */
 .wdealimgfirst {
   display: inline;
 
@@ -439,9 +135,11 @@
 }
 
 .wheeldealbtn {
-  margin-top: 5%;
-  margin-left: 31%;
+  margin-top: 10%;
+  margin-left: 13%;
   margin-right: 35%;
+  margin-bottom: 5%;
+  /* padding-bottom: 5%; */
 
   text-align: center;
   background-color: B0463D;
@@ -474,7 +172,7 @@
 
 :root {
   --wheel-font: "Lato", "Quicksand", sans-serif;
-  --wheel-size: 500px;
+  --wheel-size: 25rem;
   --wheel-slice-spacing: 50px;
   --wheel-border-size: 5px;
   --wheel-color: #b0463d;
@@ -533,6 +231,7 @@
   margin: auto;
   width: var(--wheel-size);
   height: var(--wheel-size);
+  margin-bottom: 5%;
   overflow: hidden;
   border-radius: 50%;
   border: solid var(--wheel-color) var(--wheel-border-size);

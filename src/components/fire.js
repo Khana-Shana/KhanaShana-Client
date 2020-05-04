@@ -22,12 +22,12 @@ class firebase_integration extends Component {
       this.auth = firebase.auth()
   }
 
-  getImageURL(divID, mainreferencefolder, path, imagename) {
-      console.log(":(((((((((((((((((((((((((((((((((((((((((")
-    this.storage.ref(mainreferencefolder).child(path+'/'+imagename).getDownloadURL().then(function(url) {
-        document.getElementById(divID).src = url;
-    })
-  }
+//   getImageURL(divID, mainreferencefolder, path, imagename) {
+//       console.log(":(((((((((((((((((((((((((((((((((((((((((")
+//     this.storage.ref(mainreferencefolder).child(path+'/'+imagename).getDownloadURL().then(function(url) {
+//         document.getElementById(divID).src = url;
+//     })
+//   }
 
   login(email, password) {
     return this.auth.signInWithEmailAndPassword(email, password)
