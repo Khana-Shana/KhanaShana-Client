@@ -155,7 +155,7 @@ function Cart(props) {
             <button onClick = {
                 ()=>{
                     
-    // if(discount_price === "0%"){
+    // if(discount_price === "0%){
     //     setOrderDiscount("0%")
     // } else {
     //     setOrderDiscount(discount)

@@ -6,8 +6,11 @@ import DiscountContext from '../context/context';
 import CheckoutContext from '../context/checkoutcontext';
 import {Link} from 'react-router-dom';
 import firebase_integration from '../fire.js'
+import { useAlert } from 'react-alert'
 
 function Checkout() {
+
+    const alert = useAlert();
 
     const {discount, setDiscount} = useContext(DiscountContext);
     const [number, setNumber] = useState("");
@@ -61,25 +64,43 @@ function Checkout() {
         })
     }
 
+    const checkInputField = () => {
+        if (
+          number === "" ||
+          address === "" ||
+          area === ""
+        ) {
+          alert.show("Please fill in all the fields.");
+          return false;
+        } if (number.length !== 11){
+            alert.show("Mobile number must be 11 characters long.")
+            return false;
+        } else {
+            return true;
+        }
+      };
+
     return (
         <div class = "menuback">
             <Header title = "CHECKOUT" link = "/cart"/>
             <div class = "forms">
                 <div name = "your-details"><h3><strong>Your Details:</strong></h3></div>
-                <form action="/action_page.php">
-                    <input required="required" value={number} onChange={(e) => setNumber(e.target.value)} type="text" name ="mobile" placeholder="   Mobile Number" required pattern="[0-9]{10}"/>
-                    <input required="required" value={address} onChange={(e) => setAddress(e.target.value)} type="text" name ="address" placeholder="   Street Address"/><br/>
-                    <input required="required" value={area} onChange={(e) => setArea(e.target.value)} type="text" name ="area" placeholder="   Area"/>
-                    <input required="required" value={floor} onChange={(e) => setFloor(e.target.value)} type="text" name ="floor" placeholder="   Floor/Unit"/>
-                </form> 
-                <br/> <br/>
+                <form>
+                    <input value={number} onChange={(e) => setNumber(e.target.value)} type="text" name ="mobile" placeholder="   Mobile Number" required/>
+                    <input value={address} onChange={(e) => setAddress(e.target.value)} type="text" name ="address" placeholder="   Street Address" required/><br/>
+                    <input value={area} onChange={(e) => setArea(e.target.value)} type="text" name ="area" placeholder="   Area" required/>
+                    <input value={floor} onChange={(e) => setFloor(e.target.value)} type="text" name ="floor" placeholder="   Floor/Unit" requ/>
+                    {/* <button type="submit">Submit</button> */}
+                </form>
+                <br/> <br/> <br/> <br/>
                 <div class = "instructions"><h3><strong>Special Instructions:</strong></h3></div>
-                <textarea maxlength="700" id="instruction-box" class = "text-area" placeholder="   Write your text here"></textarea>
-                <br/> <br/>
+                <textarea maxlength="700" id="instruction-box" class = "text-area" placeholder="  Write your text here"></textarea>
+                <br/> <br/> <br/> <br/>
                 <div><h3><strong>Order Type:</strong></h3></div>
                 <div name = "order-type-checkout">
                     <input value={deliverytype} onChange={(e) => setDeliveryType("Delivery")} type="radio" name = "method"/>
                     <label>Delivery</label>
+                    <br/>
                     <input value={deliverytype} onChange={(e) => setDeliveryType("Takeaway")} type="radio" name = "method"/>
                     <label>Takeaway</label>
                 </div>
@@ -88,20 +109,21 @@ function Checkout() {
                     <input type="checkbox" checked='checked' name = "method"/>
                     <label>Cash on Delivery</label>   
                     <Link to = "/orderconfirmed">              
-                    <div class = "confirm">
-                        
-                        <a
-                         onClick = {() => {PlaceOrder()}}
+                    <div class = "confirm">                
+                        <button
+                            onClick = {() => {
+                                if(!checkInputField()){
+                                PlaceOrder()
+                            }}}
                             // href = "/orderconfirmed"
-                             type="button" class="btn btn-success btn-lg">CONFIRM</a>
-                             
+                             type="submit" class="btn btn-success btn-lg">CONFIRM</button>                 
                     </div>
                     </Link>  
                     <br/>
                 </div>
-
+             
             </div>
-            <br/> <br/>
+            <br/> <br/> <br/> <br/>
             <Footer/>
         </div>
     )

@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from '../navigation/Header';
+import { Link } from 'react-router-dom'
 import firebase_integration from '../fire.js';
 import './orderhistorystyles.css';
+import OrderHistContext from '../context/orderhistcontext';
 
 function OrderHistory() {
     
     const [orders, setorders] = useState([]) 
+    const {orderdetails, OrderHistory} = useContext(OrderHistContext);
     
     useEffect(() => {
         firebase_integration.database.collection('RegularOrder').orderBy("Date", "desc").onSnapshot((snapshot) => {
@@ -19,6 +22,11 @@ function OrderHistory() {
             console.log(order_arr)
         })
     }, orders);   
+
+    const handleOrderDetails = (order) => {
+        OrderHistory(order);
+        console.log(orderdetails);
+    }
     
     return (
         <div id="orderhistorypage">
@@ -50,7 +58,9 @@ function OrderHistory() {
                                                 <td style = {{color: "#576271"}}>{orders[i].Date.toDate().getDate()+"-"+orders[i].Date.toDate().getMonth()+"-"+orders[i].Date.toDate().getFullYear()}</td>
                                                 <td style = {{color: "#576271"}}>Rs. {orders[i].Subtotal}\-</td>
                                                 <td><button className = "btn btn-danger redbox" disabled>{orders[i].Tracking}</button></td>
-                                                <td><button className = "btn btn-danger redbox">Order Details</button></td>
+                                                <Link to = "/orderdetails">
+                                                <td><button onClick = {handleOrderDetails(orders[i])} className = "btn btn-danger redbox">Order Details</button></td>
+                                                </Link>
                                                 <td><button className = "btn btn-danger redbox">Reorder</button></td>
                                                 {orders[i].Tracking === "Cancelled" || orders[i].Tracking === "Completed" || orders[i].Tracking === "Done" || orders[i].Tracking === "Rejected"?
                                                     <td><button className = "btn btn-danger redbox" disabled>Cancel</button></td>:
