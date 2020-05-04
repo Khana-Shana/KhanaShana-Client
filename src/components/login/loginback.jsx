@@ -107,7 +107,9 @@ function LoginBack(props) {
                                   Gender: socialAuthUser.additionalUserInfo.profile.gender,
                                   Name: socialAuthUser.additionalUserInfo.profile.name,
                                   isFacebookUser: true,
-                                  WheelUsed: true
+                                  WheelUsed: true,
+                                  DateWheelUsed: new Date(),
+                                  Discount: 0
                                 })
                               setError({ error: null });
                               alert(error);
