@@ -28,9 +28,11 @@ function GuestLinks() {
             </li>
               </Nav>
              <Nav className="ml-auto">  {/* for the right side of navbar*/}
-              <li className="nav-item active">
-              <Scrollchor  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",marginTop:"8px"}}>Deals</Scrollchor >
-            </li>
+              {/* <li className="nav-item active"> */}
+            <Link to = "/#to-menu">
+              <a  className="nav-link" style={{background: "#955F61",color: "white",marginTop:"8px"}}>Deals</a >
+              </Link>
+            {/* </li> */}
             <Link to = "/loginpage">
             <li className="nav-item active">
               <a  className="nav-link" style={{background: "#955F61",color: "white",marginTop:"7px"}}>Login</a >

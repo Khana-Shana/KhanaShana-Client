@@ -13,7 +13,7 @@ var string_discount = "";
 
 function Cart(props) {
     const {discount, setDiscount} = useContext(DiscountContext);
-    const {orderdetails, setCart, setOrderDiscount} = useContext(CheckoutContext);
+    const {orderdetails, setCart, setOrderDiscount, setTotal} = useContext(CheckoutContext);
     
 
     if(discount === null){
@@ -140,6 +140,7 @@ function Cart(props) {
     // }
     setOrderDiscount(string_discount)
                 setCart(props.items)
+                setTotal(props.total)
                 console.log(props.items)           
             
             }} type="button" class="btn btn-success btn-lg">CHECKOUT</button>
