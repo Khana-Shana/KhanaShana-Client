@@ -3,9 +3,6 @@ import './aboutus.css';
 import firebase_integration from '../fire.js'
 
 function Aboutus() {
-  firebase_integration.getImageURL('owner1', 'Mehreen', '', 'Image 2-image.png')
-  firebase_integration.getImageURL('owner2', 'Mehreen', '', 'sign.jpg')
-  firebase_integration.getImageURL('womancook1', 'Mehreen', '', 'auntytest.svg')
   return (
     <div>
     <div className="aboutus grid-cont">
@@ -32,6 +29,7 @@ function Aboutus() {
           id="owner1"
           className="img-fluid"
           alt="Woman Cooking"
+          src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2FImage%202-image.png?alt=media&token=da361037-4b6a-438f-ad36-08912beb668b"
         /> 
         </div>
         <div className="sign-img">
@@ -39,6 +37,7 @@ function Aboutus() {
           id="owner2"
           className="img-fluid"
           alt="Woman Cooking"
+          src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fsign.jpg?alt=media&token=f1c04b2e-47b2-4e58-a645-c02517d1e86e"
         /> 
         </div>
       </div>
@@ -47,6 +46,7 @@ function Aboutus() {
           id="womancook1"
           className="img-fluid"
           alt="Woman Cooking"
+          src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fauntytest.svg?alt=media&token=f323dfc0-3ae4-4ff4-8766-320a477dbb3f"
         />
       </div>
     </div>

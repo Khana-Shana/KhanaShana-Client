@@ -9,7 +9,6 @@ import {Link} from 'react-router-dom';
 function ThankYou() {
   const {orderdetails} = useContext(CheckoutContext);
   console.log(orderdetails.orderid)
-   firebase_integration.getImageURL('aunty', 'Mehreen', '', 'aunty.svg')
     return (
       <div id = "tybackground">
         <Header/>
@@ -25,7 +24,7 @@ function ThankYou() {
               </div>
             </div>
             <div className= "col-6">
-              <img id="aunty" className = "img-fluid" alt="aunty" />
+              <img id="aunty" src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Faunty.svg?alt=media&token=30c3cbb1-b363-4d53-9cf4-bd94cf3c1bff" className = "img-fluid" alt="aunty" />
             </div>
           </div>
         </div>
