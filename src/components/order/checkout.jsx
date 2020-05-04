@@ -5,6 +5,7 @@ import Footer from '../navigation/footer';
 import DiscountContext from '../context/context';
 import CheckoutContext from '../context/checkoutcontext';
 import {Link} from 'react-router-dom';
+import firebase_integration from '../fire.js'
 
 function Checkout() {
 
@@ -15,10 +16,50 @@ function Checkout() {
     const [floor, setFloor] = useState("");
     const [deliverytype, setDeliveryType] = useState("");
     const [paymentMethod] = useState("Cash on Delivery")
+    var orderid = ""
 
     const {orderdetails} = useContext(CheckoutContext);
     console.log(orderdetails)
     
+    async function PlaceOrder(){
+        var CustomerID = firebase_integration.auth.currentUser.uid
+        var TodaysDate = new Date()
+        var Address = floor+" "+address+" "+area
+        var DishNames = []
+        var DishQuantities = []
+        
+        orderdetails.cart.map((item) => 
+            DishNames.push(item.Name)
+        )
+        orderdetails.cart.map((item) => 
+            DishQuantities.push(item.quantity)
+        ) 
+        var instructions = document.getElementById("instruction-box").value
+        if(instructions === ""){
+            instructions = "None"
+        }
+        var placeorder = await firebase_integration.database.collection("RegularOrder").add({
+            CustomerID: CustomerID,
+            Date: TodaysDate,
+            Action: "Accept/Reject",
+            Address: Address,
+            Discount: discount,
+            DishName: DishNames,
+            DishQuantity: DishQuantities,
+            OrderType: deliverytype,
+            Subtotal: orderdetails.total,
+            Tracking: "Pending",
+            MobileNumber: number,
+            SpecialInstruction: instructions,
+            OrderID: "Not Assigned"
+        }).then(function(docRef){
+            orderid = docRef.id
+            firebase_integration.database.collection("RegularOrder").doc(orderid.toString()).update({
+                OrderID: orderid
+            })
+        })
+    }
+
     return (
         <div class = "menuback">
             <Header title = "CHECKOUT" link = "/cart"/>
@@ -32,7 +73,7 @@ function Checkout() {
                 </form> 
                 <br/> <br/>
                 <div class = "instructions"><h3><strong>Special Instructions:</strong></h3></div>
-                <textarea class = "text-area" placeholder="   Write your text here"></textarea>
+                <textarea id="instruction-box" class = "text-area" placeholder="   Write your text here"></textarea>
                 <br/> <br/>
                 <div><h3><strong>Order Type:</strong></h3></div>
                 <div name = "order-type-checkout">
@@ -43,20 +84,13 @@ function Checkout() {
                 </div>
                 <div><h3><strong>Select a payment method:</strong></h3></div>
                 <div name = "payment">
-                    <input type="radio" checked='checked' name = "method"/>
+                    <input type="checkbox" checked='checked' name = "method"/>
                     <label>Cash on Delivery</label>   
                     <Link to = "/orderconfirmed">              
                     <div class = "confirm">
                         
                         <a
-                         onClick = {() => {setDiscount("0%");
-                         console.log(discount)
-                        console.log(number);
-                        console.log(address);
-                        console.log(area);
-                        console.log(floor); 
-                        console.log(deliverytype)
-                    console.log(paymentMethod)}}
+                         onClick = {() => {PlaceOrder()}}
                             // href = "/orderconfirmed"
                              type="button" class="btn btn-success btn-lg">CONFIRM</a>
                              

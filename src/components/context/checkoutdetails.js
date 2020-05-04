@@ -6,7 +6,8 @@ function CheckoutContextProvider(props) {
   const [orderdetails, SetOrderDetails] = useState(
     {
       cart: null,
-      discount: null
+      discount: null,
+      total: null
     }
   )
 
@@ -25,9 +26,16 @@ function CheckoutContextProvider(props) {
     });
   };
 
+  const setTotal = (value) => {
+    // SetOrderDetails(...orderdetails, cart: value);
+    SetOrderDetails(prevState => {
+      return { ...prevState, total: value }
+    });
+  };
+
 
   return (
-    <CheckoutContext.Provider value={{ orderdetails, setCart: setCart, setOrderDiscount: setOrderDiscount }}>
+    <CheckoutContext.Provider value={{ orderdetails, setCart: setCart, setOrderDiscount: setOrderDiscount, setTotal: setTotal }}>
       {props.children}
     </CheckoutContext.Provider>
   );
