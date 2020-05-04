@@ -8,10 +8,12 @@ function OrderHistory() {
     const [orders, setorders] = useState([]) 
     
     useEffect(() => {
-        firebase_integration.database.collection('RegularOrder').where("CustomerID", "==", firebase_integration.auth.currentUser.uid.toString()).onSnapshot((snapshot) => {
+        firebase_integration.database.collection('RegularOrder').orderBy("Date", "desc").onSnapshot((snapshot) => {
             var order_arr = []
             snapshot.docs.forEach(doc => {
-                order_arr.push(doc.data())
+                if(doc.data().CustomerID === firebase_integration.auth.currentUser.uid.toString()){
+                    order_arr.push(doc.data())
+                }
             });
             setorders(order_arr)
             console.log(order_arr)
