@@ -490,6 +490,12 @@ input[type=radio] {
   margin-left: 3rem;
 }
 
+input[type=checkbox] {
+  width: 1.2rem;
+  height: 1rem;
+  margin-left: 3rem;
+}
+
 label{
   color: #955F61;
   font-size: 1.25rem;

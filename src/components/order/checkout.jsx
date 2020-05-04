@@ -43,7 +43,7 @@ function Checkout() {
                 </div>
                 <div><h3><strong>Select a payment method:</strong></h3></div>
                 <div name = "payment">
-                    <input type="radio" checked='checked' name = "method"/>
+                    <input type="checkbox" name = "method" checked/>
                     <label>Cash on Delivery</label>   
                     <Link to = "/orderconfirmed">              
                     <div class = "confirm">
@@ -56,7 +56,7 @@ function Checkout() {
                         console.log(area);
                         console.log(floor); 
                         console.log(deliverytype)
-                    console.log(paymentMethod)}}
+                        console.log(paymentMethod)}}
                             // href = "/orderconfirmed"
                              type="button" class="btn btn-success btn-lg">CONFIRM</a>
                              
