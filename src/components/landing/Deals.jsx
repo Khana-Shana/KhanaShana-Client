@@ -11,24 +11,6 @@ class Deals extends Component {
     this.places = ["10%", "20%", "30%", "10%", "20%", "30%"];
   }
   render() {
-    firebase_integration.getImageURL(
-      "deal1",
-      "Mehreen",
-      "",
-      "hamburger-beside-fries-2271107.png"
-    );
-    firebase_integration.getImageURL(
-      "deal2",
-      "Mehreen",
-      "",
-      "hamburger-beside-fries-2271107.png"
-    );
-    firebase_integration.getImageURL(
-      "dealwheel1",
-      "Mehreen",
-      "",
-      "club-sandwich-served-on-chopping-board-1600711.png"
-    );
     return (
       <div className="grid-container">
         <div className="wheelitem">
@@ -45,12 +27,12 @@ class Deals extends Component {
         </div>
         <div className="dailydeals">
           <div className="dealcard rounded">
-            <img id="deal1" className="ddealimgfirst" alt="food-deal" />
+            <img id="deal1" src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fhamburger-beside-fries-2271107.png?alt=media&token=77f41572-ed35-4b9a-b388-1b082632a766" className="ddealimgfirst" alt="food-deal" />
           </div>
         </div>
         <div className="weeklydeals">
           <div className="dealcard rounded">
-            <img id="deal2" className="wdealimgfirst" alt="food-deal" />
+            <img id="deal2" src ="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fhamburger-beside-fries-2271107.png?alt=media&token=77f41572-ed35-4b9a-b388-1b082632a766" className="wdealimgfirst" alt="food-deal" />
             <svg
               className="bi bi-plus-circle plus"
               width="4em"
@@ -75,7 +57,7 @@ class Deals extends Component {
                 clip-rule="evenodd"
               />
             </svg>
-            <img id="dealwheel1" className="wdealimgsecond" alt="food-deal" />
+            <img id="dealwheel1" src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fclub-sandwich-served-on-chopping-board-1600711.png?alt=media&token=79851f82-9c1f-4921-a938-d6a35a3c1390" className="wdealimgsecond" alt="food-deal" />
             <Link to = "/fullmenu">
             <button
               // href="/fullmenu"

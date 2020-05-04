@@ -4,13 +4,6 @@ import firebase_integration from '../fire.js'
 import DiscountContext from "../context/context";
 import {Link} from 'react-router-dom';
 function Menu() {
-  firebase_integration.getImageURL('menuimg1', 'Mehreen', '', 'taylor-kiser-POFG828-GQc-unsplash.jpg')
-  firebase_integration.getImageURL('menuimg2', 'Mehreen', '', 'hamburger-beside-fries-2271107.jpg')
-  firebase_integration.getImageURL('menuimg3', 'Mehreen', '', 'club-sandwich-served-on-chopping-board-1600711.jpg')
-  firebase_integration.getImageURL('menuimg4', 'Mehreen', '', 'appetizer-bowl-chili-close-up-286283.jpg')
-  firebase_integration.getImageURL('menuimg5', 'Mehreen', '', 'bread-with-soup-2474661.jpg')
-  firebase_integration.getImageURL('menuimg6', 'Mehreen', '', 'flat-lay-photography-of-pasta-served-in-white-plate-1487511.jpg')
-  
   return (
     <div className="menu">
       <div className="servicestitleleft">MENU</div>
@@ -19,6 +12,7 @@ function Menu() {
           <img
             id = "menuimg1"
             className="card-image"
+            src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Ftaylor-kiser-POFG828-GQc-unsplash.jpg?alt=media&token=3b2eefe1-7526-4864-a941-f22147ef3068"
           />
           <div className="card-content">
             <div className="dish-name"> Burger </div>
@@ -34,6 +28,7 @@ function Menu() {
           <img
             id = "menuimg2"
             className="card-image"
+            src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fhamburger-beside-fries-2271107.jpg?alt=media&token=0b52a846-1030-4172-ab28-61064611d757"
           />
           <div className="card-content">
             <div className="dish-name"> Burger </div>
@@ -49,6 +44,7 @@ function Menu() {
           <img
             id = "menuimg3"
             className="card-image"
+            src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fclub-sandwich-served-on-chopping-board-1600711.jpg?alt=media&token=f1f0c21e-7d1e-41db-ab76-0dbccb626a8e"
           />
           <div className="card-content">
             <div className="dish-name"> Burger </div>
@@ -64,6 +60,7 @@ function Menu() {
           <img
             id = "menuimg4"
             className="card-image"
+            src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fappetizer-bowl-chili-close-up-286283.jpg?alt=media&token=ba47c82a-d9ea-4169-9e91-8bee61fb68d4"
           />
           <div className="card-content">
             <div className="dish-name"> Burger </div>
@@ -79,6 +76,7 @@ function Menu() {
           <img
             id = "menuimg5"
             className="card-image"
+            src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fbread-with-soup-2474661.jpg?alt=media&token=1c793c1b-04ae-4219-9ba2-1e5aaf40d6c0"
           />
           <div className="card-content">
             <div className="dish-name"> Burger </div>
@@ -94,6 +92,7 @@ function Menu() {
           <img
             id = "menuimg6"
             className="card-image"
+            src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fflat-lay-photography-of-pasta-served-in-white-plate-1487511.jpg?alt=media&token=4435bad0-bb36-4890-89f2-e0533882cd1a"
           />
           <div className="card-content">
             <div className="dish-name"> Burger </div>

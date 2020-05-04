@@ -71,7 +71,7 @@ const StepTwo = (props) => {
                   trailWidth="1"
                   trailColor="white"
                 /> */}
-                <img src ="./images/step2.svg"/>
+                <img src ="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fstep2.svg?alt=media&token=9de2bdde-bf3f-4fa1-b31d-cd845e2ae050"/>
               </div>
               <div className="modal-body">
                 <form
@@ -126,7 +126,7 @@ const StepTwo = (props) => {
                 </form>
               </div>
               <span className = "back" onClick = {back}>
-              <img src = "./images/back.svg"/>
+              <img src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"/>
             </span>
             </div>
           </div>

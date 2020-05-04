@@ -63,7 +63,7 @@ const StepOne = (props) => {
                 trailWidth="1"
                 trailColor="white"
               /> */}
-              <img src ="./images/step1.svg"/>
+              <img src ="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fstep1.svg?alt=media&token=f4cdc414-0fc7-4416-a71f-dc6ea97fef9e"/>
             </div>
             <div className="modal-body">
               <form

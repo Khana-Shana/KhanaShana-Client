@@ -4,8 +4,6 @@ import "./welcome.css";
 import firebase_integration from '../fire.js'
 
 function Welcome() {
-  firebase_integration.getImageURL('womancookwelcome', 'Mehreen', '', 'WomanCook.svg')
-
   return (
     <div className="container-fluid welcome">
       <div className="row">
@@ -35,6 +33,7 @@ function Welcome() {
               id="womancookwelcome"
               className="img-fluid"
               alt="Woman Cooking"
+              src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2FWomanCook.svg?alt=media&token=e0f6a486-76ee-4a06-a152-b0fe8e70748c"
             />
           </div>
         </div>
