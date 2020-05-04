@@ -41,7 +41,7 @@ const StepOne = (props) => {
                 <span className="back">
                   <div className ="butt-1"></div>
                   <span className="toggle"></span>
-                  <span className="label on">LOGIN</span>
+                  <span onClick = {refreshPage} className="label on">LOGIN</span>
                   <span className="label off">
                     SIGN UP
                   </span>
