@@ -1,20 +1,24 @@
 import React from "react";
 import "./footer.css";
-// import ReactBootstrap, {Nav, Butto/n, Navbar,NavDropdown,Form,FormControl} from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import { HashLink} from 'react-router-hash-link';
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <div className="footerdiv">
       <footer className="footer">
         <div className="footer__addr">
+          <Link to = "/">
           <h1 className="footer__logo">
             <b>KHANA SHANA</b>
           </h1>
+          </Link>
 
+  
           <h2>
             <b>CONTACT</b>
           </h2>
+         
 
           <address>
             122 Tipu Block, Garden Town, Lahore.
@@ -32,17 +36,21 @@ function Footer() {
             </h2>
 
             <ul className="nav__ul">
+            <HashLink smooth to = "/#to-menu">
               <li>
-                <a href="#">Menu</a>
+                <a>Menu</a>
               </li>
-
+              </HashLink>
+              <HashLink smooth to = "/#to-services">
               <li>
-                <a href="#">Our Services</a>
+                <a>Our Services</a>
               </li>
-
+              </HashLink>
+              <HashLink smooth to = "/#to-about">
               <li>
-                <a href="#">About Us</a>
+                <a>About Us</a>
               </li>
+              </HashLink>
             </ul>
           </li>
 
@@ -53,14 +61,11 @@ function Footer() {
 
             <ul className="nav__ul">
               <li>
-                <a href="#">Instagram</a>
+                <a href="https://www.instagram.com/bonappetempt.pk/">Instagram</a>
               </li>
 
               <li>
-                <a href="#">Facebook</a>
-              </li>
-              <li>
-                <a href="#">Twitter</a>
+                <a href="https://www.facebook.com/uzmascuisine/">Facebook</a>
               </li>
             </ul>
           </li>
