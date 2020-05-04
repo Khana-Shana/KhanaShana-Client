@@ -27,7 +27,7 @@ function CheckoutContextProvider(props) {
   };
 
   const setTotal = (value) => {
-    
+    // SetOrderDetails(...orderdetails, cart: value);
     SetOrderDetails(prevState => {
       return { ...prevState, total: value }
     });
