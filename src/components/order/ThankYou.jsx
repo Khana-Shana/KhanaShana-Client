@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Footer from '../navigation/footer';
 import Header from './navbar';
 import './tystyles.css';
-import firebase_integration from '../fire.js'
+import CheckoutContext from '../context/checkoutcontext';
+import firebase_integration from '../fire.js';
+import {Link} from 'react-router-dom';
 
 function ThankYou() {
-   firebase_integration.getImageURL('aunty', 'Mehreen', '', 'aunty.svg')
+  const {orderdetails} = useContext(CheckoutContext);
+  console.log(orderdetails.orderid)
     return (
       <div id = "tybackground">
         <Header/>
@@ -13,13 +16,15 @@ function ThankYou() {
           <div className="row">
             <div className= "col-6">
               <div className = "ordernumbox align-baseline">
-                <div id = "ordnum">ORDER NUMBER: 3O3O25201</div>
+                <div id = "ordnum">ORDER ID: #{orderdetails.orderid}</div>
                 <div id = "msg">You will receive an Email confirmation shortly!</div>
+                <Link to = "/orderhistory">
                 <button type="button" id = "trackbtn" class="btn btn-primary">TRACK YOUR ORDER</button>
+                </Link>
               </div>
             </div>
             <div className= "col-6">
-              <img id="aunty" className = "img-fluid" alt="aunty" />
+              <img id="aunty" src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Faunty.svg?alt=media&token=30c3cbb1-b363-4d53-9cf4-bd94cf3c1bff" className = "img-fluid" alt="aunty" />
             </div>
           </div>
         </div>

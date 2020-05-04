@@ -61,7 +61,7 @@ function CSupport() {
                 <div className = "message-title">
                     <h3><strong>MESSAGE</strong></h3>
                 </div>
-                <textarea value = {message} onChange = {(t) => {setMessage(t.target.value)}} className = "message-area" placeholder="   Write your text here"></textarea>
+                <textarea maxlength="400" value = {message} onChange = {(t) => {setMessage(t.target.value)}} className = "message-area" placeholder="   Write your text here"></textarea>
                 <br/> <br/>
                 <StarRating value={rating} handleChange = {handleChange}/>
                 <div className = "confirm">

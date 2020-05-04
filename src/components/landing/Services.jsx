@@ -4,10 +4,6 @@ import Prebook from './prebook.pdf';
 import firebase_integration from '../fire.js'
 
 function Services() {
-  firebase_integration.getImageURL('fryaunty', 'Mehreen', '', 'fryaunty.svg')
-  firebase_integration.getImageURL('rider', 'Mehreen', '', 'rider.svg')
-  firebase_integration.getImageURL('family', 'Mehreen', '', 'family.svg')
-
   return (
     <div className="container-fluid services">
       <div className="row">
@@ -48,6 +44,7 @@ function Services() {
                     id="fryaunty"
                     className="img-fluid"
                     alt="fryaunty"
+                    src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Ffryaunty.svg?alt=media&token=687dc051-9f51-44d5-a5c0-ca82562fe45b"
                   />
                 </div>
               {/* </section> */}
@@ -67,6 +64,7 @@ function Services() {
                     id="rider"
                     className="img-fluid"
                     alt="rider"
+                    src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Frider.svg?alt=media&token=5acd73bd-5b65-4be0-b2c7-c10ccffae47b"
                   />
                 </div>
               {/* </section> */}
@@ -81,6 +79,7 @@ function Services() {
                 id="family"
                 className="img-fluid"
                 alt="Family"
+                src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Ffamily.svg?alt=media&token=0b1c4194-86d8-4f74-bc0c-67211f60334d"
               />
               <div className="orderbtn">
                 <a

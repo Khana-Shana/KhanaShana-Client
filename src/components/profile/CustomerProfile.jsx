@@ -2,6 +2,7 @@ import React from 'react';
 import firebase_integration from '../fire.js';
 import './profilestyles.css';
 import Header from '../navigation/Header';
+import {Link} from 'react-router-dom';
 function CustomerProfile() {
     const [editname, seteditname] = React.useState(false)
     const [editemail, seteditemail] = React.useState(false)
@@ -93,8 +94,12 @@ function CustomerProfile() {
                         <div className="col">
                             <div className="btn-group d-flex" role="group" aria-label="Basic example">
                                 <button type="button" className="btn btn-secondary w-100 buttonbar" style = {{borderLeft: "0px"}}>Profile</button>
-                                <a href = './orderhistory' type="button" className="btn btn-secondary w-100 buttonbar">Order History</a>
-                                <a  href = './feedback' type="button" className="btn btn-secondary w-100 buttonbar">Feedback</a>
+                                <Link to = "./orderhistory">
+                                <button type="button" className="btn btn-secondary w-100 buttonbar">Order History</button>
+                                </Link>
+                                <Link to = "./feedback">
+                                <button  href = './feedback' type="button" className="btn btn-secondary w-100 buttonbar">Feedback</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

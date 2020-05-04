@@ -2,22 +2,26 @@ import React, { Component } from "react";
 import { Line, Circle } from "rc-progress";
 import firebase_integration from "../fire";
 import './loginstyles.css';
+import { useAlert } from 'react-alert'
 
-const checkInputField = (values) => {
-  // return true;
-  if (values.number === "" || values.gender === "" || values.dob === "") {
-    alert("Please fill in all the fields.");
-    return false;
-  } else {
-    // if(values.password === values.confirmpswd)
-    // {
-    return true;
-    // }
-    // alert("Passwords don't match.");
-  }
-};
 
 const StepTwo = (props) => {
+  const alert = useAlert()
+
+  const checkInputField = (values) => {
+    // return true;
+    if (values.number === "" || values.gender === "" || values.dob === "") {
+      alert.show("Please fill in all the fields.");
+      return false;
+    } else {
+      // if(values.password === values.confirmpswd)
+      // {
+      return true;
+      // }
+      // alert("Passwords don't match.");
+    }
+  };
+  
   const continuefwd = (e) => {
     // e.preventDefault();
     if (checkInputField(props.values)) {
@@ -37,7 +41,7 @@ const StepTwo = (props) => {
           isFacebookUser: false,
           WheelUsed: false
       }).catch(function(error) {
-        alert(error.message)
+        alert.show(error.message)
     });
       props.nextStep();
     }
@@ -67,7 +71,7 @@ const StepTwo = (props) => {
                   trailWidth="1"
                   trailColor="white"
                 /> */}
-                <img src ="./images/step2.svg"/>
+                <img src ="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fstep2.svg?alt=media&token=9de2bdde-bf3f-4fa1-b31d-cd845e2ae050"/>
               </div>
               <div className="modal-body">
                 <form
@@ -122,7 +126,7 @@ const StepTwo = (props) => {
                 </form>
               </div>
               <span className = "back" onClick = {back}>
-              <img src = "./images/back.svg"/>
+              <img src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"/>
             </span>
             </div>
           </div>
@@ -138,7 +142,7 @@ const StepTwo = (props) => {
       // props.history.replace('./')
       continuefwd();
     } catch (error) {
-      alert("An error occured while signing up. Please Try Again!");
+      alert.show("An error occured while signing up. Please Try Again!");
       console.log(error.message)
     }
   }

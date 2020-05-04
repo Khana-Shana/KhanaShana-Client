@@ -6,6 +6,7 @@ import Scrollchor from 'react-scrollchor';
 import firebase_integration from '../fire';
 import {withRouter} from 'react-router-dom';
 import {Link} from 'react-router-dom';
+import { HashLink} from 'react-router-hash-link';
 
 function LoginLinks(props){
     return(
@@ -19,22 +20,30 @@ function LoginLinks(props){
           </Link>
         <Nav className="mr-auto">  {/* for the left side of navbar*/}
   
+        <HashLink smooth to="/#to-menu">
               <li className="nav-item active">
-              <Scrollchor  className="nav-link" to="to-menu" style={{background: "#955F61",color: "white",marginTop:"16%"}}>Menu</Scrollchor >
+              <a  className="nav-link" to="to-menu" style={{background: "#955F61",color: "white",marginTop:"7px"}}>Menu</a >
             </li>
+            </HashLink>
+            <HashLink smooth to="/#to-services">
             <li className="nav-item">
-              <Scrollchor  className="nav-link" to="to-services" style={{background: "#955F61",color: "white",marginTop:"12%"}}>Services</Scrollchor >
+              <a  className="nav-link" to="to-services" style={{background: "#955F61",color: "white",marginTop:"12%"}}>Services</a >
             </li>
+            </HashLink>
+            <HashLink smooth to="/#to-about">
             <li className="nav-item">
-              <Scrollchor  className="nav-link" to="to-about" style={{background: "#955F61",color: "white", marginTop:"11%"}}>About Us</Scrollchor >
+              <a  className="nav-link" to="to-about" style={{background: "#955F61",color: "white", marginTop:"11%"}}>About Us</a >
             </li>
+            </HashLink>
               </Nav>
 
              
-             <Nav className="ml-auto">  
+             <Nav className="ml-auto"> 
+             <HashLink smooth to="/#to-deals">
               <li className="nav-item active">
-              <Scrollchor  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",marginTop:"15%"}}>Deals</Scrollchor >
+              <a  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",marginTop:"15%"}}>Deals</a >
             </li>
+            </HashLink>
             <Link to = "/myprofile">
             <li className="nav-item active">
               <a  className="nav-link" style={{background: "#955F61",color: "white",marginTop:"11%"}}>{firebase_integration.getDisplayName()}</a >

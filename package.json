@@ -17,7 +17,13 @@
     "node-sass": "^4.14.0",
     "rc-progress": "^2.5.2",
     "react": "^16.13.1",
+<<<<<<< HEAD
     "react-bootstrap": "^1.0.0",
+=======
+    "react-alert": "^7.0.0",
+    "react-alert-template-basic": "^1.0.0",
+    "react-bootstrap": "^1.0.1",
+>>>>>>> 869488ff705c88f1dd8ab0f64b33cc368f5d9cff
     "react-bootstrap-tabs": "^1.0.2",
     "react-card-flip": "^1.0.10",
     "react-dom": "^16.13.1",
@@ -33,6 +39,7 @@
     "react-redux": "^7.2.0",
     "react-redux-firebase": "^3.3.1",
     "react-router-dom": "^5.1.2",
+    "react-router-hash-link": "^1.2.2",
     "react-scripts": "3.4.1",
     "react-scroll": "^1.7.16",
     "react-scrollchor": "^6.0.0",

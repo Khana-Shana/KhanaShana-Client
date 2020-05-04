@@ -109,9 +109,11 @@
 }
 .login-button .label.on {
   left: 0px;
+  cursor: pointer;
 }
 .login-button .label.off {
   right: 0px;
+  cursor: pointer;
 }
 
 .login-button input[type="checkbox"]:checked + .back .label.on {

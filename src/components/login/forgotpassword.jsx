@@ -17,7 +17,7 @@ export default function ForgotPassword(props) {
     <div class="pass-back">
        <Link to = "/">
       <span>
-              <img  className = "main-back" src = "./images/back.svg"/>
+              <img  className = "main-back" src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"/>
             </span>
             </Link>
         <div class = "top">
@@ -28,7 +28,7 @@ export default function ForgotPassword(props) {
         </div>
 
         <div>
-          <img id="pass-img" src=".\images\Asset 1.svg" alt="image" />
+          <img id="pass-img" src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2FAsset%201.svg?alt=media&token=ad8aa644-4685-4ae5-ab98-74534c37d8aa" alt="image" />
           <div className="form-div">
             <div
               className="modal-dialog modal-login"

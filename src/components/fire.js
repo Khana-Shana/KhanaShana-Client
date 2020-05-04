@@ -23,6 +23,7 @@ class firebase_integration extends Component {
   }
 
   getImageURL(divID, mainreferencefolder, path, imagename) {
+      console.log(":(((((((((((((((((((((((((((((((((((((((((")
     this.storage.ref(mainreferencefolder).child(path+'/'+imagename).getDownloadURL().then(function(url) {
         document.getElementById(divID).src = url;
     })
