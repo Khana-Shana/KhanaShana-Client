@@ -1,30 +1,52 @@
-import React, { Component, Fragment, useContext, useState } from 'react';
+import React, { Component, Fragment, useContext, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeItem,addQuantity,subtractQuantity} from './actions/cart-actions'
 import './orderstyles.css';
 import Header from './navbar';
-import DiscountContext from '../context/context';
+import firebase_integration from "../fire";
+// import DiscountContext from '../context/context';
 import CheckoutContext from '../context/checkoutcontext';
 
-var discount_price = "";
+var discount_price = 0;
 var discount_bill = 0;
 var string_discount = "";
 
 function Cart(props) {
-    const {discount, setDiscount} = useContext(DiscountContext);
+    // const {discount, setDiscount} = useContext(DiscountContext);
+    // let discount = 0;
     const {orderdetails, setCart, setOrderDiscount, setTotal} = useContext(CheckoutContext);
+
+
+    useEffect(() => {
+        var UserID = firebase_integration.auth.currentUser.uid
+        firebase_integration.database.collection("CustomerDatabase").where("CustomerID", "==", UserID.toString()).get().then((docs) => {
+          var mydata = 0              
+          docs.forEach((doc) => {
+            mydata = doc.data()
+            discount_price = mydata.Discount
+          });
+    
+          
+          console.log(mydata.Discount)
+         
+        })
+      }, discount_price);
+
+      
+      console.log(discount_price);
+    // discount_price = 10;
     
 
-    if(discount === null){
+    // if(discount === null){
         
-        discount_price = "0%";
-        string_discount = "0%";
-        discount_price = parseInt(discount_price.split("%",1));
-    } else {
-        string_discount = discount;
-        discount_price = parseInt(discount.split("%",1));
-    }
+    //     discount_price = "0%";
+    //     string_discount = "0%";
+    //     discount_price = parseInt(discount_price.split("%",1));
+    // } else {
+    //     string_discount = discount;
+    //     discount_price = parseInt(discount.split("%",1));
+    // }
     
     function handleRemove(id){
         props.removeItem(id);

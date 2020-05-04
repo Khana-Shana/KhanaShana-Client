@@ -6,6 +6,7 @@ import firebase_integration from '../fire.js'
 import firebase from '../fire';
 import { Link, withRouter } from "react-router-dom";
 import { withAlert } from 'react-alert'
+import { Button } from "rsuite";
 // import './index.css';
 
 class Wheel extends React.Component {
@@ -148,13 +149,13 @@ class Wheel extends React.Component {
           </button>
           </Link>
           :
-          <button
+          <Button
             type="button"
             id="GFG"
             className="wheeldealbtn button-error pure-button "
           disabled>
             Avail Discount
-          </button>}
+          </Button>}
         </div>
           
       </div>
