@@ -82,9 +82,7 @@ class Wheel extends React.Component {
         <div
           className={`wheel ${spinning}`}
           style={wheelVars}
-          onClick={() => {
-
-            
+          onClick={() => {          
             if(!firebase.getCurrentUsername()) {
             // not logged in
             alert.show('Please login first')
@@ -102,8 +100,12 @@ class Wheel extends React.Component {
                 let promise = new Promise (() => {this.selectItem()})
                 console.log("Allow Discount")
                 promise.then(givediscount(true))
+                var todaysDate = new Date()
+                var disc = parseInt(this.props.items[this.value].substring(0,this.props.items[this.value].length-1))
                 firebase_integration.database.collection("CustomerDatabase").doc(UserID.toString()).update({
-                  WheelUsed: true
+                  WheelUsed: true,
+                  DateWheelUsed: todaysDate,
+                  Discount: disc
                 })
                 this.setState({ button: true });
 

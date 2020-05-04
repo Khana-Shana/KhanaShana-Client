@@ -431,6 +431,7 @@ function CustomerProfile() {
               id="profilepic"
               className="mx-auto img-fluid img-circle d-block"
               alt="ProfilePicture"
+              src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/CustomerProfile%2Fprofilepic.svg?alt=media&token=ee543aa0-18be-4d30-a73c-1c53d838ac7c"
             />
             {/* {firebase_integration.getImageURL(
               "profilepic",
