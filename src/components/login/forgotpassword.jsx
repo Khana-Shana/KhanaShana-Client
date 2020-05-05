@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "./passwordstyles.css";
 import firebase_integration from "../fire";
 import { Alert, AlertTitle } from "@material-ui/lab";
-import {Link} from 'react-router-dom';
-export default function ForgotPassword(props) {
+import {Link, withRouter} from 'react-router-dom';
+
+function ForgotPassword(props) {
   const [email, setEmail] = useState("");
   const checkInputField = (value) => {
     if (value === "") {
@@ -85,10 +86,12 @@ export default function ForgotPassword(props) {
   async function reset() {
     try {
       await firebase_integration.passwordreset(email);
-      alert("Email Sent");
+      // alert("Email Sent");
       props.history.replace("/loginpage");
     } catch (error) {
       alert(error.message);
     }
   }
 }
+
+export default withRouter(ForgotPassword);
