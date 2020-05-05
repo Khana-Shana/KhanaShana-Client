@@ -27,7 +27,7 @@ function OrderHistory() {
     }
     
     return (
-        <div id="orderhistorypage">
+        <div className = "orderhistorypage" style = {{backgroundColor:"#99AA93"}}>
             <Header/>
             <div id="orderhistorybox" className="container">
                 <div id="boxheading" className="row">
@@ -42,7 +42,6 @@ function OrderHistory() {
                             <th style = {{color: "#576271"}} scope="col">Cost</th>
                             <th style = {{color: "#576271"}} scope="col">Order Tracking</th>
                             <th style = {{color: "#576271"}} scope="col">Order Details</th>
-                            <th style = {{color: "#576271"}} scope="col">Reorder</th>
                             <th style = {{color: "#576271"}} scope="col">Cancel</th>
                             </tr>
                         </thead>
@@ -59,7 +58,6 @@ function OrderHistory() {
                                                 <Link to = "/orderdetails">
                                                 <td><button onClick = {handleOrderDetails(orders[i])} className = "btn btn-danger redbox">Order Details</button></td>
                                                 </Link>
-                                                <td><button className = "btn btn-danger redbox">Reorder</button></td>
                                                 {orders[i].Tracking === "Cancelled" || orders[i].Tracking === "Completed" || orders[i].Tracking === "Done" || orders[i].Tracking === "Rejected"?
                                                     <td><button className = "btn btn-danger redbox" disabled>Cancel</button></td>:
                                                     <td><button className = "btn btn-danger redbox" onClick = {() => {

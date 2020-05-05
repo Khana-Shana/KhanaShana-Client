@@ -41,13 +41,8 @@
   margin-left: 2%;
 }
 
-.buttdiv {
-  text-align: center;
-  float: right;
-  margin-top: 2.5%;
-  display: flex;
-  margin-right: 2%;
-  display: flex;
+.butt-div {
+ height: auto;
 }
 
 .card-button {

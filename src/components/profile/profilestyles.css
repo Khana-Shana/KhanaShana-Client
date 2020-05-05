@@ -1,6 +1,14 @@
-#wholepage{
-    background-color: #EEF1ED;
-    background-size: contain;
+.profileback{
+
+  
+        background-image: url("../images/menuback.svg");
+        /* background-position: center; */
+        background-repeat: repeat;
+        background-size: cover;
+        /* background-position: top; */
+        /* width: 100%; */
+        /* height: auto; */
+      
 }
 #r1c2 {
     border-left: solid;
@@ -128,4 +136,5 @@ a:hover {
   }
   .hehe{
     font-family: 'Jost', sans-serif !important;
+    
   }

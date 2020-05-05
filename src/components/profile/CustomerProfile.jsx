@@ -108,7 +108,7 @@ function CustomerProfile() {
       });
   }
   return (
-    <div>
+    <div class = "profileback">
       <Header />
       <div class="hehe container-fluid">
         <div class="row my-2">

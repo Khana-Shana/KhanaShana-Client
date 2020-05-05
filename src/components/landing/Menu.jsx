@@ -19,12 +19,10 @@ function Menu() {
   return (
     <div className="menu container-fluid">
       <div className="servicestitleleft">MENU</div>
-      {/* <div className="cards"> */}
-      {/* <div class="container-fluid"> */}
-        <div class="row pb-4">
+        <div class="row">
           {menuitems.map((item) => {
             return (
-              <div class=" text-center col-md-4 col-sm-">
+              <div  style = {{marginBottom:"3%"}}  class= "col-md-4 col-sm-">
                 <div>
                   <LandingCard
                     DishID={item.DishID}
@@ -40,17 +38,17 @@ function Menu() {
         </div>
       {/* </div> */}
       {/* </div> */}
-      <div className="menubtn">
-        <Link to="/fullmenu">
-          <a
-            // href="/fullmenu"
-            type="button"
-            id="GFG"
-            className="button-menu pure-button"
-          >
-            Full Menu
-          </a>
-        </Link>
+      <div class = "butt-div">
+      <Link to = "/fullmenu">
+              <button
+                // id="GFG"
+                type="button"
+                className="button-error pure-button"
+                style = {{backgroundColor: "#955f61", fontSize: "1.7rem", width: "16%", border: "none", fontFamily: "'Jost', sans-serif", marginTop: "0%", marginBottom:"3%", marginLeft:"80%"}}
+              >
+                FULL MENU
+              </button>
+              </Link>
       </div>
     </div>
   );

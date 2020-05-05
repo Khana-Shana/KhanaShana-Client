@@ -3,7 +3,7 @@ import "./menu.css";
 
 export default function LandingCard(props){
     return(
-        <div>
+        <div >
           <img
             id={props.DishID}
             className="card-image"
