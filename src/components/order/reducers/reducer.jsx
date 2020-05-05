@@ -27,6 +27,8 @@ const cartReducer= (state = initState,action)=>{
          {
             fooditem.quantity += 1 
             localStorage.setItem("cart", JSON.stringify(state.cart))
+            console.log(state.items)
+            localStorage.setItem("menu", JSON.stringify(state.items))
              return{
                 ...state,
                  total: state.total + fooditem.SalePrice 
@@ -38,6 +40,8 @@ const cartReducer= (state = initState,action)=>{
             let newTotal = state.total + fooditem.SalePrice 
             const cartitems = [...state.cart,fooditem]
             localStorage.setItem("cart", JSON.stringify(cartitems))
+            console.log(state.items)
+            localStorage.setItem("menu", JSON.stringify(state.items))
             return{
                 ...state,
                 cart: cartitems,
@@ -57,6 +61,8 @@ const cartReducer= (state = initState,action)=>{
         //calculating the total
         let newTotal = state.total - (itemToRemove.SalePrice * itemToRemove.quantity )
         localStorage.setItem("cart", JSON.stringify(new_items))
+        console.log(state.items)
+        localStorage.setItem("menu", JSON.stringify(state.items))
         return{
             ...state,
             cart: new_items,
@@ -69,6 +75,8 @@ const cartReducer= (state = initState,action)=>{
           fooditem.quantity += 1 
           let newTotal = state.total + fooditem.SalePrice
           localStorage.setItem("cart", JSON.stringify(state.cart))
+          console.log(state.items)
+          localStorage.setItem("menu", JSON.stringify(state.items))
           return{
               ...state,
               total: newTotal
@@ -81,6 +89,8 @@ const cartReducer= (state = initState,action)=>{
             let new_items = state.cart.filter(item=>item.DishID !== action.payload)
             let newTotal = state.total - fooditem.SalePrice
             localStorage.setItem("cart", JSON.stringify(new_items))
+            console.log(state.items)
+            localStorage.setItem("menu", JSON.stringify(state.items))
             return{
                 ...state,
                 cart: new_items,
@@ -91,6 +101,7 @@ const cartReducer= (state = initState,action)=>{
             fooditem.quantity -= 1
             let newTotal = state.total - fooditem.SalePrice
             localStorage.setItem("cart", JSON.stringify(state.cart))
+            localStorage.setItem("menu", JSON.stringify(state.items))
             return{
                 ...state,
                 total: newTotal

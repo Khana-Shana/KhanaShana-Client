@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import Footer from '../navigation/footer';
-import Header from './navbar';
+import Header from "../navigation/Header";
 import './tystyles.css';
 import CheckoutContext from '../context/checkoutcontext';
 import firebase_integration from '../fire.js';

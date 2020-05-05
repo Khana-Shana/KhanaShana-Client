@@ -4,30 +4,30 @@ import Card from "./Card.jsx";
 import { Container } from "react-bootstrap";
 import firebase_integration from "../fire";
 import FilterResults from "react-filter-search";
-import { FetchItems } from "./actions/cart-actions";
+import { FetchItems, FetchCart } from "./actions/cart-actions";
 import { Tabs, Tab } from "react-bootstrap-tabs";
 import CardScreen from "./CardScreen";
 
 function Menu(props) {
-  // const menu = localStorage.getItem("menu")
-  // JSON.parse(menu)
-  // console.log(menu)
-  // let All = props.items;
-  // props.FetchItems(menu)
   var menudata = [];
 
+//   function getCart(){
+//     const localcart = localStorage.getItem("cart")
+//     return localcart ? JSON.parse(localcart) : []
+// }
+
+  function getMenu(){
+    const localmenu = localStorage.getItem("menu")
+    return localmenu ? JSON.parse(localmenu) : []
+}
+
+const localmenu = getMenu();   
+// const localcart = getCart();  
   useEffect(() => {
-    firebase_integration.database
-      .collection("Menu")
-      .get()
-      .then((docs) => {
-        docs.forEach((doc) => {
-          menudata.push(doc.data());
-          localStorage.setItem("menu", JSON.stringify(menudata));
-        });
-        props.FetchItems(menudata);
-      });
-  }, menudata);
+    // localStorage.getItem("menu")
+        props.FetchItems(localmenu);
+        // props.FetchCart(localcart);
+  }, []);
 
   let All = [];
   function makeAll() {
@@ -150,6 +150,9 @@ const mapDispatchToProps = (dispatch) => {
     FetchItems: (items) => {
       dispatch(FetchItems(items));
     },
+    FetchCart: (items) => {
+      dispatch(FetchCart(items));
+    }
   };
 };
 // export default connect(mapStateToProps,mapDispatchToProps)(DataRead)
