@@ -19,13 +19,11 @@ function OrderHistory() {
                 }
             });
             setorders(order_arr)
-            console.log(order_arr)
         })
     }, orders);   
 
     const handleOrderDetails = (order) => {
         OrderHistory(order);
-        console.log(orderdetails);
     }
     
     return (
@@ -65,7 +63,7 @@ function OrderHistory() {
                                                 {orders[i].Tracking === "Cancelled" || orders[i].Tracking === "Completed" || orders[i].Tracking === "Done" || orders[i].Tracking === "Rejected"?
                                                     <td><button className = "btn btn-danger redbox" disabled>Cancel</button></td>:
                                                     <td><button className = "btn btn-danger redbox" onClick = {() => {
-                                                        updateDBcancel(orders[i].OrderID)
+                                                        updateDBcancel(orders[i])
                                                     }}>Cancel</button></td>   
                                                 }
                                             </tr>
@@ -79,12 +77,20 @@ function OrderHistory() {
             </div>
         </div>
     );
-    async function updateDBcancel(OrderID){
-        firebase_integration.database.collection("RegularOrder").doc(OrderID.toString()).update({
-            Tracking: "Cancelled"
-        }).catch(function(error) {
-            alert(error.message)
-        });
+    async function updateDBcancel(Order){
+        var time_of_order = Order.Date.seconds
+        var time_now = (new Date().getTime()/1000).toFixed(0)
+        if(time_now-time_of_order>300){
+            alert("You can only cancel an order 5 minutes within placing it")
+        }
+        else {
+            firebase_integration.database.collection("RegularOrder").doc(Order.OrderID.toString()).update({
+                Tracking: "Cancelled"
+            }).catch(function(error) {
+                alert(error.message)
+            });
+        }
+        
     }
 }
 

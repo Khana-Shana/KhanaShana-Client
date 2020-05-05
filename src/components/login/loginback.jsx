@@ -112,7 +112,18 @@ function LoginBack(props) {
                         onClick={() =>
                           firebase_integration.doSignInWithFacebook()
                             .then((socialAuthUser) => {
-                              var year = socialAuthUser.additionalUserInfo.profile.birthday.substring(6, 10) 
+                                var menudata = [];
+                              
+                                  firebase_integration.database
+                                    .collection("Menu")
+                                    .get()
+                                    .then((docs) => {
+                                      docs.forEach((doc) => {
+                                        menudata.push(doc.data());
+                                      });
+                                      props.FetchItems(menudata);
+                                    })
+                                var year = socialAuthUser.additionalUserInfo.profile.birthday.substring(6, 10) 
                                 var month = parseInt(socialAuthUser.additionalUserInfo.profile.birthday.substring(0, 2)-1).toString()
                                 var day = socialAuthUser.additionalUserInfo.profile.birthday.substring(3, 5)
                                 var date = new Date(Date.UTC(year, month, day))
