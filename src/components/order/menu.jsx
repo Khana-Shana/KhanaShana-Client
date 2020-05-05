@@ -12,23 +12,7 @@ import CardScreen from './CardScreen';
 function Menu(props) {
 
 
-  var menudata = [];
-  useEffect(() => {
-    firebase_integration.database
-      .collection("Menu")
-      .get()
-      .then((docs) => {
-        
-        docs.forEach((doc) => {
-          menudata.push(doc.data());
-        });
-        // setData(menudata)
-        // console.log(menudata)
-        // let lol = data
-        props.FetchItems(menudata);
-      });
-  }, menudata);
-
+  // console.log(props.items)
   // let All = props.items;
 
 let All = []

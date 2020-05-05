@@ -13,10 +13,10 @@ var discount_bill = 0;
 var string_discount = "";
 
 function Cart(props) {
+    
     // const {discount, setDiscount} = useContext(DiscountContext);
     // let discount = 0;
     const {orderdetails, setCart, setOrderDiscount, setTotal} = useContext(CheckoutContext);
-
 
     useEffect(() => {
         var UserID = firebase_integration.auth.currentUser.uid

@@ -15,7 +15,7 @@
     "firebase": "^7.14.1",
     "formik": "^2.1.4",
     "lottery-wheel": "^2.1.0",
-    "node-sass": "^4.14.0",
+    "node-sass": "^4.14.1",
     "rc-progress": "^2.5.2",
     "react": "^16.13.1",
     "react-alert": "^7.0.0",

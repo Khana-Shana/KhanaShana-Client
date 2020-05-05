@@ -1,12 +1,14 @@
 import React from "react";
 // import Button from "./loginbutton";
 import LoginFront from "./loginfront";
+import { connect } from "react-redux";
 import ReactCardFlip from "react-card-flip";
 import SignupBack from "./signupback";
 import SignupFront from "./signupfront";
 import { useState, useEffect } from "react";
 import firebase_integration from "../fire";
 import { Link, withRouter } from "react-router-dom";
+import { FetchItems } from "../order/actions/cart-actions"
 import Login from "./login";
 import './loginstyles.css';
 import { FacebookLoginButton } from "react-social-login-buttons";
@@ -79,7 +81,23 @@ function LoginBack(props) {
                           type="submit"
                           className="btn btn-primary btn-block btn-lg"
                           value="Sign in"
-                          onClick={login}
+                          onClick={() => {login()
+                          
+  var menudata = [];
+
+    firebase_integration.database
+      .collection("Menu")
+      .get()
+      .then((docs) => {
+        
+        docs.forEach((doc) => {
+          menudata.push(doc.data());
+        });
+        // setData(menudata)
+        
+        // let lol = data
+        props.FetchItems(menudata);
+      });}}
                         />
                       </div>
                     </form>
@@ -162,6 +180,23 @@ function LoginBack(props) {
     try {
       await firebase_integration.login(email, password);
       alert("logged in");
+      
+  var menudata = [];
+
+    firebase_integration.database
+      .collection("Menu")
+      .get()
+      .then((docs) => {
+        
+        docs.forEach((doc) => {
+          menudata.push(doc.data());
+        });
+        // setData(menudata)
+        
+        // let lol = data
+        props.FetchItems(menudata);
+      });
+ 
       props.history.replace("/");
     } catch (error) {
       alert("Invalid Email/Password");
@@ -170,4 +205,20 @@ function LoginBack(props) {
   }
 }
 
-export default withRouter(LoginBack);
+const mapStateToProps = (state) => {
+  return {
+    items: state.items,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    FetchItems: (items) => {
+      dispatch(FetchItems(items));
+    },
+  };
+};
+// export default connect(mapStateToProps,mapDispatchToProps)(DataRead)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginBack));
+
+// export default withRouter(LoginBack);
