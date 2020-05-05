@@ -1,8 +1,5 @@
 import React from "react";
-import ReactBootstrap, {
-  Nav,
-  Navbar
-} from "react-bootstrap";
+import ReactBootstrap, { Nav, Navbar } from "react-bootstrap";
 import "./header.css";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -10,15 +7,17 @@ import { HashLink } from "react-router-hash-link";
 function GuestLinks() {
   return (
     <div>
-      <Navbar className="nav-link" expand="lg">
+      <Navbar className="nav-link" expand="lg" style={{ paddingBottom: "0.8%", paddingTop: "0.6%", boxShadow: "none" }}>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Link to="/">
             <a
-              style={{
-                background: "#955F61",
-                color: "white",
-                marginTop: "6px",
+            style={{
+              background: "#955F61",
+              color: "white",
+              marginTop: "4%",
+              paddingTop: "0",
+              fontSize: "1.2rem",
               }}
               className="navbar-brand"
             >
@@ -34,7 +33,7 @@ function GuestLinks() {
                   style={{
                     background: "#955F61",
                     color: "white",
-                    marginTop: "7px",
+                    paddingTop: "19%",
                   }}
                 >
                   Menu
@@ -49,7 +48,7 @@ function GuestLinks() {
                   style={{
                     background: "#955F61",
                     color: "white",
-                    marginTop: "12%",
+                    paddingTop: "15%",
                   }}
                 >
                   Services
@@ -64,7 +63,7 @@ function GuestLinks() {
                   style={{
                     background: "#955F61",
                     color: "white",
-                    marginTop: "11%",
+                    paddingTop: "13%",
                   }}
                 >
                   About Us
@@ -81,7 +80,7 @@ function GuestLinks() {
                   style={{
                     background: "#955F61",
                     color: "white",
-                    marginTop: "15%",
+                    marginTop: "5%",
                   }}
                 >
                   Deals
@@ -95,20 +94,42 @@ function GuestLinks() {
                   style={{
                     background: "#955F61",
                     color: "white",
-                    marginTop: "7px",
+                    paddingTop: "19%",
                   }}
                 >
                   Login
                 </a>
               </li>
             </Link>
+            <Link to="/cart">
+              <li className="nav-item">
+                {/* <i class="fa fa-facebook"></i> */}
+                <a
+                  type="button"
+                  id="GFG"
+                  className="fa fa-shopping-cart fa-xs"
+                  style={{
+                    background: "#955F61",
+                    color: "white",
+                    fontSize: "1.5rem",
+                    paddingTop: "19%",
+                  }}
+                ></a>
+              </li>
+            </Link>
             <li className="nav-item">
+              {/* <i class="fa fa-facebook"></i> */}
               <a
                 type="button"
                 id="GFG"
                 href="https://www.facebook.com/uzmascuisine/"
                 className="fa fa-facebook fa-xs"
-                style={{ background: "#955F61", color: "white" }}
+                style={{
+                  background: "#955F61",
+                  color: "white",
+                  fontSize: "1.5rem",
+                  paddingTop: "19%",
+                }}
               ></a>
             </li>
             <li className="nav-item">
@@ -117,7 +138,12 @@ function GuestLinks() {
                 id="GFG"
                 href="https://www.instagram.com/bonappetempt.pk/"
                 className="fa fa-instagram fa-xs"
-                style={{ background: "#955F61", color: "white" }}
+                style={{
+                  background: "#955F61",
+                  color: "white",
+                  fontSize: "1.5rem",
+                  paddingTop: "19%",
+                }}
               ></a>
             </li>
           </Nav>

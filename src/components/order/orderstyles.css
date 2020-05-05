@@ -9,51 +9,16 @@ body {
 
 header {
     background-color: #955F61;   
-    /* margin: -16px -16px; */
-    /* padding: 16px 32px; */
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
     position: relative;
 }
 
-.hullo,
-.cullo{
-  font-family: 'Montserrat', sans-serif;
-  width: 6rem;
-  font-size: 1rem;
-  /* vertical-align: middle; */
-  /* margin-top: 0%; */
-}
-  
   .nav-link{
     background: #955F61;
     color: white;
   }
 
-  #hc-butts {
-    background-color: #626E60 !important;
-    color: white !important;
-    border-color: white !important;
-    width: 9rem;
-    height: 1rem;
-    /* margin-top: %; */
-  }
 
-.btn-primary > ion-icon  {
-    font-size: 1.5rem;
-    /* vertical-align: middle; */
-    float: left;
-    
-}
-i{
-  margin-top: 4% !important;
-  float: left;
-  font-size: 1rem;
-  color: white !important;
-}
-
-.home-outline{
-  margin-top: 2%;
-}
 .card-outline{
   display: flex;
   text-align: center;
@@ -91,12 +56,12 @@ i{
 
   .cartback{
     background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=3c68e38c-8600-4852-9f67-f606b52b22f9");
-    /* background-position: center; */
+    background-position: center;
     /* background-repeat: repeat; */
-    background-size: contain;
+    background-size: cover;
 
-    /* background-position: top; */
-    width: 100%;
+    background-position: top;
+    /* width: 100%; */
     height: 200vh;
   }
 
@@ -130,7 +95,7 @@ i{
     color: white;
     font-size: 1.5rem;
     margin-left: 2%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Jost', sans-serif;
   }
 
   .buttdiv{
@@ -163,7 +128,7 @@ i{
     color: white;
     font-size: 1.5rem;
     margin-right: 2%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Jost', sans-serif;
   }
 
   .icon {
@@ -181,20 +146,24 @@ i{
     margin-top: 3.5%; 
     display: flex;
     float: left;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Jost', sans-serif;
 }
 
 .menuuu {
     text-align: center;
     font-size: 4rem;
     color: #626E60;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Jost', sans-serif;
     margin-top: auto;
     margin-bottom: 1%;
 }
 
 .row{
-  margin-top: 3% !important;
+  margin-top: 2% !important;
+  /* margin-bottom: 2% !important; */
+  margin-left: 0% !important;
+  width: 100% !important;
+  padding-bottom: 2.5% !important;
 }
 
 .btn-group > a{
@@ -207,38 +176,42 @@ i{
 /* ---------- Cart --------- */
 
 .order-details01 {
-  text-align: center;
-  font-size: 4rem;
+  text-align: left;
+  font-size: 1.8rem;
+  margin-left: 4.5rem;
+  margin-top: 1rem;
   color: #626E60;
-  font-family: 'Montserrat', sans-serif;
-  margin-top: auto;
+  font-family: 'Jost', sans-serif;
+  /* margin-top: auto; */
 }
 
 .container-products ion-icon {
-  font-size: 25px;
+  font-size: 1.35rem;
   color: blue;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   cursor: pointer;
 }
 
 .container-products {
   background-color: #DAC4C4;
-  width: 65rem;
+  width: 50rem;
   float: left;
   border-radius: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-left: 3rem;
   margin-right: 2rem;
+  border: 0.5px solid #B0463D;
 }
 
 .container-bill{
   background-color: #DAC4C4;
-  width: 41rem;
+  width: 35rem;
   float: left;
   border-radius: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-left: 2rem;
+  border: 0.5px solid #B0463D
 }
 
 .container-bill-order-details{
@@ -263,22 +236,43 @@ i{
   /* justify-content: flex-end; */
 }
 
-.basketTotalTitle,
-.discountedBill,
+
+
 .basketTotalTitle-orderdetails{
     color: #B0463D;
     font-size: 2rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Jost', sans-serif;
     width: 20rem;
     margin-right: 3rem;
     /* align-items: flex-start; */
     margin-left: 3rem;
 }
 
+.basketTotalTitle{
+  color: #B0463D;
+    font-size: 2rem;
+    font-family: 'Jost', sans-serif;
+    width: 15.7rem;
+    margin-right: 3rem;
+    /* align-items: flex-start; */
+    margin-left: 3rem;
+
+}
+
+.discountedBill{
+  color: #B0463D;
+    font-size: 2rem;
+    font-family: 'Jost', sans-serif;
+    width: 18.7rem;
+    /* margin-right: rem; */
+    /* align-items: flex-start; */
+    margin-left: 3rem;
+
+}
 .discountedBill-orderdetails{
     color: #B0463D;
     font-size: 2rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Jost', sans-serif;
     width: 20rem;
     margin-right: 3rem;
     /* align-items: flex-start; */
@@ -291,17 +285,18 @@ i{
 .basketTotal-orderdetails{
   color: #B0463D;
   font-size: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   width: 11rem;
   text-align: left;
   margin-left: 3rem;
 }
 
 .check{
-  width: 96%;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 .checkout{
@@ -314,15 +309,15 @@ i{
   margin-right: 3%;
   margin-left: 3%;
   margin-bottom: 3%;
-  height: 20rem;
-  width: 26rem;
+  height: 13rem;
+  width: 17rem;
   border-radius: 1rem;
 }
 
 .pname{
   font-size: 2rem;
   color: #B0463D;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   margin-bottom: 90%;
   width: 15rem;
 }
@@ -330,16 +325,16 @@ i{
 .quantity{
   font-size: 2rem;
   color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   float: left;
   margin-right: 11%;
-  margin-top: 7rem;
+  margin-top: 1.7rem;
   width: 10rem;
 }
 
 .name-col{
   width: 10%;
-  height: 20rem;
+  height: 10rem;
   margin-left: 5%;
   margin-top: 2%;
 }
@@ -347,57 +342,53 @@ i{
 .remove {
   cursor: pointer;
   color: #B0463D;
-  size: 3rem;
-  margin-top: 10rem;
+  size: 2.7rem;
+  margin-top: 6.5rem;
 }
 
 .delete-icon ion-icon{
-  margin-left: 1.5rem;
+  margin-left: 0.8rem;
+  font-size: 1.3rem;
 }
-
+.product{
+  border-bottom: 1px solid #B0463D;
+}
 .product ion-icon {
   cursor: pointer;
   color: #B0463D;
 }
 
-.remove{
-  size: 4rem;
-}
-
-.ion-div ion-icon{
-  margin-left: 2rem;
-}
 
 .price-col{
-  height: 20rem;
+  height: 10rem;
   margin-top: 2%;
-  margin-left: 19rem;
+  margin-left: 10rem;
 }
 
 .priceee{
   font-size: 2rem;
   color: #B0463D;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 .timerrr{
-  margin-top: 13rem;
+  margin-top: 6.8rem;
   font-size: 1.5rem;
   color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 .order-now{
   margin-top: 1rem;
   font-size: 2.5rem;
   color: #B0463D;
-  font-family: 'Montserrat', sans-serif;  
+  font-family: 'Jost', sans-serif;  
   text-align: center;
   margin-bottom: 1rem;
 }
 
 .item-name{
-  width: 14rem;
+  width: 9rem;
   margin-left: 3rem;
   margin-right: 3.5rem;
 }
@@ -428,16 +419,6 @@ i{
 
 }
 
-/* .original-bill{
-    color: #B0463D;
-    font-size: 2rem;
-    font-family: 'Montserrat', sans-serif;
-    width: 20rem;
-    margin-right: 3rem;
-    text-align: left; 
-    margin-left: 3rem;
-} */
-
 .nums{
   margin-right: 3rem;
   width: 5rem;
@@ -456,18 +437,23 @@ i{
 .billnums{
   font-size: 2rem;
   color: #955F61;
-  font-family: 'Montserrat', sans-serif;  
+  font-family: 'Jost', sans-serif;  
   text-align: left; 
 }
 
 .order-details-container{
   background-color: #FBF4F3;
+  margin-bottom: 2%;
+  margin-right: 8%;
+  /* width: 100%/; */
+  display: flex;
+  
 }
 
 .discount-title-order-details{
   color: #B0463D;
   font-size: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   width: 20rem;
   margin-right: 3rem;
   /* align-items: flex-start; */
@@ -479,36 +465,52 @@ i{
 .discount-price-order-details{
   color: #B0463D;
   font-size: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   width: 11rem;
   text-align: left;
   margin-left: 3rem;
     margin-top: 3rem;
 }
-
+.delivery{
+  width: 9.1rem !important;
+}
 .delivery,
 .discount-title{
   margin-left: 3rem !important;
   font-size: 2rem;
   color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   background-color: #DAC4C4;
 }
 
-.delivery-cost,
-.discount-price{
+.delivery-cost{
   font-size: 2rem;
   color: #955F61;
-  font-family: 'Montserrat', sans-serif;
-  margin-left: 11rem;
-  width: 34rem;
+  font-family: 'Jost', sans-serif;
+  margin-left: 12.5rem;
+  margin-top: 1rem;
+  text-align: end;
+  margin-right: 1rem;
+}
+
+.discount-price{
+  margin-top: 0rem !important;
+  font-size: 2rem;
+  color: #955F61;
+  font-family: 'Jost', sans-serif;
+  margin-left: 14.3rem;
   margin-top: 1rem;
   text-align: end;
   margin-right: 5rem;
 }
 
-.discount-price{
-  margin-top: 0rem !important;
+.prod-cont{
+  border-bottom: 1px solid #B0463D;
+  border-top: 1px solid #B0463D;
+}
+.extra-cont{
+  border-bottom: 1px solid #B0463D;
+  /* border-top: 1px solid white; */
 }
 
 .ddetails,
@@ -523,7 +525,7 @@ i{
   text-align: center;
   font-size: 4rem;
   color: #626E60;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   margin-top: 2rem;
 }
 
@@ -536,7 +538,7 @@ i{
 
 h3{
   color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   margin-left: 3rem;
   padding-top: 3rem;
 }
@@ -571,13 +573,6 @@ form > input:focus {
 }
 
 .text-area {
-  /* margin-left: 3rem;
-  margin-top: 1rem;
-  margin-right: 3rem;
-  height: 10rem;
-  width: 66rem;
-  border-radius: 0.75rem;
-  box-sizing: border-box; */
   float: left;
   padding: .5rem;
   font-size: 16px;
@@ -619,7 +614,7 @@ input[type=checkbox] {
 label{
   color: #955F61;
   font-size: 1.4rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
   vertical-align: auto;
 }
 
@@ -637,7 +632,7 @@ label{
   border-radius: 2rem !important;
   width: 12rem;
   font-size: large !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 

@@ -22,22 +22,23 @@ function Header(props) {
             <Link to={props.link}>
               <li className="nav-item">
                 <button
-                  className="btn hullo"
+                  className="btn"
                   style={{
                     background: "#626E60",
                     color: "white",
                     width: "100%",
                     height: "20%",
                     marginTop: "3%",
-                    marginRight:"100%"
+                    marginRight:"100%",
+                    paddingTop:"0",
                   }}
                 >
-                  <i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>BACK
+                  <i style = {{color:"white"}} class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>BACK
                 </button>
               </li>
             </Link>
           </Nav>
-          <div style = {{paddingLeft:"4%", fontSize:"2rem", fontFamily:"Montserrat", letterSpacing:"0.1em"}}class = "mx-auto">
+          <div style = {{paddingLeft:"4%", fontSize:"2rem", fontFamily:"Montserrat", letterSpacing:"0.1em", justifyContent:"center"}}class = "mx-auto">
             <b>{props.title}</b>
           </div>
 
@@ -45,19 +46,21 @@ function Header(props) {
             <Link to="/">
               <li className="nav-item">
                 <button
-                  className="btn hullo"
+                  className="btn"
                   style={{
                     background: "#626E60",
                     color: "white",
                     width: "100%",
                     height: "20%",
-                    marginTop: "3%",
+                    paddingTop:"0"
+                    // marginTop: "3%",
                   }}
                 >
-                  <i class="fa fa-home fa-lg" aria-hidden="true"></i>HOME
+                  <i style = {{color:"white"}} class="fa fa-home fa-lg" aria-hidden="true"></i>HOME
                 </button>
               </li>
             </Link>
+            {props.cart ? null :             
             <Link to="/cart">
               <li
                 className="nav-item"
@@ -66,20 +69,22 @@ function Header(props) {
                 }}
               >
                 <button
-                  className="btn cullo"
+                  className="btn"
                   style={{
                     background: "#626E60",
                     color: "white",
-                    marginTop: "3%",
+                    // marginTop: "2%",
+                    paddingTop:"0",
                     width: "100%",
                     height: "20%",
                   }}
                 >
-                  <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+                  <i style = {{color:"white"}} class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
                   CART
                 </button>
               </li>
-            </Link>
+            </Link>}
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -29,8 +29,8 @@ function Welcome() {
         <div className="left-side">
             <div className="Title">KHANA SHANA</div>
             <div className="container Textwelc">
-              Do you want to eat something delicious, special and healthy? Worry
-              not! We are sincerely for your service. Welcome your arrival!
+              Do you want to eat something delicious, special and healthy? 
+              Worry not! We are sincerely for your service. Welcome your arrival!
             </div>
             <div className="orderbtn">
             <Link to = "/fullmenu">
@@ -38,8 +38,9 @@ function Welcome() {
                 id="GFG"
                 type="button"
                 className="button-error pure-button"
+                style = {{fontSize: "1.7rem", width: "40%", border: "none", fontFamily: "'Jost', sans-serif", marginTop:"3%", marginLeft:"1%"}}
               >
-                Place Order!
+                PLACE ORDER
               </button>
               </Link>
             </div>

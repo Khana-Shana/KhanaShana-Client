@@ -7,10 +7,8 @@ import './orderstyles.css';
 function CartScreen() {
     return(
         <div class = "cartback">
-            {/* <DiscountContextProvider> */}
-            <Header title = "CART" link = "/fullmenu"/>
+            <Header cart = {true} title = "CART" link = "/fullmenu"/>
             <Cart/>
-            {/* </DiscountContextProvider> */}
         </div>
     );
 }

@@ -74,7 +74,7 @@ function Cart(props) {
                 <div class = "delete-icon col-sm-">
                     <ion-icon onClick={()=>{handleRemove(item.DishID)}} name="trash-outline" class = "remove"></ion-icon>
                 </div>
-                <div class = "col-md-">
+                <div class = "col-sm-">
                     <img class = "imgcolumn" src = {item.URL} />
                 </div>
                 <div class = "name-col col-md-">
@@ -100,7 +100,9 @@ function Cart(props) {
     let productsBill = props.items.map((item) => {
 
         return(
+            
             <Fragment>
+                
                 <div class = "product-bill row">
                     <div class = "item col-md-">
                         <div class = "item-name">{item.Name}</div>
@@ -112,7 +114,9 @@ function Cart(props) {
                         <div class = "subtotal">Rs {item.quantity*item.SalePrice}</div>
                     </div>
                 </div>
+                
             </Fragment>
+            
         )
     });
 
@@ -121,7 +125,7 @@ function Cart(props) {
     return (
         
     <div class = "order">
-        <div class = "order-details01">ORDER DETAILS</div>
+        <div class = "order-details01"><b>ORDER DETAILS</b></div>
         <div class = "container-products">
             <div class = "products">
                 {productsinCart}
@@ -131,8 +135,11 @@ function Cart(props) {
             <div class = "order-now">
                 ORDER NOW
             </div>
+            <div class = "prod-cont">
             {productsBill}
-            <br/> <br/>
+            </div>
+            {/* <br/> */}
+            <div class = "extra-cont">
             <div class = "ddetails">
                 <div class = "delivery"> Delivery</div>
                 <p class = "delivery-cost">Rs 100</p>
@@ -141,16 +148,17 @@ function Cart(props) {
                 <div class = "discount-title">Discount</div>
                 <p class = "discount-price">{discount_price}%</p>
             </div>
-            <br/> <br/>
+            {/* <br/> */}
+            </div>
+            <br/>
             <div class = "basketTotalContainer">
-                <p class = "basketTotalTitle">ORIGINAL BILL</p>
+                <p class = "basketTotalTitle">Total</p>
                 <p class = "basketTotal">Rs {props.total+100}</p>
             </div>
             <div class = "discountContainer">
-                <p class = "discountedBill">DISCOUNTED BILL</p>
+                <p class = "discountedBill">Discounted Total</p>
                 <p class = "discountedTotal">Rs {discount_bill}</p>
             </div>
-            <br/>
             {/* {console.log(props.items.length)} */}
             {props.items.length !== 0 ?  
             <Link to = "/checkout">

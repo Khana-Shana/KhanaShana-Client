@@ -49,9 +49,9 @@ export default function OrderDetails(){
     discount_bill = ((100-discount_price)*(subtotal+100))/100;
 
     return(
-        
+        <div>
+            <Header/>
         <div class = "order-details-container">
-                <Header/>
                 <div class = "container-bill-order-details">
                     <div class = "order-now">
                             ORDER DETAILS
@@ -91,8 +91,8 @@ export default function OrderDetails(){
                             <p class = "discountedTotal-orderdetails">Rs {discount_bill}</p>
                         </div>
                 </div>
-                <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-                <Footer/>
+            </div>
+            <Footer/>
             </div>
              
     );
