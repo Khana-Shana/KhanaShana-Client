@@ -22,17 +22,17 @@ function LoginLinks(props){
   
         <HashLink smooth to="/#to-menu">
               <li className="nav-item active">
-              <a  className="nav-link" to="to-menu" style={{background: "#955F61",color: "white",marginTop:"7px"}}>Menu</a >
+              <a  className="nav-link" to="to-menu" style={{background: "#955F61",color: "white",paddingTop:"35%"}}>Menu</a >
             </li>
             </HashLink>
             <HashLink smooth to="/#to-services">
             <li className="nav-item">
-              <a  className="nav-link" to="to-services" style={{background: "#955F61",color: "white",marginTop:"12%"}}>Services</a >
+              <a  className="nav-link" to="to-services" style={{background: "#955F61",color: "white",paddingTop:"27%"}}>Services</a >
             </li>
             </HashLink>
             <HashLink smooth to="/#to-about">
             <li className="nav-item">
-              <a  className="nav-link" to="to-about" style={{background: "#955F61",color: "white", marginTop:"11%"}}>About Us</a >
+              <a  className="nav-link" to="to-about" style={{background: "#955F61",color: "white", paddingTop:"25%"}}>About Us</a >
             </li>
             </HashLink>
               </Nav>
@@ -41,17 +41,24 @@ function LoginLinks(props){
              <Nav className="ml-auto"> 
              <HashLink smooth to="/#to-deals">
               <li className="nav-item active">
-              <a  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",marginTop:"15%"}}>Deals</a >
+              <a  className="nav-link" to="to-deals" style={{background: "#955F61",color: "white",paddingTop:"26%"}}>Deals</a >
             </li>
             </HashLink>
             <Link to = "/myprofile">
             <li className="nav-item active">
-              <a  className="nav-link" style={{background: "#955F61",color: "white",marginTop:"11%"}}>{firebase_integration.getDisplayName()}</a >
+              <a  className="nav-link" style={{background: "#955F61",color: "white",paddingTop:"18%"}}>{firebase_integration.getDisplayName()}</a >
             </li>
             </Link>
+
             <li className = "nav-item">
-              <button className="btn" onClick={logout} style={{background: "#955F61",color: "white",marginTop: "11%"}}>Log Out</button>
+              <a className="nav-link" onClick={logout} style={{background: "#955F61",color: "white",paddingTop:"21%", marginRight:"10%"}}>Logout</a>
             </li>
+            <Link to = "/cart">
+            <li className="nav-item">
+            {/* <i class="fa fa-facebook"></i> */}
+              <a type = "button" id = "GFG" className="fa fa-shopping-cart fa-xs" style={{background: "#955F61",color: "white"}}></a >
+            </li>
+            </Link>
             <li className="nav-item">
             {/* <i class="fa fa-facebook"></i> */}
               <a type = "button" id = "GFG" href="https://www.facebook.com/uzmascuisine/" className="fa fa-facebook fa-xs" style={{background: "#955F61",color: "white"}}></a >
