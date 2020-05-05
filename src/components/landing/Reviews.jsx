@@ -188,7 +188,7 @@ const Carousel = () => {
     <li className={className} style={style}>
       <div className="carousel-slide-item__body">
         {checkRating(slide)}
-        <h4>{slide.Subject}</h4>
+        <h5>{slide.Subject}</h5>
         <p>{slide.Message}</p>
       </div>
     </li>
