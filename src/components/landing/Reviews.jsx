@@ -122,34 +122,37 @@ const Carousel = () => {
   const slides = [
     {
       id: 1,
-      title: mydata[0].Subject,
-      desc: mydata[0].Message,
+      title: "Efren Reyes",
+      desc:
+        'Known as "The Magician", Efren Reyes is well regarded by many professionals as the greatest all around player of all time.',
     //   image: "https://i.postimg.cc/RhYnBf5m/er-slider.jpg"
     },
     {
       id: 2,
-      title: mydata[1].Subject,
-      desc: mydata[1].Message,
+      title: `Ronnie O'Sullivan`,
+      desc: `Ronnie O'Sullivan professional snooker player who is widely regarded as one of the greatest players in the history of the discipline.`,
     //   image: "https://i.postimg.cc/qBGQNc37/ro-slider.jpg"
     },
     {
       id: 3,
-      title: mydata[2].Subject,
-      desc: mydata[2].Message,
+      title: "Shane Van Boening",
+      desc:
+        'The "South Dakota Kid" is hearing-impaired and uses a hearing aid, but it has not limited his ability.',
   
     //   image: "https://i.postimg.cc/cHdMJQKG/svb-slider.jpg"
     },
     {
       id: 4,
-      title: mydata[3].Subject,
-      desc: mydata[3].Message,
+      title: "Mike Sigel",
+      desc: `Mike Sigel or "Captain Hook" as many like to call him is an American professional pool player with over 108 tournament wins.`,
   
     //   image: "https://i.postimg.cc/C12h7nZn/ms-1.jpg"
     },
     {
       id: 5,
-      title: mydata[4].Subject,
-      desc: mydata[4].Message,
+      title: "Willie Mosconi",
+      desc:
+        'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
   
     //   image: "https://i.postimg.cc/NfzMDVHP/willie-mosconi-slider.jpg"
     }
