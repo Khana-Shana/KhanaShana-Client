@@ -2,15 +2,25 @@ import React from "react";
 import "./footer.css";
 import { HashLink} from 'react-router-hash-link';
 import { Link } from "react-router-dom";
+import firebase_integration from '../fire.js'
 
 function Footer() {
+  const [restaurantDetails, setdetails] = React.useState({})
+
+  React.useEffect(() => {
+    firebase_integration.database.collection("RestaurantDetails").doc("jOzlK1WWsNPdRrjcYLGv").onSnapshot((snapshot) => {
+      setdetails(snapshot.data())
+    })
+  }, restaurantDetails)
+  
   return (
     <div className="footerdiv">
+      {console.log(restaurantDetails)}
       <footer className="footer">
         <div className="footer__addr">
           <Link to = "/">
           <h1 className="footer__logo">
-            <b>KHANA SHANA</b>
+          <b>{restaurantDetails.Name}</b>
           </h1>
           </Link>
 
@@ -21,11 +31,11 @@ function Footer() {
          
 
           <address>
-            122 Tipu Block, Garden Town, Lahore.
+            {restaurantDetails.Address}
             <br />
-            +92 3009493838
+            {restaurantDetails.ContactDetails}
             <br />
-            uzma.masood123@gmail.com
+            {restaurantDetails.Email}
           </address>
         </div>
 

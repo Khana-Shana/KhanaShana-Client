@@ -3,8 +3,17 @@ import './aboutus.css';
 import firebase_integration from '../fire.js'
 
 function Aboutus() {
+  const [restaurantDetails, setdetails] = React.useState({})
+
+  React.useEffect(() => {
+    firebase_integration.database.collection("RestaurantDetails").doc("jOzlK1WWsNPdRrjcYLGv").onSnapshot((snapshot) => {
+      setdetails(snapshot.data())
+    })
+  }, restaurantDetails)
+
   return (
     <div>
+      {console.log(restaurantDetails)}
     <div className="aboutus row">
       <div className="col-sm-7 about-text">
         <div className="aboutustitle">ABOUT US</div>
@@ -16,12 +25,7 @@ function Aboutus() {
         </blockquote>
         <div className="textabout">
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
-          sollicitudin quam dign issimerat mattis fringilla. Sed sollicitudin 
-          quam dign issimerat mattis fringilla. Lorem ipsum dolor sit 
-          amet, consectetur adipiscing elit. Sed sollicitudin quam dign 
-          issimerat mattis fringilla. Sed sollicitudin quam dign issimerat
-          mattis fringilla sit amet, consectetur adipiscing elit.
+          {restaurantDetails.AboutUs}
           </p>
         </div>
         <div className="uzma-img">
