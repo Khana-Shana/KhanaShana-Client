@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_ITEM,DEC_CART,INC_CART, FETCH_ITEMS } from '../actions/cart-action-types';
+import { ADD_TO_CART,REMOVE_ITEM,DEC_CART,INC_CART, FETCH_ITEMS, FETCH_CART } from '../actions/cart-action-types';
 import img1 from '../images/4.jpg'
 import img2 from '../images/8.jpg'
 import img3 from '../images/9.jpg'
@@ -19,12 +19,14 @@ const cartReducer= (state = initState,action)=>{
    
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
+          
           let fooditem = state.items.find(item=> item.DishID === action.payload)
           //check if the action.payload exists in the cart
          let existed_item= state.cart.find(item=> action.payload === item.DishID)
          if(existed_item)
          {
             fooditem.quantity += 1 
+            localStorage.setItem("cart", JSON.stringify(state.cart))
              return{
                 ...state,
                  total: state.total + fooditem.SalePrice 
@@ -34,14 +36,19 @@ const cartReducer= (state = initState,action)=>{
             fooditem.quantity = 1;
             //calculating the total
             let newTotal = state.total + fooditem.SalePrice 
-            
+            const cartitems = [...state.cart,fooditem]
+            localStorage.setItem("cart", JSON.stringify(cartitems))
             return{
                 ...state,
-                cart: [...state.cart, fooditem],
+                cart: cartitems,
                 total : newTotal
             }
             
         }
+
+       
+
+
     }
     if(action.type === REMOVE_ITEM){
         let itemToRemove= state.cart.find(item=> action.payload === item.DishID)
@@ -49,6 +56,7 @@ const cartReducer= (state = initState,action)=>{
         
         //calculating the total
         let newTotal = state.total - (itemToRemove.SalePrice * itemToRemove.quantity )
+        localStorage.setItem("cart", JSON.stringify(new_items))
         return{
             ...state,
             cart: new_items,
@@ -60,6 +68,7 @@ const cartReducer= (state = initState,action)=>{
         let fooditem = state.items.find(item=> item.DishID === action.payload)
           fooditem.quantity += 1 
           let newTotal = state.total + fooditem.SalePrice
+          localStorage.setItem("cart", JSON.stringify(state.cart))
           return{
               ...state,
               total: newTotal
@@ -71,6 +80,7 @@ const cartReducer= (state = initState,action)=>{
         if(fooditem.quantity === 1){
             let new_items = state.cart.filter(item=>item.DishID !== action.payload)
             let newTotal = state.total - fooditem.SalePrice
+            localStorage.setItem("cart", JSON.stringify(new_items))
             return{
                 ...state,
                 cart: new_items,
@@ -80,6 +90,7 @@ const cartReducer= (state = initState,action)=>{
         else {
             fooditem.quantity -= 1
             let newTotal = state.total - fooditem.SalePrice
+            localStorage.setItem("cart", JSON.stringify(state.cart))
             return{
                 ...state,
                 total: newTotal
@@ -92,6 +103,13 @@ const cartReducer= (state = initState,action)=>{
         return{
             ...state,
             items: action.payload
+        }
+    }
+    if(action.type=== FETCH_CART)
+    {
+        return{
+            ...state,
+            cart: action.payload
         }
     }
     

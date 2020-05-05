@@ -61,6 +61,7 @@ function Checkout(props) {
                 OrderID: orderid
             })
 
+            localStorage.setItem("cart", [])
             props.history.replace("./orderconfirmed")
         })
 

@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_ITEM,DEC_CART,INC_CART, FETCH_ITEMS } from './cart-action-types'
+import { ADD_TO_CART,REMOVE_ITEM,DEC_CART,INC_CART, FETCH_ITEMS, FETCH_CART } from './cart-action-types'
 
 export const addToCart= (id)=>{
     return{
@@ -31,6 +31,13 @@ export const addQuantity=(id)=>{
 export const FetchItems=(items)=>{
     return{
         type: FETCH_ITEMS,
+        payload:items
+    }
+}
+
+export const FetchCart=(items)=>{
+    return{
+        type: FETCH_CART,
         payload:items
     }
 }

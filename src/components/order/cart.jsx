@@ -1,7 +1,7 @@
 import React, { Component, Fragment, useContext, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { removeItem,addQuantity,subtractQuantity} from './actions/cart-actions'
+import { removeItem,addQuantity,subtractQuantity, FetchCart} from './actions/cart-actions'
 import './orderstyles.css';
 import Header from './navbar';
 import firebase_integration from "../fire";
@@ -13,8 +13,18 @@ var discount_bill = 0;
 var string_discount = "";
 
 function Cart(props) {
+
+    function getCart(){
+        const localcart = localStorage.getItem("cart")
+        return localcart ? JSON.parse(localcart) : []
+    }
     // const {discount, setDiscount} = useContext(DiscountContext);
     // let discount = 0;
+    const localcart = getCart();    
+    console.log(localcart)
+    
+
+    // localStorage.setItem("cart", JSON.stringify(props.items))
     const [userdisc, setdisc] = useState(0)
     const {orderdetails, setCart, setOrderDiscount, setTotal} = useContext(CheckoutContext);
 
@@ -26,8 +36,9 @@ function Cart(props) {
             mydata = doc.data().Discount
           });        
           setdisc(mydata)
+          props.FetchCart(localcart)
         })
-      }, userdisc);
+      }, []);
 
     // discount_price = 10;
     discount_price = userdisc
@@ -173,7 +184,8 @@ const mapDispatchToProps = (dispatch)=>{
     return{
         removeItem: (id)=>{dispatch(removeItem(id))},
         addQuantity: (id)=>{dispatch(addQuantity(id))},
-        subtractQuantity: (id)=>{dispatch(subtractQuantity(id))}
+        subtractQuantity: (id)=>{dispatch(subtractQuantity(id))},
+        FetchCart: (items)=>{dispatch(FetchCart(items))}
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Cart)

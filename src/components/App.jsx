@@ -24,6 +24,8 @@ import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic';
 
 function App() {
+
+  
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
   // optional cofiguration
@@ -43,6 +45,7 @@ const options = {
     firebase_integration.isInitialized().then((val) => {
       setFirebaseInitialized(val);
     });
+    
   });
 
   return firebaseInitialized !== false ? (
