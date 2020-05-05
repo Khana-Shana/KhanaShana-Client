@@ -13,31 +13,26 @@ var discount_bill = 0;
 var string_discount = "";
 
 function Cart(props) {
-    
     // const {discount, setDiscount} = useContext(DiscountContext);
     // let discount = 0;
+    const [userdisc, setdisc] = useState(0)
     const {orderdetails, setCart, setOrderDiscount, setTotal} = useContext(CheckoutContext);
 
     useEffect(() => {
         var UserID = firebase_integration.auth.currentUser.uid
-        firebase_integration.database.collection("CustomerDatabase").where("CustomerID", "==", UserID.toString()).get().then((docs) => {
+        firebase_integration.database.collection("CustomerDatabase").where("CustomerID", "==", UserID.toString()).onSnapshot((docs) => {
           var mydata = 0              
           docs.forEach((doc) => {
-            mydata = doc.data()
-            discount_price = mydata.Discount
-          });
-    
-          
-          console.log(mydata.Discount)
-         
+            mydata = doc.data().Discount
+          });        
+          setdisc(mydata)
         })
-      }, discount_price);
+      }, userdisc);
 
-      
-      console.log(discount_price);
+    // console.log(userdisc)
+    //   console.log(discount_price);
     // discount_price = 10;
-    
-
+    discount_price = userdisc
     // if(discount === null){
         
     //     discount_price = "0%";
@@ -138,7 +133,7 @@ function Cart(props) {
             </div>
             <div class = "discount">
                 <div class = "discount-title">Discount</div>
-                <p class = "discount-price">{discount_price}%</p>"
+                <p class = "discount-price">{discount_price}%</p>
             </div>
             <br/> <br/>
             <div class = "basketTotalContainer">
