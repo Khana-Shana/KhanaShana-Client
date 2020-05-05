@@ -4,19 +4,38 @@ import "./deals.css";
 import firebase_integration from "../fire.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class Deals extends Component {
-  constructor() {
-    super();
-    this.places = ["10%", "20%", "30%", "10%", "20%", "30%"];
-  }
-  render() {
+function Deals() {
+    const [dailydeal, setdailydeal] = React.useState({})
+    const [weeklydeal, setweeklydeal] = React.useState({})
+    const [discountwheel, setdiscountwheel] = React.useState([])
+
+    React.useEffect(() => {
+      firebase_integration.database.collection("Deals").orderBy("DealType", "desc").onSnapshot((snapshot) => {
+        var data = []
+        snapshot.forEach((doc) => {
+          data.push(doc.data())
+        })
+        setweeklydeal(data[0])
+        setdailydeal(data[1])
+      })
+      firebase_integration.database.collection("DiscountWheel").onSnapshot((snapshot) => {
+        var data = []
+        snapshot.forEach((doc) => {
+          data.push(doc.data().value)
+        })
+        var data_copy = data
+        var data = data.concat(data_copy)
+        setdiscountwheel(data)
+      })
+    }, [])
+
     return (
       <div className=" deals container-fluid">
         <div className="row pb-5">
           <div className="col-lg-6 col-sm wheelitem">
             <div className="wheeltitle">TRY YOUR LUCK</div>
             <div>
-              <Wheel items={this.places} />
+              <Wheel items={discountwheel} />
               {/* <wheel/> */}
             </div>
           </div>
@@ -26,7 +45,7 @@ class Deals extends Component {
                 <div className="dealcard rounded">
                   <img
                     id="deal1"
-                    src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fhamburger-beside-fries-2271107.png?alt=media&token=77f41572-ed35-4b9a-b388-1b082632a766"
+                    src={dailydeal.ImageURL}
                     className="ddealimgfirst"
                     alt="food-deal"
                   />
@@ -48,7 +67,7 @@ class Deals extends Component {
               <div className="dealcard rounded">
                 <img
                   id="deal1"
-                  src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fhamburger-beside-fries-2271107.png?alt=media&token=77f41572-ed35-4b9a-b388-1b082632a766"
+                  src={weeklydeal.ImageURL}
                   className="wdealimgfirst"
                   alt="food-deal"
                 />
@@ -69,7 +88,6 @@ class Deals extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default Deals;
