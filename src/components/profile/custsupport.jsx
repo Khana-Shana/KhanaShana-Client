@@ -16,6 +16,20 @@ function CSupport() {
     const [rating, setRating] = useState(null);
     const [check, setCheck] = useState(false);
 
+    function checkInputField(){
+        if (
+            subject === "" ||
+            message === "" ||
+          rating === ""
+        ) {
+          alert("Please fill in all the fields.");
+          return false;
+        } else {
+            return true;
+        }
+      };
+
+
     function resetForm(){
         setSubject("");
         setMessage("");
@@ -27,10 +41,10 @@ function CSupport() {
     }
 
 
-    function sendEmail(e){
+    async function sendEmail(e){
         if(check == false){
             setCheck(true)
-            e.preventDefault();
+            // e.preventDefault();
 
             var template_params = {
                 "subject": subject,
@@ -39,7 +53,8 @@ function CSupport() {
             }
 
             var todaysdate = new Date()
-            firebase_integration.addFeedback(firebase_integration.auth.currentUser.uid, todaysdate, parseInt(template_params.rating), template_params.subject, template_params.message)
+            await firebase_integration.addFeedback(firebase_integration.auth.currentUser.uid, todaysdate, parseInt(template_params.rating), template_params.subject, template_params.message)
+            alert("Submitted!")
         }
     }
 
@@ -65,7 +80,9 @@ function CSupport() {
                 <br/> <br/>
                 <StarRating value={rating} handleChange = {handleChange}/>
                 <div className = "confirm">
-                        <button onClick = {sendEmail} type="submit" className="btn btn-success btn-lg">SUBMIT</button>
+                        <button onClick = {() => {
+                            if(checkInputField())
+                            {sendEmail()}}} type="submit" className="btn btn-success btn-lg">SUBMIT</button>
                 </div>
                 <br/>
             </div>

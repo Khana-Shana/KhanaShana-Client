@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 import firebase_integration from '../fire.js'
 import { useAlert } from 'react-alert'
 
-function Checkout() {
+function Checkout(props) {
 
     const alert = useAlert();
 
@@ -60,10 +60,13 @@ function Checkout() {
             firebase_integration.database.collection("RegularOrder").doc(orderid.toString()).update({
                 OrderID: orderid
             })
+
+            props.history.replace("./orderconfirmed")
         })
+
     }
 
-    const checkInputField = () => {
+    function checkInputField(){
         if (
           number === "" ||
           address === "" ||
@@ -107,17 +110,17 @@ function Checkout() {
                 <div name = "payment">
                     <input type="checkbox" checked='checked' name = "method"/>
                     <label>Cash on Delivery</label>   
-                    <Link to = "/orderconfirmed">              
+                    {/* <Link to = "/orderconfirmed">               */}
                     <div class = "confirm">                
                         <button
                             onClick = {() => {
-                                if(!checkInputField()){
+                                if(checkInputField()){
                                 PlaceOrder()
                             }}}
                             // href = "/orderconfirmed"
                              type="submit" class="btn btn-success btn-lg">CONFIRM</button>                 
                     </div>
-                    </Link>  
+                    {/* </Link>   */}
                     <br/>
                 </div>
              
