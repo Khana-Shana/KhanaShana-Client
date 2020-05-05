@@ -110,12 +110,13 @@ function CustomerProfile() {
   return (
     <div>
       <Header />
-      <div class="container-fluid">
+      <div class="hehe container-fluid">
         <div class="row my-2">
           <div class="col-lg-7 order-lg-2">
-            <ul class="nav nav-tabs">
+            <ul style = {{marginTop: "10%"}} class="nav nav-tabs">
               <li class="nav-item">
                 <a
+                style = {{color:"#955F61"}}
                   href=""
                   data-target="#profile"
                   data-toggle="tab"
@@ -126,12 +127,12 @@ function CustomerProfile() {
               </li>
               <Link to="./orderhistory">
                 <li class="nav-item">
-                  <a class="nav-link">Order History</a>
+                  <a style = {{color:"white"}} class="nav-link">Order History</a>
                 </li>
               </Link>
               <Link to="./feedback">
                 <li class="nav-item">
-                  <a class="nav-link">Feedback</a>
+                  <a style = {{color:"white"}} class="nav-link">Feedback</a>
                 </li>
               </Link>
             </ul>
@@ -169,6 +170,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditname(true)}>
                           <ion-icon
+                          style = {{color:"#955F61"}}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -225,6 +227,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditemail(true)}>
                           <ion-icon
+                          style = {{color:"#955F61"}}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -279,6 +282,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditnumber(true)}>
                           <ion-icon
+                          style = {{color:"#955F61"}}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -346,6 +350,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditgender(true)}>
                           <ion-icon
+                          style = {{color:"#955F61"}}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -380,8 +385,7 @@ function CustomerProfile() {
                           aria-label="Recipient's username"
                           aria-describedby="button-addon2"
                           value={password}
-                          readonly
-                        />
+                          readonly/>
                       </div>
                     ) : (
                       <div class="col-lg-8">
@@ -400,6 +404,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditpassword(true)}>
                           <ion-icon
+                          style = {{color:"#955F61"}}
                             size="large"
                             name="create-outline"
                           ></ion-icon>

@@ -46,12 +46,12 @@ header {
 
   .menuback{
     background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=3c68e38c-8600-4852-9f67-f606b52b22f9");
-    /* background-position: center; */
-    background-repeat: repeat;
-    background-size: contain;
-    background-position: top;
-    width: 100%;
-    /* height: 200vh; */
+    background-position: center;
+    /* background-repeat: repeat; */
+    /* background-size: contain; */
+    /* background-position: top; */
+    /* width: 100%; */
+    height: auto;
   }
 
   .cartback{
@@ -676,10 +676,10 @@ label{
 }
 
 .search{
-  width: 85%;
-  margin-left: 10%;
-  padding-top: 3%;
-  /* margin-bottom: 10/%; */
+  width: 77%;
+  margin-left: 8%;
+  padding-top: 2%;
+  padding-bottom: 5%;
 }
 
 .tabs{

@@ -7,14 +7,10 @@ import FilterResults from "react-filter-search";
 import { FetchItems, FetchCart } from "./actions/cart-actions";
 import { Tabs, Tab } from "react-bootstrap-tabs";
 import CardScreen from "./CardScreen";
+import "./orderstyles.css";
 
 function Menu(props) {
   var menudata = [];
-
-//   function getCart(){
-//     const localcart = localStorage.getItem("cart")
-//     return localcart ? JSON.parse(localcart) : []
-// }
 
   function getMenu(){
     const localmenu = localStorage.getItem("menu")
@@ -107,9 +103,8 @@ const localmenu = getMenu();
     <div class="menuback">
       <div className="container-fluid">
         <div>
-          <div className="tabs">
-            {/* onSelect={(index, label) => console.log(label + ' selected')} */}
-            <Tabs>
+          <div styles = {{marginTop:"0%", paddingTop:"0%"}} className="tabs">
+            <Tabs style = {{color:"white"}}>
               <Tab label="All">
                 <CardScreen data={All} />
               </Tab>

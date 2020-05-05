@@ -28,11 +28,11 @@ function CardScreen(props){
             value={value}
             data={props.data}
             renderResults={(results) => (
-              <div class="container-fluid ml-2 mr-2">
-                <div class="row mg">
+              <div class="container-fluid">
+                <div style = {{paddingLeft:"1%"}} class="row mg">
                   {results.map((item) => {
                     return (
-                      <div class=" text-center col-md-3 ml-5 mr-5">
+                      <div class=" text-center col-md-3 ml-5 mr-1">
                         <div>
                           <Card
                             id={item.DishID}

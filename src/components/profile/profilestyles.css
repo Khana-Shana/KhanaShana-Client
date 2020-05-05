@@ -76,7 +76,7 @@
 .buttonbar {
     color: #B0463D;
     background-color: #E3E0DD;
-    border-color: #707070;
+    border-color: white;
     border-bottom: 0px;
 }
 @media (max-width: 850px) {
@@ -111,23 +111,21 @@
     float:right;
 }
 
-.nav-tabs{
-    margin-top: 10%;
-}
 
-.pencil{
-    color:#955F61 !important;
-    /* padding-top: 2% !important; */
-}
+
 a{
     color: rgb(247, 232, 232);
 }
 a:hover {
     text-decoration: none;
     color: #955F61;
+    
   }
 
   a:active {
     text-decoration: none;
     color: #955F61;
+  }
+  .hehe{
+    font-family: 'Jost', sans-serif !important;
   }
