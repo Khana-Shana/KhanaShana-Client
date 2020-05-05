@@ -56,12 +56,12 @@ export default function OrderDetails(){
                     <div class = "order-now">
                             ORDER DETAILS
                     </div>
-                    <div class = "product-bill row">
+                    <div class = "prod-cont row">
                         <div class = "item col-md-">
                             <div class = "orderID">Order ID: </div>
                         </div>
                         <div class = "item col-md-">
-                            <div class = "subtotal">{orderID}</div>
+                            <div class = "dbID">{orderID}</div>
                         </div>
                         <div class = "item col-md-">
                             <div class = "ordertype">Order Type: </div>
@@ -70,6 +70,7 @@ export default function OrderDetails(){
                             <div class = "subtotal">{ordertype}</div>
                         </div>
                     </div>
+                    <div class = "prod-cont">
                     <div class = "product-bill row">
                         <div class = "item col-md-">
                         {NameMap}
@@ -77,6 +78,7 @@ export default function OrderDetails(){
                         <div class = "item col-md-">
                         {QuantMap}
                         </div>
+                    </div>
                     </div>
                         <div class = "discount">
                             <div class = "discount-title-order-details">Discount</div>

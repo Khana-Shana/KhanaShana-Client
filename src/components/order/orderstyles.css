@@ -222,6 +222,7 @@ header {
   float: left;
   border-radius: 2rem;
   margin-bottom: 4rem;
+  border: 1px solid #B0463D;
 }
 
 .basketTotalContainer{
@@ -242,10 +243,10 @@ header {
     color: #B0463D;
     font-size: 2rem;
     font-family: 'Jost', sans-serif;
-    width: 20rem;
+    width: 12.5rem;
     margin-right: 3rem;
     /* align-items: flex-start; */
-    margin-left: 3rem;
+    margin-left: 2rem;
 }
 
 .basketTotalTitle{
@@ -273,22 +274,37 @@ header {
     color: #B0463D;
     font-size: 2rem;
     font-family: 'Jost', sans-serif;
-    width: 20rem;
+    width: 12.7rem;
     margin-right: 3rem;
     /* align-items: flex-start; */
     margin-left: 2rem;
 }
 
 .basketTotal,
-.discountedTotal,
-.discountedTotal-orderdetails,
-.basketTotal-orderdetails{
+.discountedTotal{
   color: #B0463D;
   font-size: 2rem;
   font-family: 'Jost', sans-serif;
   width: 11rem;
   text-align: left;
   margin-left: 3rem;
+}
+.basketTotal-orderdetails{
+  color: #B0463D;
+  font-size: 2rem;
+  font-family: 'Jost', sans-serif;
+  width: 8rem;
+  text-align: left;
+  margin-left: 15rem;
+}
+
+.discountedTotal-orderdetails{
+  color: #B0463D;
+  font-size: 2rem;
+  font-family: 'Jost', sans-serif;
+  width: 8rem;
+  text-align: left;
+  margin-left: 14.8rem;
 }
 
 .check{
@@ -395,27 +411,28 @@ header {
 
 .orderID{
   width: 10rem;
-  margin-left: 3rem;
+  margin-left: 2rem;
   margin-right: 3.5rem;
+  margin-top: 1rem;
 }
 
 .billname{
   width: 10rem;
-  margin-left: 4rem;
+  margin-left: 2rem;
   margin-right: 3.5rem;
 }
 
 .billnums{
-  width: 12rem;
-  margin-left: 6rem;
-  margin-right: 1.4rem;
+  width: 5rem;
+  margin-left: 18rem;
+  /* margin-right: 1.4rem; */
 }
 
 .ordertype{
   width: 12rem;
-  margin-left: 3rem;
+  margin-left: 2rem;
   margin-right: 1.4rem;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
 
 }
 
@@ -425,6 +442,14 @@ header {
 }
 
 .subtotal{
+  margin-left: 1rem;
+}
+.dbID{
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: #955F61;
+  font-family: 'Jost', sans-serif;  
+  text-align: left; 
   margin-left: 1rem;
 }
 
@@ -454,11 +479,11 @@ header {
   color: #B0463D;
   font-size: 2rem;
   font-family: 'Jost', sans-serif;
-  width: 20rem;
+  width: 12.5rem;
   margin-right: 3rem;
   /* align-items: flex-start; */
   margin-left: 2rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
 
 }
 
@@ -466,10 +491,10 @@ header {
   color: #B0463D;
   font-size: 2rem;
   font-family: 'Jost', sans-serif;
-  width: 11rem;
+  width: 3rem;
   text-align: left;
-  margin-left: 3rem;
-    margin-top: 3rem;
+  margin-left: 15rem;
+    margin-top: 1rem;
 }
 .delivery{
   width: 9.1rem !important;
