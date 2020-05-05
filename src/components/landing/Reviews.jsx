@@ -3,25 +3,86 @@ import './reviews.scss'
 import Footer from '../navigation/footer.jsx';
 import firebase_integration from '../fire.js'
 
-// var mydata = []
-// async function getReviews() {
-//   firebase_integration.database.collection("CustomerSupport").orderBy("Date", "desc").limit(5).get().then((snapshot) => {
-//     var custreviews = []  
-//     snapshot.forEach((doc) => {
-//       custreviews.push(doc.data())
-//     })
-//     mydata = custreviews
-//   })
-// }
+
+const oneStar = () => {
+  return(
+  <div className = "stars">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+  </div>
+  )
+}
+
+const twoStar = () => {
+return(
+<div className = "stars">
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+</div>
+)
+}
+
+const threeStar = () => {
+return(
+<div className = "stars">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+)
+}
+
+const fourStar = () => {
+return(
+<div className = "stars">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+</div>
+)
+}
+
+const fiveStar = () => {
+return(
+<div className = "stars">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+</div>
+)
+} 
 
 const Carousel = () => {
     const [selectedIdx, setSelectedIdx] = React.useState(0);
     const [slideOrder, setSlideOrder] = React.useState(['s4', 's5', 's1', 's2', 's3']);
     const [slideStyles, setSlideStyles] = React.useState({});
+    const [slidesdetails, setSlidesDetails] = React.useState([]);
     
+    React.useEffect(() => {
+    var mydata = []
+      firebase_integration.database.collection("CustomerSupport").orderBy("Date", "desc").limit(5).get().then((snapshot) => {
+        var custreviews = []  
+        snapshot.forEach((doc) => {
+          custreviews.push(doc.data())
+        })
+        setSlidesDetails(custreviews)
+      })
+    }, slidesdetails)
 
-    const rotate = (slides) => {
-      const [s1, s2, s3, s4, s5] = slides;
+    const rotate = (slidesdetails) => {
+      const [s1, s2, s3, s4, s5] = slidesdetails;
       setSlideStyles({
         [s1]: { transform: 'translateX(-60rem)', opacity: 0 },
         [s2]: { transform: 'translateX(-30rem)', opacity: 1 },
@@ -29,7 +90,7 @@ const Carousel = () => {
         [s4]: { transform: 'translateX(30rem)', opacity: 1 },
         [s5]: { transform: 'translateX(60rem)', opacity: 0 },
       });
-      setSlideOrder(slides);
+      setSlideOrder(slidesdetails);
     };
   
     // rotate slides left by n spaces: e.g. 2 spaces - [1, 2, 3, 4, 5] -> [3, 4, 5, 1, 2]
@@ -58,6 +119,8 @@ const Carousel = () => {
         rotateRight(selectedIdx - idx);
       }
     };
+
+
     
     return (     
       <div className="carousel-wrap">
@@ -71,13 +134,13 @@ const Carousel = () => {
             <i className="carousel-btn__arrow left" />
           </button>
           <ul className="carousel-slide-list">
-            {slides.map((slide, i) => (
+            {slidesdetails.map((slide, i) => (
               <CarouselSlideItem
-                key={slide.id}
+                key={i+1}
                 slide={slide}
-                style={slideStyles[`s${slide.id}`]}
-                active={selectedIdx === i}
-                className={`carousel-slide-item s${slide.id}`}
+                style={slideStyles[`s${i+1}`]}
+                active={selectedIdx === i+1}
+                className={`carousel-slide-item s${i+1}`}
               />
             ))}
           </ul>
@@ -86,7 +149,7 @@ const Carousel = () => {
           </button>
         </div>
         <div className="carousel-dots">
-          {slides.map((_, i) => {
+          {slidesdetails.map((_, i) => {
             const className = selectedIdx === i ? 'dot active' : 'dot';
             return (
               <button
@@ -101,62 +164,35 @@ const Carousel = () => {
       </div>
     );
   };
-  
+
+  const checkRating = (slide) => {
+    if(slide.Rating === 1)
+    {
+      return oneStar();
+    } else if(slide.Rating === 2)
+    {
+      return twoStar();
+    } else if(slide.Rating === 3)
+    {
+      return threeStar();
+    } else if(slide.Rating === 4)
+    {
+      return fourStar();
+    }  else if(slide.Rating === 5)
+    {
+      return fiveStar();
+    }
+  }
   
   const CarouselSlideItem = ({ slide, style, className, active }) => (
     <li className={className} style={style}>
       <div className="carousel-slide-item__body">
-        <div className = "stars">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        </div>
-        <h4>{slide.title}</h4>
-        <p>{slide.desc}</p>
+        {checkRating(slide)}
+        <h4>{slide.Subject}</h4>
+        <p>{slide.Message}</p>
       </div>
     </li>
   );
-  
-  const slides = [
-    {
-      id: 1,
-      title: "Efren Reyes",
-      desc:
-        'Known as "The Magician", Efren Reyes is well regarded by many professionals as the greatest all around player of all time.',
-    //   image: "https://i.postimg.cc/RhYnBf5m/er-slider.jpg"
-    },
-    {
-      id: 2,
-      title: `Ronnie O'Sullivan`,
-      desc: `Ronnie O'Sullivan professional snooker player who is widely regarded as one of the greatest players in the history of the discipline.`,
-    //   image: "https://i.postimg.cc/qBGQNc37/ro-slider.jpg"
-    },
-    {
-      id: 3,
-      title: "Shane Van Boening",
-      desc:
-        'The "South Dakota Kid" is hearing-impaired and uses a hearing aid, but it has not limited his ability.',
-  
-    //   image: "https://i.postimg.cc/cHdMJQKG/svb-slider.jpg"
-    },
-    {
-      id: 4,
-      title: "Mike Sigel",
-      desc: `Mike Sigel or "Captain Hook" as many like to call him is an American professional pool player with over 108 tournament wins.`,
-  
-    //   image: "https://i.postimg.cc/C12h7nZn/ms-1.jpg"
-    },
-    {
-      id: 5,
-      title: "Willie Mosconi",
-      desc:
-        'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
-  
-    //   image: "https://i.postimg.cc/NfzMDVHP/willie-mosconi-slider.jpg"
-    }
-  ];
   
 export default Carousel;
 
