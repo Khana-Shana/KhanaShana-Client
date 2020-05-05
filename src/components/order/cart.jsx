@@ -140,24 +140,21 @@ function Cart(props) {
                 <p class = "discountedTotal">Rs {discount_bill}</p>
             </div>
             <br/>
+            {/* {console.log(props.items.length)} */}
+            {props.items.length !== 0 ?  
             <Link to = "/checkout">
             <div class = "check">
             <button onClick = {
-                ()=>{
-                    
-    // if(discount_price === "0%){
-    //     setOrderDiscount("0%")
-    // } else {
-    //     setOrderDiscount(discount)
-    // }
-    setOrderDiscount(string_discount)
+                ()=>{setOrderDiscount(string_discount)
                 setCart(props.items)
                 setTotal(props.total)
-                console.log(props.items)           
-            
-            }} type="button" class="btn btn-success btn-lg">CHECKOUT</button>
+                console.log(props.items)}} type="button" class="btn btn-success btn-lg">CHECKOUT</button>
             </div>
-            </Link>
+            </Link> :
+            <div class = "check">
+            <button type="button" class="btn btn-success btn-lg" disabled>CHECKOUT</button>
+            </div>}
+
         </div>
      </div>
    

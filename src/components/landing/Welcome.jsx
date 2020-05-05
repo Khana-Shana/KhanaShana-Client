@@ -5,7 +5,7 @@ import firebase_integration from '../fire.js'
 import firebase from '../fire';
 
 function Welcome() {
-  
+  // The if statement below checks whether the last time the user used the discount wheel was 7 or more days ago. And then updates the database variables to allow them to avail discount again
   if(firebase.getCurrentUsername()) {
     var todaysdate = new Date()
     firebase_integration.database.collection("CustomerDatabase").doc(firebase_integration.auth.currentUser.uid.toString()).get().then((snapshot)=>{
