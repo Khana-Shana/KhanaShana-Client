@@ -80,7 +80,7 @@ function LoginLinks(props){
 
     async function logout() {
         await firebase_integration.logout();
-        alert("logged out");
+        // alert("logged out");
 		props.history.replace('/');
 	}
 }
