@@ -3,10 +3,10 @@ $black: #161616;
 .reviews-title{
   text-align: left;
   padding-left: 2%;
-  width: 47% !important;
+  width: 45% !important;
   color: #b0463d;
-  font-size: 4rem;
-  font-family: "brandon_grotesqueblack";
+  font-size: 4.2rem;
+  font-family: 'Kanit', sans-serif;
   margin-top: 3%;
   border-color: #b0463d;
   border-style: solid;
@@ -14,11 +14,12 @@ $black: #161616;
   border-top: 2px;
 
   margin-left: 4%;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 
 .reviewstext {
   grid-area: text;
+  
 }
 
 *,
@@ -45,7 +46,7 @@ a {
   justify-content: center;
   overflow: hidden;
   width: 100%;
-  // height: auto;
+  height: auto;
   background-color: #bcc7b8;
 }
 
@@ -68,7 +69,7 @@ a {
   flex-direction: column;
   position: absolute;
   transition: all 0.5s ease;
-  width: 28rem;
+  width: 26rem;
   padding-bottom: 5%;
   height: 100%;
   background-color: #DAC4C4;
@@ -138,8 +139,9 @@ a {
 
 .stars{
     text-align: center;
-    margin-left: 1.5rem !important;
-    width: 25rem;
+    padding-left: 0%;
+    width:77%;
+    margin-top: 2%;
 }
 
 .fa{
@@ -153,34 +155,39 @@ a {
 }
 
 .carousel-slide-item__body {
-  height: 60rem;
+  height: 100%;
   position: relative;
 
   h4 {
-    margin: 0.1rem 0 0 0;
+    // margin: 0 0 0 0;
     text-transform: uppercase;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: #955F61;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bolder;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
   }
   p {
     margin: 0.7rem 0 0 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.3;
     margin-left: 2rem;
     margin-right: 2rem;
     color: #955F61;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
+    text-align: justify;
+    font-family: 'Jost', sans-serif
+    
   }
 }
 
 .carousel-btn {
   position: absolute;
-  border-radius: 4rem;
+  border-radius: 3rem;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
@@ -189,8 +196,10 @@ a {
   background: none;
   border: 0;
   outline: 0;
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
+  margin-left: 2%;
+  margin-right: 2%;
   cursor: pointer;
   &.prev-btn {
     left: -15rem;
@@ -220,7 +229,7 @@ a {
 
 .carousel-dots {
   display: inline-block;
-  margin-bottom: 7rem;
+  margin-bottom: 3.4rem;
   align-self: center;
 
   .dot {
@@ -230,7 +239,7 @@ a {
     border: 0;
     border-radius: 50%;
     margin: 0.5rem 0.3rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     outline: none;
     transform: scale(0.5);
     cursor: pointer;

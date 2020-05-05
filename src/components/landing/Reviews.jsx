@@ -131,7 +131,7 @@ const Carousel = () => {
         </div>
         <div className="carousel-container">
           <button className="carousel-btn prev-btn" onClick={() => rotateLeft()}>
-            <i className="carousel-btn__arrow left" />
+          <i style = {{color:"#955F61"}}class="fa fa-arrow-left" aria-hidden="true"></i>
           </button>
           <ul className="carousel-slide-list">
             {slidesdetails.map((slide, i) => (
@@ -145,7 +145,7 @@ const Carousel = () => {
             ))}
           </ul>
           <button className="carousel-btn next-btn" onClick={() => rotateRight()}>
-            <i className="carousel-btn__arrow right" />
+          <i style = {{color:"#955F61"}}class="fa fa-arrow-right" aria-hidden="true"></i>
           </button>
         </div>
         <div className="carousel-dots">
