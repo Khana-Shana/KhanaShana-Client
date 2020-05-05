@@ -23,7 +23,7 @@ class firebase_integration extends Component {
   }
 
   login(email, password) {
-    this.auth.signInWithEmailAndPassword(email, password).then(authUser => {
+    return this.auth.signInWithEmailAndPassword(email, password).then(authUser => {
         if(authUser.user.emailVerified === false){
             alert("Please verify your email to continue")
             this.logout()

@@ -1,6 +1,7 @@
 import React from "react";
 // import Button from "./loginbutton";
 import LoginFront from "./loginfront";
+import firebase from '../fire';
 import { connect } from "react-redux";
 import ReactCardFlip from "react-card-flip";
 import SignupBack from "./signupback";
@@ -190,25 +191,14 @@ function LoginBack(props) {
   async function login() {
     try {
       await firebase_integration.login(email, password);
-      alert("logged in");
-      
-  var menudata = [];
-
-    firebase_integration.database
-      .collection("Menu")
-      .get()
-      .then((docs) => {
-        
-        docs.forEach((doc) => {
-          menudata.push(doc.data());
-        });
-        // setData(menudata)
-        
-        // let lol = data
-        props.FetchItems(menudata);
-      });
- 
-      props.history.replace("/");
+      // alert("logged in");
+      if(firebase_integration.getCurrentUsername()) {
+        // not logged in
+        // alert('hi')
+        props.history.replace('./')
+        // return null
+        }
+  
     } catch (error) {
       alert("Invalid Email/Password");
     }

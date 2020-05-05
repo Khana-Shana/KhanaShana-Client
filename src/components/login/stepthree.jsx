@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import firebase_integration from "../fire";
-import { Line, Circle } from "rc-progress";
+import {withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const StepThree = (props) => {
   return (
@@ -20,12 +21,18 @@ const StepThree = (props) => {
         <img id = "verifyimage1" src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fverify.svg?alt=media&token=d2371046-5d53-4c03-b4f6-bd84052d6b88" className="verify" alt="" />
       </div>
       <div>
-        <a href="#" className="button" role="button">
+        <button onClick = {logout} className="button" role="button">
           Lets Go!
-        </a>
+        </button>
       </div>
     </div>
   );
+
+  async function logout() {
+    await firebase_integration.logout();
+    // alert("logged out");
+    window.location.reload(false);
+}
 };
 
-export default StepThree;
+export default withRouter(StepThree);
