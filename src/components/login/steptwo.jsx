@@ -138,7 +138,7 @@ const StepTwo = (props) => {
 
   async function onRegister() {
     try {
-      firebase_integration.register(values.name, values.email, values.password);
+      await firebase_integration.register(values.name, values.email, values.password);
       // await firebase.addQuote(quote)
       // props.history.replace('./')
       continuefwd();
