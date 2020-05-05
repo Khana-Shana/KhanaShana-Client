@@ -15,7 +15,6 @@ function Footer() {
   
   return (
     <div className="footerdiv">
-      {console.log(restaurantDetails)}
       <footer className="footer">
         <div className="footer__addr">
           <Link to = "/">

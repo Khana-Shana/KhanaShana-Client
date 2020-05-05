@@ -8,7 +8,6 @@ import {Link} from 'react-router-dom';
 
 function ThankYou() {
   const {orderdetails} = useContext(CheckoutContext);
-  console.log(orderdetails.orderid)
     return (
       <div id = "tybackground">
         <Header/>

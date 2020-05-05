@@ -24,8 +24,6 @@ function CardScreen(props){
             />
           </div>
 
-          {console.log(data)}
-
           <FilterResults
             value={value}
             data={props.data}

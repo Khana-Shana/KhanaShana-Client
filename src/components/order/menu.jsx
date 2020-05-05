@@ -12,7 +12,6 @@ import CardScreen from './CardScreen';
 function Menu(props) {
 
 
-  // console.log(props.items)
   // let All = props.items;
 
 let All = []
@@ -27,7 +26,6 @@ function makeDesi(){
   // filtered.splice(0,filtered.length)
       props.items.map((item)=>{
         if(item.Category === "Desi"){
-          // console.log(item)
           Desi.push(item)
         }
       })
@@ -41,7 +39,6 @@ function makeChinese(){
   // filtered.splice(0,filtered.length)
     props.items.map((item)=>{
       if(item.Category === "Chinese"){
-        // console.log(item)
         Chinese.push(item)
       }
     })
@@ -56,7 +53,6 @@ function makeItalian(){
   // filtered.splice(0,filtered.length)
     props.items.map((item)=>{
       if(item.Category === "Italian"){
-        // console.log(item)
         Italian.push(item)
       }
     })
@@ -70,7 +66,6 @@ function makeSandwich(){
   // filtered.splice(0,filtered.length)
     props.items.map((item)=>{
       if(item.Category === "Sandwich"){
-        // console.log(item)
         Sandwich.push(item)
       }
     })
@@ -84,7 +79,6 @@ function makeBurgers(){
   // filtered.splice(0,filtered.length)
     props.items.map((item)=>{
       if(item.Category === "Burgers"){
-        // console.log(item)
         Burger.push(item)
       }
     })
@@ -99,7 +93,6 @@ function makeDesserts(){
   // filtered.splice(0,filtered.length)
     props.items.map((item)=>{
       if(item.Category === "Desserts"){
-        // console.log(item)
         Dessert.push(item)
       }
     })
@@ -122,11 +115,10 @@ function makeDesserts(){
 
     <div class="menuback">
       <div className="container-fluid">
-        {/* {console.log(props.items)} */}
         <div>
         <div className = "tabs">
-
-        <Tabs onSelect={(index, label) => console.log(label + ' selected')}>
+        {/* onSelect={(index, label) => console.log(label + ' selected')} */}
+        <Tabs>
     <Tab label="All"><CardScreen data = {All}/></Tab>
     <Tab label="Desi"><CardScreen data = {Desi}/></Tab>
     <Tab label="Desserts"><CardScreen data = {Dessert}/></Tab>

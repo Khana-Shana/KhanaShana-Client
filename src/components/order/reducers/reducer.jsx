@@ -19,10 +19,7 @@ const cartReducer= (state = initState,action)=>{
    
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
-        // console.log(state.items)
           let fooditem = state.items.find(item=> item.DishID === action.payload)
-        //   console.log(action.payload);
-        //   console.log(item.DishID);
           //check if the action.payload exists in the cart
          let existed_item= state.cart.find(item=> action.payload === item.DishID)
          if(existed_item)
@@ -52,7 +49,6 @@ const cartReducer= (state = initState,action)=>{
         
         //calculating the total
         let newTotal = state.total - (itemToRemove.SalePrice * itemToRemove.quantity )
-        // console.log(itemToRemove)
         return{
             ...state,
             cart: new_items,
@@ -61,11 +57,8 @@ const cartReducer= (state = initState,action)=>{
     }
     //INSIDE CART COMPONENT
     if(action.type=== INC_CART){
-        // console.log(action.payload)
-        console.log(state.items)
         let fooditem = state.items.find(item=> item.DishID === action.payload)
           fooditem.quantity += 1 
-          console.log(fooditem);
           let newTotal = state.total + fooditem.SalePrice
           return{
               ...state,
@@ -73,13 +66,11 @@ const cartReducer= (state = initState,action)=>{
           }
     }
     if(action.type=== DEC_CART){
-        console.log(state.items)  
         let fooditem = state.items.find(item=> item.DishID === action.payload) 
         //if the qt == 0 then it should be removed
         if(fooditem.quantity === 1){
             let new_items = state.cart.filter(item=>item.DishID !== action.payload)
             let newTotal = state.total - fooditem.SalePrice
-            console.log(fooditem);
             return{
                 ...state,
                 cart: new_items,
@@ -87,10 +78,8 @@ const cartReducer= (state = initState,action)=>{
             }
         }
         else {
-            console.log(state.items)
             fooditem.quantity -= 1
             let newTotal = state.total - fooditem.SalePrice
-            console.log(fooditem);
             return{
                 ...state,
                 total: newTotal

@@ -143,8 +143,7 @@ const StepTwo = (props) => {
       // props.history.replace('./')
       continuefwd();
     } catch (error) {
-      alert.show("An error occured while signing up. Please Try Again!");
-      console.log(error.message)
+      alert.show("An error occured while signing up. Please Try Again!", error.message);
     }
   }
 };

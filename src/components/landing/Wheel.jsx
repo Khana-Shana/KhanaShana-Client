@@ -31,26 +31,21 @@ class Wheel extends React.Component {
     
     
     this.value = Math.floor(Math.random() * this.props.items.length);
-    console.log(this.value)
     // givediscount();
     
-    // console.log(this.context)
     
     
 
     // if (this.props.onSelectItem) {
     //   this.props.onSelectItem(selectedItem);
     // }
-    // console.log(this.props.items[selectedItem]);
     this.setState({ selectedItem: this.value });
-    // console.log(this.state.selectedItem)
     // givediscount();
    
   }
 
   render() {
     // const { setDiscount } = this.context;
-    // console.log(this.context)
     const alert = this.props.alert;
     const { selectedItem, button } = this.state;
     // const { button } = this.state;
@@ -61,20 +56,15 @@ class Wheel extends React.Component {
       "--selected-item": selectedItem,
     };
     const spinning = selectedItem !== null ? "spinning" : "";
-    console.log(this.context)
 
     
   const givediscount = (resolvepromise) => {
     if(resolvepromise === true) {
-      console.log(this.value);
       this.context.setDiscount(this.props.items[this.value]);
-      console.log(this.context);
     }
     else {
       alert.show("Discount already availed. Please try again next week!")
-      console.log(this.value);
       // this.context.setDiscount(0);
-      console.log(this.context);
     }
   };
 
@@ -99,7 +89,6 @@ class Wheel extends React.Component {
               });
               if(mydata.WheelUsed === false){
                 let promise = new Promise (() => {this.selectItem()})
-                console.log("Allow Discount")
                 promise.then(givediscount(true))
                 var todaysDate = new Date()
                 var disc = parseInt(this.props.items[this.value].substring(0,this.props.items[this.value].length-1))
@@ -112,7 +101,6 @@ class Wheel extends React.Component {
 
               }
               else if (mydata.WheelUsed === true){
-                console.log("Don't Allow Discount")
                 this.context.setDiscount("0%")
                 alert.show("Discount already availed. Try again next week!")
                 // this.buttondisable = true

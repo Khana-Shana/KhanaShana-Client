@@ -28,7 +28,6 @@ function CustomerProfile() {
         firebase_integration.auth.currentUser.uid.toString()
       )
       .onSnapshot((snapshot) => {
-        console.log(firebase_integration.auth.currentUser);
         var customerdata = {};
         snapshot.docs.forEach((doc) => {
           customerdata = doc.data();

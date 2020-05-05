@@ -29,8 +29,6 @@ function Cart(props) {
         })
       }, userdisc);
 
-    // console.log(userdisc)
-    //   console.log(discount_price);
     // discount_price = 10;
     discount_price = userdisc
     // if(discount === null){
@@ -108,13 +106,10 @@ function Cart(props) {
     });
 
     discount_bill = ((100-discount_price)*(props.total+100))/100;
-    // console.log(discount_bill)
 
     return (
         
     <div class = "order">
-        {/* {setDiscount(100)} */}
-        {/* {console.log(discount)} */}
         <div class = "order-details01">ORDER DETAILS</div>
         <div class = "container-products">
             <div class = "products">

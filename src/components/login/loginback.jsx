@@ -211,7 +211,6 @@ function LoginBack(props) {
       props.history.replace("/");
     } catch (error) {
       alert("Invalid Email/Password");
-      console.log("loginbackerror", error.message)
     }
   }
 }

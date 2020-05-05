@@ -13,7 +13,6 @@ function Aboutus() {
 
   return (
     <div>
-      {console.log(restaurantDetails)}
     <div className="aboutus row">
       <div className="col-sm-7 about-text">
         <div className="aboutustitle">ABOUT US</div>

@@ -79,7 +79,6 @@ export default (state=initialState,action) => {
         case ADD_PRODUCT_BASKET:
 
             productSelected = {...state.products[action.payload]};
-            console.log(productSelected);
             productSelected.numbers += 1;
             productSelected.inCart = true;
 

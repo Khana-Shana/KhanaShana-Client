@@ -5,8 +5,6 @@ import './orderstyles.css';
 
 
 function Card (props){
-    // console.log(props)
-
     const handleClick = (id)=>{
         props.addToCart(id); 
     }

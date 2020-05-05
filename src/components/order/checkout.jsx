@@ -22,7 +22,6 @@ function Checkout() {
     var orderid = ""
 
     const {orderdetails, setOrderID} = useContext(CheckoutContext);
-    console.log(orderdetails)
     
     async function PlaceOrder(){
         var CustomerID = firebase_integration.auth.currentUser.uid
