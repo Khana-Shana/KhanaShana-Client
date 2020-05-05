@@ -1,13 +1,25 @@
 import React from 'react';
 import './reviews.scss'
 import Footer from '../navigation/footer.jsx';
+import firebase_integration from '../fire.js'
 
+// var mydata = []
+// async function getReviews() {
+//   firebase_integration.database.collection("CustomerSupport").orderBy("Date", "desc").limit(5).get().then((snapshot) => {
+//     var custreviews = []  
+//     snapshot.forEach((doc) => {
+//       custreviews.push(doc.data())
+//     })
+//     mydata = custreviews
+//   })
+// }
 
 const Carousel = () => {
     const [selectedIdx, setSelectedIdx] = React.useState(0);
     const [slideOrder, setSlideOrder] = React.useState(['s4', 's5', 's1', 's2', 's3']);
     const [slideStyles, setSlideStyles] = React.useState({});
-  
+    
+
     const rotate = (slides) => {
       const [s1, s2, s3, s4, s5] = slides;
       setSlideStyles({
@@ -46,7 +58,7 @@ const Carousel = () => {
         rotateRight(selectedIdx - idx);
       }
     };
-  
+    
     return (     
       <div className="carousel-wrap">
         <div className = "reviewstext">
@@ -110,37 +122,34 @@ const Carousel = () => {
   const slides = [
     {
       id: 1,
-      title: "Efren Reyes",
-      desc:
-        'Known as "The Magician", Efren Reyes is well regarded by many professionals as the greatest all around player of all time.',
+      title: mydata[0].Subject,
+      desc: mydata[0].Message,
     //   image: "https://i.postimg.cc/RhYnBf5m/er-slider.jpg"
     },
     {
       id: 2,
-      title: `Ronnie O'Sullivan`,
-      desc: `Ronnie O'Sullivan professional snooker player who is widely regarded as one of the greatest players in the history of the discipline.`,
+      title: mydata[1].Subject,
+      desc: mydata[1].Message,
     //   image: "https://i.postimg.cc/qBGQNc37/ro-slider.jpg"
     },
     {
       id: 3,
-      title: "Shane Van Boening",
-      desc:
-        'The "South Dakota Kid" is hearing-impaired and uses a hearing aid, but it has not limited his ability.',
+      title: mydata[2].Subject,
+      desc: mydata[2].Message,
   
     //   image: "https://i.postimg.cc/cHdMJQKG/svb-slider.jpg"
     },
     {
       id: 4,
-      title: "Mike Sigel",
-      desc: `Mike Sigel or "Captain Hook" as many like to call him is an American professional pool player with over 108 tournament wins.`,
+      title: mydata[3].Subject,
+      desc: mydata[3].Message,
   
     //   image: "https://i.postimg.cc/C12h7nZn/ms-1.jpg"
     },
     {
       id: 5,
-      title: "Willie Mosconi",
-      desc:
-        'Nicknamed "Mr. Pocket Billiards," Willie Mosconi was among the first Billiard Congress of America Hall of Fame inductees.',
+      title: mydata[4].Subject,
+      desc: mydata[4].Message,
   
     //   image: "https://i.postimg.cc/NfzMDVHP/willie-mosconi-slider.jpg"
     }
