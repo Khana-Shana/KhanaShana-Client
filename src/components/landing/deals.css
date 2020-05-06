@@ -1,7 +1,7 @@
 .deals {
   background-color: #bcc7b8;
   width: auto;
-  height: 100vh;
+  height: 105vh;
 }
 
 .button-error {
@@ -189,6 +189,7 @@
   height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
   padding: 3px;
   margin: auto;
+  margin-top: 5%;
   background-color: var(--neutral-color);
   border: solid var(--wheel-color) 3px;
   border-radius: 50%;

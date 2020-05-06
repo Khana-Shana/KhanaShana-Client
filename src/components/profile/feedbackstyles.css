@@ -98,8 +98,10 @@ input[name="subject"] {
 input[name="rating"] {
   display: none;
 }
-
 .stars {
+  margin-left: 2.5rem;
+}
+.stars1 {
   width: 27%;
   padding-top: 15%;
 }
