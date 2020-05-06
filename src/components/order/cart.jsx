@@ -16,7 +16,7 @@ import CheckoutContext from "../context/checkoutcontext";
 function Cart(props) {
 
   /* function declarations to get Menu, Cart, and Total amount of bill from localstorage */
-  
+
   function getMenu() {
     const localmenu = localStorage.getItem("menu");
     return localmenu ? JSON.parse(localmenu) : [];

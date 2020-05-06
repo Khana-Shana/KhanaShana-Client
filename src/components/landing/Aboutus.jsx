@@ -24,8 +24,9 @@ function Aboutus() {
           <div className="aboutustitle">ABOUT US</div>
           <blockquote className="otro-blockquote">
             <p>
-              Morales ha convertido la ya dúctil democracia boliviana en una
-              plastilina con la que sus manos juegan a su antojo.
+              Bon Appetempt is a home-based food venture that strives to 
+              offer its customers a vast variety of sumptuous food items
+              desserts from its rich cuisine. 
             </p>
           </blockquote>
           <div className="textabout">
