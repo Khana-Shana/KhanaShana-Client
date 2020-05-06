@@ -92,14 +92,16 @@ function Services() {
                   Prebooking
                 </a> */}
                             {/* <Link to = "/fullmenu"> */}
-              <button
+              <a
                 id="GFG"
                 type="button"
+                href = "/prebook.pdf"
+                target = "_blank"
                 className="button-error pure-button"
                 style = {{fontSize: "1.7rem", width: "40%", border: "none", fontFamily: "'Jost', sans-serif", marginTop:"0%", marginLeft:"1%"}}
               >
-                PLACE ORDER
-              </button>
+                SEE DETAILS
+              </a>
               {/* </Link> */}
               </div>
             </div>
