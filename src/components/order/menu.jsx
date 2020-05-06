@@ -4,37 +4,28 @@ import { FetchItems, FetchCart, addToCart } from "./actions/cart-actions";
 import { Tabs, Tab } from "react-bootstrap-tabs";
 import CardScreen from "./CardScreen";
 import "./orderstyles.css";
-import MenuContext from "../context/menucontext";
 
 function Menu(props) {
-// const {menu, setMenu} = React.useContext(MenuContext)
+  function getMenu() {
+    const localmenu = localStorage.getItem("menu");
+    return localmenu ? JSON.parse(localmenu) : [];
+  }
 
-function getMenu(){
-  const localmenu = localStorage.getItem("menu")
-  return localmenu ? JSON.parse(localmenu) : []
-}
+  const localmenu = getMenu();
 
-const localmenu = getMenu();
-
-useEffect(()=>{
-  props.FetchItems(localmenu)
-},[])
-
-console.log(props.items)
-
-
-
-
+  useEffect(() => {
+    props.FetchItems(localmenu);
+  }, []);
 
   let All = [];
   function makeAll() {
-
+    /* A function to cater to all the items in the menu. */
     All = props.items;
   }
 
   let Desi = [];
   function makeDesi() {
-
+    /* A function to display items that only belong to the 'Desi' category. */
     props.items.map((item) => {
       if (item.Category === "Desi") {
         Desi.push(item);
@@ -44,7 +35,7 @@ console.log(props.items)
 
   let Chinese = [];
   function makeChinese() {
-
+    /* A function to display items that only belong to the 'Menu' category. */
     props.items.map((item) => {
       if (item.Category === "Chinese") {
         Chinese.push(item);
@@ -54,7 +45,7 @@ console.log(props.items)
 
   let Italian = [];
   function makeItalian() {
-
+    /* A function to display items that only belong to the 'Italian' category. */
     props.items.map((item) => {
       if (item.Category === "Italian") {
         Italian.push(item);
@@ -64,7 +55,7 @@ console.log(props.items)
 
   let Sandwich = [];
   function makeSandwich() {
-
+    /* A function to display items that only belong to the 'Sandwich' category. */
     props.items.map((item) => {
       if (item.Category === "Sandwich") {
         Sandwich.push(item);
@@ -74,7 +65,7 @@ console.log(props.items)
 
   let Burger = [];
   function makeBurgers() {
-
+    /* A function to display items that only belong to the 'Burger' category. */
     props.items.map((item) => {
       if (item.Category === "Burger") {
         Burger.push(item);
@@ -84,7 +75,7 @@ console.log(props.items)
 
   let Dessert = [];
   function makeDesserts() {
-
+    /* A function to display items that only belong to the 'Dessert' category. */
     props.items.map((item) => {
       if (item.Category === "Desserts") {
         Dessert.push(item);
@@ -104,8 +95,8 @@ console.log(props.items)
     <div class="menuback">
       <div className="container-fluid">
         <div>
-          <div styles = {{marginTop:"0%", paddingTop:"0%"}} className="tabs">
-            <Tabs style = {{color:"white"}}>
+          <div styles={{ marginTop: "0%", paddingTop: "0%" }} className="tabs">
+            <Tabs style={{ color: "white" }}>
               <Tab label="All">
                 <CardScreen data={All} />
               </Tab>
@@ -149,7 +140,9 @@ const mapDispatchToProps = (dispatch) => {
     FetchCart: (items) => {
       dispatch(FetchCart(items));
     },
-    addToCart: (id)=>{dispatch(addToCart(id))}
+    addToCart: (id) => {
+      dispatch(addToCart(id));
+    },
   };
 };
 

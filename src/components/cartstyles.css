@@ -1,202 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 body {
-    background-color: #FBF4F3;
-    /* padding: 0 16px; */
+  background-color: #fbf4f3;
 }
 
 header {
-    background-color: #955F61;   
-    /* margin: -16px -16px; */
-    /* padding: 16px 32px; */
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
-    position: relative;
+  background-color: #955f61;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 .card-outline,
-.home-outline{
-  font-family: 'Montserrat', sans-serif;
+.home-outline {
+  font-family: "Montserrat", sans-serif;
 }
-
 
 /* Style all font awesome icons */
 .fa {
-    /* padding: 20px; */
-    font-size: 30px;
-    width: 32px;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  /* Add a hover effect if you want */
-  .fa:hover {
-    opacity: 0.7;
-  }
-  
-  /* Set a specific color for each brand */
-  
-  /* Facebook */
-  .fa-facebook {
-    background: #955F61;
-    color: white;
-    margin-top: 10px;
-  }
-  
-  .fa-instagram {
-    background: #955F61;
-    color: white;
-    margin-top: 10px;
-  }
-
-  .fa-search {
-    background: #955F61;
-    color: white;
-    margin-right: -3px;
-    
-  }
-  
-  .nav-link{
-    background: #955F61;
-    color: white;
-  }
-  .nav-item-active{
-      margin-right: 5px;
-  }
-  #hc-butts {
-    background-color: #626E60 !important;
-    color: white !important;
-    border-color: white !important;
-    width: 10rem;
-  }
-
-.btn-primary > ion-icon  {
-    font-size: 2rem;
-    vertical-align: middle;
-    float: left;
-    margin-left: auto;
+  font-size: 30px;
+  width: 32px;
+  text-align: center;
+  text-decoration: none;
 }
 
-.card-outline{
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #955f61;
+  color: white;
+  margin-top: 10px;
+}
+
+.fa-instagram {
+  background: #955f61;
+  color: white;
+  margin-top: 10px;
+}
+
+.fa-search {
+  background: #955f61;
+  color: white;
+  margin-right: -3px;
+}
+
+.nav-link {
+  background: #955f61;
+  color: white;
+}
+.nav-item-active {
+  margin-right: 5px;
+}
+#hc-butts {
+  background-color: #626e60 !important;
+  color: white !important;
+  border-color: white !important;
+  width: 10rem;
+}
+
+.btn-primary > ion-icon {
+  font-size: 2rem;
+  vertical-align: middle;
+  float: left;
+  margin-left: auto;
+}
+
+.card-outline {
   display: flex;
   text-align: center;
 }
 
-  .nav-item-active{
+.nav-item-active {
+  background-color: #626e60;
+  color: white;
+}
 
-    background-color: #626E60;
-    color: white;
+.cards {
+  display: inline-flex;
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
-  }
+.singlecard1 {
+  width: 30rem;
+  position: relative;
+}
 
-  .cards {
-      display: inline-flex;
-      margin-top: 3%;
-      margin-left: 5%;
-      margin-right: 5%;
-  }
+.container-menu {
+  width: 100%;
+}
 
-  .singlecard1 {
-    width: 30rem;
-    position: relative;
-  }
+.card-image {
+  width: 70%;
+  height: 228.6px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
 
-  .container-menu{
-    width: 100%;
-  }
+.card-content {
+  background-color: #955f61;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 5.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
 
-  .card-image {
+.dish-name {
+  float: left;
+  text-align: left;
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 2%;
+}
 
-    width: 70%;
-    height: 228.6px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-  }
+.buttdiv {
+  text-align: center;
+  float: right;
+  margin-top: 2.5%;
+  display: flex;
+  margin-right: 2%;
+  display: flex;
+}
 
-  .card-content {
+.card-button {
+  background-color: #626e60;
+  color: white;
+  border: #626e60;
+  padding: 0.25rem 0.5rem;
+}
 
-    background-color: #955F61;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 5.5rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
+.dish-price {
+  text-align: right;
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 2%;
+}
 
-  .dish-name {
-
-    float: left;
-    text-align: left;
-    color: white;
-    font-size: 1.5rem;
-    margin-left: 2%;
-  }
-
-  .buttdiv{
-    text-align: center;
-    float: right;
-    margin-top:2.5%;
-    display: flex;
-    margin-right: 2%;
-    display: flex;
-  }
-
-  .card-button {
-    background-color: #626E60;
-    color: white;
-    border: #626E60;
-    padding: 0.25rem 0.5rem;
-  }
-
-  .dish-price {
-    text-align: right;
-    color: white;
-    font-size: 1.5rem;
-    margin-right: 2%;
-  }
-
-  .icon {
-      float: left;
-      margin-left: 2%;
-      margin-top: 3%;  
-      display: flex;  
-  }
+.icon {
+  float: left;
+  margin-left: 2%;
+  margin-top: 3%;
+  display: flex;
+}
 
 .dish-time {
-    text-align: center;
-    color: white;
-    font-size: 1rem;
-    margin-left: 3%;
-    margin-top: 3.5%; 
-    display: flex;
-    float: left;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  margin-left: 3%;
+  margin-top: 3.5%;
+  display: flex;
+  float: left;
 }
 
 .pagination > li > a {
-    color: #B0463D;
-    background-color: #DAC4C4;
+  color: #b0463d;
+  background-color: #dac4c4;
 }
 
 .pagination {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 .menuuu {
-    text-align: center;
-    font-size: 4rem;
-    color: #626E60;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: auto;
+  text-align: center;
+  font-size: 4rem;
+  color: #626e60;
+  font-family: "Montserrat", sans-serif;
+  margin-top: auto;
 }
 
-.btn-group > a{
-    color: #B0463D;
-    background-color: #DAC4C4;
-    border-color: white;
-    margin-top: 1%;
+.btn-group > a {
+  color: #b0463d;
+  background-color: #dac4c4;
+  border-color: white;
+  margin-top: 1%;
 }
 
 /* ---------- Cart --------- */
@@ -204,13 +193,13 @@ header {
 .order-details {
   text-align: center;
   font-size: 4rem;
-  color: #626E60;
-  font-family: 'Montserrat', sans-serif;
+  color: #626e60;
+  font-family: "Montserrat", sans-serif;
   margin-top: auto;
 }
 
 .container-products ion-icon {
-font-size: 25px;
+  font-size: 25px;
   color: blue;
   margin-left: 10px;
   margin-right: 10px;
@@ -218,7 +207,7 @@ font-size: 25px;
 }
 
 .container-products {
-  background-color: #DAC4C4;
+  background-color: #dac4c4;
   width: 82rem;
   float: left;
   border-radius: 2rem;
@@ -227,8 +216,8 @@ font-size: 25px;
   margin-right: 2rem;
 }
 
-.container-bill{
-  background-color: #DAC4C4;
+.container-bill {
+  background-color: #dac4c4;
   width: 41rem;
   float: left;
   border-radius: 2rem;
@@ -243,32 +232,32 @@ font-size: 25px;
 }
 
 .basketTotalTitle {
-  color: #B0463D;
+  color: #b0463d;
   font-size: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 11.75rem;
   text-align: center;
   margin-right: 0.2rem;
 }
 
 .basketTotal {
-  color: #B0463D;
+  color: #b0463d;
   font-size: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 11.75rem;
   text-align: left;
   margin-left: 3rem;
 }
 
-.check{
+.check {
   width: 96%;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0.5rem;
 }
 
-.checkout{
-  background-color: #626E60;
+.checkout {
+  background-color: #626e60;
   color: white;
 }
 
@@ -282,28 +271,28 @@ font-size: 25px;
   border-radius: 1rem;
 }
 
-.pname{
+.pname {
   font-size: 2rem;
-  color: #B0463D;
-  font-family: 'Montserrat', sans-serif;
+  color: #b0463d;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 90%;
 }
 
-.quantity{
+.quantity {
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+  color: #955f61;
+  font-family: "Montserrat", sans-serif;
   float: left;
   margin-right: 11%;
   margin-top: 6rem;
 }
 
-.padding-0{
-  padding-right:0;
-  padding-left:0;
+.padding-0 {
+  padding-right: 0;
+  padding-left: 0;
 }
 
-.name-col{
+.name-col {
   width: 10%;
   height: 20rem;
   margin-right: 40%;
@@ -313,7 +302,7 @@ font-size: 25px;
 
 .remove {
   cursor: pointer;
-  color: #B0463D;
+  color: #b0463d;
   size: 3rem;
   margin-left: 3rem;
   margin-top: 10rem;
@@ -321,121 +310,119 @@ font-size: 25px;
 
 .product ion-icon {
   cursor: pointer;
-  color: #B0463D;
+  color: #b0463d;
 }
 
-.remove{
+.remove {
   size: 4rem;
 }
 
-.ion-div ion-icon{
+.ion-div ion-icon {
   margin-left: 2rem;
 }
 
-.price-col{
+.price-col {
   height: 20rem;
   margin-top: 2%;
 }
 
-.priceee{
+.priceee {
   font-size: 2rem;
-  color: #B0463D;
-  font-family: 'Montserrat', sans-serif;
+  color: #b0463d;
+  font-family: "Montserrat", sans-serif;
 }
 
-.timerrr{
+.timerrr {
   margin-top: 13rem;
   font-size: 1.5rem;
-  color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+  color: #955f61;
+  font-family: "Montserrat", sans-serif;
 }
 
-.order-now{
+.order-now {
   margin-top: 1rem;
   font-size: 2.5rem;
-  color: #B0463D;
-  font-family: 'Montserrat', sans-serif;  
+  color: #b0463d;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.item-name{
+.item-name {
   width: 14rem;
   margin-left: 1rem;
   margin-right: 6rem;
 }
 
-.nums{
+.nums {
   margin-right: 6rem;
 }
 
-.subtotal{
+.subtotal {
   margin-left: 1rem;
 }
 
 .item-name,
 .nums,
-.subtotal{
+.subtotal {
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Montserrat', sans-serif;  
-  text-align: center; 
+  color: #955f61;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
-.delivery{
+.delivery {
   margin-left: 2.5rem;
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+  color: #955f61;
+  font-family: "Montserrat", sans-serif;
   width: 10rem;
 }
 
-.delivery-cost{
+.delivery-cost {
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+  color: #955f61;
+  font-family: "Montserrat", sans-serif;
   margin-left: 17rem;
 }
 
-.ddetails{
+.ddetails {
   display: flex;
 }
-
 
 /* -------- Check Out ------ */
 
 .checkout-title {
   text-align: center;
   font-size: 4rem;
-  color: #626E60;
-  font-family: 'Montserrat', sans-serif;
+  color: #626e60;
+  font-family: "Montserrat", sans-serif;
   margin-top: auto;
 }
 
 .delivery-details {
   margin-left: 3rem;
-  color: #955F61;
+  color: #955f61;
   font-size: 2rem;
   text-align: center;
 }
 
-h3{
-  color: #955F61;
-  font-family: 'Montserrat', sans-serif;
+h3 {
+  color: #955f61;
+  font-family: "Montserrat", sans-serif;
   margin-left: 3rem;
   padding-top: 1rem;
 }
 
-.forms{
-  background-color: #DAC4C4;
+.forms {
+  background-color: #dac4c4;
   margin: 0 auto;
   margin-top: 2rem;
   border-radius: 1rem;
   width: 72rem;
 }
 
-form > input{
-
+form > input {
   margin-left: 3rem;
   margin-top: 1rem;
   margin-right: 3rem;
@@ -455,37 +442,36 @@ form > input{
   box-sizing: border-box;
 }
 
-.payment{
+.payment {
   display: flex;
 }
 
-input[type=radio] {
+input[type="radio"] {
   width: 1.2rem;
   height: 1rem;
   margin-left: 3rem;
 }
 
-label{
-  color: #955F61;
+label {
+  color: #955f61;
   font-size: 1.25rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   vertical-align: auto;
 }
 
-
-.confirm{
+.confirm {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .btn-success {
-  background-color: #B0463D !important;
+  background-color: #b0463d !important;
   color: white !important;
   border-color: white !important;
   border-radius: 2rem !important;
   width: 12rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ------ Feedback ------- */
@@ -493,13 +479,13 @@ label{
 .feedback-title {
   text-align: center;
   font-size: 4rem;
-  color: #626E60;
-  font-family: 'Montserrat', sans-serif;
+  color: #626e60;
+  font-family: "Montserrat", sans-serif;
   margin-top: auto;
 }
 
-.feedback-form{
-  background-color: #DAC4C4;
+.feedback-form {
+  background-color: #dac4c4;
   margin: 0 auto;
   margin-top: 2rem;
   border-radius: 1rem;
@@ -517,14 +503,13 @@ label{
 }
 
 .subject-title,
-.message-title{
-    color: #955F61;
-    font-family: 'Montserrat', sans-serif;
-    padding-top: 1rem;
-  
+.message-title {
+  color: #955f61;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 1rem;
 }
 
-input[name=subject]{
+input[name="subject"] {
   margin-left: 3rem;
   margin-top: 1rem;
   margin-right: 3rem;
@@ -534,10 +519,10 @@ input[name=subject]{
   box-sizing: border-box;
 }
 
-input[name=rating]{
+input[name="rating"] {
   display: none;
 }
 
-.stars{
+.stars {
   margin-left: 2.5rem;
 }
