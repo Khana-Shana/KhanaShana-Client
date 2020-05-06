@@ -1,7 +1,8 @@
 /* credit: https://codepen.io/matheusalmeida/pen/aeLMMr */
 
 import React from "react";
-import { HashLink } from "react-router-hash-link";
+import "./footer.css";
+import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
 import firebase_integration from "../fire.js";
 import "./footer.css";
@@ -99,7 +100,6 @@ function Footer() {
             </ul>
           </li>
         </ul>
-
         <div className="legal">
           <p>&copy; CS 360 - Khana Shana.</p>
         </div>

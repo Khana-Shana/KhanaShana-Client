@@ -7,10 +7,9 @@
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
   background-color: #955F61 !important;
- 
 }
 
-.footer > * {
+.footer>* {
   flex: 1 100%;
 }
 
@@ -22,7 +21,7 @@
 .footer__logo {
   font-family: "brandon_grotesqueblack";
   font-weight: 400;
- 
+
   font-size: 1.5rem;
 }
 
@@ -74,7 +73,7 @@
   flex-flow: row wrap;
 }
 
-.footer__nav > * {
+.footer__nav>* {
   flex: 1 50%;
   margin-right: 1.25em;
 }
@@ -101,7 +100,7 @@
 }
 
 @media screen and (min-width: 40.375em) {
-  .footer__nav > * {
+  .footer__nav>* {
     flex: 1;
   }
 
@@ -128,6 +127,6 @@ h2,
 .footer address,
 .footer__logo,
 .footer li,
-.nav__ul a{
+.nav__ul a {
   color: white !important;
 }
