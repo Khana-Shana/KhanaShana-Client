@@ -8,7 +8,7 @@ const StarRating = (props) => {
     const {rating, handleChange} = props
 
     return (
-        <div class = "stars">
+        <div class = "stars-feedback">
             {[...Array(5)].map((star,index) => {
 
                const ratingValue = index+1;

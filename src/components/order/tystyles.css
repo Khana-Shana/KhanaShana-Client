@@ -1,73 +1,72 @@
 #tybackground {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Ftybackground.svg?alt=media&token=870e4811-465d-4264-9420-0aecc4eb9b13");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Ftybackground.svg?alt=media&token=870e4811-465d-4264-9420-0aecc4eb9b13");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .ordernumbox {
-    position: relative;
-    background-color: #E0CCCD;
-    border: solid 1%;
-    border-color: #E0CCCD;
-    border-radius: 3%;
-    margin-left: 15%;
-    display: grid;
-    width: 85%;
-    height: 40%;
-    margin-top: 37%;
-    text-align: center;
-    color: #B2463D;
+  position: relative;
+  background-color: #e0cccd;
+  border: solid 1%;
+  border-color: #e0cccd;
+  border-radius: 3%;
+  margin-left: 15%;
+  display: grid;
+  width: 85%;
+  height: 40%;
+  margin-top: 37%;
+  text-align: center;
+  color: #b2463d;
 }
 #aunty {
-    max-width: 65%;
-    height: auto;
-    margin-left: 20%;
-    margin-right: 10%;
-    margin-top: 25%;
-    margin-bottom: 15%;
+  max-width: 65%;
+  height: auto;
+  margin-left: 20%;
+  margin-right: 10%;
+  margin-top: 25%;
+  margin-bottom: 15%;
 }
 #ordnum {
-    font-family: Arial;
-    font-size: 2.0vw;
-    margin-top: 12%;
+  font-family: Arial;
+  font-size: 2vw;
+  margin-top: 12%;
 }
 #msg {
-    font-family: Arial;
-    font-size: 1.5vw;
+  font-family: Arial;
+  font-size: 1.5vw;
 }
 
-#trackbtn{
-    margin: auto;
-    margin-bottom: 12%;
-    text-align: center;
-    background-color: #B2463D;
-    font-size: 1.3vw;
-    font-family: 'PT Sans', sans-serif;
-  }
+#trackbtn {
+  margin: auto;
+  margin-bottom: 12%;
+  text-align: center;
+  background-color: #b2463d;
+  font-size: 1.3vw;
+  font-family: "PT Sans", sans-serif;
+}
 
-  .nav-link{
-    background: #955F61;
-    color: white;
-    width: 100%;
-  }
-  
-  .navbar-brand{
-    background: #955F61;
-    color: white;
-  }
+.nav-link {
+  background: #955f61;
+  color: white;
+  width: 100%;
+}
+
+.navbar-brand {
+  background: #955f61;
+  color: white;
+}
 
 .footer {
   display: flex;
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
-  color: #AF473C;
-  background-color: #BCC7B8;
+  color: #af473c;
+  background-color: #bcc7b8;
 }
 
 .footer > * {
-  flex:  1 100%;
+  flex: 1 100%;
 }
 
 .footer__addr {
@@ -76,7 +75,7 @@
 }
 
 .footer__logo {
-  font-family: 'brandon_grotesqueblack';
+  font-family: "brandon_grotesqueblack";
   font-weight: 400;
   /* text-transform: lowercase; */
   font-size: 1.5rem;
@@ -95,7 +94,7 @@
 
 .footer address {
   font-style: normal;
-  color: #AF473C;
+  color: #af473c;
 }
 
 .footer__btn {
@@ -106,7 +105,7 @@
   max-width: max-content;
   background-color: rgb(33, 33, 33, 0.07);
   border-radius: 100px;
-  color: #AF473C;
+  color: #af473c;
   line-height: 0;
   margin: 0.6em 0;
   font-size: 1rem;
@@ -128,7 +127,7 @@
 
 .footer__nav {
   display: flex;
-	flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .footer__nav > * {
@@ -137,24 +136,23 @@
 }
 
 .nav__ul a {
-  color: #AF473C;
+  color: #af473c;
   /* margin-right: 30px; */
 }
 
 .legal {
   display: flex;
   flex-wrap: wrap;
-  color:#AF473C;
- 
+  color: #af473c;
 }
-  
+
 .legal__links {
   display: flex;
   align-items: center;
 }
 
 .heart {
-  color: #AF473C;
+  color: #af473c;
 }
 
 @media screen and (min-width: 24.375em) {
@@ -167,29 +165,28 @@
   .footer__nav > * {
     flex: 1;
   }
-  
+
   .nav__item--extra {
     flex-grow: 2;
   }
-  
+
   .footer__addr {
     flex: 1 0px;
   }
-  
+
   .footer__nav {
     flex: 2 0px;
   }
 }
 
-.footerdiv{
+.footerdiv {
   width: 100%;
 }
 header {
-  background-color: #955F61;   
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+  background-color: #955f61;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   position: relative;
 }
-
 
 /* Style all font awesome icons */
 .fa {
@@ -199,16 +196,16 @@ header {
   text-align: center;
   text-decoration: none;
 }
-.nav-link{
-  background: #955F61;
+.nav-link {
+  background: #955f61;
   color: white;
 }
-.nav-item-active{
-    margin-right: 5px;
+.nav-item-active {
+  margin-right: 5px;
 }
-.butt1{
-  background-color: #626E60;
-  margin-right:5px;
+.butt1 {
+  background-color: #626e60;
+  margin-right: 5px;
   border: 1px;
   border-color: white;
   color: white;
@@ -219,8 +216,8 @@ header {
   font-size: 16px;
 }
 
-.butt2{
-  background-color: #626E60;
+.butt2 {
+  background-color: #626e60;
   border: 1px;
   border-color: white;
   color: white;
@@ -231,9 +228,7 @@ header {
   font-size: 16px;
 }
 
-.nav-item-active{
-
-  background-color: #626E60;
+.nav-item-active {
+  background-color: #626e60;
   color: white;
-
 }
