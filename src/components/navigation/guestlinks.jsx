@@ -12,12 +12,12 @@ function GuestLinks() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Link to="/">
             <a
-            style={{
-              background: "#955F61",
-              color: "white",
-              marginTop: "4%",
-              paddingTop: "0",
-              fontSize: "1.2rem",
+              style={{
+                background: "#955F61",
+                color: "white",
+                marginTop: "4%",
+                paddingTop: "0",
+                fontSize: "1.2rem",
               }}
               className="navbar-brand"
             >
@@ -102,7 +102,6 @@ function GuestLinks() {
               </li>
             </Link>
             <li className="nav-item">
-              {/* <i class="fa fa-facebook"></i> */}
               <a
                 type="button"
                 id="GFG"

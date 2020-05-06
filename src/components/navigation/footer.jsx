@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import { HashLink} from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
 import firebase_integration from '../fire.js'
 
@@ -8,27 +8,24 @@ function Footer() {
   const [restaurantDetails, setdetails] = React.useState({})
 
   React.useEffect(() => {
+    /* Fetching restaurant details to be displayed on the footer from the backend database. */
     firebase_integration.database.collection("RestaurantDetails").doc("jOzlK1WWsNPdRrjcYLGv").onSnapshot((snapshot) => {
       setdetails(snapshot.data())
     })
   }, restaurantDetails)
-  
+
   return (
     <div className="footerdiv">
       <footer className="footer">
         <div className="footer__addr">
-          <Link to = "/">
-          <h1 className="footer__logo">
-          <b>{restaurantDetails.Name}</b>
-          </h1>
+          <Link to="/">
+            <h1 className="footer__logo">
+              <b>{restaurantDetails.Name}</b>
+            </h1>
           </Link>
-
-  
           <h2>
             <b>CONTACT</b>
           </h2>
-         
-
           <address>
             {restaurantDetails.Address}
             <br />
@@ -45,20 +42,20 @@ function Footer() {
             </h2>
 
             <ul className="nav__ul">
-            <HashLink smooth to = "/#to-menu">
-              <li>
-                <a>Menu</a>
-              </li>
+              <HashLink smooth to="/#to-menu">
+                <li>
+                  <a>Menu</a>
+                </li>
               </HashLink>
-              <HashLink smooth to = "/#to-services">
-              <li>
-                <a>Our Services</a>
-              </li>
+              <HashLink smooth to="/#to-services">
+                <li>
+                  <a>Our Services</a>
+                </li>
               </HashLink>
-              <HashLink smooth to = "/#to-about">
-              <li>
-                <a>About Us</a>
-              </li>
+              <HashLink smooth to="/#to-about">
+                <li>
+                  <a>About Us</a>
+                </li>
               </HashLink>
             </ul>
           </li>
@@ -91,7 +88,6 @@ function Footer() {
             </ul>
           </li>
         </ul>
-
         <div className="legal">
           <p>&copy; CS 360 - Khana Shana.</p>
         </div>
