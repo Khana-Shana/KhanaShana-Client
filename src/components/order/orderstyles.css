@@ -1,176 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 /* -------- NavBar ------ */
 
 body {
-    background-color: #FBF4F3;
+  background-color: #fbf4f3;
 }
-
 
 header {
-    background-color: #955F61;   
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
-    position: relative;
+  background-color: #955f61;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
-  .nav-link{
-    background: #955F61;
-    color: white;
-  }
+.nav-link {
+  background: #955f61;
+  color: white;
+}
 
-
-.card-outline{
+.card-outline {
   display: flex;
   text-align: center;
 }
 
 /* ------ Card ------ */
 
-  .cards99 {
-      /* display: inline-flex; */
-      margin-top: 3%;
-      margin-left: 5%;
-      margin-right: 5%;
-  }
+.cards99 {
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
-  .singlecard111 {
-    width: 30rem;
-    margin-bottom:7%;
-    /* position: relative; */
-  }
+.singlecard111 {
+  width: 30rem;
+  margin-bottom: 7%;
+}
 
-  .container-menuuu{
-    width: 100%;
-    height: auto;
-  }
+.container-menuuu {
+  width: 100%;
+  height: auto;
+}
 
-  .menuback{
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
-    background-position: center;
-    /* background-repeat: repeat; */
-    /* background-size: contain; */
-    background-position: top;
-    /* width: 100%; */
-    height: auto;
-  }
+.menuback {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
+  background-position: center;
+  background-position: top;
+  height: auto;
+}
 
-  .cartback{
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
-    background-position: center;
-    /* background-repeat: repeat; */
-    background-size: cover;
+.cartback {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
+  background-position: center;
+  background-size: cover;
 
-    background-position: top;
-    /* width: 100%; */
-    height: 200vh;
-  }
+  background-position: top;
+  height: 200vh;
+}
 
+.card-image {
+  width: 70%;
+  height: 228.6px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
 
-  .card-image {
+.card-content {
+  background-color: #955f61;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 5.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
 
-    width: 70%;
-    height: 228.6px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-  }
+.dish-name {
+  float: left;
+  text-align: left;
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 2%;
+  font-family: "Jost", sans-serif;
+}
 
-  .card-content {
+.buttdiv {
+  text-align: center;
+  float: right;
+  margin-top: 2.5%;
+  display: flex;
+  margin-right: 2%;
+  display: flex;
+}
 
-    background-color: #955F61;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 5.5rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
+.card-button {
+  background-color: #626e60;
+  color: white;
+  border: #626e60;
+  padding: 0.25rem 0.5rem;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  color: white;
+  border-radius: 1rem;
+}
 
-  .dish-name {
+.card-button:hover {
+  background-color: white;
+  color: #955f61;
+}
 
-    float: left;
-    text-align: left;
-    color: white;
-    font-size: 1.5rem;
-    margin-left: 2%;
-    font-family: 'Jost', sans-serif;
-  }
+.dish-price {
+  text-align: right;
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 2%;
+  font-family: "Jost", sans-serif;
+}
 
-  .buttdiv{
-    text-align: center;
-    float: right;
-    margin-top:2.5%;
-    display: flex;
-    margin-right: 2%;
-    display: flex;
-  }
-
-  .card-button {
-    background-color: #626E60;
-    color: white;
-    border: #626E60;
-    padding: 0.25rem 0.5rem;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    color: white; 
-    border-radius: 1rem;
-  }
-
-  .card-button:hover{
-    background-color: white;
-    color:#955F61;
-  }
-
-  .dish-price {
-    text-align: right;
-    color: white;
-    font-size: 1.5rem;
-    margin-right: 2%;
-    font-family: 'Jost', sans-serif;
-  }
-
-  .icon {
-      float: left;
-      margin-left: 2%;
-      margin-top: 3%;  
-      display: flex;  
-  }
+.icon {
+  float: left;
+  margin-left: 2%;
+  margin-top: 3%;
+  display: flex;
+}
 
 .dish-time {
-    text-align: center;
-    color: white;
-    font-size: 1rem;
-    margin-left: 3%;
-    margin-top: 3.5%; 
-    display: flex;
-    float: left;
-    font-family: 'Jost', sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  margin-left: 3%;
+  margin-top: 3.5%;
+  display: flex;
+  float: left;
+  font-family: "Jost", sans-serif;
 }
 
 .menuuu {
-    text-align: center;
-    font-size: 4rem;
-    color: #626E60;
-    font-family: 'Jost', sans-serif;
-    margin-top: auto;
-    margin-bottom: 1%;
+  text-align: center;
+  font-size: 4rem;
+  color: #626e60;
+  font-family: "Jost", sans-serif;
+  margin-top: auto;
+  margin-bottom: 1%;
 }
 
-.row{
+.row {
   margin-top: 2% !important;
-  /* margin-bottom: 2% !important; */
   margin-left: 0% !important;
   width: 100% !important;
   padding-bottom: 2.5% !important;
 }
 
-.btn-group > a{
-    color: #B0463D;
-    background-color: #DAC4C4;
-    border-color: white;
-    margin-top: 1%;
+.btn-group > a {
+  color: #b0463d;
+  background-color: #dac4c4;
+  border-color: white;
+  margin-top: 1%;
 }
 
 /* ---------- Cart --------- */
@@ -180,9 +166,8 @@ header {
   font-size: 1.8rem;
   margin-left: 4.5rem;
   margin-top: 1rem;
-  color: #626E60;
-  font-family: 'Jost', sans-serif;
-  /* margin-top: auto; */
+  color: #626e60;
+  font-family: "Jost", sans-serif;
 }
 
 .container-products ion-icon {
@@ -194,120 +179,109 @@ header {
 }
 
 .container-products {
-  background-color: #DAC4C4;
+  background-color: #dac4c4;
   width: 50rem;
   float: left;
   border-radius: 2rem;
   margin-top: 1rem;
   margin-left: 3rem;
   margin-right: 2rem;
-  border: 0.5px solid #B0463D;
+  border: 0.5px solid #b0463d;
 }
 
-.container-bill{
-  background-color: #DAC4C4;
+.container-bill {
+  background-color: #dac4c4;
   width: 35rem;
   float: left;
   border-radius: 2rem;
   margin-top: 1rem;
   margin-left: 2rem;
-  border: 0.5px solid #B0463D
+  border: 0.5px solid #b0463d;
 }
 
-.container-bill-order-details{
+.container-bill-order-details {
   margin-top: 5rem;
   margin-left: 33%;
-  background-color: #DAC4C4;
+  background-color: #dac4c4;
   width: 41rem;
   float: left;
   border-radius: 2rem;
   margin-bottom: 4rem;
-  border: 1px solid #B0463D;
+  border: 1px solid #b0463d;
 }
 
-.basketTotalContainer{
+.basketTotalContainer {
   width: 100%;
   display: flex;
-  /* justify-content: flex-end; */
 }
 
-.discountContainer{
+.discountContainer {
   width: 100%;
   display: flex;
-  /* justify-content: flex-end; */
 }
 
-
-
-.basketTotalTitle-orderdetails{
-    color: #B0463D;
-    font-size: 2rem;
-    font-family: 'Jost', sans-serif;
-    width: 12.5rem;
-    margin-right: 3rem;
-    /* align-items: flex-start; */
-    margin-left: 2rem;
+.basketTotalTitle-orderdetails {
+  color: #b0463d;
+  font-size: 2rem;
+  font-family: "Jost", sans-serif;
+  width: 12.5rem;
+  margin-right: 3rem;
+  margin-left: 2rem;
 }
 
-.basketTotalTitle{
-  color: #B0463D;
-    font-size: 2rem;
-    font-family: 'Jost', sans-serif;
-    width: 15.7rem;
-    margin-right: 3rem;
-    /* align-items: flex-start; */
-    margin-left: 3rem;
-
+.basketTotalTitle {
+  color: #b0463d;
+  font-size: 2rem;
+  font-family: "Jost", sans-serif;
+  width: 15.7rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
 }
 
-.discountedBill{
-  color: #B0463D;
-    font-size: 2rem;
-    font-family: 'Jost', sans-serif;
-    width: 18.7rem;
-    /* margin-right: rem; */
-    /* align-items: flex-start; */
-    margin-left: 3rem;
-
+.discountedBill {
+  color: #b0463d;
+  font-size: 2rem;
+  font-family: "Jost", sans-serif;
+  width: 18.7rem;
+  margin-left: 3rem;
 }
-.discountedBill-orderdetails{
-    color: #B0463D;
-    font-size: 2rem;
-    font-family: 'Jost', sans-serif;
-    width: 12.7rem;
-    margin-right: 3rem;
-    /* align-items: flex-start; */
-    margin-left: 2rem;
+.discountedBill-orderdetails {
+  color: #b0463d;
+  font-size: 2rem;
+  font-family: "Jost", sans-serif;
+  width: 12.7rem;
+  margin-right: 3rem;
+  margin-left: 2rem;
 }
 
 .basketTotal,
-.discountedTotal{
-  color: #B0463D;
+.discountedTotal {
+  color: #b0463d;
   font-size: 2rem;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   width: 11rem;
   text-align: left;
   margin-left: 3rem;
 }
-.basketTotal-orderdetails{
-  color: #B0463D;
+.basketTotal-orderdetails {
+  color: #b0463d;
   font-size: 2rem;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   width: 8rem;
   text-align: left;
   margin-left: 15rem;
 }
 
-.discountedTotal-orderdetails{
-  color: #B0463D;
+.discountedTotal-orderdetails {
+  color: #b0463d;
   font-size: 2rem;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   width: 8rem;
   text-align: left;
   margin-left: 14.8rem;
 }
 
-.check{
+.check {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -315,8 +289,8 @@ header {
   margin-top: 0.5rem;
 }
 
-.checkout{
-  background-color: #626E60;
+.checkout {
+  background-color: #626e60;
   color: white;
 }
 
@@ -330,25 +304,25 @@ header {
   border-radius: 1rem;
 }
 
-.pname{
+.pname {
   font-size: 2rem;
-  color: #B0463D;
-  font-family: 'Jost', sans-serif;
+  color: #b0463d;
+  font-family: "Jost", sans-serif;
   margin-bottom: 90%;
   width: 15rem;
 }
 
-.quantity{
+.quantity {
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Jost', sans-serif;
+  color: #955f61;
+  font-family: "Jost", sans-serif;
   float: left;
   margin-right: 11%;
   margin-top: 1.7rem;
   width: 10rem;
 }
 
-.name-col{
+.name-col {
   width: 10%;
   height: 10rem;
   margin-left: 5%;
@@ -357,99 +331,95 @@ header {
 
 .remove {
   cursor: pointer;
-  color: #B0463D;
+  color: #b0463d;
   size: 2.7rem;
   margin-top: 6.5rem;
 }
 
-.delete-icon ion-icon{
+.delete-icon ion-icon {
   margin-left: 0.8rem;
   font-size: 1.3rem;
 }
-.product{
-  border-bottom: 1px solid #B0463D;
+.product {
+  border-bottom: 1px solid #b0463d;
 }
 .product ion-icon {
   cursor: pointer;
-  color: #B0463D;
+  color: #b0463d;
 }
 
-
-.price-col{
+.price-col {
   height: 10rem;
   margin-top: 2%;
   margin-left: 10rem;
 }
 
-.priceee{
+.priceee {
   font-size: 2rem;
-  color: #B0463D;
-  font-family: 'Jost', sans-serif;
+  color: #b0463d;
+  font-family: "Jost", sans-serif;
 }
 
-.timerrr{
+.timerrr {
   margin-top: 6.8rem;
   font-size: 1.5rem;
-  color: #955F61;
-  font-family: 'Jost', sans-serif;
+  color: #955f61;
+  font-family: "Jost", sans-serif;
 }
 
-.order-now{
+.order-now {
   margin-top: 1rem;
   font-size: 2.5rem;
-  color: #B0463D;
-  font-family: 'Jost', sans-serif;  
+  color: #b0463d;
+  font-family: "Jost", sans-serif;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.item-name{
+.item-name {
   width: 9rem;
   margin-left: 3rem;
   margin-right: 3.5rem;
 }
 
-.orderID{
+.orderID {
   width: 10rem;
   margin-left: 2rem;
   margin-right: 3.5rem;
   margin-top: 1rem;
 }
 
-.billname{
+.billname {
   width: 10rem;
   margin-left: 2rem;
   margin-right: 3.5rem;
 }
 
-.billnums{
+.billnums {
   width: 5rem;
   margin-left: 18rem;
-  /* margin-right: 1.4rem; */
 }
 
-.ordertype{
+.ordertype {
   width: 12rem;
   margin-left: 2rem;
   margin-right: 1.4rem;
-  /* margin-bottom: 3rem; */
-
 }
 
-.nums{
+.nums {
   margin-right: 3rem;
   width: 5rem;
 }
 
-.subtotal{
+.subtotal {
   margin-left: 1rem;
 }
-.dbID{
+.dbID {
   margin-top: 1rem;
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Jost', sans-serif;  
-  text-align: left; 
+  color: #955f61;
+  font-family: "Jost", sans-serif;
+  text-align: left;
   margin-left: 1rem;
 }
 
@@ -459,135 +429,128 @@ header {
 .orderID,
 .ordertype,
 .billname,
-.billnums{
+.billnums {
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Jost', sans-serif;  
-  text-align: left; 
+  color: #955f61;
+  font-family: "Jost", sans-serif;
+  text-align: left;
 }
 
-.order-details-container{
-  background-color: #FBF4F3;
+.order-details-container {
+  background-color: #fbf4f3;
   margin-bottom: 2%;
   margin-right: 8%;
-  /* width: 100%/; */
   display: flex;
-  
 }
 
-.discount-title-order-details{
-  color: #B0463D;
+.discount-title-order-details {
+  color: #b0463d;
   font-size: 2rem;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   width: 12.5rem;
   margin-right: 3rem;
-  /* align-items: flex-start; */
   margin-left: 2rem;
   margin-top: 1rem;
-
 }
 
-.discount-price-order-details{
-  color: #B0463D;
+.discount-price-order-details {
+  color: #b0463d;
   font-size: 2rem;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   width: 3rem;
   text-align: left;
   margin-left: 15rem;
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
-.delivery{
+.delivery {
   width: 9.1rem !important;
 }
 .delivery,
-.discount-title{
+.discount-title {
   margin-left: 3rem !important;
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Jost', sans-serif;
-  background-color: #DAC4C4;
+  color: #955f61;
+  font-family: "Jost", sans-serif;
+  background-color: #dac4c4;
 }
 
-.delivery-cost{
+.delivery-cost {
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Jost', sans-serif;
+  color: #955f61;
+  font-family: "Jost", sans-serif;
   margin-left: 12.5rem;
   margin-top: 1rem;
   text-align: end;
   margin-right: 1rem;
 }
 
-.discount-price{
+.discount-price {
   margin-top: 0rem !important;
   font-size: 2rem;
-  color: #955F61;
-  font-family: 'Jost', sans-serif;
+  color: #955f61;
+  font-family: "Jost", sans-serif;
   margin-left: 14.3rem;
   margin-top: 1rem;
   text-align: end;
   margin-right: 5rem;
 }
 
-.prod-cont{
-  border-bottom: 1px solid #B0463D;
-  border-top: 1px solid #B0463D;
+.prod-cont {
+  border-bottom: 1px solid #b0463d;
+  border-top: 1px solid #b0463d;
 }
-.extra-cont{
-  border-bottom: 1px solid #B0463D;
-  /* border-top: 1px solid white; */
+.extra-cont {
+  border-bottom: 1px solid #b0463d;
 }
 
 .ddetails,
-.discount{
+.discount {
   display: flex;
 }
-
 
 /* -------- Check Out ------ */
 
 .checkout-title {
   text-align: center;
   font-size: 4rem;
-  color: #626E60;
-  font-family: 'Jost', sans-serif;
+  color: #626e60;
+  font-family: "Jost", sans-serif;
   margin-top: 2rem;
 }
 
 .delivery-details {
   margin-left: 3rem;
-  color: #955F61;
+  color: #955f61;
   font-size: 2rem;
   text-align: center;
 }
 
-h3{
-  color: #955F61;
-  font-family: 'Jost', sans-serif;
+h3 {
+  color: #955f61;
+  font-family: "Jost", sans-serif;
   margin-left: 3rem;
   padding-top: 3rem;
 }
 
-.forms{
-  background-color: #DAC4C4;
+.forms {
+  background-color: #dac4c4;
   margin: 0 auto;
   margin-top: 2rem;
   border-radius: 1rem;
   width: 72rem;
 }
 
-form > input{
-
-    float: left;
-    padding: .5rem;
-    font-size: 16px;
-    width: 31rem;
-    display: block;
-    border-radius: 4px;
-    box-sizing: border-box; 
-    border: 1px solid #ccc;
-    margin-left: 4.5%;
-    margin-top: 1%;  
+form > input {
+  float: left;
+  padding: 0.5rem;
+  font-size: 16px;
+  width: 31rem;
+  display: block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-left: 4.5%;
+  margin-top: 1%;
 }
 
 form > input:focus {
@@ -599,96 +562,91 @@ form > input:focus {
 
 .text-area {
   float: left;
-  padding: .5rem;
+  padding: 0.5rem;
   font-size: 16px;
   width: 65.1rem;
   height: 10rem;
   display: block;
   border-radius: 4px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border: 1px solid #ccc;
   margin-left: 4.5%;
   margin-top: 1%;
   margin-bottom: 4rem;
 }
 
-.payment{
+.payment {
   display: flex;
 }
 
-input[type=radio] {
+input[type="radio"] {
   width: 1.2rem;
   height: 1rem;
   margin-left: 3rem;
   margin-right: 1rem;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 1.2rem;
   height: 1rem;
   margin-left: 3rem;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 1.2rem;
   height: 1rem;
   margin-left: 3rem;
   margin-right: 1rem;
 }
 
-label{
-  color: #955F61;
+label {
+  color: #955f61;
   font-size: 1.4rem;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   vertical-align: auto;
 }
 
-
-.confirm{
+.confirm {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .btn-success {
-  background-color: #B0463D !important;
+  background-color: #b0463d !important;
   color: white !important;
   border-color: white !important;
   border-radius: 2rem !important;
   width: 12rem;
   font-size: large !important;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
-
-.check :hover{
-  background-color: #626E60 !important;
+.check :hover {
+  background-color: #626e60 !important;
   color: white !important;
 }
 
-.confirm :hover{
-  background-color: #626E60 !important;
+.confirm :hover {
+  background-color: #626e60 !important;
   color: white !important;
 }
-.active-pink-4 input[type=text]:focus:not([readonly]) {
+.active-pink-4 input[type="text"]:focus:not([readonly]) {
   border: 1px solid #f48fb1;
   box-shadow: 0 0 0 1px #f48fb1;
 }
 
-.search{
+.search {
   width: 77%;
   margin-left: 8%;
   padding-top: 2%;
   padding-bottom: 5%;
 }
 
-.tabs{
+.tabs {
   padding-top: 2%;
-  /* padding-left: 50%; */
 }
 
-.nav-tabs{
+.nav-tabs {
   padding-left: 30% !important;
-
 }
-

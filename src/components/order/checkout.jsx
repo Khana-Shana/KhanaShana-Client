@@ -20,18 +20,22 @@ function Checkout(props) {
   const [area, setArea] = useState("");
   const [floor, setFloor] = useState("");
   const [deliverytype, setDeliveryType] = useState("");
-  const [paymentMethod] = useState("Cash on Delivery"); /* Payment method is by default set to Cash on Delivery. */
+  const [paymentMethod] = useState(
+    "Cash on Delivery"
+  ); /* Payment method is by default set to Cash on Delivery. */
   var orderid = "";
 
   const { orderdetails, setOrderID } = useContext(CheckoutContext);
 
   async function PlaceOrder() {
+    /* Setting order details when the confirm button is clicked. */
     var CustomerID = firebase_integration.auth.currentUser.uid;
     var TodaysDate = new Date();
     var Address = floor + " " + address + " " + area;
     var DishNames = [];
     var DishQuantities = [];
 
+    /* Looping over the items in the cart to extract their names and quantities. */
     orderdetails.cart.map((item) => DishNames.push(item.Name));
     orderdetails.cart.map((item) => DishQuantities.push(item.quantity));
     var instructions = document.getElementById("instruction-box").value;
@@ -67,7 +71,10 @@ function Checkout(props) {
             OrderID: orderid,
           });
 
-        localStorage.setItem("cart", []); /* Setting the cart object in the local storage to persist its states during the user session. */
+        localStorage.setItem(
+          "cart",
+          []
+        ); /* Setting the cart object in the local storage to persist its states during the user session. */
         props.FetchCart([]);
         localStorage.setItem("total", 0); 
         props.FetchTotal(0);
@@ -76,12 +83,15 @@ function Checkout(props) {
   }
 
   function checkInputField() {
-    if (number === "" || address === "" || area === "") { /* Validation checks to ensure that the customer fills in these fields before checking out. */
+    if (number === "" || address === "" || area === "") {
+      /* Validation checks to ensure that the customer fills in these fields before checking out. */
       alert.show("Please fill in all the fields.");
       return false;
     }
     if (number.length !== 11) {
-      alert.show("Mobile number must be 11 characters long."); /* Validation check to ensure that the mobile number entered is exactly 11 characters long. */
+      alert.show(
+        "Mobile number must be 11 characters long."
+      ); /* Validation check to ensure that the mobile number entered is exactly 11 characters long. */
       return false;
     } else {
       return true;

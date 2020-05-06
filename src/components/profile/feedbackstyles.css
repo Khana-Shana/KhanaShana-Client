@@ -45,13 +45,6 @@ outline: none;
 
 
 .message-area {
-  /* margin-left: 3rem;
-  margin-top: 1rem;
-  margin-right: 3rem;
-  height: 10rem;
-  width: 66rem;
-  border-radius: 0.75rem;
-  box-sizing: border-box; */
   float: left;
   padding: .5rem;
   font-size: 16px;
@@ -62,7 +55,7 @@ outline: none;
   box-sizing: border-box; 
   border: 1px solid #ccc;
   margin-left: 4.3%;
-  margin-top: 0%;
+  margin-top: 1rem;
 }
 
 .subject-title,
@@ -98,10 +91,14 @@ input[name="subject"] {
 input[name="rating"] {
   display: none;
 }
-.stars {
-  margin-left: 2.5rem;
+
+.stars-feedback {
+  margin-left: 2.8rem;
+  text-align: start;
+  padding-left: 0%;
+  width:77%;
 }
-.stars1 {
-  width: 27%;
-  padding-top: 15%;
+
+.stars-feedback > label{
+  margin-top: 3%;
 }

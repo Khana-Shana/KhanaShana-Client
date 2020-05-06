@@ -3,13 +3,11 @@ import { connect } from "react-redux";
 import { addToCart } from "./actions/cart-actions";
 import "./orderstyles.css";
 
-
 function Card(props) {
   /* Function to handle clicks on the 'Add to Cart' button. */
   const handleClick = (id) => {
     props.addToCart(id);
   };
-
 
   /* Creating the texture of an individual card based on the card id. 
      The card includes the image of the item, its name, respective 
@@ -17,11 +15,11 @@ function Card(props) {
      Add to Cart button with each item. */
 
   return (
-    <div class="singlecard111" key={props.id}> 
-      <img src={props.img} class="card-image" />
+    <div class="singlecard111" key={props.id}>
+      <img src={props.img} class="card-image" />{" "}
       <div class="card-content">
-        <div class="dish-name"> {props.title} </div>
-        <div class="dish-price"> Rs {props.price} </div>
+        <div class="dish-name"> {props.title} </div>{" "}
+        <div class="dish-price"> Rs {props.price} </div>{" "}
         <div class="timer">
           <div class="icon">
             <svg
@@ -49,13 +47,14 @@ function Card(props) {
               />
             </svg>
           </div>
-          <span class="dish-time">{props.desc}</span>
+          <span class="dish-time">{props.desc}</span>{" "}
         </div>
-
         <div class="buttdiv">
           <button
             onClick={() => {
-              handleClick(props.id); /* handleClick function being called when the Add to Cart button is clicked. */
+              handleClick(
+                props.id
+              ); /* handleClick function being called when the Add to Cart button is clicked. */
             }}
             type="button"
             class="card-button"
