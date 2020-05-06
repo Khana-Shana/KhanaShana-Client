@@ -1,33 +1,39 @@
+/* credit: https://codepen.io/matheusalmeida/pen/aeLMMr */
+
 import React from "react";
-import "./footer.css";
-import { HashLink} from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-import firebase_integration from '../fire.js'
+import firebase_integration from "../fire.js";
+import "./footer.css";
+
+/* footer component function linked to different components of website through the hashlink component */
 
 function Footer() {
-  const [restaurantDetails, setdetails] = React.useState({})
+  /* setting up state and reading restaurant details from database to be displayed on footer */
+  const [restaurantDetails, setdetails] = React.useState({});
 
   React.useEffect(() => {
-    firebase_integration.database.collection("RestaurantDetails").doc("jOzlK1WWsNPdRrjcYLGv").onSnapshot((snapshot) => {
-      setdetails(snapshot.data())
-    })
-  }, restaurantDetails)
-  
+    firebase_integration.database
+      .collection("RestaurantDetails")
+      .doc("jOzlK1WWsNPdRrjcYLGv")
+      .onSnapshot((snapshot) => {
+        setdetails(snapshot.data());
+      });
+  }, restaurantDetails);
+
   return (
     <div className="footerdiv">
       <footer className="footer">
         <div className="footer__addr">
-          <Link to = "/">
-          <h1 className="footer__logo">
-          <b>{restaurantDetails.Name}</b>
-          </h1>
+          <Link to="/">
+            <h1 className="footer__logo">
+              <b>{restaurantDetails.Name}</b>
+            </h1>
           </Link>
 
-  
           <h2>
             <b>CONTACT</b>
           </h2>
-         
 
           <address>
             {restaurantDetails.Address}
@@ -45,20 +51,20 @@ function Footer() {
             </h2>
 
             <ul className="nav__ul">
-            <HashLink smooth to = "/#to-menu">
-              <li>
-                <a>Menu</a>
-              </li>
+              <HashLink smooth to="/#to-menu">
+                <li>
+                  <a>Menu</a>
+                </li>
               </HashLink>
-              <HashLink smooth to = "/#to-services">
-              <li>
-                <a>Our Services</a>
-              </li>
+              <HashLink smooth to="/#to-services">
+                <li>
+                  <a>Our Services</a>
+                </li>
               </HashLink>
-              <HashLink smooth to = "/#to-about">
-              <li>
-                <a>About Us</a>
-              </li>
+              <HashLink smooth to="/#to-about">
+                <li>
+                  <a>About Us</a>
+                </li>
               </HashLink>
             </ul>
           </li>
@@ -70,7 +76,9 @@ function Footer() {
 
             <ul className="nav__ul">
               <li>
-                <a href="https://www.instagram.com/bonappetempt.pk/">Instagram</a>
+                <a href="https://www.instagram.com/bonappetempt.pk/">
+                  Instagram
+                </a>
               </li>
 
               <li>

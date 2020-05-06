@@ -1,10 +1,11 @@
 import React from "react";
-import "./header.css";
 import { Nav, Navbar } from "react-bootstrap";
-import firebase_integration from "../fire";
-import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import firebase_integration from "../fire";
+import "./header.css";
+
+/* component rendered for navbar when user is logged in */
 
 function LoginLinks(props) {
   return (
@@ -104,6 +105,7 @@ function LoginLinks(props) {
                     paddingTop: "14%",
                   }}
                 >
+                  {/* get name of user from firebase */}
                   {firebase_integration.getDisplayName()}
                 </a>
               </li>
@@ -157,6 +159,7 @@ function LoginLinks(props) {
     </div>
   );
 
+  /* logs user out from firebase and redirects to landing page */
   async function logout() {
     await firebase_integration.logout();
     localStorage.setItem("menu", []);
