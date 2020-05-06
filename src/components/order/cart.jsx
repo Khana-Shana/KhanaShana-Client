@@ -24,7 +24,6 @@ import DailyDealContext from "../context/dailydealcontext";
 
 var discount_price = 0;
 var discount_bill = 0;
-var string_discount = "";
 
 function Cart(props) {
   const { availdaily } = useContext(DailyDealContext);
@@ -203,7 +202,6 @@ function Cart(props) {
             <div class="check">
               <button
                 onClick={() => {
-                  setOrderDiscount(string_discount);
                   setCart(props.items);
                   setTotal(props.total);
                 }}
