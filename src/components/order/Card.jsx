@@ -17,12 +17,9 @@ function Card(props) {
   return (
     <div class="singlecard111" key={props.id}>
       <img src={props.img} class="card-image" />{" "}
-      {/* Accessing the image of the dish stored as a URL at the backend. */}
       <div class="card-content">
         <div class="dish-name"> {props.title} </div>{" "}
-        {/* Accessing the name of the dish through props. */}
         <div class="dish-price"> Rs {props.price} </div>{" "}
-        {/* Accessing the price of the dish. */}
         <div class="timer">
           <div class="icon">
             <svg
@@ -51,7 +48,6 @@ function Card(props) {
             </svg>
           </div>
           <span class="dish-time">{props.desc}</span>{" "}
-          {/* The desc variable refers to the preparation time that a dish requires. */}
         </div>
         <div class="buttdiv">
           <button

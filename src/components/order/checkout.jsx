@@ -20,7 +20,9 @@ function Checkout(props) {
   const [area, setArea] = useState("");
   const [floor, setFloor] = useState("");
   const [deliverytype, setDeliveryType] = useState("");
-  const [paymentMethod] = useState("Cash on Delivery"); /* Payment method is by default set to Cash on Delivery. */
+  const [paymentMethod] = useState(
+    "Cash on Delivery"
+  ); /* Payment method is by default set to Cash on Delivery. */
   var orderid = "";
 
   const { orderdetails, setOrderID } = useContext(CheckoutContext);
@@ -69,19 +71,25 @@ function Checkout(props) {
             OrderID: orderid,
           });
 
-        localStorage.setItem("cart", []); /* Setting the cart object in the local storage to persist its states during the user session. */
+        localStorage.setItem(
+          "cart",
+          []
+        ); /* Setting the cart object in the local storage to persist its states during the user session. */
         props.FetchCart([]);
         props.history.replace("./orderconfirmed");
       });
   }
 
   function checkInputField() {
-    if (number === "" || address === "" || area === "") { /* Validation checks to ensure that the customer fills in these fields before checking out. */
+    if (number === "" || address === "" || area === "") {
+      /* Validation checks to ensure that the customer fills in these fields before checking out. */
       alert.show("Please fill in all the fields.");
       return false;
     }
     if (number.length !== 11) {
-      alert.show("Mobile number must be 11 characters long."); /* Validation check to ensure that the mobile number entered is exactly 11 characters long. */
+      alert.show(
+        "Mobile number must be 11 characters long."
+      ); /* Validation check to ensure that the mobile number entered is exactly 11 characters long. */
       return false;
     } else {
       return true;
@@ -99,7 +107,6 @@ function Checkout(props) {
         </div>
         <form>
           <input
-            {/* Setting mobile number of the customer. */}
             value={number}
             onChange={(e) => setNumber(e.target.value)}
             type="text"
@@ -108,7 +115,6 @@ function Checkout(props) {
             required
           />
           <input
-            {/* Setting the address inputted by the customer. */}
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             type="text"
@@ -118,7 +124,6 @@ function Checkout(props) {
           />
           <br />
           <input
-            {/* Setting the area of the customer. */}
             value={area}
             onChange={(e) => setArea(e.target.value)}
             type="text"
@@ -127,7 +132,6 @@ function Checkout(props) {
             required
           />
           <input
-            {/* Setting the floor number selected by the customer if any. */}
             value={floor}
             onChange={(e) => setFloor(e.target.value)}
             type="text"
@@ -156,7 +160,6 @@ function Checkout(props) {
         </div>
         <div name="order-type-checkout">
           <input
-            {/* Setting the order type choosen by the customer - Delivery or Takeaway. */}
             value={deliverytype}
             onChange={(e) => setDeliveryType("Delivery")}
             type="radio"
@@ -178,13 +181,11 @@ function Checkout(props) {
           </h3>
         </div>
         <div name="payment">
-          {/* The payment method is by default Cash on Delivery. */}
           <input type="checkbox" checked="checked" name="method" />
           <label>Cash on Delivery</label>
           <div class="confirm">
             <button
               onClick={() => {
-                {/* If the inputted data passes the validation checks, then call the PlaceOrder function. */}
                 if (checkInputField()) {
                   PlaceOrder();
                 }

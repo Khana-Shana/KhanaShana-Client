@@ -15,7 +15,7 @@ function ThankYou() {
         <div className="row">
           <div className="col-6">
             <div className="ordernumbox align-baseline">
-              <div id="ordnum">ORDER ID: {orderdetails.orderid /* Dispalying the orderID of the order placed by the user. */}</div>
+              <div id="ordnum">ORDER ID: {orderdetails.orderid}</div>
               <div id="msg">
                 You will receive an Email confirmation shortly!
               </div>
