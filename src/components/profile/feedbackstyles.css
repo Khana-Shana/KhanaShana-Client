@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-/* ------ Feedback ------- */
+/* CSS file for the feedback screen */
 
 .feedback-title {
   text-align: center;
   font-size: 4rem;
-  color:#955f61;
-  font-family: 'Kanit', sans-serif;
+  color: #955f61;
+  font-family: "Kanit", sans-serif;
   margin-top: 0.2rem;
 }
 
@@ -18,41 +18,35 @@
   width: 72rem;
 }
 
-input{
-
+input {
   float: left;
-  padding: .5rem;
+  padding: 0.5rem;
   font-size: 16px;
   width: 31rem;
   display: block;
   border-radius: 4px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border: 1px solid #ccc;
   margin-left: 4.5%;
   margin-top: 1%;
-
-
-
-
 }
 
 input:focus {
-border-color: #007eff;
-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-  0 0 0 3px rgba(0, 126, 255, 0.1);
-outline: none;
+  border-color: #007eff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 0 3px rgba(0, 126, 255, 0.1);
+  outline: none;
 }
-
 
 .message-area {
   float: left;
-  padding: .5rem;
+  padding: 0.5rem;
   font-size: 16px;
   height: 10rem;
   width: 66rem;
   display: block;
   border-radius: 0.75rem;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border: 1px solid #ccc;
   margin-left: 4.3%;
   margin-top: 1rem;
@@ -61,20 +55,17 @@ outline: none;
 .subject-title,
 .message-title {
   color: #955f61;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   margin-left: 0.1%;
-  /* padding-top: 0.7rem; */
 }
 
-.subject{
+.subject {
   margin-bottom: 3%;
 }
 .title {
   color: #955f61;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   padding-top: 0rem;
-  /* width: 5%; */
-  /* height:0%; */
   margin-top: 1rem;
 }
 
@@ -96,9 +87,9 @@ input[name="rating"] {
   margin-left: 2.8rem;
   text-align: start;
   padding-left: 0%;
-  width:77%;
+  width: 77%;
 }
 
-.stars-feedback > label{
+.stars-feedback > label {
   margin-top: 3%;
 }
