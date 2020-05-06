@@ -6,6 +6,8 @@ import CardScreen from "./CardScreen";
 import "./orderstyles.css";
 
 function Menu(props) {
+  /* function declaration to get Menu from localstorage */
+
   function getMenu() {
     const localmenu = localStorage.getItem("menu");
     return localmenu ? JSON.parse(localmenu) : [];
@@ -13,19 +15,21 @@ function Menu(props) {
 
   const localmenu = getMenu();
 
+  /* setting menu in reducer for global use using a dispatcher function */
+
   useEffect(() => {
     props.FetchItems(localmenu);
   }, []);
 
+  /* functions to filter out menu items based on different categories and push them into their respective arrays */
+
   let All = [];
   function makeAll() {
-    /* A function to cater to all the items in the menu. */
     All = props.items;
   }
 
   let Desi = [];
   function makeDesi() {
-    /* A function to display items that only belong to the 'Desi' category. */
     props.items.map((item) => {
       if (item.Category === "Desi") {
         Desi.push(item);
@@ -35,7 +39,6 @@ function Menu(props) {
 
   let Chinese = [];
   function makeChinese() {
-    /* A function to display items that only belong to the 'Menu' category. */
     props.items.map((item) => {
       if (item.Category === "Chinese") {
         Chinese.push(item);
@@ -45,7 +48,6 @@ function Menu(props) {
 
   let Italian = [];
   function makeItalian() {
-    /* A function to display items that only belong to the 'Italian' category. */
     props.items.map((item) => {
       if (item.Category === "Italian") {
         Italian.push(item);
@@ -55,7 +57,6 @@ function Menu(props) {
 
   let Sandwich = [];
   function makeSandwich() {
-    /* A function to display items that only belong to the 'Sandwich' category. */
     props.items.map((item) => {
       if (item.Category === "Sandwich") {
         Sandwich.push(item);
@@ -65,7 +66,6 @@ function Menu(props) {
 
   let Burger = [];
   function makeBurgers() {
-    /* A function to display items that only belong to the 'Burger' category. */
     props.items.map((item) => {
       if (item.Category === "Burger") {
         Burger.push(item);
@@ -75,13 +75,14 @@ function Menu(props) {
 
   let Dessert = [];
   function makeDesserts() {
-    /* A function to display items that only belong to the 'Dessert' category. */
     props.items.map((item) => {
       if (item.Category === "Desserts") {
         Dessert.push(item);
       }
     });
   }
+
+  /* creating a filtered array of menu items for each category */
 
   makeAll();
   makeBurgers();
@@ -126,11 +127,16 @@ function Menu(props) {
   );
 }
 
+/* maps menu items from reducer to our Menu component */
+/* this function is called every time when the Redux store state changes */
+
 const mapStateToProps = (state) => {
   return {
     items: state.items,
   };
 };
+
+/* connects dispatcher functions for different action.types from the reducer to our Menu Component and arguments required */
 
 const mapDispatchToProps = (dispatch) => {
   return {
