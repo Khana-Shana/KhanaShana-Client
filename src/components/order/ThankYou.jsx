@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../navigation/footer";
 import Header from "../navigation/Header";
-import "./tystyles.css";
 import CheckoutContext from "../context/checkoutcontext";
-import firebase_integration from "../fire.js";
-import { Link } from "react-router-dom";
+import "./tystyles.css";
 
 function ThankYou() {
-  const { orderdetails } = useContext(CheckoutContext); /* Giving ThankYou.jsx access to the orderdetails context. */
+  const { orderdetails } = useContext(
+    CheckoutContext
+  ); /* Giving ThankYou.jsx access to the orderdetails context. */
   return (
     <div id="tybackground">
       <Header />
@@ -20,8 +21,12 @@ function ThankYou() {
                 You will receive an Email confirmation shortly!
               </div>
               <Link to="/orderhistory">
-                <button type="button" id="trackbtn" class="btn btn-primary"
-                /* Linking the Thank You Screen with an individual user's Order History screen. */ > 
+                <button
+                  type="button"
+                  id="trackbtn"
+                  class="btn btn-primary"
+                  /* Linking the Thank You Screen with an individual user's Order History screen. */
+                >
                   TRACK YOUR ORDER
                 </button>
               </Link>

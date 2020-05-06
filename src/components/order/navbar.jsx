@@ -7,9 +7,9 @@ import ReactBootstrap, {
   Form,
   FormControl,
 } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./orderstyles.css";
 
 function Header(props) {

@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { FetchItems, FetchCart, addToCart } from "./actions/cart-actions";
 import { Tabs, Tab } from "react-bootstrap-tabs";

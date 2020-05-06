@@ -1,11 +1,11 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useAlert } from "react-alert";
 import { connect } from "react-redux";
-import Header from "./navbar";
-import Footer from "../navigation/footer";
 import { FetchCart, FetchTotal } from "./actions/cart-actions";
 import DiscountContext from "../context/context";
 import CheckoutContext from "../context/checkoutcontext";
+import Header from "./navbar";
+import Footer from "../navigation/footer";
 import firebase_integration from "../fire.js";
 import "./orderstyles.css";
 
@@ -13,7 +13,7 @@ function Checkout(props) {
   const alert = useAlert();
 
   /* Creating hooks to add state to our functional components and access the states from different components in the tree. */
-  const { discount, setDiscount } = useContext(DiscountContext);
+  const { discount } = useContext(DiscountContext);
   const [number, setNumber] = useState("");
   const [address, setAddress] = useState("");
   const [area, setArea] = useState("");
