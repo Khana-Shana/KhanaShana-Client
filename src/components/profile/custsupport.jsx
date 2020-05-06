@@ -1,94 +1,92 @@
 import React, { useState } from 'react';
 import StarRating from './starrating.jsx';
-import emailjs from 'emailjs-com';
-import './feedbackstyles.css';
 import Header from '../navigation/Header';
 import Footer from '../navigation/footer';
+import './feedbackstyles.css';
 import firebase_integration from '../fire'
 
-
-//  emailjs.send(service_id, template_id, template_params,user_id);
-
 function CSupport() {
-
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [rating, setRating] = useState(null);
     const [check, setCheck] = useState(false);
 
-    function checkInputField(){
+    function checkInputField() {
+        /* This function applies validation checks on the fields by checking whether the inputs are empty or not.
+        If one of the required fields is missed by the user, an alert is generated. */
         if (
             subject === "" ||
             message === "" ||
-          rating === ""
+            rating === ""
         ) {
-          alert("Please fill in all the fields.");
-          return false;
+            alert("Please fill in all the fields.");
+            return false;
         } else {
             return true;
         }
-      };
+    };
 
 
-    function resetForm(){
+    function resetForm() {
+        /* This function sets the three inputs to their initial values, i.e. empty strings. */
         setSubject("");
         setMessage("");
         setRating("");
     }
 
+    /* Sets the rating provided by the customer upon clicks. */
     const handleChange = (input) => (e) => {
         setRating(e.target.value)
     }
 
 
-    async function sendEmail(e){
-        if(check == false){
+    async function sendEmail(e) {
+        if (check == false) {
             setCheck(true)
-            // e.preventDefault();
 
             var template_params = {
+                /* setting variables for database storage. */
                 "subject": subject,
                 "message": message,
                 "rating": rating
             }
 
             var todaysdate = new Date()
+            /* Storing the feedback information into the database. */
             await firebase_integration.addFeedback(firebase_integration.auth.currentUser.uid, todaysdate, parseInt(template_params.rating), template_params.subject, template_params.message)
             alert("Submitted!")
         }
     }
 
-    // const values = {rating};
-
-            return (
-            <div>
-            <Header/>
-            <div className = "feedback-title">
+    return (
+        <div>
+            <Header />
+            <div className="feedback-title">
                 FEEDBACK
             </div>
-            <div className = "feedback-form">
-                <div className = "subject-title">
+            <div className="feedback-form">
+                <div className="subject-title">
                     <h3><strong>SUBJECT</strong></h3>
                 </div>
                 <form action="/action_page.php">
-                    <input class = "subject" value = {subject} onChange = {(e) => {setSubject(e.target.value)}} type="text" name ="subject" placeholder="   Write your text here"/>
+                    <input class="subject" value={subject} onChange={(e) => { setSubject(e.target.value) }} type="text" name="subject" placeholder="   Write your text here" />
                 </form>
-                <div className = "title">
+                <div className="title">
                     <h3><strong>MESSAGE</strong></h3>
                 </div>
-                <textarea maxlength="400" value = {message} onChange = {(t) => {setMessage(t.target.value)}} className = "message-area" placeholder="   Write your text here"></textarea>
+                <textarea maxlength="400" value={message} onChange={(t) => { setMessage(t.target.value) }} className="message-area" placeholder="   Write your text here"></textarea>
                 <div>
-                <StarRating value={rating} handleChange = {handleChange}/>
+                    <StarRating value={rating} handleChange={handleChange} />
                 </div>
-                <div className = "confirm">
-                        <button onClick = {() => {
-                            if(checkInputField())
-                            {sendEmail()}}} type="submit" className="btn btn-success btn-lg">SUBMIT</button>
+                <div className="confirm">
+                    <button onClick={() => {
+                        if (checkInputField()) { sendEmail() }
+                    }} type="submit" className="btn btn-success btn-lg">SUBMIT</button>
                 </div>
-                <br/>
+                <br />
             </div>
-            <br/> <br/>
-            <Footer/>
+            <br /> <br />
+            <Footer />
         </div>
     )
 }
