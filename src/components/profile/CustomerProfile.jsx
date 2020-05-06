@@ -1,24 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import firebase_integration from "../fire.js";
 import Header from "../navigation/Header";
-import { Link } from "react-router-dom";
 import "./profilestyles.css";
+
 function CustomerProfile() {
+  /* states for form input values */
   const [editname, seteditname] = React.useState(false);
   const [editemail, seteditemail] = React.useState(false);
   const [editnumber, seteditnumber] = React.useState(false);
   const [editpassword, seteditpassword] = React.useState(false);
-  const [editconfirmpassword, seteditconfirmpassword] = React.useState(false);
   const [editgender, seteditgender] = React.useState(false);
+  /* states for reading data from database and making changes in the database */
   const [ID, setID] = React.useState();
   const [name, setname] = React.useState();
   const [email, setemail] = React.useState();
   const [number, setnumber] = React.useState();
   const [dob, setdob] = React.useState();
   const [password, setpassword] = React.useState();
-  const [confirmpassword, setConfirmpassword] = React.useState();
   const [gender, setgender] = React.useState();
 
+  /* reading customer profile data from database */
   React.useEffect(() => {
     firebase_integration.database
       .collection("CustomerDatabase")
@@ -49,6 +51,7 @@ function CustomerProfile() {
       });
   }, [ID]);
 
+  /* functions for updating the database */
   async function updatename(value) {
     firebase_integration.auth.currentUser
       .updateProfile({
@@ -107,16 +110,18 @@ function CustomerProfile() {
         Gender: value,
       });
   }
+
+  /* form displays input field and edit buttons */
   return (
-    <div class = "profileback">
+    <div class="profileback">
       <Header />
       <div class="hehe container-fluid">
         <div class="row my-2">
           <div class="col-lg-7 order-lg-2">
-            <ul style = {{marginTop: "10%"}} class="nav nav-tabs">
+            <ul style={{ marginTop: "10%" }} class="nav nav-tabs">
               <li class="nav-item">
                 <a
-                style = {{color:"#955F61"}}
+                  style={{ color: "#955F61" }}
                   href=""
                   data-target="#profile"
                   data-toggle="tab"
@@ -127,12 +132,16 @@ function CustomerProfile() {
               </li>
               <Link to="./orderhistory">
                 <li class="nav-item">
-                  <a style = {{color:"white"}} class="nav-link">Order History</a>
+                  <a style={{ color: "white" }} class="nav-link">
+                    Order History
+                  </a>
                 </li>
               </Link>
               <Link to="./feedback">
                 <li class="nav-item">
-                  <a style = {{color:"white"}} class="nav-link">Feedback</a>
+                  <a style={{ color: "white" }} class="nav-link">
+                    Feedback
+                  </a>
                 </li>
               </Link>
             </ul>
@@ -144,7 +153,7 @@ function CustomerProfile() {
                     <label class="col-lg-2 col-form-label form-control-label">
                       Full name
                     </label>
-
+                    {/* if edit state is true, render an editable input field, else render a read only field*/}
                     {editname === false ? (
                       <div class="col-lg-8">
                         <input
@@ -166,11 +175,12 @@ function CustomerProfile() {
                         />
                       </div>
                     )}
+                    {/* if edit state is true, render a save button, else render edit pencil */}
                     {editname === false ? (
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditname(true)}>
                           <ion-icon
-                          style = {{color:"#955F61"}}
+                            style={{ color: "#955F61" }}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -227,7 +237,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditemail(true)}>
                           <ion-icon
-                          style = {{color:"#955F61"}}
+                            style={{ color: "#955F61" }}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -282,7 +292,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditnumber(true)}>
                           <ion-icon
-                          style = {{color:"#955F61"}}
+                            style={{ color: "#955F61" }}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -350,7 +360,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditgender(true)}>
                           <ion-icon
-                          style = {{color:"#955F61"}}
+                            style={{ color: "#955F61" }}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -385,7 +395,8 @@ function CustomerProfile() {
                           aria-label="Recipient's username"
                           aria-describedby="button-addon2"
                           value={password}
-                          readonly/>
+                          readonly
+                        />
                       </div>
                     ) : (
                       <div class="col-lg-8">
@@ -404,7 +415,7 @@ function CustomerProfile() {
                       <div class="col-lg-1">
                         <a class="pencil" onClick={() => seteditpassword(true)}>
                           <ion-icon
-                          style = {{color:"#955F61"}}
+                            style={{ color: "#955F61" }}
                             size="large"
                             name="create-outline"
                           ></ion-icon>
@@ -437,12 +448,6 @@ function CustomerProfile() {
               alt="ProfilePicture"
               src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/CustomerProfile%2Fprofilepic.svg?alt=media&token=ee543aa0-18be-4d30-a73c-1c53d838ac7c"
             />
-            {/* {firebase_integration.getImageURL(
-              "profilepic",
-              "CustomerProfile",
-              "",
-              "profilepic.svg"
-            )} */}
           </div>
         </div>
       </div>
