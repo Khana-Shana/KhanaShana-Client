@@ -77,7 +77,6 @@
 .footer__logo {
   font-family: "brandon_grotesqueblack";
   font-weight: 400;
-  /* text-transform: lowercase; */
   font-size: 1.5rem;
 }
 
@@ -137,7 +136,6 @@
 
 .nav__ul a {
   color: #af473c;
-  /* margin-right: 30px; */
 }
 
 .legal {
@@ -190,7 +188,6 @@ header {
 
 /* Style all font awesome icons */
 .fa {
-  /* padding: 20px; */
   font-size: 30px;
   width: 32px;
   text-align: center;

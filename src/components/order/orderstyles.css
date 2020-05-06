@@ -25,7 +25,6 @@ header {
 /* ------ Card ------ */
 
 .cards99 {
-  /* display: inline-flex; */
   margin-top: 3%;
   margin-left: 5%;
   margin-right: 5%;
@@ -34,7 +33,6 @@ header {
 .singlecard111 {
   width: 30rem;
   margin-bottom: 7%;
-  /* position: relative; */
 }
 
 .container-menuuu {
@@ -45,21 +43,16 @@ header {
 .menuback {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
   background-position: center;
-  /* background-repeat: repeat; */
-  /* background-size: contain; */
   background-position: top;
-  /* width: 100%; */
   height: auto;
 }
 
 .cartback {
   background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
   background-position: center;
-  /* background-repeat: repeat; */
   background-size: cover;
 
   background-position: top;
-  /* width: 100%; */
   height: 200vh;
 }
 
@@ -154,7 +147,6 @@ header {
 
 .row {
   margin-top: 2% !important;
-  /* margin-bottom: 2% !important; */
   margin-left: 0% !important;
   width: 100% !important;
   padding-bottom: 2.5% !important;
@@ -176,7 +168,6 @@ header {
   margin-top: 1rem;
   color: #626e60;
   font-family: "Jost", sans-serif;
-  /* margin-top: auto; */
 }
 
 .container-products ion-icon {
@@ -222,13 +213,11 @@ header {
 .basketTotalContainer {
   width: 100%;
   display: flex;
-  /* justify-content: flex-end; */
 }
 
 .discountContainer {
   width: 100%;
   display: flex;
-  /* justify-content: flex-end; */
 }
 
 .basketTotalTitle-orderdetails {
@@ -237,7 +226,6 @@ header {
   font-family: "Jost", sans-serif;
   width: 12.5rem;
   margin-right: 3rem;
-  /* align-items: flex-start; */
   margin-left: 2rem;
 }
 
@@ -247,7 +235,6 @@ header {
   font-family: "Jost", sans-serif;
   width: 15.7rem;
   margin-right: 3rem;
-  /* align-items: flex-start; */
   margin-left: 3rem;
 }
 
@@ -256,8 +243,6 @@ header {
   font-size: 2rem;
   font-family: "Jost", sans-serif;
   width: 18.7rem;
-  /* margin-right: rem; */
-  /* align-items: flex-start; */
   margin-left: 3rem;
 }
 .discountedBill-orderdetails {
@@ -266,7 +251,6 @@ header {
   font-family: "Jost", sans-serif;
   width: 12.7rem;
   margin-right: 3rem;
-  /* align-items: flex-start; */
   margin-left: 2rem;
 }
 
@@ -414,14 +398,12 @@ header {
 .billnums {
   width: 5rem;
   margin-left: 18rem;
-  /* margin-right: 1.4rem; */
 }
 
 .ordertype {
   width: 12rem;
   margin-left: 2rem;
   margin-right: 1.4rem;
-  /* margin-bottom: 3rem; */
 }
 
 .nums {
@@ -458,7 +440,6 @@ header {
   background-color: #fbf4f3;
   margin-bottom: 2%;
   margin-right: 8%;
-  /* width: 100%/; */
   display: flex;
 }
 
@@ -468,7 +449,6 @@ header {
   font-family: "Jost", sans-serif;
   width: 12.5rem;
   margin-right: 3rem;
-  /* align-items: flex-start; */
   margin-left: 2rem;
   margin-top: 1rem;
 }
@@ -521,7 +501,6 @@ header {
 }
 .extra-cont {
   border-bottom: 1px solid #b0463d;
-  /* border-top: 1px solid white; */
 }
 
 .ddetails,
@@ -666,7 +645,6 @@ label {
 
 .tabs {
   padding-top: 2%;
-  /* padding-left: 50%; */
 }
 
 .nav-tabs {

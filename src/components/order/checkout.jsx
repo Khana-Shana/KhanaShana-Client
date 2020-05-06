@@ -26,12 +26,14 @@ function Checkout(props) {
   const { orderdetails, setOrderID } = useContext(CheckoutContext);
 
   async function PlaceOrder() {
+    /* Setting order details when the confirm button is clicked. */
     var CustomerID = firebase_integration.auth.currentUser.uid;
     var TodaysDate = new Date();
     var Address = floor + " " + address + " " + area;
     var DishNames = [];
     var DishQuantities = [];
 
+    /* Looping over the items in the cart to extract their names and quantities. */
     orderdetails.cart.map((item) => DishNames.push(item.Name));
     orderdetails.cart.map((item) => DishQuantities.push(item.quantity));
     var instructions = document.getElementById("instruction-box").value;
@@ -97,6 +99,7 @@ function Checkout(props) {
         </div>
         <form>
           <input
+            {/* Setting mobile number of the customer. */}
             value={number}
             onChange={(e) => setNumber(e.target.value)}
             type="text"
@@ -105,6 +108,7 @@ function Checkout(props) {
             required
           />
           <input
+            {/* Setting the address inputted by the customer. */}
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             type="text"
@@ -114,6 +118,7 @@ function Checkout(props) {
           />
           <br />
           <input
+            {/* Setting the area of the customer. */}
             value={area}
             onChange={(e) => setArea(e.target.value)}
             type="text"
@@ -122,6 +127,7 @@ function Checkout(props) {
             required
           />
           <input
+            {/* Setting the floor number selected by the customer if any. */}
             value={floor}
             onChange={(e) => setFloor(e.target.value)}
             type="text"
@@ -150,6 +156,7 @@ function Checkout(props) {
         </div>
         <div name="order-type-checkout">
           <input
+            {/* Setting the order type choosen by the customer - Delivery or Takeaway. */}
             value={deliverytype}
             onChange={(e) => setDeliveryType("Delivery")}
             type="radio"
@@ -171,11 +178,13 @@ function Checkout(props) {
           </h3>
         </div>
         <div name="payment">
+          {/* The payment method is by default Cash on Delivery. */}
           <input type="checkbox" checked="checked" name="method" />
           <label>Cash on Delivery</label>
           <div class="confirm">
             <button
               onClick={() => {
+                {/* If the inputted data passes the validation checks, then call the PlaceOrder function. */}
                 if (checkInputField()) {
                   PlaceOrder();
                 }
