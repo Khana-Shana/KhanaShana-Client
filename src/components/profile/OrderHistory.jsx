@@ -66,8 +66,9 @@ function OrderHistory() {
                                                     <td><button className = "btn btn-danger redbox" disabled>Cancel</button></td>:
                                                     <td><button className = "btn btn-danger redbox" onClick = {() => {
                                                         updateDBcancel(orders[i])
-                                                    }}>Cancel</button></td>   {/*update order in database when order is cancelled from customer end*/}
+                                                    }}>Cancel</button></td>  
                                                 }
+                                                {/*update order in database when order is cancelled from customer end*/}
                                             </tr>
                                         );
                                     }
