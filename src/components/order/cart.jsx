@@ -1,30 +1,56 @@
 import React, { Component, Fragment, useContext, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { removeItem,addQuantity,subtractQuantity, FetchCart} from './actions/cart-actions'
+import { removeItem,addQuantity,subtractQuantity, FetchCart,FetchItems} from './actions/cart-actions'
 import './orderstyles.css';
 import Header from './navbar';
 import firebase_integration from "../fire";
 // import DiscountContext from '../context/context';
 import CheckoutContext from '../context/checkoutcontext';
+import MenuContext from "../context/menucontext";
 
 var discount_price = 0;
 var discount_bill = 0;
 var string_discount = "";
 
 function Cart(props) {
+    // const {menu, setMenu} = React.useContext(MenuContext)
 
-    function getCart(){
-        const localcart = localStorage.getItem("cart")
-        return localcart ? JSON.parse(localcart) : []
-    }
-    // const {discount, setDiscount} = useContext(DiscountContext);
-    // let discount = 0;
-    const localcart = getCart();    
-    console.log(localcart)
+// function getMenu(){
+//   const localmenu = localStorage.getItem("menu")
+//   return localmenu ? JSON.parse(localmenu) : []
+// }
+
+// const localmenu = getMenu();
+
+// useEffect(()=>{
+//   props.FetchItems(localmenu)
+// },[])
+
+//     function getMenu(){
+//         const localmenu = localStorage.getItem("menu")
+//         return localmenu ? JSON.parse(localmenu) : []
+//       }
+
+//     function getCart(){
+//         const localcart = localStorage.getItem("cart")
+//         return localcart ? JSON.parse(localcart) : []
+//     }
+
+//     useEffect(() => {
+//         localcart = getCart(); 
+//         console.log(localcart)
+//         if(props.items.length === 0 && localcart !== [])
+//         {
+//             console.log(localcart)
+//             props.FetchCart(...props.items,localcart)
+//             props.FetchCart(props.items)
+//         } 
+  
     
+//      },[])
 
-    // localStorage.setItem("cart", JSON.stringify(props.items))
+
     const [userdisc, setdisc] = useState(0)
     const {orderdetails, setCart, setOrderDiscount, setTotal} = useContext(CheckoutContext);
 
@@ -36,22 +62,22 @@ function Cart(props) {
             mydata = doc.data().Discount
           });        
           setdisc(mydata)
-          props.FetchCart(localcart)
         })
       }, []);
 
-    // discount_price = 10;
+      var localcart = []
+
+
+
+
+      
+
+ 
+     
+
+
     discount_price = userdisc
-    // if(discount === null){
-        
-    //     discount_price = "0%";
-    //     string_discount = "0%";
-    //     discount_price = parseInt(discount_price.split("%",1));
-    // } else {
-    //     string_discount = discount;
-    //     discount_price = parseInt(discount.split("%",1));
-    // }
-    
+
     function handleRemove(id){
         props.removeItem(id);
     }
@@ -193,7 +219,8 @@ const mapDispatchToProps = (dispatch)=>{
         removeItem: (id)=>{dispatch(removeItem(id))},
         addQuantity: (id)=>{dispatch(addQuantity(id))},
         subtractQuantity: (id)=>{dispatch(subtractQuantity(id))},
-        FetchCart: (items)=>{dispatch(FetchCart(items))}
+        FetchCart: (items)=>{dispatch(FetchCart(items))},
+        FetchItems: (items)=>{dispatch(FetchItems(items))}
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Cart)

@@ -5,15 +5,15 @@
 .feedback-title {
   text-align: center;
   font-size: 4rem;
-  color: #626e60;
-  font-family: "Montserrat", sans-serif;
-  margin-top: 2rem;
+  color:#955f61;
+  font-family: 'Kanit', sans-serif;
+  margin-top: 0.2rem;
 }
 
 .feedback-form {
   background-color: #dac4c4;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-radius: 1rem;
   width: 72rem;
 }
@@ -62,14 +62,27 @@ outline: none;
   box-sizing: border-box; 
   border: 1px solid #ccc;
   margin-left: 4.3%;
-  margin-top: 1%;
+  margin-top: 0%;
 }
 
 .subject-title,
 .message-title {
   color: #955f61;
-  font-family: "Montserrat", sans-serif;
-  padding-top: 1rem;
+  font-family: 'Jost', sans-serif;
+  margin-left: 0.1%;
+  /* padding-top: 0.7rem; */
+}
+
+.subject{
+  margin-bottom: 3%;
+}
+.title {
+  color: #955f61;
+  font-family: 'Jost', sans-serif;
+  padding-top: 0rem;
+  /* width: 5%; */
+  /* height:0%; */
+  margin-top: 1rem;
 }
 
 input[name="subject"] {
@@ -87,5 +100,6 @@ input[name="rating"] {
 }
 
 .stars {
-  margin-left: 2.5rem;
+  width: 27%;
+  padding-top: 15%;
 }

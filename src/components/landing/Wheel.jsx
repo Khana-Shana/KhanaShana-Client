@@ -124,25 +124,27 @@ class Wheel extends React.Component {
 
         <div>
         {button ?         
-          <Link to = "/fullmenu">
-          <button
-            type="button"
-            id="GFG"
-            // href="/fullmenu"
-            className="wheeldealbtn button-error pure-button "
-            // onClick = {givediscount}
-          >
-            Avail Discount
-          </button>
-          </Link>
+                <Link to = "/fullmenu">
+                <button
+                  id="GFG"
+                  type="button"
+                  className="button-error pure-button"
+                  style = {{fontSize: "1.7rem", width: "70%", border: "none", fontFamily: "'Jost', sans-serif", marginTop:"8%", marginLeft:"16%"}}
+                >
+                  Avail Discount
+                </button>
+                </Link>
           :
-          <Button
-            type="button"
+          
+          <button
             id="GFG"
-            className="wheeldealbtn button-error pure-button "
+            type="button"
+            className="button-error pure-button"
+            style = {{fontSize: "1.7rem", width: "70%", border: "none", fontFamily: "'Jost', sans-serif", marginTop:"8%", marginLeft:"16%"}}
           disabled>
             Avail Discount
-          </Button>}
+          </button>
+          }
        
         </div>
           

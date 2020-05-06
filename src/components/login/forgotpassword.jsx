@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./passwordstyles.css";
 import firebase_integration from "../fire";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import {Link, withRouter} from 'react-router-dom';
+import "./passwordstyles.css";
 
 function ForgotPassword(props) {
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ function ForgotPassword(props) {
 
   return (
     <div class="pass-back">
-       <Link to = "/">
+       <Link to = "/loginpage">
       <span>
               <img  className = "main-back" src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"/>
             </span>
@@ -41,7 +41,7 @@ function ForgotPassword(props) {
                     <b>ENTER YOUR EMAIL</b>
                   </h4>
                 </div>
-                <div className="modal-body">
+                <div style = {{paddingTop:"0"}} className="modal-body">
                   <form
                     action="/examples/actions/confirmation.php"
                     method="post"

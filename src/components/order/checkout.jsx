@@ -2,6 +2,8 @@ import React, { Fragment, useContext, useState } from 'react';
 import './orderstyles.css';
 import Header from './navbar';
 import Footer from '../navigation/footer';
+import { connect } from 'react-redux'
+import {FetchCart} from './actions/cart-actions'
 import DiscountContext from '../context/context';
 import CheckoutContext from '../context/checkoutcontext';
 import {Link} from 'react-router-dom';
@@ -62,6 +64,7 @@ function Checkout(props) {
             })
 
             localStorage.setItem("cart", [])
+            props.FetchCart([]);
             props.history.replace("./orderconfirmed")
         })
 
@@ -132,4 +135,12 @@ function Checkout(props) {
     )
 }
 
-export default Checkout;
+
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        
+        FetchCart: (items)=>{dispatch(FetchCart(items))}
+    }
+}
+export default connect(null,mapDispatchToProps)(Checkout)
+// export default Checkout;

@@ -12,10 +12,12 @@ import { Link, withRouter } from "react-router-dom";
 import { FetchItems } from "../order/actions/cart-actions";
 import Login from "./login";
 import "./loginstyles.css";
+import MenuContext from "../context/menucontext"
 import { FacebookLoginButton } from "react-social-login-buttons";
 
 function LoginBack(props) {
   const [isFlipped, setState] = useState(false);
+  const {menu, setMenu} = React.useContext(MenuContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -27,7 +29,13 @@ function LoginBack(props) {
 
   return (
     <div className="cont">
+
       <div className="row">
+      <Link to = "/">
+      
+      <img  className = "main-back" src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"/>
+    
+    </Link>
         <div className="col-lg- leftcard">
           <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
             <div className="logcardback1">
@@ -84,23 +92,25 @@ function LoginBack(props) {
                             value="Sign in"
                             onClick={() => {
                               login();
-
-                              var menudata = [];
-
+                            
+                                var menudata = [];
+                              
                               firebase_integration.database
                                 .collection("Menu")
                                 .get()
                                 .then((docs) => {
                                   docs.forEach((doc) => {
                                     menudata.push(doc.data());
-                                    localStorage.setItem("menu",JSON.stringify(menudata))
+                                    
                                   });
-                                  props.FetchItems(menudata);
+                                  setMenu(menudata)
+                                  
                                   
                                 });
+                              
 
-                                // const localcart = localStorage.getItem("cart")
-                                // localcart ? JSON.parse(localcart) : null
+                              
+                            
 
                               
                             }}

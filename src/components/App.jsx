@@ -2,6 +2,8 @@ import React from "react";
 import LandingPage from "./landing/landingpage";
 import Login from "./login/login";
 // import MenuScreen from "./order/fullmenu";
+import { connect } from "react-redux";
+import { FetchItems } from "./order/actions/cart-actions"
 import ThankYou from "./order/ThankYou";
 import OrderHistory from './profile/OrderHistory';
 import OrderDetails from './profile/OrderDetails';
@@ -14,16 +16,16 @@ import CartScreen from './order/CartScreen';
 import Checkout from './order/checkout.jsx';
 import MenuScreen from './order/menuscreen';
 import firebase_integration from "./fire";
-import { Provider } from 'react-redux';
-import store from './stores/store'
+
 import DiscountContextProvider from './context/discount';
 import CheckoutContextProvider from './context/checkoutdetails';
 import OrderHistContextProvider from './context/orderhistdetails'
 import ForgotPassword from './login/forgotpassword';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic';
+import MenuContext from "./context/menucontext";
 
-function App() {
+function App(props) {
 
   
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -41,6 +43,7 @@ const options = {
   }
 }
 
+
   useEffect(() => {
     firebase_integration.isInitialized().then((val) => {
       setFirebaseInitialized(val);
@@ -50,7 +53,7 @@ const options = {
 
   return firebaseInitialized !== false ? (
     <AlertProvider template={AlertTemplate} {...options}>
-    <Provider store = {store}>
+   
       
     <div>
       <Router>
@@ -81,7 +84,7 @@ const options = {
       </Router>
     </div>
     {/* </DiscountContextProvider> */}
-   </Provider>
+   
    </AlertProvider>
   ) : (
     <div id="loader">
@@ -91,4 +94,18 @@ const options = {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    items: state.items,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    FetchItems: (items) => {
+      dispatch(FetchItems(items));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

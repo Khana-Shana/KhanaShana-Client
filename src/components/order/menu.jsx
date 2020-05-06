@@ -1,39 +1,38 @@
 import React, { Component, useState, useEffect } from "react";
 import { connect } from "react-redux";
-import Card from "./Card.jsx";
-import { Container } from "react-bootstrap";
-import firebase_integration from "../fire";
-import FilterResults from "react-filter-search";
-import { FetchItems, FetchCart } from "./actions/cart-actions";
+import { FetchItems, FetchCart, addToCart } from "./actions/cart-actions";
 import { Tabs, Tab } from "react-bootstrap-tabs";
 import CardScreen from "./CardScreen";
 import "./orderstyles.css";
+import MenuContext from "../context/menucontext";
 
 function Menu(props) {
-  var menudata = [];
+const {menu, setMenu} = React.useContext(MenuContext)
 
-  function getMenu(){
-    const localmenu = localStorage.getItem("menu")
-    return localmenu ? JSON.parse(localmenu) : []
+function getMenu(){
+  const localmenu = localStorage.getItem("menu")
+  return localmenu ? JSON.parse(localmenu) : []
 }
 
-const localmenu = getMenu();   
-// const localcart = getCart();  
-  useEffect(() => {
-    // localStorage.getItem("menu")
-        props.FetchItems(localmenu);
-        // props.FetchCart(localcart);
-  }, []);
+const localmenu = getMenu();
+
+useEffect(()=>{
+  props.FetchItems(localmenu)
+},[])
+
+
+
+
 
   let All = [];
   function makeAll() {
-    // filtered.splice(0,filtered.length)
+
     All = props.items;
   }
 
   let Desi = [];
   function makeDesi() {
-    // filtered.splice(0,filtered.length)
+
     props.items.map((item) => {
       if (item.Category === "Desi") {
         Desi.push(item);
@@ -43,7 +42,7 @@ const localmenu = getMenu();
 
   let Chinese = [];
   function makeChinese() {
-    // filtered.splice(0,filtered.length)
+
     props.items.map((item) => {
       if (item.Category === "Chinese") {
         Chinese.push(item);
@@ -53,7 +52,7 @@ const localmenu = getMenu();
 
   let Italian = [];
   function makeItalian() {
-    // filtered.splice(0,filtered.length)
+
     props.items.map((item) => {
       if (item.Category === "Italian") {
         Italian.push(item);
@@ -63,7 +62,7 @@ const localmenu = getMenu();
 
   let Sandwich = [];
   function makeSandwich() {
-    // filtered.splice(0,filtered.length)
+
     props.items.map((item) => {
       if (item.Category === "Sandwich") {
         Sandwich.push(item);
@@ -73,9 +72,9 @@ const localmenu = getMenu();
 
   let Burger = [];
   function makeBurgers() {
-    // filtered.splice(0,filtered.length)
+
     props.items.map((item) => {
-      if (item.Category === "Burgers") {
+      if (item.Category === "Burger") {
         Burger.push(item);
       }
     });
@@ -83,7 +82,7 @@ const localmenu = getMenu();
 
   let Dessert = [];
   function makeDesserts() {
-    // filtered.splice(0,filtered.length)
+
     props.items.map((item) => {
       if (item.Category === "Desserts") {
         Dessert.push(item);
@@ -147,8 +146,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     FetchCart: (items) => {
       dispatch(FetchCart(items));
-    }
+    },
+    addToCart: (id)=>{dispatch(addToCart(id))}
   };
 };
-// export default connect(mapStateToProps,mapDispatchToProps)(DataRead)
+
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

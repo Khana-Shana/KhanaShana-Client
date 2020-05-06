@@ -71,14 +71,15 @@ function CSupport() {
                     <h3><strong>SUBJECT</strong></h3>
                 </div>
                 <form action="/action_page.php">
-                    <input value = {subject} onChange = {(e) => {setSubject(e.target.value)}} type="text" name ="subject" placeholder="   Write your text here"/>
+                    <input class = "subject" value = {subject} onChange = {(e) => {setSubject(e.target.value)}} type="text" name ="subject" placeholder="   Write your text here"/>
                 </form>
-                <div className = "message-title">
+                <div className = "title">
                     <h3><strong>MESSAGE</strong></h3>
                 </div>
                 <textarea maxlength="400" value = {message} onChange = {(t) => {setMessage(t.target.value)}} className = "message-area" placeholder="   Write your text here"></textarea>
-                <br/> <br/>
+                <div>
                 <StarRating value={rating} handleChange = {handleChange}/>
+                </div>
                 <div className = "confirm">
                         <button onClick = {() => {
                             if(checkInputField())

@@ -7,7 +7,7 @@
 
 .rectangle {
   float: left;
-  margin-top: 2%;
+  margin-top: 3%;
   margin-left: 4%;
   height: 75%;
   width: 2%;
@@ -24,17 +24,17 @@
   color: #b0463d;
   /* margin-top: 1%; */
   font-size: 3rem;
-  font-family: "brandon_grotesqueblack";
+    font-family: 'Kanit', sans-serif;
   margin-left: 4%;
 }
 
 .textdetailsright {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-right: 30px;
   text-align: right;
   color: #b0463d;
   font-size: 1.5rem;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 .righttext {
@@ -45,14 +45,15 @@
   display: block;
 
   width: 100%;
-  height: 90%;
-  padding-top: 2%;
+  height: 100%;
+  /* padding-top: 2%; */
 }
 .left-services {
-  display: block;
+  /* display: block; */
+  /* padding-bottom: 5%; */
   height:45%;
   width: 100%;
-  padding-top: 2%;
+  /* padding-top: 2%; */
 }
 
 .prebook {
@@ -61,7 +62,7 @@
   /* margin-top: 0; */
   margin-right: 30px;
 
-  height: 100%;
+  height: 94%;
 }
 
 .takeaway {
@@ -73,27 +74,26 @@
 
   height: 100%;
 }
+.takeaway2 {
+  background-color: #f1ece9;
+  border-radius: 10px;
+  margin-top: 3%;
+  position: relative;
+  margin-left: 30px;
+
+  height: 100%;
+}
 #fryaunty {
   position: absolute;
-  margin-left: 10%;
+  margin-left: 5%;
+  margin-right: 2%;
   /* max-height: 70%; */
   height: auto;
-  max-width: 19%;
+  max-width: 21%;
   padding-top: 1%;
   /* padding-bottom: 5px; */
 }
-.delivery {
-  background-color: #f1ece9;
-  border-radius: 10px;
-  margin-right: 0px;
-  margin-left: 30px !important;
-  margin-top: 2%;
-  /* margin-left: 30px; */
-  /* margin-right: 80%; */
-  height: 100% !important;
-  /* width: 100%; */
-  width: 900px !important;
-}
+
 #rider {
   /* /* max-height: 70%; */
   /* max-width: 25%;
@@ -102,12 +102,12 @@
   position: absolute;
   padding-top: 3%;  */
   position: absolute;
-  margin-left: 10%;
+  /* margin-left: 6%; */
   /* max-height: 70%; */
   height: auto;
   max-width: 25%;
   padding-top: 1%;
-  margin-left: 27px;
+  margin-left: 2%;
   margin-top:4%;
   
 }
@@ -128,13 +128,22 @@
   font-size: 3.5rem;
   margin-left: 5%;
   /* margin-bottom: 5%; */
-  font-family: "brandon_grotesqueblack";
+    font-family: 'Kanit', sans-serif;;
+}
+
+.servicestitleright2 {
+  text-align: left;
+  color: #b0463d;
+  font-size: 3.5rem;
+  margin-left: 7%;
+  /* margin-bottom: 5%; */
+    font-family: 'Kanit', sans-serif;;
 }
 .servicestitleleft {
   text-align: center;
   color: #b0463d;
   font-size: 2rem;
-  font-family: "brandon_grotesqueblack";
+    font-family: 'Kanit', sans-serif;;
 }
 
 .one {
@@ -147,19 +156,15 @@
   display: block;
 }
 
-.two {
-  height: 340px;
-  display: block;
-  width: 340px;
-}
+
 
 .servicedetails {
   text-align: left;
-  margin-left: 6%;
+  margin-left: 7%;
   /* margin-top: 1%; */
   color: #b0463d;
-  font-size: 1.7rem;
-  font-family: "PT Sans", sans-serif;
+  font-size: 1.6rem;
+  font-family: 'Jost', sans-serif;
 }
 
 /* .container {
@@ -180,14 +185,14 @@
   text-align: center;
   background-color: B0463D;
   font-size: 10pt;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 .button-error {
   color: white;
   width: 300px;
   font-size: 25pt;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'Jost', sans-serif;
   border-radius: 10px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   background: #b0463d;

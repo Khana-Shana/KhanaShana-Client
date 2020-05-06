@@ -27,7 +27,7 @@ function Deals() {
         var data = data.concat(data_copy)
         setdiscountwheel(data)
       })
-    }, [])
+    })
 
     return (
       <div className=" deals container-fluid">
@@ -50,16 +50,16 @@ function Deals() {
                     alt="food-deal"
                   />
                 {/* </div> */}
-                <Link to="/fullmenu">
-                  <button
-                    // href="/fullmenu"
-                    type="button"
-                    id="GFG"
-                    className=" wdealbtn button-error pure-button "
-                  >
-                    Daily Deal
-                  </button>
-                </Link>
+                <Link to = "/fullmenu">
+              <button
+                id="GFG"
+                type="button"
+                className="button-error pure-button"
+                style = {{fontSize: "1.7rem", width: "50%", border: "none", fontFamily: "'Jost', sans-serif", marginTop:"3%", marginLeft:"25%",marginBottom:"3%"}}
+              >
+                Daily Deal
+              </button>
+              </Link>
               </div>
             </div>
             {/* <div class="row"> */}
@@ -71,16 +71,16 @@ function Deals() {
                   className="wdealimgfirst"
                   alt="food-deal"
                 />
-                <Link to="/fullmenu">
-                  <button
-                    // href="/fullmenu"
-                    type="button"
-                    id="GFG"
-                    className=" wdealbtn button-error pure-button "
-                  >
-                    Weekly Deal
-                  </button>
-                </Link>
+                            <Link to = "/fullmenu">
+              <button
+                id="GFG"
+                type="button"
+                className="button-error pure-button"
+                style = {{fontSize: "1.7rem", width: "50%", border: "none", fontFamily: "'Jost', sans-serif", marginTop:"3%", marginLeft:"25%", marginBottom:"3%"}}
+              >
+                Weekly Deal
+              </button>
+              </Link>
                 {/* </div> */}
               </div>
             </div>

@@ -10,9 +10,9 @@
   width: 45%;
 
   color: #b0463d;
-  font-size: 3.7rem;
-  font-family: "brandon_grotesqueblack";
-  margin-top: 3%;
+  font-size: 3.9rem;
+  font-family: 'Kanit', sans-serif;
+  margin-top: 1%;
   border-color: #b0463d;
   border-style: solid;
   border-right: 2px;
@@ -45,7 +45,7 @@
   /* margin-top: 2%; */
   margin-right: 5%;
   margin-left: 10%;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 .about-img {

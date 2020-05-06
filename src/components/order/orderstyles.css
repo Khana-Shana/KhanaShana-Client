@@ -45,17 +45,17 @@ header {
   }
 
   .menuback{
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=3c68e38c-8600-4852-9f67-f606b52b22f9");
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
     background-position: center;
     /* background-repeat: repeat; */
     /* background-size: contain; */
-    /* background-position: top; */
+    background-position: top;
     /* width: 100%; */
     height: auto;
   }
 
   .cartback{
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=3c68e38c-8600-4852-9f67-f606b52b22f9");
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
     background-position: center;
     /* background-repeat: repeat; */
     background-size: cover;
