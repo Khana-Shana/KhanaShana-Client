@@ -1,54 +1,65 @@
 import React, { Component, Fragment, useContext, useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { removeItem,addQuantity,subtractQuantity, FetchCart,FetchItems} from './actions/cart-actions'
+import { removeItem,addQuantity,subtractQuantity, FetchCart,FetchItems, FetchTotal} from './actions/cart-actions'
 import './orderstyles.css';
 import Header from './navbar';
 import firebase_integration from "../fire";
 // import DiscountContext from '../context/context';
 import CheckoutContext from '../context/checkoutcontext';
 import MenuContext from "../context/menucontext";
+import DailyDealContext from "../context/dailydealcontext";
 
 var discount_price = 0;
 var discount_bill = 0;
 var string_discount = "";
 
 function Cart(props) {
+    const {availdaily} = useContext(DailyDealContext)
     // const {menu, setMenu} = React.useContext(MenuContext)
 
-// function getMenu(){
-//   const localmenu = localStorage.getItem("menu")
-//   return localmenu ? JSON.parse(localmenu) : []
-// }
+function getMenu(){
+  const localmenu = localStorage.getItem("menu")
+  return localmenu ? JSON.parse(localmenu) : []
+}
 
-// const localmenu = getMenu();
+const localmenu = getMenu();
 
-// useEffect(()=>{
-//   props.FetchItems(localmenu)
-// },[])
+useEffect(()=>{
+  props.FetchItems(localmenu)
+},[])
 
-//     function getMenu(){
-//         const localmenu = localStorage.getItem("menu")
-//         return localmenu ? JSON.parse(localmenu) : []
-//       }
+    function getLocal(){
+        const localtotal = localStorage.getItem("total")
+        return localtotal ? JSON.parse(localtotal) : []
+      }
 
-//     function getCart(){
-//         const localcart = localStorage.getItem("cart")
-//         return localcart ? JSON.parse(localcart) : []
-//     }
+    function getCart(){
+        const localcart = localStorage.getItem("cart")
+        return localcart ? JSON.parse(localcart) : []
+    }
+    
+   
+    console.log("hi")
+    useEffect(() => {
+        localcart = getCart(); 
+        let localtotal = getLocal();
+        
+        
+        if(props.items.length === 0 && localcart !== [])
+        {
+            console.log(localcart);
+            console.log(localtotal)
 
-//     useEffect(() => {
-//         localcart = getCart(); 
-//         console.log(localcart)
-//         if(props.items.length === 0 && localcart !== [])
-//         {
-//             console.log(localcart)
-//             props.FetchCart(...props.items,localcart)
-//             props.FetchCart(props.items)
-//         } 
+            props.FetchCart(...props.items,localcart);
+            props.FetchTotal(localtotal);
+            
+            
+            // props.FetchCart(props.items)
+        } 
   
     
-//      },[])
+     },[])
 
 
     const [userdisc, setdisc] = useState(0)
@@ -220,7 +231,8 @@ const mapDispatchToProps = (dispatch)=>{
         addQuantity: (id)=>{dispatch(addQuantity(id))},
         subtractQuantity: (id)=>{dispatch(subtractQuantity(id))},
         FetchCart: (items)=>{dispatch(FetchCart(items))},
-        FetchItems: (items)=>{dispatch(FetchItems(items))}
+        FetchItems: (items)=>{dispatch(FetchItems(items))},
+        FetchTotal: (total)=>{dispatch(FetchTotal(total))}
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Cart)

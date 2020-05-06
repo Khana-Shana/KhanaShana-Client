@@ -1,10 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import Wheel from "./Wheel";
 import "./deals.css";
 import firebase_integration from "../fire.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import WeeklyDealContext from '../context/weeklydealcontext'
+import DailyDealContext from '../context/dailydealcontext'
 
 function Deals() {
+    const {availdaily, setDaily} = useContext(DailyDealContext);
+    // const {availweekly, setWeekly} = useContext(WeeklyDealContext);
     const [dailydeal, setdailydeal] = React.useState({})
     const [weeklydeal, setweeklydeal] = React.useState({})
     const [discountwheel, setdiscountwheel] = React.useState([])
@@ -17,6 +21,7 @@ function Deals() {
         })
         setweeklydeal(data[0])
         setdailydeal(data[1])
+
       })
       firebase_integration.database.collection("DiscountWheel").onSnapshot((snapshot) => {
         var data = []
@@ -27,7 +32,9 @@ function Deals() {
         var data = data.concat(data_copy)
         setdiscountwheel(data)
       })
-    })
+    },dailydeal,weeklydeal,discountwheel)
+
+   
 
     return (
       <div className=" deals container-fluid">
@@ -37,6 +44,7 @@ function Deals() {
             <div>
               <Wheel items={discountwheel} />
               {/* <wheel/> */}
+              {console.log(weeklydeal)}
             </div>
           </div>
           <div class="col-lg-6 col-sm">
@@ -50,8 +58,9 @@ function Deals() {
                     alt="food-deal"
                   />
                 {/* </div> */}
-                <Link to = "/fullmenu">
+                <Link to = "/cart">
               <button
+                onClick = {setDaily(dailydeal)}
                 id="GFG"
                 type="button"
                 className="button-error pure-button"
@@ -71,9 +80,10 @@ function Deals() {
                   className="wdealimgfirst"
                   alt="food-deal"
                 />
-                            <Link to = "/fullmenu">
+              <Link to = "/cart">
               <button
                 id="GFG"
+                onClick = {setDaily(weeklydeal)}
                 type="button"
                 className="button-error pure-button"
                 style = {{fontSize: "1.7rem", width: "50%", border: "none", fontFamily: "'Jost', sans-serif", marginTop:"3%", marginLeft:"25%", marginBottom:"3%"}}

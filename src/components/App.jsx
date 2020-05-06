@@ -24,6 +24,8 @@ import ForgotPassword from './login/forgotpassword';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic';
 import MenuContext from "./context/menucontext";
+import DailyDealContextProvider from './context/dailydealdetails';
+// import WeeklyDealContextProvider from './context/weeklydealcontext';
 
 function App(props) {
 
@@ -53,6 +55,8 @@ const options = {
 
   return firebaseInitialized !== false ? (
     <AlertProvider template={AlertTemplate} {...options}>
+
+
    
       
     <div>
@@ -61,14 +65,21 @@ const options = {
          
           <Route exact path="/loginpage" component={Login} />
           <Route exact path="/resetpassword" component={ForgotPassword} />
+
           <DiscountContextProvider>
+          {/* <WeeklyDealContextProvider> */}
+          <DailyDealContextProvider>
+          <CheckoutContextProvider>
           <Route exact path="/" exact component={LandingPage} />
           <Route exact path="/fullmenu" component={MenuScreen} />
-          <CheckoutContextProvider>
+          
           <Route exact path = "/cart" component = {CartScreen} />
           <Route exact path = "/checkout" component = {Checkout} />
           <Route exact path = "/orderconfirmed" component = {ThankYou}/>
           </CheckoutContextProvider>
+          </DailyDealContextProvider>
+           {/* </WeeklyDealContextProvider> */}
+
           <OrderHistContextProvider>
           <Route exact path = "/orderhistory" component = {OrderHistory}/>
           <Route exact path = "/orderdetails" component = {OrderDetails}/>
@@ -84,7 +95,7 @@ const options = {
       </Router>
     </div>
     {/* </DiscountContextProvider> */}
-   
+
    </AlertProvider>
   ) : (
     <div id="loader">
