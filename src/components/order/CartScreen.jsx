@@ -1,16 +1,16 @@
-import React from 'react';
-import Header from './navbar';
-import Cart from './cart';
-import DiscountContextProvider from '../context/discount';
-import './orderstyles.css';
+import React from "react";
+import Header from "./navbar";
+import Cart from "./cart";
+import DiscountContextProvider from "../context/discount";
+import "./orderstyles.css";
 
 function CartScreen() {
-    return(
-        <div class = "cartback">
-            <Header cart = {true} title = "CART" link = "/fullmenu"/>
-            <Cart/>
-        </div>
-    );
+  return (
+    <div class="cartback">
+      <Header cart={true} title="CART" link="/fullmenu" />
+      <Cart />
+    </div>
+  );
 }
 
 export default CartScreen;
