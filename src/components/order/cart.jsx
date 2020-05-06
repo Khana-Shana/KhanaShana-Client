@@ -1,10 +1,4 @@
-import React, {
-  Component,
-  Fragment,
-  useContext,
-  useState,
-  useEffect,
-} from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -15,29 +9,18 @@ import {
   FetchItems,
   FetchTotal,
 } from "./actions/cart-actions";
-import "./orderstyles.css";
-import Header from "./navbar";
 import firebase_integration from "../fire";
 import CheckoutContext from "../context/checkoutcontext";
-import MenuContext from "../context/menucontext";
-import DailyDealContext from "../context/dailydealcontext";
-
-var discount_price = 0;
-var discount_bill = 0;
+import "./orderstyles.css";
 
 function Cart(props) {
-  const { availdaily } = useContext(DailyDealContext);
+
+  /* function declarations to get Menu, Cart, and Total amount of bill from localstorage */
 
   function getMenu() {
     const localmenu = localStorage.getItem("menu");
     return localmenu ? JSON.parse(localmenu) : [];
   }
-
-  const localmenu = getMenu();
-
-  useEffect(() => {
-    props.FetchItems(localmenu);
-  }, []);
 
   function getLocal() {
     const localtotal = localStorage.getItem("total");
@@ -49,7 +32,41 @@ function Cart(props) {
     return localcart ? JSON.parse(localcart) : [];
   }
 
+  /* function declarations to dispatch actions to functions for the reducer */
+
+  function handleRemove(id) {
+    props.removeItem(id);
+  }
+
+  function handleAddQuantity(id) {
+    props.addQuantity(id);
+  }
+
+  function handleSubtractQuantity(id) {
+    props.subtractQuantity(id);
+  }
+
+  /* declaring variables to get cart from local storage and to access the discount available to user */
+
+  var localcart = [];
+  var discount_price = 0;
+  var discount_bill = 0;
+
+  const [userdisc, setdisc] = useState(0);
+  const { setCart, setTotal } = useContext(CheckoutContext);
+
+  /* restoring menu existing in local storage into the variable localmenu */
+
+  const localmenu = getMenu();
+
+  /* using reducer functions to set state of "menu" and "cart" reducers globally*/
+
   useEffect(() => {
+    props.FetchItems(localmenu);
+  }, []);
+
+  useEffect(() => {
+    /* restoring cart and total from local storage into the variables */
     localcart = getCart();
     let localtotal = getLocal();
 
@@ -59,10 +76,7 @@ function Cart(props) {
     }
   }, []);
 
-  const [userdisc, setdisc] = useState(0);
-  const { orderdetails, setCart, setOrderDiscount, setTotal } = useContext(
-    CheckoutContext
-  );
+  /* reading discount available to user from database and setting state */
 
   useEffect(() => {
     var UserID = firebase_integration.auth.currentUser.uid;
@@ -78,21 +92,9 @@ function Cart(props) {
       });
   }, []);
 
-  var localcart = [];
-
   discount_price = userdisc;
 
-  function handleRemove(id) {
-    props.removeItem(id);
-  }
-
-  function handleAddQuantity(id) {
-    props.addQuantity(id);
-  }
-
-  function handleSubtractQuantity(id) {
-    props.subtractQuantity(id);
-  }
+  /* maps products in cart from the reducer for display on the cart interface */
 
   let productsinCart = props.items.map((item) => {
     return (
@@ -145,6 +147,8 @@ function Cart(props) {
     );
   });
 
+  /* maps all order details for display on the cart interface */
+
   let productsBill = props.items.map((item) => {
     return (
       <Fragment>
@@ -163,7 +167,12 @@ function Cart(props) {
     );
   });
 
+  /* calculating discounted bill */
+
   discount_bill = ((100 - discount_price) * (props.total + 100)) / 100;
+
+  /* returns order details, product bill for rendering */
+  /* checkout button is disabled if cart is empty */
 
   return (
     <div class="order">
@@ -224,13 +233,18 @@ function Cart(props) {
   );
 }
 
+/* maps cart and total from reducer to our Cart component */
+/* this function is called every time when the Redux store state changes */
+
 const mapStateToProps = (state) => {
   return {
     items: state.cart,
-    addedItems: state.addedItems,
     total: state.total,
   };
 };
+
+/* connects dispatcher functions for different action.types from the reducer to our cart Component and arguments required */
+
 const mapDispatchToProps = (dispatch) => {
   return {
     removeItem: (id) => {
@@ -253,4 +267,5 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

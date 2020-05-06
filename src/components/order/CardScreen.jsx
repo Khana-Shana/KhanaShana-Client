@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import FilterResults from "react-filter-search";
 import Card from "./Card.jsx";
 
+/* component for rendering different tab screens based on the props passed */
+
 function CardScreen(props) {
-  const [data, setData] = useState([]);
 
   function handleChange(event) {
     const { value } = event.target;
@@ -13,6 +14,7 @@ function CardScreen(props) {
   const [value, setValue] = useState("");
   return (
     <div>
+      {/* search filter added using FilterResults module */}
       <div class=" search active-pink-3 active-pink-4 mb-4">
         <input
           value={value}
@@ -25,7 +27,6 @@ function CardScreen(props) {
       </div>
 
       <FilterResults
-        /* Implementation of the search bar to cater to each card's name. */
         value={value}
         data={props.data}
         renderResults={(results) => (
@@ -36,9 +37,7 @@ function CardScreen(props) {
                   <div class=" text-center col-md-3 ml-5 mr-1">
                     <div>
                       <Card
-                        /* Applying map on the cards fetched from the backend and storing 
-                           details of all cards in the variables below for the purpose of
-                           displaying on the menu screen. */
+                      /* mapping items to card component for rendering and passing props required */
                         id={item.DishID}
                         title={item.Name}
                         desc={item.PrepTime}

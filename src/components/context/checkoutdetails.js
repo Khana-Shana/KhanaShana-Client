@@ -1,7 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import CheckoutContext from "./checkoutcontext";
 
+/* creating a checkout context provider for child components */
 function CheckoutContextProvider(props) {
+  /*declaring state for order details*/
   const [orderdetails, SetOrderDetails] = useState({
     cart: null,
     discount: null,
@@ -9,6 +11,7 @@ function CheckoutContextProvider(props) {
     orderid: null,
   });
 
+  /*setter functions for order details state */
   const setCart = (value) => {
     SetOrderDetails((prevState) => {
       return { ...prevState, cart: value };
@@ -33,6 +36,7 @@ function CheckoutContextProvider(props) {
     });
   };
 
+  /* returning context provider for children along with orderdetails state and setter functions*/
   return (
     <CheckoutContext.Provider
       value={{

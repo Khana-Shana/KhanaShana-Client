@@ -1,18 +1,26 @@
+/* credit: https://codepen.io/matheusalmeida/pen/aeLMMr */
+
 import React from "react";
 import "./footer.css";
 import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
-import firebase_integration from '../fire.js'
+import firebase_integration from "../fire.js";
+import "./footer.css";
+
+/* footer component function linked to different components of website through the hashlink component */
 
 function Footer() {
-  const [restaurantDetails, setdetails] = React.useState({})
+  /* setting up state and reading restaurant details from database to be displayed on footer */
+  const [restaurantDetails, setdetails] = React.useState({});
 
   React.useEffect(() => {
-    /* Fetching restaurant details to be displayed on the footer from the backend database. */
-    firebase_integration.database.collection("RestaurantDetails").doc("jOzlK1WWsNPdRrjcYLGv").onSnapshot((snapshot) => {
-      setdetails(snapshot.data())
-    })
-  }, restaurantDetails)
+    firebase_integration.database
+      .collection("RestaurantDetails")
+      .doc("jOzlK1WWsNPdRrjcYLGv")
+      .onSnapshot((snapshot) => {
+        setdetails(snapshot.data());
+      });
+  }, restaurantDetails);
 
   return (
     <div className="footerdiv">
@@ -23,9 +31,11 @@ function Footer() {
               <b>{restaurantDetails.Name}</b>
             </h1>
           </Link>
+
           <h2>
             <b>CONTACT</b>
           </h2>
+
           <address>
             {restaurantDetails.Address}
             <br />
@@ -67,7 +77,9 @@ function Footer() {
 
             <ul className="nav__ul">
               <li>
-                <a href="https://www.instagram.com/bonappetempt.pk/">Instagram</a>
+                <a href="https://www.instagram.com/bonappetempt.pk/">
+                  Instagram
+                </a>
               </li>
 
               <li>

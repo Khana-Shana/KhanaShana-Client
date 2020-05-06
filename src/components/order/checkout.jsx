@@ -1,20 +1,19 @@
-import React, { Fragment, useContext, useState } from "react";
-import "./orderstyles.css";
-import Header from "./navbar";
-import Footer from "../navigation/footer";
+import React, { useContext, useState } from "react";
+import { useAlert } from "react-alert";
 import { connect } from "react-redux";
 import { FetchCart, FetchTotal } from "./actions/cart-actions";
 import DiscountContext from "../context/context";
 import CheckoutContext from "../context/checkoutcontext";
-import { Link } from "react-router-dom";
+import Header from "./navbar";
+import Footer from "../navigation/footer";
 import firebase_integration from "../fire.js";
-import { useAlert } from "react-alert";
+import "./orderstyles.css";
 
 function Checkout(props) {
   const alert = useAlert();
 
   /* Creating hooks to add state to our functional components and access the states from different components in the tree. */
-  const { discount, setDiscount } = useContext(DiscountContext);
+  const { discount } = useContext(DiscountContext);
   const [number, setNumber] = useState("");
   const [address, setAddress] = useState("");
   const [area, setArea] = useState("");
@@ -74,11 +73,16 @@ function Checkout(props) {
         localStorage.setItem(
           "cart",
           []
-        ); /* Setting the cart object in the local storage to persist its states during the user session. */
+        ); /* Setting the cart object in the local storage and reducer to empty after the order is placed. */
         props.FetchCart([]);
-        localStorage.setItem("total", 0); 
+        localStorage.setItem(
+          "total",
+          0
+        ); /* Setting the total bill in the local storage and reducer to 0 after the order is placed. */
         props.FetchTotal(0);
-        props.history.replace("./orderconfirmed");
+        props.history.replace(
+          "./orderconfirmed"
+        ); /*redirecting users to orderconfirmed screen */
       });
   }
 
@@ -113,7 +117,7 @@ function Checkout(props) {
             onChange={(e) => setNumber(e.target.value)}
             type="text"
             name="mobile"
-            placeholder="   Mobile Number"
+            placeholder="Mobile Number"
             required
           />
           <input
@@ -121,7 +125,7 @@ function Checkout(props) {
             onChange={(e) => setAddress(e.target.value)}
             type="text"
             name="address"
-            placeholder="   Street Address"
+            placeholder="Street Address"
             required
           />
           <br />
@@ -130,7 +134,7 @@ function Checkout(props) {
             onChange={(e) => setArea(e.target.value)}
             type="text"
             name="area"
-            placeholder="   Area"
+            placeholder="Area"
             required
           />
           <input
@@ -138,7 +142,7 @@ function Checkout(props) {
             onChange={(e) => setFloor(e.target.value)}
             type="text"
             name="floor"
-            placeholder="   Floor/Unit"
+            placeholder="Floor/Unit"
             required
           />
         </form>
@@ -152,7 +156,7 @@ function Checkout(props) {
           maxlength="700"
           id="instruction-box"
           class="text-area"
-          placeholder="  Write your text here"
+          placeholder="Write your text here"
         ></textarea>
         <br /> <br /> <br /> <br />
         <div>
@@ -186,6 +190,7 @@ function Checkout(props) {
           <input type="checkbox" checked="checked" name="method" />
           <label>Cash on Delivery</label>
           <div class="confirm">
+            {/* Store Order Details to database on button click after verifying that the required input fields of the form have been filled */}
             <button
               onClick={() => {
                 if (checkInputField()) {
@@ -207,6 +212,8 @@ function Checkout(props) {
   );
 }
 
+/* connects dispatcher functions for fetching cart and total from the reducer to our Checkout Component and arguments required */
+
 const mapDispatchToProps = (dispatch) => {
   return {
     FetchCart: (items) => {
@@ -214,7 +221,8 @@ const mapDispatchToProps = (dispatch) => {
     },
     FetchTotal: (total) => {
       dispatch(FetchTotal(total));
-    }
+    },
   };
 };
+
 export default connect(null, mapDispatchToProps)(Checkout);

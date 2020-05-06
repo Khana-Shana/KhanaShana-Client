@@ -1,5 +1,7 @@
 import { ADD_TO_CART,REMOVE_ITEM,DEC_CART,INC_CART, FETCH_ITEMS, FETCH_CART, FETCH_TOTAL} from './cart-action-types'
 
+/* dispatcher functions for cart reducer */
+
 export const addToCart= (id)=>{
     return{
         type: ADD_TO_CART,
@@ -27,6 +29,8 @@ export const addQuantity=(id)=>{
         payload:id
     }
 }
+
+/* dispatcher functions for setting reducer based on data fetched from local storage */
 
 export const FetchItems=(items)=>{
     return{

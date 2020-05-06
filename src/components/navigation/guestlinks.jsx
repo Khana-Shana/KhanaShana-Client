@@ -1,8 +1,10 @@
 import React from "react";
-import ReactBootstrap, { Nav, Navbar } from "react-bootstrap";
-import "./header.css";
+import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import "./header.css";
+
+/* component rendered for navbar when user is not logged in */
 
 function GuestLinks() {
   return (
