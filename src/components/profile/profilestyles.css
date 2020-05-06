@@ -1,140 +1,124 @@
-.profileback{
-
-  
-        background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
-        /* background-position: center; */
-        background-repeat: repeat;
-        background-size: cover;
-        /* background-position: top; */
-        /* width: 100%; */
-        /* height: auto; */
-      
+/* css file for customer profile */
+.profileback {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fmenuback.svg?alt=media&token=88c087b1-4b8c-4ac2-bf28-c0cd735fd05d");
+  background-repeat: repeat;
+  background-size: cover;
 }
 #r1c2 {
-    border-left: solid;
-    border-bottom: solid;
-    border-color: #707070;
-    text-align: center;
-    border-width: 1px;
+  border-left: solid;
+  border-bottom: solid;
+  border-color: #707070;
+  text-align: center;
+  border-width: 1px;
 }
-#r1c3, #r1c4{
-    border-bottom: solid;
-    border-color: #707070;
-    border-width: 1px;
+#r1c3,
+#r1c4 {
+  border-bottom: solid;
+  border-color: #707070;
+  border-width: 1px;
 }
 #r2c1 {
-    border-right: solid;
-    border-color: #707070;
-    border-width: 1px;
+  border-right: solid;
+  border-color: #707070;
+  border-width: 1px;
 }
 #r2c2 {
-    padding: 35px 0 0 20px;
+  padding: 35px 0 0 20px;
 }
 #r2c3 {
-    padding: 3% 0 0 25%;
-    /* max-width: 60%; */
-    /* max-height: 60%; */
+  padding: 3% 0 0 25%;
 }
 #namebox {
-    background-color: #E3E0DD;
-    margin-top: 10%;
-    margin-bottom: 13%;
-    width: 80%;
-    font-family: Arial;
-    font-size: 2.0vw;
-    color: #B0463D;
-    border-style: solid;
-    border-width: 10px;
-    border-color: #E3E0DD;
-    border-radius: 2rem;
+  background-color: #e3e0dd;
+  margin-top: 10%;
+  margin-bottom: 13%;
+  width: 80%;
+  font-family: Arial;
+  font-size: 2vw;
+  color: #b0463d;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #e3e0dd;
+  border-radius: 2rem;
 }
 .pencil {
-    margin-left: 2%;
-    width: 10%;
-    height: auto;
+  margin-left: 2%;
+  width: 10%;
+  height: auto;
 }
 #profilepic {
-    padding: 10%;
-    padding-bottom: 20%;
-    padding-top: 40%;
-    /* padding-left: 30%; */
-    height:70%;
-    width: 70%;
-    /* float: left; */
+  padding: 10%;
+  padding-bottom: 20%;
+  padding-top: 40%;
+  height: 70%;
+  width: 70%;
 }
 .infotitle {
-    color: #B0463D;
-    font-size: 1.5vw;
-    margin-bottom: 5%;
-    /* margin-top: 10%; */
+  color: #b0463d;
+  font-size: 1.5vw;
+  margin-bottom: 5%;
 }
 .info {
-    margin-top: 2%;
-    background-color: #E3E0DD;
-    font-size: 1.4vw;
-    border-style: solid;
-    text-align: center;
-    border-color: #E3E0DD;
-    border-radius: 1rem;
+  margin-top: 2%;
+  background-color: #e3e0dd;
+  font-size: 1.4vw;
+  border-style: solid;
+  text-align: center;
+  border-color: #e3e0dd;
+  border-radius: 1rem;
 }
 #profileaunty {
-    max-width: 90%;
-    max-height: 90%;
+  max-width: 90%;
+  max-height: 90%;
 }
 .buttonbar {
-    color: #B0463D;
-    background-color: #E3E0DD;
-    border-color: white;
-    border-bottom: 0px;
+  color: #b0463d;
+  background-color: #e3e0dd;
+  border-color: white;
+  border-bottom: 0px;
 }
 @media (max-width: 850px) {
-    img#profileaunty {
-      display: none;
-    }
+  img#profileaunty {
+    display: none;
   }
-
-.left-side1{
-    border-right: 1px black solid;
-    border-bottom: 1px black solid;
-    height: 20%;
-    /* width: 50%; */
 }
-.left-side2{
-    border-right: 1px black solid;
-    border-bottom: 1px black solid;
-    height: 110vh
+
+.left-side1 {
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+  height: 20%;
+}
+.left-side2 {
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+  height: 110vh;
 }
 
 .container > .row {
-    margin: 0 !important;
-    padding: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.row{
-    margin-top: 0 !important;
+.row {
+  margin-top: 0 !important;
 }
 
-
-.input-group-append{
-    float:right;
+.input-group-append {
+  float: right;
 }
 
-
-
-a{
-    color: rgb(247, 232, 232);
+a {
+  color: rgb(247, 232, 232);
 }
 a:hover {
-    text-decoration: none;
-    color: #955F61;
-    
-  }
+  text-decoration: none;
+  color: #955f61;
+}
 
-  a:active {
-    text-decoration: none;
-    color: #955F61;
-  }
-  .hehe{
-    font-family: 'Jost', sans-serif !important;
-    
-  }
+a:active {
+  text-decoration: none;
+  color: #955f61;
+}
+.hehe {
+  font-family: "Jost", sans-serif !important;
+}
