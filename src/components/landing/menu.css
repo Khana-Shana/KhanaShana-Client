@@ -11,8 +11,6 @@
   font-family: "brandon_grotesqueblack";
 }
 
-
-
 .card-image {
   width: 75%;
   height: 228.6px;
@@ -42,7 +40,7 @@
 }
 
 .butt-div {
- height: auto;
+  height: auto;
 }
 
 .card-button {
@@ -59,35 +57,25 @@
   margin-right: 2%;
 }
 
-.dishdescription{
+.dishdescription {
   color: white;
   margin-left: 3%;
   text-align: left;
   font-size: 0.8rem;
 }
 
-
-
-.menubtn{
-  /* margin: 0 auto; */
+.menubtn {
   width: 10%;
   height: 4%;
   margin-top: 2%;
   margin-left: 80%;
-  /* font-size: 10pt; */
-  /* border-radius: 10%; */
-  /* border: 1px solid white; */
-  /* margin-left: 50px; */
-  /* margin-right: 50px; */
   padding-top: 0.1%;
   padding-right: 2%;
   padding-left: 2%;
-
 
   text-align: center;
   background-color: #955f61;
   font-size: 1.2rem;
   font-weight: bold;
   font-family: "PT Sans", sans-serif;
-
 }

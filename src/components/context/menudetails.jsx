@@ -5,7 +5,6 @@ function MenuContextProvider(props) {
   const [menu, setdsc] = useState(null);
 
   const setMenu = (value) => {
-    // localStorage.setItem("menu",JSON.stringify(value))
     setdsc(value);
   };
 

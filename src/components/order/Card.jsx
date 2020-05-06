@@ -16,10 +16,10 @@ function Card(props) {
 
   return (
     <div class="singlecard111" key={props.id}>
-      <img src={props.img} class="card-image" />{" "}
+      <img src={props.img} class="card-image" />
       <div class="card-content">
-        <div class="dish-name"> {props.title} </div>{" "}
-        <div class="dish-price"> Rs {props.price} </div>{" "}
+        <div class="dish-name"> {props.title} </div>
+        <div class="dish-price"> Rs {props.price} </div>
         <div class="timer">
           <div class="icon">
             <svg
@@ -47,7 +47,7 @@ function Card(props) {
               />
             </svg>
           </div>
-          <span class="dish-time">{props.desc}</span>{" "}
+          <span class="dish-time">{props.desc}</span>
         </div>
         <div class="buttdiv">
           <button

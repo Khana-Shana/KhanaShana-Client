@@ -3,6 +3,7 @@ import "./menu.css";
 
 export default function LandingCard(props){
     return(
+      /* Displaying menu items on the menu section on the landing page. */
         <div >
           <img
             id={props.DishID}

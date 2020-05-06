@@ -9,7 +9,9 @@ function OrderHistContextProvider(props) {
   };
 
   return (
-    <OrderHistContext.Provider value={{ orderdetails, OrderHistory: setOrderDetails }}>
+    <OrderHistContext.Provider
+      value={{ orderdetails, OrderHistory: setOrderDetails }}
+    >
       {props.children}
     </OrderHistContext.Provider>
   );

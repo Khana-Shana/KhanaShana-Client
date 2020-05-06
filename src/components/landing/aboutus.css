@@ -11,7 +11,7 @@
 
   color: #b0463d;
   font-size: 3.9rem;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   margin-top: 1%;
   border-color: #b0463d;
   border-style: solid;
@@ -42,10 +42,10 @@
   text-align: justify;
   color: #b0463d;
   font-size: 1.3rem;
-  /* margin-top: 2%; */
+
   margin-right: 5%;
   margin-left: 10%;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .about-img {
@@ -57,43 +57,42 @@
   margin-bottom: 5%;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
-.otro-blockquote{
+@import url(https://fonts.googleapis.com/css?family=Open + Sans:400italic);
+.otro-blockquote {
   font-size: 1.2rem;
-  width:85%;
+  width: 85%;
   margin-left: 10%;
-  /* margin:40px auto; */
-  font-family:Open Sans;
-  font-style:italic;
+
+  font-family: Open Sans;
+  font-style: italic;
   color: #555555;
-  padding:1.2em 30px 1.2em 75px;
-  border-left:8px solid #78C0A8 ;
-  line-height:1.6;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #78c0a8;
+  line-height: 1.6;
   position: relative;
-  background:#EDEDED;
+  background: #ededed;
 }
 
-.otro-blockquote::before{
-  font-family:Arial;
+.otro-blockquote::before {
+  font-family: Arial;
   content: "\201C";
-  color:#78C0A8;
-  font-size:4em;
+  color: #78c0a8;
+  font-size: 4em;
   position: absolute;
   left: 10px;
-  top:-10px;
+  top: -10px;
 }
 
-.otro-blockquote::after{
-  content: '';
+.otro-blockquote::after {
+  content: "";
 }
 
-.otro-blockquote span{
-  display:block;
-  color:#333333;
+.otro-blockquote span {
+  display: block;
+  color: #333333;
   font-style: normal;
   font-weight: bold;
-  margin-top:1em;
-  /* padding-left: 5%; */
+  margin-top: 1em;
 }
 *,
 *:before,
@@ -125,8 +124,7 @@
   width: 90%;
 }
 
-
-@media (max-width:629px) {
+@media (max-width: 629px) {
   img#womancook1 {
     display: none;
   }

@@ -14,7 +14,6 @@
   background: #b0463d;
 }
 
-
 .card {
   float: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -48,7 +47,6 @@
   color: white;
 }
 
-
 #loader {
   position: fixed;
   top: 0;
@@ -70,7 +68,7 @@
   margin-bottom: 5%;
   color: #b0463d;
   font-size: 50pt;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 .dailydeals {
   background-color: #bcc7b8;
@@ -95,8 +93,8 @@
 }
 .ddealimgfirst {
   max-width: 70%;
-  /* height: 5%; */
-  height:230px;
+
+  height: 230px;
 
   margin-left: 22%;
   margin-top: 5%;
@@ -116,25 +114,19 @@
 .ddealbtn:hover {
   box-shadow: 0 8px 16px 0 #955f61;
 }
-/* .row {
-  height: 110vh;
-} */
-.wdealimgfirst {
-  /* display: inline; */
 
+.wdealimgfirst {
   max-width: 60%;
 
   margin-left: 20%;
   margin-top: 5%;
 }
 
-
 .wheeldealbtn {
   margin-top: 10%;
   margin-left: 13%;
   margin-right: 35%;
   margin-bottom: 5%;
-  /* padding-bottom: 5%; */
 
   text-align: center;
   background-color: B0463D;
@@ -232,7 +224,7 @@
   border-radius: 50%;
   border: solid var(--wheel-color) var(--wheel-border-size);
   background-color: var(--wheel-color);
-  /* transition: transform var(--spinning-duration); */
+
   transform: rotate(0deg);
   cursor: pointer;
 }
