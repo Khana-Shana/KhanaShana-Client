@@ -3,7 +3,7 @@ import "./orderstyles.css";
 import Header from "./navbar";
 import Footer from "../navigation/footer";
 import { connect } from "react-redux";
-import { FetchCart } from "./actions/cart-actions";
+import { FetchCart, FetchTotal } from "./actions/cart-actions";
 import DiscountContext from "../context/context";
 import CheckoutContext from "../context/checkoutcontext";
 import { Link } from "react-router-dom";
@@ -76,6 +76,8 @@ function Checkout(props) {
           []
         ); /* Setting the cart object in the local storage to persist its states during the user session. */
         props.FetchCart([]);
+        localStorage.setItem("total", 0); 
+        props.FetchTotal(0);
         props.history.replace("./orderconfirmed");
       });
   }
@@ -210,6 +212,9 @@ const mapDispatchToProps = (dispatch) => {
     FetchCart: (items) => {
       dispatch(FetchCart(items));
     },
+    FetchTotal: (total) => {
+      dispatch(FetchTotal(total));
+    }
   };
 };
 export default connect(null, mapDispatchToProps)(Checkout);

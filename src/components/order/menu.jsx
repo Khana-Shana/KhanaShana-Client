@@ -7,7 +7,7 @@ import "./orderstyles.css";
 import MenuContext from "../context/menucontext";
 
 function Menu(props) {
-const {menu, setMenu} = React.useContext(MenuContext)
+// const {menu, setMenu} = React.useContext(MenuContext)
 
 function getMenu(){
   const localmenu = localStorage.getItem("menu")
@@ -19,6 +19,8 @@ const localmenu = getMenu();
 useEffect(()=>{
   props.FetchItems(localmenu)
 },[])
+
+console.log(props.items)
 
 
 

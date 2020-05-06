@@ -123,21 +123,6 @@ function LoginLinks(props) {
                 Logout
               </a>
             </li>
-            <Link to="/cart">
-              <li className="nav-item">
-                <a
-                  type="button"
-                  id="GFG"
-                  className="fa fa-shopping-cart fa-xs"
-                  style={{
-                    background: "#955F61",
-                    color: "white",
-                    fontSize: "1.5rem",
-                    paddingTop: "19%",
-                  }}
-                ></a>
-              </li>
-            </Link>
             <li className="nav-item">
               <a
                 type="button"

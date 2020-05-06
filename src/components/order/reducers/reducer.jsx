@@ -5,6 +5,7 @@ import {
   INC_CART,
   FETCH_ITEMS,
   FETCH_CART,
+  FETCH_TOTAL,
 } from "../actions/cart-action-types";
 
 const initState = {
@@ -22,13 +23,18 @@ const cartReducer = (state = initState, action) => {
       (item) => action.payload === item.DishID
     );
     if (existed_item) {
+      // console.log(fooditem)
       fooditem.quantity += 1;
+      existed_item.quantity = fooditem.quantity;
       localStorage.setItem("cart", JSON.stringify(state.cart));
       console.log(state.items);
       localStorage.setItem("menu", JSON.stringify(state.items));
+      let newTotal = state.total + existed_item.SalePrice;
+      localStorage.setItem("total",newTotal);
+      console.log(state.cart)
       return {
         ...state,
-        total: state.total + fooditem.SalePrice,
+        total: newTotal,
       };
     } else {
       fooditem.quantity = 1;
@@ -38,6 +44,7 @@ const cartReducer = (state = initState, action) => {
       localStorage.setItem("cart", JSON.stringify(cartitems));
       console.log(state.items);
       localStorage.setItem("menu", JSON.stringify(state.items));
+      localStorage.setItem("total",newTotal);
       return {
         ...state,
         cart: cartitems,
@@ -56,6 +63,7 @@ const cartReducer = (state = initState, action) => {
     localStorage.setItem("cart", JSON.stringify(new_items));
     console.log(state.items);
     localStorage.setItem("menu", JSON.stringify(state.items));
+    localStorage.setItem("total",newTotal);
     return {
       ...state,
       cart: new_items,
@@ -64,12 +72,19 @@ const cartReducer = (state = initState, action) => {
   }
   //INSIDE CART COMPONENT
   if (action.type === INC_CART) {
-    let fooditem = state.items.find((item) => item.DishID === action.payload);
-    fooditem.quantity += 1;
-    let newTotal = state.total + fooditem.SalePrice;
-    localStorage.setItem("cart", JSON.stringify(state.cart));
+    // let fooditem = state.items.find((item) => item.DishID === action.payload);
+    // fooditem.quantity += 1;
+    // let newTotal = state.total + fooditem.SalePrice;
+    
     console.log(state.items);
     localStorage.setItem("menu", JSON.stringify(state.items));
+    let existed_item = state.cart.find(
+      (item) => action.payload === item.DishID
+    );
+    existed_item.quantity += 1
+    let newTotal = state.total + existed_item.SalePrice;
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+    localStorage.setItem("total",newTotal);
     return {
       ...state,
       cart: state.cart,
@@ -77,7 +92,7 @@ const cartReducer = (state = initState, action) => {
     };
   }
   if (action.type === DEC_CART) {
-    let fooditem = state.items.find((item) => item.DishID === action.payload);
+    let fooditem = state.cart.find((item) => item.DishID === action.payload);
     //if the qt == 0 then it should be removed
     if (fooditem.quantity === 1) {
       let new_items = state.cart.filter(
@@ -87,6 +102,7 @@ const cartReducer = (state = initState, action) => {
       localStorage.setItem("menu", JSON.stringify(state.items));
       localStorage.setItem("cart", JSON.stringify(new_items));
       console.log(state.items);
+      localStorage.setItem("total",newTotal);
       return {
         ...state,
         cart: new_items,
@@ -98,9 +114,9 @@ const cartReducer = (state = initState, action) => {
       localStorage.setItem("cart", JSON.stringify(state.cart));
       console.log(state.items);
       localStorage.setItem("menu", JSON.stringify(state.items));
+      localStorage.setItem("total",newTotal);
       return {
         ...state,
-        cart: state.cart,
         total: newTotal,
       };
     }
@@ -116,7 +132,14 @@ const cartReducer = (state = initState, action) => {
       ...state,
       cart: action.payload,
     };
-  } else {
+  }  
+  if (action.type === FETCH_TOTAL) {
+    return {
+      ...state,
+      total: action.payload,
+    };
+  } 
+  else {
     return state;
   }
 };
