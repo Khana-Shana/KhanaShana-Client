@@ -1,14 +1,13 @@
 import React, { Fragment, useContext, useState } from "react";
-import "./orderstyles.css";
+import { useAlert } from "react-alert";
+import { connect } from "react-redux";
 import Header from "./navbar";
 import Footer from "../navigation/footer";
-import { connect } from "react-redux";
 import { FetchCart, FetchTotal } from "./actions/cart-actions";
 import DiscountContext from "../context/context";
 import CheckoutContext from "../context/checkoutcontext";
-import { Link } from "react-router-dom";
 import firebase_integration from "../fire.js";
-import { useAlert } from "react-alert";
+import "./orderstyles.css";
 
 function Checkout(props) {
   const alert = useAlert();

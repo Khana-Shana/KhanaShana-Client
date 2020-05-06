@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { addToCart } from "./actions/cart-actions";
 import "./orderstyles.css";
@@ -9,10 +9,7 @@ function Card(props) {
     props.addToCart(id);
   };
 
-  /* Creating the texture of an individual card based on the card id. 
-     The card includes the image of the item, its name, respective 
-     price, the preparation time the item needs as well as a dedicated
-     Add to Cart button with each item. */
+  /* card component that takes in props for dish name, dish price, dish preparation time and displays them along with an add to cart button */
 
   return (
     <div class="singlecard111" key={props.id}>

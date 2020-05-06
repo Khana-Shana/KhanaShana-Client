@@ -9,9 +9,9 @@ import {
   FetchItems,
   FetchTotal,
 } from "./actions/cart-actions";
-import "./orderstyles.css";
 import firebase_integration from "../fire";
 import CheckoutContext from "../context/checkoutcontext";
+import "./orderstyles.css";
 
 function Cart(props) {
 
