@@ -1,15 +1,22 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../navigation/Header';
-import { Link } from 'react-router-dom'
 import firebase_integration from '../fire.js';
-import './orderhistorystyles.css';
 import OrderHistContext from '../context/orderhistcontext';
+import './orderhistorystyles.css';
 
 function OrderHistory() {
-    
+
+    /* state declared for reading and setting customer order history from database */
     const [orders, setorders] = useState([]) 
-    const {orderdetails, OrderHistory} = useContext(OrderHistContext);
-    
+
+     /* orderhistory context accessed to make details from order history available for order details screen */
+    const {OrderHistory} = useContext(OrderHistContext);
+    const handleOrderDetails = (order) => {
+        OrderHistory(order);
+    }
+
+    /* reading order history from database */
     useEffect(() => {
         firebase_integration.database.collection('RegularOrder').orderBy("Date", "desc").onSnapshot((snapshot) => {
             var order_arr = []
@@ -21,11 +28,8 @@ function OrderHistory() {
             setorders(order_arr)
         })
     }, orders);   
-
-    const handleOrderDetails = (order) => {
-        OrderHistory(order);
-    }
     
+    /* rendering table to display user order history along with buttons for viweing order details and cancelling order */
     return (
         <div className = "orderhistorypage" style = {{backgroundColor:"#99AA93"}}>
             <Header/>
@@ -62,7 +66,7 @@ function OrderHistory() {
                                                     <td><button className = "btn btn-danger redbox" disabled>Cancel</button></td>:
                                                     <td><button className = "btn btn-danger redbox" onClick = {() => {
                                                         updateDBcancel(orders[i])
-                                                    }}>Cancel</button></td>   
+                                                    }}>Cancel</button></td>   {/*update order in database when order is cancelled from customer end*/}
                                                 }
                                             </tr>
                                         );
@@ -75,9 +79,13 @@ function OrderHistory() {
             </div>
         </div>
     );
+
+    /* update order status in database when order gets cancelled by customer */
+    
     async function updateDBcancel(Order){
         var time_of_order = Order.Date.seconds
         var time_now = (new Date().getTime()/1000).toFixed(0)
+        /* order can only be cancelled within 5 minutes of placing order */
         if(time_now-time_of_order>300){
             alert("You can only cancel an order 5 minutes within placing it")
         }
