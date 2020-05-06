@@ -1,3 +1,4 @@
+/* creating store for cart reducer to maintain cart globally */
 import { createStore } from 'redux';
 import cartReducer from '../order/reducers/reducer'
 
