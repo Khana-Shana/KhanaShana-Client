@@ -1,6 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import OrderHistContext from "./orderhistcontext";
 
+/* order history provider function for child components*/
 function OrderHistContextProvider(props) {
   const [orderdetails, setOrderDetails] = useState(null);
 
@@ -8,6 +9,7 @@ function OrderHistContextProvider(props) {
     setOrderDetails(value);
   };
 
+    /* returning order history provider for children along with order details and setter functions*/
   return (
     <OrderHistContext.Provider
       value={{ orderdetails, OrderHistory: setOrderDetails }}
