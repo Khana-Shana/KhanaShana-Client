@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import firebase_integration from "../fire";
+import React from "react";
 import { withRouter } from 'react-router-dom';
+import firebase_integration from "../fire";
+
 
 const StepThree = (props) => {
   /* Creating card of the Step Three screen for the sign-up process. */
@@ -21,6 +22,7 @@ const StepThree = (props) => {
     </div>
   );
 
+  /* firebase logs in user by default after sign up, this functions logs out the user immediately after sign up for email verification purposes */
   async function logout() {
     await firebase_integration.logout();
     window.location.reload(false);

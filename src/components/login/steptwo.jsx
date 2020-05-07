@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import { useAlert } from 'react-alert'
-import './loginstyles.css';
+import React from "react";
+import { useAlert } from "react-alert";
 import firebase_integration from "../fire";
+import "./loginstyles.css";
 
+/* step two for the multi-step form */
 const StepTwo = (props) => {
-  const alert = useAlert()
+  const alert = useAlert();
 
+  /* field validation for required inputs in form */
   const checkInputField = (values) => {
-
     if (values.number === "" || values.gender === "" || values.dob === "") {
       alert.show("Please fill in all the fields.");
       return false;
@@ -16,41 +17,47 @@ const StepTwo = (props) => {
     }
   };
 
+  /* store user details in database when user clicks on sign up and then continue form to last step */
   const continuefwd = (e) => {
     if (checkInputField(props.values)) {
-      var year = values.dob.substring(0, 4)
-      var month = parseInt(values.dob.substring(5, 7) - 1).toString()
-      var day = values.dob.substring(8, 10)
-      var date = new Date(Date.UTC(year, month, day))
-      var customerID = firebase_integration.auth.currentUser.uid
-      firebase_integration.database.collection("CustomerDatabase").doc(customerID.toString()).set({
-        ContactNo: values.number,
-        CustomerID: firebase_integration.auth.currentUser.uid,
-        DOB: date,
-        Email: values.email,
-        Gender: values.gender,
-        Name: values.name,
-        isFacebookUser: false,
-        WheelUsed: false,
-        DateWheelUsed: new Date(),
-        Discount: 0
-      }).catch(function (error) {
-        alert.show(error.message)
-      });
+      var year = values.dob.substring(0, 4);
+      var month = parseInt(values.dob.substring(5, 7) - 1).toString();
+      var day = values.dob.substring(8, 10);
+      var date = new Date(Date.UTC(year, month, day));
+      var customerID = firebase_integration.auth.currentUser.uid;
+      firebase_integration.database
+        .collection("CustomerDatabase")
+        .doc(customerID.toString())
+        .set({
+          ContactNo: values.number,
+          CustomerID: firebase_integration.auth.currentUser.uid,
+          DOB: date,
+          Email: values.email,
+          Gender: values.gender,
+          Name: values.name,
+          isFacebookUser: false,
+          WheelUsed: false,
+          DateWheelUsed: new Date(),
+          Discount: 0,
+        })
+        .catch(function (error) {
+          alert.show(error.message);
+        });
       props.nextStep();
     }
   };
 
+  /* go back to previous step */
   const back = (e) => {
     e.preventDefault();
     props.prevStep();
   };
 
+  /* destruct prop values */
   const { values, handleChange } = props;
 
   return (
     <div className="logcardback2">
-
       <div className="box">
         <div className="sign1-text">HALF WAY THROUGH!</div>
 
@@ -116,12 +123,20 @@ const StepTwo = (props) => {
     </div>
   );
 
+  /* register user with firebase and then continue to next step */
   async function onRegister() {
     try {
-      await firebase_integration.register(values.name, values.email, values.password);
+      await firebase_integration.register(
+        values.name,
+        values.email,
+        values.password
+      );
       continuefwd();
     } catch (error) {
-      alert.show("An error occured while signing up. Please Try Again!", error.message);
+      alert.show(
+        "An error occured while signing up. Please Try Again!",
+        error.message
+      );
     }
   }
 };
