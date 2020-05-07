@@ -4,10 +4,6 @@ An elegant food ordering web application running on top of reactjs, redux, and f
 
 ![image](./landingpage.jpg)
 
-## Demo
-
-
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Find the detailed instructions below:
@@ -36,7 +32,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 `npm start`
 
-* After following above steps, your browser should automatically launched. If not, open your browser and run:
+* After following above steps, your browser should automatically launch. If not, open your browser and run:
 
 `http://localhost:3000`
 
