@@ -7,6 +7,7 @@ import "./loginstyles.css";
 /* step two for the multi-step form */
 const StepTwo = (props) => {
   const alert = useAlert();
+  let i = 0;
 
   /* field validation for required inputs in form */
   const checkInputField = (values) => {
@@ -20,7 +21,7 @@ const StepTwo = (props) => {
 
   /* store user details in database when user clicks on sign up and then continue form to last step */
   const continuefwd = (e) => {
-    if (checkInputField(props.values)) {
+    if (checkInputField(props.values) && i === 0) {
       var year = values.dob.substring(0, 4);
       var month = parseInt(values.dob.substring(5, 7) - 1).toString();
       var day = values.dob.substring(8, 10);
@@ -44,6 +45,7 @@ const StepTwo = (props) => {
         .catch(function (error) {
           alert.show(error.message);
         });
+      i= i+1;
       props.nextStep();
     }
   };
