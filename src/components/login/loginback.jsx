@@ -1,27 +1,26 @@
 import React from "react";
-// import Button from "./loginbutton";
-import LoginFront from "./loginfront";
-import firebase from "../fire";
 import { connect } from "react-redux";
+import { FacebookLoginButton } from "react-social-login-buttons";
+import { Link, withRouter } from "react-router-dom";
+import { FetchItems } from "../order/actions/cart-actions";
+import { useState, useEffect } from "react";
+import firebase_integration from "../fire";
 import ReactCardFlip from "react-card-flip";
 import SignupBack from "./signupback";
 import SignupFront from "./signupfront";
-import { useState, useEffect } from "react";
-import firebase_integration from "../fire";
-import { Link, withRouter } from "react-router-dom";
-import { FetchItems } from "../order/actions/cart-actions";
-import Login from "./login";
+import MenuContext from "../context/menucontext";
+import LoginFront from "./loginfront";
+
 import "./loginstyles.css";
-import MenuContext from "../context/menucontext"
-import { FacebookLoginButton } from "react-social-login-buttons";
 
 function LoginBack(props) {
+  /* create states for flipping card and form inputs */
   const [isFlipped, setState] = useState(false);
-  const {menu, setMenu} = React.useContext(MenuContext);
+  const { setMenu } = React.useContext(MenuContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  /* flip card on click */
   function handleClick(e) {
     e.preventDefault();
     setState((prevState) => ({ isFlipped: !prevState.isFlipped }));
@@ -29,14 +28,15 @@ function LoginBack(props) {
 
   return (
     <div className="cont">
-
       <div className="row">
-      <Link to = "/">
-      
-      <img  className = "main-back" src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"/>
-    
-    </Link>
+        <Link to="/">
+          <img
+            className="main-back"
+            src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"
+          />
+        </Link>
         <div className="col-lg- leftcard">
+          {/* component one for card flip */}
           <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
             <div className="logcardback1">
               <div className="button-position">
@@ -92,27 +92,18 @@ function LoginBack(props) {
                             value="Sign in"
                             onClick={() => {
                               login();
-                            
-                                var menudata = [];
-                              
+                              /* reading menu from database on customer login and setting its context*/
+                              var menudata = [];
+
                               firebase_integration.database
                                 .collection("Menu")
                                 .get()
                                 .then((docs) => {
                                   docs.forEach((doc) => {
                                     menudata.push(doc.data());
-                                    
                                   });
-                                  setMenu(menudata)
-                                  
-                                  
+                                  setMenu(menudata);
                                 });
-                                // props.FetchItems(menudata)
-
-                              
-                            
-
-                              
                             }}
                           />
                         </div>
@@ -122,6 +113,7 @@ function LoginBack(props) {
                           <a>Forgot Your Password?</a>
                         </Link>
                       </p>
+                      {/* sign in with facebook and add customer details to database*/}
                       <FacebookLoginButton
                         onClick={() =>
                           firebase_integration
@@ -202,6 +194,7 @@ function LoginBack(props) {
               </div>
             </div>
             <div>
+              {/* component two for card flip */}
               <LoginFront />
             </div>
           </ReactCardFlip>
@@ -210,9 +203,11 @@ function LoginBack(props) {
           <div>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
               <div>
+                {/* component three for card flip */}
                 <SignupFront />
               </div>
               <div>
+                {/* component four for card flip */}
                 <SignupBack />
               </div>
             </ReactCardFlip>
@@ -222,15 +217,12 @@ function LoginBack(props) {
     </div>
   );
 
+  /* redirect user to landing page after login */
   async function login() {
     try {
       await firebase_integration.login(email, password);
-      // alert("logged in");
       if (firebase_integration.getCurrentUsername()) {
-        // not logged in
-        // alert('hi')
         props.history.replace("./");
-        // return null
       }
     } catch (error) {
       alert("Invalid Email/Password");
@@ -238,12 +230,14 @@ function LoginBack(props) {
   }
 }
 
+/* connect menu items to props for update */
 const mapStateToProps = (state) => {
   return {
     items: state.items,
   };
 };
 
+/* dispatcher function to set menu in reducer */
 const mapDispatchToProps = (dispatch) => {
   return {
     FetchItems: (items) => {
@@ -251,9 +245,7 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-// export default connect(mapStateToProps,mapDispatchToProps)(DataRead)
+
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(LoginBack)
 );
-
-// export default withRouter(LoginBack);

@@ -1,5 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
+
+/* front card component for login-signup cards*/
 
 function FrontCard(props) {
   return (
@@ -14,8 +15,6 @@ function FrontCard(props) {
       </div>
     </div>
   );
-
-
 }
 
 export default FrontCard;
