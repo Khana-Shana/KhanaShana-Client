@@ -66,8 +66,8 @@ For backend management of the web application, clone the [admin side repository.
 
 ### Authors
 
-#### * Momin Mehmood Butt
-#### * Mehreen Masood
+ * Momin Mehmood Butt
+ * Mehreen Masood
 
 You can also find the list of all [contributors](https://github.com/shehryaarsharif/KhanaShana-Client/graphs/contributors) who participated in this project.
 
