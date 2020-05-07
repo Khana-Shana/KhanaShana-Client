@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import StepOne from "./stepone";
 import StepTwo from "./steptwo";
 import StepThree from "./stepthree";
-// import { ProgressBar, Step } from "react-step-progress-bar";
-import { Link, withRouter } from "react-router-dom";
-import firebase_integration from "../fire";
 import './loginstyles.css';
+
 export class UserForm extends Component {
   state = {
     step: 1,
@@ -18,7 +16,7 @@ export class UserForm extends Component {
     number: "",
   };
 
-  // Proceed to next step
+  /* Proceed to next step */
   nextStep = () => {
     const { step } = this.state;
     this.setState({
@@ -26,7 +24,7 @@ export class UserForm extends Component {
     });
   };
 
-  // Go back to prev step
+  /* Go back to prev step */
   prevStep = () => {
     const { step } = this.state;
     this.setState({
@@ -34,7 +32,7 @@ export class UserForm extends Component {
     });
   };
 
-  // Handle fields change
+  /* Handle fields change */
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
