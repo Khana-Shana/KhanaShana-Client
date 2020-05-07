@@ -8,12 +8,12 @@ import "./header.css";
 
 function GuestLinks() {
   return (
-    <div>
+    <div className = "nav">
       <Navbar className="nav-link" expand="lg" style={{ paddingBottom: "0.8%", paddingTop: "0.6%", boxShadow: "none" }}>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Link to="/">
-            <button
+            <a
               style={{
                 background: "#955F61",
                 color: "white",
@@ -24,12 +24,12 @@ function GuestLinks() {
               className="navbar-brand"
             >
               Khana Shana{" "}
-            </button>
+            </a>
           </Link>
           <Nav className="mr-auto">
             <HashLink smooth to="/#to-menu">
               <li className="nav-item active">
-                <button
+                <a
                   className="nav-link"
                   to="to-menu"
                   style={{
@@ -39,12 +39,12 @@ function GuestLinks() {
                   }}
                 >
                   Menu
-                </button>
+                </a>
               </li>
             </HashLink>
             <HashLink smooth to="/#to-services">
               <li className="nav-item">
-                <button
+                <a
                   className="nav-link"
                   to="to-services"
                   style={{
@@ -54,12 +54,12 @@ function GuestLinks() {
                   }}
                 >
                   Services
-                </button>
+                </a>
               </li>
             </HashLink>
             <HashLink smooth to="/#to-about">
               <li className="nav-item">
-                <button
+                <a
                   className="nav-link"
                   to="to-about"
                   style={{
@@ -69,14 +69,14 @@ function GuestLinks() {
                   }}
                 >
                   About Us
-                </button>
+                </a>
               </li>
             </HashLink>
           </Nav>
           <Nav className="ml-auto">
             <HashLink smooth to="/#to-deals">
               <li className="nav-item active">
-                <button
+                <a
                   className="nav-link"
                   to="to-deals"
                   style={{
@@ -86,12 +86,12 @@ function GuestLinks() {
                   }}
                 >
                   Deals
-                </button>
+                </a>
               </li>
             </HashLink>
             <Link to="/loginpage">
               <li className="nav-item active">
-                <button
+                <a
                   className="nav-link"
                   style={{
                     background: "#955F61",
@@ -100,12 +100,12 @@ function GuestLinks() {
                   }}
                 >
                   Login
-                </button>
+                </a>
               </li>
             </Link>
             <li className="nav-item">
-              <button
-                type="button"
+              <a
+                type="a"
                 id="GFG"
                 href="https://www.facebook.com/uzmascuisine/"
                 className="fa fa-facebook fa-xs"
@@ -115,11 +115,11 @@ function GuestLinks() {
                   fontSize: "1.5rem",
                   paddingTop: "19%",
                 }}
-              ></button>
+              ></a>
             </li>
             <li className="nav-item">
-              <button
-                type="button"
+              <a
+                type="a"
                 id="GFG"
                 href="https://www.instagram.com/bonappetempt.pk/"
                 className="fa fa-instagram fa-xs"
@@ -129,7 +129,7 @@ function GuestLinks() {
                   fontSize: "1.5rem",
                   paddingTop: "19%",
                 }}
-              ></button>
+              ></a>
             </li>
           </Nav>
         </Navbar.Collapse>
