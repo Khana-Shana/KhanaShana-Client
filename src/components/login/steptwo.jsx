@@ -1,5 +1,6 @@
 import React from "react";
 import { useAlert } from "react-alert";
+import { withAlert } from "react-alert";
 import firebase_integration from "../fire";
 import "./loginstyles.css";
 
@@ -141,4 +142,4 @@ const StepTwo = (props) => {
   }
 };
 
-export default StepTwo;
+export default (withAlert()(StepTwo));

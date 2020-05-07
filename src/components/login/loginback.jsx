@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { Link, withRouter } from "react-router-dom";
 import { FetchItems } from "../order/actions/cart-actions";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { withAlert } from "react-alert";
+import { useAlert } from "react-alert";
 import firebase_integration from "../fire";
 import ReactCardFlip from "react-card-flip";
 import SignupBack from "./signupback";
@@ -15,6 +17,7 @@ import "./loginstyles.css";
 
 function LoginBack(props) {
   /* create states for flipping card and form inputs */
+  const alert = useAlert();
   const [isFlipped, setState] = useState(false);
   const { setMenu } = React.useContext(MenuContext);
   const [email, setEmail] = useState("");
@@ -168,11 +171,11 @@ function LoginBack(props) {
                                   Discount: 0,
                                 });
                               setError({ error: null });
-                              alert(error);
+                              alert.show(error);
                               props.history.replace("/");
                             })
                             .catch((error) => {
-                              alert(error);
+                              alert.show(error);
                               setError({ error });
                             })
                         }
@@ -225,7 +228,7 @@ function LoginBack(props) {
         props.history.replace("./");
       }
     } catch (error) {
-      alert("Invalid Email/Password");
+      alert.show("Invalid Email/Password");
     }
   }
 }
@@ -247,5 +250,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(LoginBack)
+  connect(mapStateToProps, mapDispatchToProps)(withAlert()(LoginBack))
 );
