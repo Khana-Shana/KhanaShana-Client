@@ -1,8 +1,9 @@
 import React from "react";
 import FrontCard from "./frontcard";
 import './loginstyles.css';
-import firebase_integration from '../fire.js'
+
 function SignupFront() {
+  /* Creating the card of the front screen of sign up - image is fetched from the database. */
   return (
     <div>
       <FrontCard

@@ -1,13 +1,14 @@
-import Button from "./loginbutton";
 import React, {useState } from "react";
 import { useAlert } from 'react-alert'
-
 
 const StepOne = (props) => {
   const alert = useAlert();
   const [show, setShow] = useState(true);
 
   const checkInputField = (values) => {
+    /* Applying validation checks to see if the inputted values are empty.
+    If they are, alerts are generated and the user is not allowed to 
+    navigate to the next screen. */
     if (
       values.name === "" ||
       values.email === "" ||
@@ -16,7 +17,8 @@ const StepOne = (props) => {
     ) {
       alert.show("Please fill in all the fields.");
       return false;
-    } else {
+    } else { 
+      /* Checking if the password and the confirm password inputs are exactly same. */
       if (values.password === values.confirmpswd) {
         return true;
       }
@@ -30,6 +32,7 @@ const StepOne = (props) => {
 
   function continuefwd(e) {
     e.preventDefault();
+    /* If the inputted values pass the validation checks, navigate to the next screen. */
     if (checkInputField(props.values)) {
       props.nextStep();
     }                             
@@ -56,20 +59,12 @@ const StepOne = (props) => {
         <div className="modal-dialog modal-login">
           <div className="modal-content">
             <div className="prog">
-              {/* <Line
-                percent="40"
-                strokeWidth="2"
-                strokeColor="#B74852"
-                trailWidth="1"
-                trailColor="white"
-              /> */}
               <img src ="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fstep1.svg?alt=media&token=f4cdc414-0fc7-4416-a71f-dc6ea97fef9e"/>
             </div>
             <div className="modal-body">
               <form
                 action="/examples/actions/confirmation.php"
                 method="post"
-                // onSubmit={e => e.preventDefault() && false }
               >
                 <div className="form-group">
                   <input
@@ -118,8 +113,7 @@ const StepOne = (props) => {
                     value="PROCEED"
                     onClick={continuefwd}
                   />
-                </div>
-                
+                </div>               
               </form>
             </div>
           </div>
