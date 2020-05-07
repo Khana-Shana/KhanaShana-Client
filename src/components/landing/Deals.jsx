@@ -50,7 +50,7 @@ function Deals() {
   return (
     <div className=" deals container-fluid">
       <div className="row pb-5">
-        <div className="col-lg-6 col-sm wheelitem">
+        <div className="col-lg-5 col-sm wheelitem">
           <div className="wheeltitle">TRY YOUR LUCK</div>
 
           <div>
