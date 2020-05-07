@@ -1,16 +1,15 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { CircularProgress } from "@material-ui/core";
+import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import LandingPage from "./landing/landingpage";
 import Login from "./login/login";
-import { connect } from "react-redux";
-import { FetchItems } from "./order/actions/cart-actions";
 import ThankYou from "./order/ThankYou";
 import OrderHistory from "./profile/OrderHistory";
 import OrderDetails from "./profile/OrderDetails";
 import CustomerProfile from "./profile/CustomerProfile";
 import CSupport from "./profile/custsupport";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { CircularProgress } from "@material-ui/core";
 import CartScreen from "./order/CartScreen";
 import Checkout from "./order/checkout.jsx";
 import MenuScreen from "./order/menuscreen";
@@ -19,13 +18,14 @@ import DiscountContextProvider from "./context/discount";
 import CheckoutContextProvider from "./context/checkoutdetails";
 import OrderHistContextProvider from "./context/orderhistdetails";
 import ForgotPassword from "./login/forgotpassword";
-import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import DailyDealContextProvider from "./context/dailydealdetails";
 
 function App(props) {
+  /* firebase initialize */
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
+  /* setting up for alerts */
   const options = {
     position: positions.TOP_CENTER,
     timeout: 5000,
@@ -43,6 +43,7 @@ function App(props) {
     });
   });
 
+  /* if firestore not initialized then show loading spin */
   return firebaseInitialized !== false ? (
     <AlertProvider template={AlertTemplate} {...options}>
       <div>
@@ -81,18 +82,4 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    items: state.items,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    FetchItems: (items) => {
-      dispatch(FetchItems(items));
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
