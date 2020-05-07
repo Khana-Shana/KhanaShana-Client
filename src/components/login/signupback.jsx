@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import StepOne from "./stepone";
 import StepTwo from "./steptwo";
 import StepThree from "./stepthree";
-import './loginstyles.css';
+import "./loginstyles.css";
 
 export class UserForm extends Component {
   state = {
@@ -38,6 +38,7 @@ export class UserForm extends Component {
   };
 
   render() {
+    /* set states for multi-step form and input fields*/
     const { step } = this.state;
     const {
       name,
@@ -48,8 +49,10 @@ export class UserForm extends Component {
       dob,
       number,
     } = this.state;
+    /* passing as props to child components */
     const values = { name, email, password, confirmpswd, gender, dob, number };
 
+    /* three step form */
     switch (step) {
       case 1:
         return (

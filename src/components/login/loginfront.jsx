@@ -1,8 +1,8 @@
 import React from "react";
 import FrontCard from "./frontcard";
 import './loginstyles.css';
-import firebase_integration from '../fire.js'
 
+/* front card component for login */
 function LoginFront() {
     return(
       <div>
