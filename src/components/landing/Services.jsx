@@ -79,7 +79,7 @@ function Services() {
                 <a
                   id="GFG"
                   type="button"
-                  href="/prebook.pdf"
+                  href="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/prebook.pdf?alt=media&token=e3e923ef-310f-41ca-aed3-ec2c62ff07a8"
                   target="_blank"
                   className="button-error pure-button"
                   style={{
