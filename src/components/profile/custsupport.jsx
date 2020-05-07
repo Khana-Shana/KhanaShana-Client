@@ -19,7 +19,7 @@ function CSupport() {
         if (
             subject === "" ||
             message === "" ||
-            rating === ""
+            rating === null
         ) {
             alert.show("Please fill in all the fields.");
             return false;
@@ -70,7 +70,7 @@ function CSupport() {
                 <div className="subject-title">
                     <h3><strong>SUBJECT</strong></h3>
                 </div>
-                <form action="/action_page.php">
+                <form>
                     <input class="subject" value={subject} onChange={(e) => { setSubject(e.target.value) }} type="text" name="subject" placeholder="   Write your text here" />
                 </form>
                 <div className="title">
