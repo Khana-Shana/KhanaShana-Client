@@ -26,17 +26,16 @@
   color: #b0463d;
 
   font-size: 3rem;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   margin-left: 4%;
 }
 
 .textdetailsright {
-
   margin-right: 30px;
   text-align: right;
   color: #b0463d;
   font-size: 1.5rem;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .righttext {
@@ -48,14 +47,11 @@
 
   width: 100%;
   height: 100%;
-
 }
 
 .left-services {
-
   height: 45%;
   width: 100%;
-
 }
 
 .prebook {
@@ -64,7 +60,7 @@
 
   margin-right: 30px;
 
-  height: 94%;
+  max-height: 94%;
 }
 
 .takeaway {
@@ -95,12 +91,9 @@
   height: auto;
   max-width: 21%;
   padding-top: 1%;
-
 }
 
 #rider {
-
-
   position: absolute;
   padding-top: 3%;
   position: absolute;
@@ -110,7 +103,6 @@
   padding-top: 1%;
   margin-left: 2%;
   margin-top: 4%;
-
 }
 
 #family {
@@ -130,8 +122,7 @@
   font-size: 3.5rem;
   margin-left: 5%;
 
-  font-family: 'Kanit', sans-serif;
-  ;
+  font-family: "Kanit", sans-serif;
 }
 
 .servicestitleright2 {
@@ -140,20 +131,17 @@
   font-size: 3.5rem;
   margin-left: 7%;
 
-  font-family: 'Kanit', sans-serif;
-  ;
+  font-family: "Kanit", sans-serif;
 }
 
 .servicestitleleft {
   text-align: center;
   color: #b0463d;
   font-size: 2rem;
-  font-family: 'Kanit', sans-serif;
-  ;
+  font-family: "Kanit", sans-serif;
 }
 
 .one {
-
   width: 500px;
   margin-right: 10px;
   margin-top: 0%;
@@ -167,28 +155,37 @@
   margin-left: 7%;
 
   color: #b0463d;
-  font-size: 1.6rem;
-  font-family: 'Jost', sans-serif;
+  font-size: 1.4rem;
+  font-family: "Jost", sans-serif;
+  text-align: justify;
 }
 
 .orderbtn {
   margin: 0 auto;
-  margin-top: 3%;
+  /* margin-top: 3%; */
   margin-left: 50px;
   margin-right: 50px;
 
   text-align: center;
   background-color: B0463D;
   font-size: 10pt;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .button-error {
   color: white;
   width: 300px;
   font-size: 25pt;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   border-radius: 10px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   background: #b0463d;
+}
+@media (max-width: 629px) {
+  img#fryaunty {
+    display: none;
+  }
+  img#rider {
+    display: none;
+  }
 }

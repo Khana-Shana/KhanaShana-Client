@@ -5,7 +5,7 @@ import "./services.css";
 function Services() {
   return (
     <div className="container-fluid services">
-      <div className="row">
+      <div className="row mb-0 pb-0" style = {{paddingBottom:"0px"}}>
         <div className="col">
           <div className="rectangle"></div>
           <div className="lefttext">
@@ -25,7 +25,7 @@ function Services() {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row .no-gutters " style = {{marginTop:"0%"}}>
         <div className="col">
           <div className="left-services">
             <div className="takeaway">
@@ -33,13 +33,13 @@ function Services() {
                 <div className="servicestitleright">TAKEAWAY</div>
                 <div className="servicedetails">
                   Our customers can avail our takeaway services and pick up
-                  their piping hot food and luscious desserts from our doorstep.
+                  their piping hot food and luscious desserts from our doorstep. They will be notified about pick up details!
                 </div>
               </div>
               <div className="two">
                 <img
                   id="fryaunty"
-                  className="img-fluid"
+                  className="img-fluid img-absolute"
                   alt="fryaunty"
                   src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Ffryaunty.svg?alt=media&token=687dc051-9f51-44d5-a5c0-ca82562fe45b"
                 />

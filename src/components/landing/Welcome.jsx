@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import firebase_integration from '../fire.js'
 import firebase from '../fire';
 import "./welcome.css";
@@ -35,12 +35,12 @@ function Welcome() {
               Worry not! We are sincerely for your service. Welcome your arrival!
             </div>
             <div className="orderbtn">
-              <Link to="/fullmenu">
+            <Link to="/fullmenu">
                 <button
                   id="GFG"
                   type="button"
                   className="button-error pure-button"
-                  style={{ fontSize: "1.7rem", width: "40%", border: "none", fontFamily: "'Jost', sans-serif", marginTop: "3%", marginLeft: "1%" }}
+                  style={{ fontSize: "1.7rem", width: "40%", border: "none", fontFamily: "'Jost', sans-serif", marginTop: "3%", marginLeft: "1%"}}
                 >
                   PLACE ORDER
               </button>

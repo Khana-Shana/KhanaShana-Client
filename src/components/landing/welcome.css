@@ -59,8 +59,11 @@
   max-width: 58%;
 }
 
-@media (max-width:629px) {
+@media (max-width:620px) {
   img#womancookwelcome {
     display: none;
+  }
+  .welcome{
+    height: auto;
   }
 }

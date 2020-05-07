@@ -9,7 +9,7 @@
   text-align: center;
   color: #b0463d;
   font-size: 4rem;
-  font-family: "brandon_grotesqueblack";
+  font-family: "Kanit", sans-serif;
 }
 
 .card-image {
@@ -38,6 +38,7 @@
   color: white;
   font-size: 1rem;
   margin-left: 2%;
+  font-family: "Jost", sans-serif;
 }
 
 .butt-div {
@@ -62,7 +63,8 @@
   color: white;
   margin-left: 3%;
   text-align: left;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-family: "Jost", sans-serif;
 }
 
 .menubtn {
@@ -78,5 +80,5 @@
   background-color: #955f61;
   font-size: 1.2rem;
   font-weight: bold;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Jost", sans-serif;
 }
