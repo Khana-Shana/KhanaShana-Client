@@ -1,49 +1,42 @@
 import React, { Component } from "react";
-import { Line, Circle } from "rc-progress";
-import firebase_integration from "../fire";
-import './loginstyles.css';
 import { useAlert } from 'react-alert'
-
+import './loginstyles.css';
+import firebase_integration from "../fire";
 
 const StepTwo = (props) => {
   const alert = useAlert()
 
   const checkInputField = (values) => {
-    // return true;
+
     if (values.number === "" || values.gender === "" || values.dob === "") {
       alert.show("Please fill in all the fields.");
       return false;
     } else {
-      // if(values.password === values.confirmpswd)
-      // {
       return true;
-      // }
-      // alert("Passwords don't match.");
     }
   };
-  
+
   const continuefwd = (e) => {
-    // e.preventDefault();
     if (checkInputField(props.values)) {
-      var year = values.dob.substring(0, 4) 
-      var month = parseInt(values.dob.substring(5, 7)-1).toString()
+      var year = values.dob.substring(0, 4)
+      var month = parseInt(values.dob.substring(5, 7) - 1).toString()
       var day = values.dob.substring(8, 10)
       var date = new Date(Date.UTC(year, month, day))
       var customerID = firebase_integration.auth.currentUser.uid
-        firebase_integration.database.collection("CustomerDatabase").doc(customerID.toString()).set({
-          ContactNo: values.number,
-          CustomerID: firebase_integration.auth.currentUser.uid,
-          DOB: date,
-          Email: values.email,
-          Gender: values.gender,
-          Name: values.name,
-          isFacebookUser: false,
-          WheelUsed: false,
-          DateWheelUsed: new Date(),
-          Discount: 0
-      }).catch(function(error) {
+      firebase_integration.database.collection("CustomerDatabase").doc(customerID.toString()).set({
+        ContactNo: values.number,
+        CustomerID: firebase_integration.auth.currentUser.uid,
+        DOB: date,
+        Email: values.email,
+        Gender: values.gender,
+        Name: values.name,
+        isFacebookUser: false,
+        WheelUsed: false,
+        DateWheelUsed: new Date(),
+        Discount: 0
+      }).catch(function (error) {
         alert.show(error.message)
-    });
+      });
       props.nextStep();
     }
   };
@@ -57,7 +50,7 @@ const StepTwo = (props) => {
 
   return (
     <div className="logcardback2">
- 
+
       <div className="box">
         <div className="sign1-text">HALF WAY THROUGH!</div>
 
@@ -65,14 +58,7 @@ const StepTwo = (props) => {
           <div className="modal-dialog modal-login">
             <div className="modal-content">
               <div className="prog">
-                {/* <Line
-                  percent="70"
-                  strokeWidth="2"
-                  strokeColor="#B74852"
-                  trailWidth="1"
-                  trailColor="white"
-                /> */}
-                <img src ="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fstep2.svg?alt=media&token=9de2bdde-bf3f-4fa1-b31d-cd845e2ae050"/>
+                <img src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fstep2.svg?alt=media&token=9de2bdde-bf3f-4fa1-b31d-cd845e2ae050" />
               </div>
               <div className="modal-body">
                 <form
@@ -117,18 +103,12 @@ const StepTwo = (props) => {
                       value="SIGN UP"
                       onClick={onRegister}
                     />
-                    {/* <input
-                      type="submit"
-                      className="btn btn-primary btn-block btn-lg"
-                      value="BACK"
-                      onClick={back}
-                    /> */}
                   </div>
                 </form>
               </div>
-              <span className = "back" onClick = {back}>
-              <img src = "https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"/>
-            </span>
+              <span className="back" onClick={back}>
+                <img src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22" />
+              </span>
             </div>
           </div>
         </div>
@@ -139,8 +119,6 @@ const StepTwo = (props) => {
   async function onRegister() {
     try {
       await firebase_integration.register(values.name, values.email, values.password);
-      // await firebase.addQuote(quote)
-      // props.history.replace('./')
       continuefwd();
     } catch (error) {
       alert.show("An error occured while signing up. Please Try Again!", error.message);
