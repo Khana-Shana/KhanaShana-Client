@@ -1,5 +1,6 @@
 import React from "react";
 import { useAlert } from "react-alert";
+import { withAlert } from "react-alert";
 
 const StepOne = (props) => {
   const alert = useAlert();
@@ -121,4 +122,5 @@ const StepOne = (props) => {
   );
 };
 
-export default StepOne;
+
+export default (withAlert()(StepOne));
