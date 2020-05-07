@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import firebase_integration from "../fire";
-import {withRouter} from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const StepThree = (props) => {
+  /* Creating card of the Step Three screen for the sign-up process. */
   return (
     <div className="logcardback2">
       <div className="sign-text">WELCOME!</div>
       <div className="prog1">
-        <img src ="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fstep3.svg?alt=media&token=1c60ba44-3484-4aad-952f-c3b8c4311d79"/>
+        <img src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fstep3.svg?alt=media&token=1c60ba44-3484-4aad-952f-c3b8c4311d79" />
       </div>
       <div>
-        <img id = "verifyimage1" src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fverify.svg?alt=media&token=d2371046-5d53-4c03-b4f6-bd84052d6b88" className="verify" alt="" />
+        <img id="verifyimage1" src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fverify.svg?alt=media&token=d2371046-5d53-4c03-b4f6-bd84052d6b88" className="verify" alt="" />
       </div>
       <div>
-        <button onClick = {logout} className="button" role="button">
+        <button onClick={logout} className="button" role="button">
           Lets Go!
         </button>
       </div>
@@ -23,9 +23,8 @@ const StepThree = (props) => {
 
   async function logout() {
     await firebase_integration.logout();
-    // alert("logged out");
     window.location.reload(false);
-}
+  }
 };
 
 export default withRouter(StepThree);

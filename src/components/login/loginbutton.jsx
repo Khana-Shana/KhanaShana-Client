@@ -1,6 +1,8 @@
 import React from 'react';
 
 function Button() {
+  /* This function creates the login-signup flipping buttons
+  that are displayed on the top of the login/signup cart. */
   return (
 <label className='login-button'>
 	 <span className='back'>
