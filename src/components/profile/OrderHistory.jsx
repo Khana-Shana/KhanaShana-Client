@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useAlert } from "react-alert";
 import Header from '../navigation/Header';
 import firebase_integration from '../fire.js';
 import OrderHistContext from '../context/orderhistcontext';
 import './orderhistorystyles.css';
 
 function OrderHistory() {
+    const alert = useAlert();
 
     /* state declared for reading and setting customer order history from database */
     const [orders, setorders] = useState([]) 
@@ -88,13 +90,13 @@ function OrderHistory() {
         var time_now = (new Date().getTime()/1000).toFixed(0)
         /* order can only be cancelled within 5 minutes of placing order */
         if(time_now-time_of_order>300){
-            alert("You can only cancel an order 5 minutes within placing it")
+            alert.show("You can only cancel an order 5 minutes within placing it")
         }
         else {
             firebase_integration.database.collection("RegularOrder").doc(Order.OrderID.toString()).update({
                 Tracking: "Cancelled"
             }).catch(function(error) {
-                alert(error.message)
+                alert.show(error.message)
             });
         }
         

@@ -170,9 +170,19 @@ function LoginBack(props) {
                                   DateWheelUsed: new Date(),
                                   Discount: 0,
                                 });
-                              setError({ error: null });
-                              alert.show(error);
                               props.history.replace("/");
+                              /* reading menu from database on customer login and setting its context*/
+                              var menudata = [];
+
+                              firebase_integration.database
+                                .collection("Menu")
+                                .get()
+                                .then((docs) => {
+                                  docs.forEach((doc) => {
+                                    menudata.push(doc.data());
+                                  });
+                                  setMenu(menudata);
+                                });
                             })
                             .catch((error) => {
                               alert.show(error);
