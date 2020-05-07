@@ -33,13 +33,14 @@ function OrderHistory() {
     
     /* rendering table to display user order history along with buttons for viweing order details and cancelling order */
     return (
-        <div className = "orderhistorypage" style = {{backgroundColor:"#99AA93"}}>
+        <div className = "orderhistorypage" style = {{height: "110vh",backgroundColor:"#99AA93"}}>
             <Header/>
             <div id="orderhistorybox" className="container">
                 <div id="boxheading" className="row">
                     <b>Order History</b>
                 </div>
                 <div className="row">
+                    <div class = "table-responsive">
                     <table id="orderslist" className="table">
                         <thead>
                             <tr>
@@ -78,6 +79,7 @@ function OrderHistory() {
                             }
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>
