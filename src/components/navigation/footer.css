@@ -18,10 +18,9 @@
   margin-bottom: 2em;
 }
 
-.footer__logo {
-  font-family: "brandon_grotesqueblack";
+.footer__logo b {
+  font-family: "Kanit", sans-serif;
   font-weight: 400;
-
   font-size: 1.5rem;
 }
 
