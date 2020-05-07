@@ -1,3 +1,6 @@
+/* credit for wheel spin: https://github.com/hadriengerard/spinning-wheel-game-react?files=1 */
+/* we modified the code to suit our requirements */
+
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { withAlert } from "react-alert";
