@@ -91,6 +91,15 @@ function Menu(props) {
     });
   }
 
+  let Deals = [];
+  function makeDeals() {
+    props.items.map((item) => {
+      if (item.Category === "Daily Deal" || item.Category === "Weekly Deal") {
+        Deals.push(item);
+      }
+    });
+  }
+
   /* creating a filtered array of menu items for each category */
 
   makeAll();
@@ -101,13 +110,14 @@ function Menu(props) {
   makeSandwich();
   makeChinese();
   makePizza();
+  makeDeals();
 
   return (
     <div class="menuback">
       <div className="container-fluid">
         <div>
           <div styles={{ marginTop: "0%", paddingTop: "0%" }} className="tabs">
-            <Tabs style={{ color: "white" }}>
+            <Tabs className = "myClass" style={{ color: "white" }}>
               <Tab label="All">
                 <CardScreen data={All} />
               </Tab>
@@ -131,6 +141,9 @@ function Menu(props) {
               </Tab>
               <Tab label="Sandwiches">
                 <CardScreen data={Sandwich} />
+              </Tab>
+              <Tab label="Deals">
+                <CardScreen data={Deals} />
               </Tab>
             </Tabs>
           </div>

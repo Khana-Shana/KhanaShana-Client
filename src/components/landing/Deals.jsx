@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Wheel from "./Wheel";
 import firebase_integration from "../fire.js";
 import DailyDealContext from "../context/dailydealcontext";
@@ -60,14 +60,13 @@ function Deals() {
             <div className="dealcard rounded">
               <img
                 id="deal1"
-                src={dailydeal.ImageURL}
+                src={dailydeal.URL}
                 className="ddealimgfirst"
                 alt="food-deal"
               />
 
-              <Link to="/cart">
+              <Link to="/fullmenu">
                 <button
-                  onClick={setDaily(dailydeal)}
                   id="GFG"
                   type="button"
                   className="button-error pure-button"
@@ -90,14 +89,13 @@ function Deals() {
               <div className="dealcard rounded">
                 <img
                   id="deal1"
-                  src={weeklydeal.ImageURL}
+                  src={weeklydeal.URL}
                   className="wdealimgfirst"
                   alt="food-deal"
                 />
-                <Link to="/cart">
+                <Link to="/fullmenu">
                   <button
                     id="GFG"
-                    onClick={setDaily(weeklydeal)}
                     type="button"
                     className="button-error pure-button"
                     style={{

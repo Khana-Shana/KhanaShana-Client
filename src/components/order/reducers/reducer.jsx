@@ -20,6 +20,7 @@ const initState = {
 const cartReducer = (state = initState, action) => {
   if (action.type === ADD_TO_CART) {
     let fooditem = state.items.find((item) => item.DishID === action.payload);
+    console.log(fooditem)
     /* check if the item exists in the cart. */
     let existed_item = state.cart.find(
       (item) => action.payload === item.DishID
