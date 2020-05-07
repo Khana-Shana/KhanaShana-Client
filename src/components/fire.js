@@ -21,7 +21,6 @@ class firebase_integration extends Component {
     firebase.initializeApp(firebaseConfig);
     this.database = firebase.firestore();
     this.storage = firebase.storage();
-    this.facebookProvider = new firebase.auth.FacebookAuthProvider()
       .addScope("user_birthday")
       .addScope("user_gender");
     this.auth = firebase.auth();
@@ -75,11 +74,6 @@ class firebase_integration extends Component {
       this.auth.onAuthStateChanged(resolve);
     });
   }
-
-
-  /* authentication with firebase: user facebook login function */
-  doSignInWithFacebook = () => this.auth.signInWithPopup(this.facebookProvider);
-
 
   /* authentication with firebase: get username of current user to check if logged in */
   getCurrentUsername() {
