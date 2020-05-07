@@ -1,3 +1,5 @@
+/* Credit: https://codepen.io/ryasan86/pen/QXwEbM */
+
 import React from "react";
 import Footer from "../navigation/footer.jsx";
 import firebase_integration from "../fire.js";
