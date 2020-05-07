@@ -13,7 +13,7 @@ function GuestLinks() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Link to="/">
-            <a
+            <button
               style={{
                 background: "#955F61",
                 color: "white",
@@ -24,12 +24,12 @@ function GuestLinks() {
               className="navbar-brand"
             >
               Khana Shana{" "}
-            </a>
+            </button>
           </Link>
           <Nav className="mr-auto">
             <HashLink smooth to="/#to-menu">
               <li className="nav-item active">
-                <a
+                <button
                   className="nav-link"
                   to="to-menu"
                   style={{
@@ -39,12 +39,12 @@ function GuestLinks() {
                   }}
                 >
                   Menu
-                </a>
+                </button>
               </li>
             </HashLink>
             <HashLink smooth to="/#to-services">
               <li className="nav-item">
-                <a
+                <button
                   className="nav-link"
                   to="to-services"
                   style={{
@@ -54,12 +54,12 @@ function GuestLinks() {
                   }}
                 >
                   Services
-                </a>
+                </button>
               </li>
             </HashLink>
             <HashLink smooth to="/#to-about">
               <li className="nav-item">
-                <a
+                <button
                   className="nav-link"
                   to="to-about"
                   style={{
@@ -69,14 +69,14 @@ function GuestLinks() {
                   }}
                 >
                   About Us
-                </a>
+                </button>
               </li>
             </HashLink>
           </Nav>
           <Nav className="ml-auto">
             <HashLink smooth to="/#to-deals">
               <li className="nav-item active">
-                <a
+                <button
                   className="nav-link"
                   to="to-deals"
                   style={{
@@ -86,12 +86,12 @@ function GuestLinks() {
                   }}
                 >
                   Deals
-                </a>
+                </button>
               </li>
             </HashLink>
             <Link to="/loginpage">
               <li className="nav-item active">
-                <a
+                <button
                   className="nav-link"
                   style={{
                     background: "#955F61",
@@ -100,11 +100,11 @@ function GuestLinks() {
                   }}
                 >
                   Login
-                </a>
+                </button>
               </li>
             </Link>
             <li className="nav-item">
-              <a
+              <button
                 type="button"
                 id="GFG"
                 href="https://www.facebook.com/uzmascuisine/"
@@ -115,10 +115,10 @@ function GuestLinks() {
                   fontSize: "1.5rem",
                   paddingTop: "19%",
                 }}
-              ></a>
+              ></button>
             </li>
             <li className="nav-item">
-              <a
+              <button
                 type="button"
                 id="GFG"
                 href="https://www.instagram.com/bonappetempt.pk/"
@@ -129,7 +129,7 @@ function GuestLinks() {
                   fontSize: "1.5rem",
                   paddingTop: "19%",
                 }}
-              ></a>
+              ></button>
             </li>
           </Nav>
         </Navbar.Collapse>

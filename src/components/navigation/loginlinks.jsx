@@ -18,7 +18,7 @@ function LoginLinks(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Link to="/">
-            <a
+            <button
               style={{
                 background: "#955F61",
                 color: "white",
@@ -29,12 +29,12 @@ function LoginLinks(props) {
               className="navbar-brand"
             >
               Khana Shana
-            </a>
+            </button>
           </Link>
           <Nav className="mr-auto">
             <HashLink smooth to="/#to-menu">
               <li className="nav-item active">
-                <a
+                <button
                   className="nav-link"
                   to="to-menu"
                   style={{
@@ -44,12 +44,12 @@ function LoginLinks(props) {
                   }}
                 >
                   Menu
-                </a>
+                </button>
               </li>
             </HashLink>
             <HashLink smooth to="/#to-services">
               <li className="nav-item">
-                <a
+                <button
                   className="nav-link"
                   to="to-services"
                   style={{
@@ -59,12 +59,12 @@ function LoginLinks(props) {
                   }}
                 >
                   Services
-                </a>
+                </button>
               </li>
             </HashLink>
             <HashLink smooth to="/#to-about">
               <li className="nav-item">
-                <a
+                <button
                   className="nav-link"
                   to="to-about"
                   style={{
@@ -74,7 +74,7 @@ function LoginLinks(props) {
                   }}
                 >
                   About Us
-                </a>
+                </button>
               </li>
             </HashLink>
           </Nav>
@@ -82,7 +82,7 @@ function LoginLinks(props) {
           <Nav className="ml-auto">
             <HashLink smooth to="/#to-deals">
               <li className="nav-item active">
-                <a
+                <button
                   className="nav-link"
                   to="to-deals"
                   style={{
@@ -92,12 +92,12 @@ function LoginLinks(props) {
                   }}
                 >
                   Deals
-                </a>
+                </button>
               </li>
             </HashLink>
             <Link to="/myprofile">
               <li className="nav-item active">
-                <a
+                <button
                   className="nav-link"
                   style={{
                     background: "#955F61",
@@ -107,12 +107,12 @@ function LoginLinks(props) {
                 >
                   {/* get name of user from firebase */}
                   {firebase_integration.getDisplayName()}
-                </a>
+                </button>
               </li>
             </Link>
 
             <li className="nav-item">
-              <a
+              <button
                 className="nav-link"
                 onClick={logout}
                 style={{
@@ -123,11 +123,11 @@ function LoginLinks(props) {
                 }}
               >
                 Logout
-              </a>
+              </button>
             </li>
             <Link to="/cart">
               <li className="nav-item">
-                <a
+                <button
                   type="button"
                   id="GFG"
                   className="fa fa-shopping-cart fa-xs"
@@ -137,11 +137,11 @@ function LoginLinks(props) {
                     fontSize: "1.5rem",
                     paddingTop: "19%",
                   }}
-                ></a>
+                ></button>
               </li>
             </Link>
             <li className="nav-item">
-              <a
+              <button
                 type="button"
                 id="GFG"
                 href="https://www.facebook.com/uzmascuisine/"
@@ -152,10 +152,10 @@ function LoginLinks(props) {
                   fontSize: "1.5rem",
                   paddingTop: "19%",
                 }}
-              ></a>
+              ></button>
             </li>
             <li className="nav-item">
-              <a
+              <button
                 type="button"
                 id="GFG"
                 href="https://www.instagram.com/bonappetempt.pk/"
@@ -166,7 +166,7 @@ function LoginLinks(props) {
                   fontSize: "1.5rem",
                   paddingTop: "19%",
                 }}
-              ></a>
+              ></button>
             </li>
           </Nav>
         </Navbar.Collapse>

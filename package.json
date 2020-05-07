@@ -12,7 +12,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha3",
     "emailjs-com": "^2.4.1",
-    "firebase": "^7.14.1",
+    "firebase": "^7.14.2",
     "formik": "^2.1.4",
     "lottery-wheel": "^2.1.0",
     "node-sass": "^4.14.1",
