@@ -4,7 +4,7 @@
   background-image: url("https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Ftybackground.svg?alt=media&token=870e4811-465d-4264-9420-0aecc4eb9b13");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 120%;
 }
 
 .ordernumbox {
@@ -17,35 +17,36 @@
   display: grid;
   width: 85%;
   height: 40%;
-  margin-top: 37%;
+  margin-top: 23%;
   text-align: center;
   color: #b2463d;
 }
+
 #aunty {
   max-width: 65%;
   height: auto;
   margin-left: 20%;
   margin-right: 10%;
-  margin-top: 25%;
-  margin-bottom: 15%;
+  margin-top: 7%;
+  margin-bottom: 10%;
 }
 #ordnum {
-  font-family: Arial;
+  font-family: "Kanit", sans-serif;
   font-size: 2vw;
-  margin-top: 12%;
+  margin-top: 7%;
 }
 #msg {
-  font-family: Arial;
+  font-family: "Jost", sans-serif;
   font-size: 1.5vw;
 }
 
 #trackbtn {
   margin: auto;
-  margin-bottom: 12%;
+  margin-bottom: 3%;
   text-align: center;
   background-color: #b2463d;
   font-size: 1.3vw;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .nav-link {
