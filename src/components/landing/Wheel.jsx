@@ -120,42 +120,7 @@ class Wheel extends React.Component {
         </div>
 
         <div>
-          {button ? (
-            <Link to="/fullmenu">
-              <button
-                id="GFG"
-                type="button"
-                className="button-error pure-button"
-                style={{
-                  fontSize: "1.7rem",
-                  width: "70%",
-                  border: "none",
-                  fontFamily: "'Jost', sans-serif",
-                  marginTop: "8%",
-                  marginLeft: "16%",
-                }}
-              >
-                Avail Discount
-              </button>
-            </Link>
-          ) : (
-            <button
-              id="GFG"
-              type="button"
-              className="button-error pure-button"
-              style={{
-                fontSize: "1.7rem",
-                width: "70%",
-                border: "none",
-                fontFamily: "'Jost', sans-serif",
-                marginTop: "8%",
-                marginLeft: "16%",
-              }}
-              disabled
-            >
-              Avail Discount
-            </button>
-          )}
+          {this.props.setbutton(button)}
         </div>
       </div>
     );

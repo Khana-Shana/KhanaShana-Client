@@ -1,8 +1,8 @@
 /* css file for deals */
 .deals {
   background-color: #bcc7b8;
-  width: auto;
-  height:95vh;
+  width: 100%;
+  height:auto;
 }
 
 .button-error {
@@ -66,9 +66,9 @@
 .wheeltitle {
   text-align: center;
   margin-top: 3%;
-  margin-bottom: 5%;
+  margin-bottom: 8%;
   color: #b0463d;
-  font-size: 4rem;
+  font-size: 4.6rem;
   font-family: "Kanit", sans-serif;
 }
 .dailydeals {
@@ -97,7 +97,7 @@
 
   height: 230px;
 
-  margin-left: 22%;
+  margin-left: 35%;
   margin-top: 5%;
 }
 
