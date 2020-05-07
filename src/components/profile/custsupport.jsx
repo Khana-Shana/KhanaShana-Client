@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useAlert } from "react-alert";
 import StarRating from './starrating.jsx';
 import Header from '../navigation/Header';
 import Footer from '../navigation/footer';
@@ -6,6 +7,7 @@ import './feedbackstyles.css';
 import firebase_integration from '../fire'
 
 function CSupport() {
+    const alert = useAlert();
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [rating, setRating] = useState(null);
@@ -19,7 +21,7 @@ function CSupport() {
             message === "" ||
             rating === ""
         ) {
-            alert("Please fill in all the fields.");
+            alert.show("Please fill in all the fields.");
             return false;
         } else {
             return true;
@@ -54,7 +56,7 @@ function CSupport() {
             var todaysdate = new Date()
             /* Storing the feedback information into the database. */
             await firebase_integration.addFeedback(firebase_integration.auth.currentUser.uid, todaysdate, parseInt(template_params.rating), template_params.subject, template_params.message)
-            alert("Submitted!")
+            alert.show("Submitted!")
         }
     }
 
