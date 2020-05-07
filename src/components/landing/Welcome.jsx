@@ -48,7 +48,7 @@ function Welcome() {
             </div>
           </div>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-4">
           <div className="right-side">
             <img
               id="womancookwelcome"

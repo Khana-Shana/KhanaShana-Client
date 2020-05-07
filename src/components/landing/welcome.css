@@ -53,11 +53,12 @@
 #womancookwelcome {
   display: block;
   position: absolute;
-  margin-top: 2%;
-  margin-left: 150px;
+  margin-top: 7%;
+  margin-left: 20%;
   margin-right: auto;
   padding-top: 100px;
-  max-width: 58%;
+  max-width: 70%;
+
 }
 
 @media (max-width:1024px) {
