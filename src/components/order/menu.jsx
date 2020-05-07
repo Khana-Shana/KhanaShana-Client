@@ -82,6 +82,15 @@ function Menu(props) {
     });
   }
 
+  let Pizza = [];
+  function makePizza() {
+    props.items.map((item) => {
+      if (item.Category === "Pizza") {
+        Pizza.push(item);
+      }
+    });
+  }
+
   /* creating a filtered array of menu items for each category */
 
   makeAll();
@@ -91,6 +100,7 @@ function Menu(props) {
   makeItalian();
   makeSandwich();
   makeChinese();
+  makePizza();
 
   return (
     <div class="menuback">
@@ -101,6 +111,12 @@ function Menu(props) {
               <Tab label="All">
                 <CardScreen data={All} />
               </Tab>
+              <Tab label="Burgers">
+                <CardScreen data={Burger} />
+              </Tab>
+              <Tab label="Chinese">
+                <CardScreen data={Chinese} />
+              </Tab>
               <Tab label="Desi">
                 <CardScreen data={Desi} />
               </Tab>
@@ -110,11 +126,8 @@ function Menu(props) {
               <Tab label="Italian">
                 <CardScreen data={Italian} />
               </Tab>
-              <Tab label="Burgers">
-                <CardScreen data={Burger} />
-              </Tab>
-              <Tab label="Chinese">
-                <CardScreen data={Chinese} />
+              <Tab label="Pizza">
+                <CardScreen data={Pizza} />
               </Tab>
               <Tab label="Sandwiches">
                 <CardScreen data={Sandwich} />
