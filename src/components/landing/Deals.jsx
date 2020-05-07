@@ -1,12 +1,15 @@
-import React, { Component, useContext } from "react";
+import React, { useContext } from "react";
+import { BrowserRouter as Link } from "react-router-dom";
 import Wheel from "./Wheel";
-import "./deals.css";
 import firebase_integration from "../fire.js";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import DailyDealContext from "../context/dailydealcontext";
+import "./deals.css";
 
 function Deals() {
-  const { availdaily, setDaily } = useContext(DailyDealContext);
+  /* access context to set deal for menu */
+  const { setDaily } = useContext(DailyDealContext);
+
+  /* states for reading deal details from database */
   const [dailydeal, setdailydeal] = React.useState({});
   const [weeklydeal, setweeklydeal] = React.useState({});
   const [discountwheel, setdiscountwheel] = React.useState([]);

@@ -1,28 +1,29 @@
 import React from "react";
-import DiscountContext from "../context/context";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import './deals.css';
-import firebase_integration from '../fire.js'
-import firebase from '../fire';
 import { Link, withRouter } from "react-router-dom";
-import { withAlert } from 'react-alert'
+import { withAlert } from "react-alert";
+import DiscountContext from "../context/context";
+import firebase_integration from "../fire.js";
+import firebase from "../fire";
+import "./deals.css";
 
 class Wheel extends React.Component {
+  /* access discount context */
   static contextType = DiscountContext;
 
   constructor(props, context) {
     super(props, context);
     this.state = {
       selectedItem: null,
-      button: false
+      button: false,
     };
     this.selectItem = this.selectItem.bind(this);
     this.run = false;
     this.value = 0;
     this.i = 0;
-    this.buttondisable = false
+    this.buttondisable = false;
   }
 
+  /* wheel spin function, selects a random value from array at which wheel stops */
   selectItem() {
     this.value = Math.floor(Math.random() * this.props.items.length);
     this.setState({ selectedItem: this.value });
@@ -38,13 +39,12 @@ class Wheel extends React.Component {
     };
     const spinning = selectedItem !== null ? "spinning" : "";
 
+    /* set discount if conditions valid */
     const givediscount = (resolvepromise) => {
       if (resolvepromise === true) {
         this.context.setDiscount(this.props.items[this.value]);
-      }
-      else {
-        alert.show("Discount already availed. Please try again next week!")
-
+      } else {
+        alert.show("Discount already availed. Please try again next week!");
       }
     };
 
@@ -54,39 +54,54 @@ class Wheel extends React.Component {
           className={`wheel ${spinning}`}
           style={wheelVars}
           onClick={() => {
+            /* check if user logged in */
             if (!firebase.getCurrentUsername()) {
+              alert.show("Please login first");
+              this.props.history.replace("/loginpage");
+              return null;
+            } else {
+              var UserID = firebase_integration.auth.currentUser.uid;
+              firebase_integration.database
+                .collection("CustomerDatabase")
+                .where("CustomerID", "==", UserID.toString())
+                .get()
+                .then((docs) => {
+                  var mydata = 0;
+                  docs.forEach((doc) => {
+                    mydata = doc.data();
+                  });
+                  /* check if wheel already used in last 7 days */
+                  if (mydata.WheelUsed === false) {
+                    let promise = new Promise(() => {
+                      this.selectItem();
+                    });
+                    promise.then(givediscount(true));
+                    var todaysDate = new Date();
+                    var disc = parseInt(
+                      this.props.items[this.value].substring(
+                        0,
+                        this.props.items[this.value].length - 1
+                      )
+                    );
+                    firebase_integration.database
+                      .collection("CustomerDatabase")
+                      .doc(UserID.toString())
+                      .update({
+                        WheelUsed: true,
+                        DateWheelUsed: todaysDate,
+                        Discount: disc,
+                      });
+                    this.setState({ button: true });
+                  } else if (mydata.WheelUsed === true) {
+                    /* disable wheel spin */
+                    this.context.setDiscount("0%");
+                    alert.show(
+                      "Discount already availed. Try again next week!"
+                    );
 
-              alert.show('Please login first')
-              this.props.history.replace('/loginpage')
-              return null
-            }
-            else {
-              var UserID = firebase_integration.auth.currentUser.uid
-              firebase_integration.database.collection("CustomerDatabase").where("CustomerID", "==", UserID.toString()).get().then((docs) => {
-                var mydata = 0
-                docs.forEach((doc) => {
-                  mydata = doc.data()
+                    this.setState({ button: false });
+                  }
                 });
-                if (mydata.WheelUsed === false) {
-                  let promise = new Promise(() => { this.selectItem() })
-                  promise.then(givediscount(true))
-                  var todaysDate = new Date()
-                  var disc = parseInt(this.props.items[this.value].substring(0, this.props.items[this.value].length - 1))
-                  firebase_integration.database.collection("CustomerDatabase").doc(UserID.toString()).update({
-                    WheelUsed: true,
-                    DateWheelUsed: todaysDate,
-                    Discount: disc
-                  })
-                  this.setState({ button: true });
-
-                }
-                else if (mydata.WheelUsed === true) {
-                  this.context.setDiscount("0%")
-                  alert.show("Discount already availed. Try again next week!")
-
-                  this.setState({ button: false });
-                }
-              })
             }
           }}
         >
@@ -102,27 +117,42 @@ class Wheel extends React.Component {
         </div>
 
         <div>
-          {button ?
+          {button ? (
             <Link to="/fullmenu">
               <button
                 id="GFG"
                 type="button"
                 className="button-error pure-button"
-                style={{ fontSize: "1.7rem", width: "70%", border: "none", fontFamily: "'Jost', sans-serif", marginTop: "8%", marginLeft: "16%" }}
+                style={{
+                  fontSize: "1.7rem",
+                  width: "70%",
+                  border: "none",
+                  fontFamily: "'Jost', sans-serif",
+                  marginTop: "8%",
+                  marginLeft: "16%",
+                }}
               >
                 Avail Discount
-                </button>
+              </button>
             </Link>
-            :
+          ) : (
             <button
               id="GFG"
               type="button"
               className="button-error pure-button"
-              style={{ fontSize: "1.7rem", width: "70%", border: "none", fontFamily: "'Jost', sans-serif", marginTop: "8%", marginLeft: "16%" }}
-              disabled>
+              style={{
+                fontSize: "1.7rem",
+                width: "70%",
+                border: "none",
+                fontFamily: "'Jost', sans-serif",
+                marginTop: "8%",
+                marginLeft: "16%",
+              }}
+              disabled
+            >
               Avail Discount
-          </button>
-          }
+            </button>
+          )}
         </div>
       </div>
     );

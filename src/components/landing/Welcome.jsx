@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./welcome.css";
+import { BrowserRouter as Link } from "react-router-dom";
 import firebase_integration from '../fire.js'
 import firebase from '../fire';
+import "./welcome.css";
 
 function Welcome() {
   /* The if statement below checks whether the last time the user used the 

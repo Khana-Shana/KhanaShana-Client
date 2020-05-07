@@ -1,11 +1,11 @@
 import React from "react";
-import "./menu.css";
-import firebase_integration from "../fire.js";
-import DiscountContext from "../context/context";
 import { Link } from "react-router-dom";
 import LandingCard from "./landingcard";
+import firebase_integration from "../fire.js";
+import "./menu.css";
 
 function Menu() {
+  /* state for setting menu read from local storage */
   const [menuitems, setmenudetails] = React.useState([]);
 
   firebase_integration.database

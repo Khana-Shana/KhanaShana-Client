@@ -1,7 +1,7 @@
 import React from "react";
-import "./reviews.scss";
 import Footer from "../navigation/footer.jsx";
 import firebase_integration from "../fire.js";
+import "./reviews.scss";
 
 /* This function returns a star on the customer review card. */
 const oneStar = () => {

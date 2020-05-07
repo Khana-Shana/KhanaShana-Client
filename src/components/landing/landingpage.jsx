@@ -6,7 +6,6 @@ import Services from "./Services";
 import Menu from "./Menu";
 import Aboutus from "./Aboutus";
 import Carousel from "./Reviews";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function LandingPage() {

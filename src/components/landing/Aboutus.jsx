@@ -1,8 +1,9 @@
 import React from "react";
-import "./aboutus.css";
 import firebase_integration from "../fire.js";
+import "./aboutus.css";
 
 function Aboutus() {
+  /* setting state for restaurant details to fetch from database */
   const [restaurantDetails, setdetails] = React.useState({});
 
   React.useEffect(() => {
@@ -24,9 +25,9 @@ function Aboutus() {
           <div className="aboutustitle">ABOUT US</div>
           <blockquote className="otro-blockquote">
             <p>
-              Bon Appetempt is a home-based food venture that strives to 
-              offer its customers a vast variety of sumptuous food items
-              desserts from its rich cuisine. 
+              Bon Appetempt is a home-based food venture that strives to offer
+              its customers a vast variety of sumptuous food items desserts from
+              its rich cuisine.
             </p>
           </blockquote>
           <div className="textabout">
