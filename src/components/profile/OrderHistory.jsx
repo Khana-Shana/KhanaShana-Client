@@ -45,7 +45,7 @@ function OrderHistory() {
   return (
     <div
       className="orderhistorypage"
-      style={{ height: "110vh", backgroundColor: "#99AA93" }}
+      style={{ minHeight: "100vh", backgroundColor: "#99AA93" }}
     >
       <Header />
       <div id="orderhistorybox" className="container">
@@ -54,7 +54,7 @@ function OrderHistory() {
         </div>
         <div className="row">
           <div class="table-responsive">
-            <table id="orderslist" className="table">
+            <table className="table">
               <thead>
                 <tr>
                   <th style={{ color: "#576271" }} scope="col">
