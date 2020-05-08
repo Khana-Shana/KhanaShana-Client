@@ -27,63 +27,73 @@ function Checkout(props) {
   const { orderdetails, setOrderID } = useContext(CheckoutContext);
 
   async function PlaceOrder() {
-    /* Setting order details when the confirm button is clicked. */
-    var CustomerID = firebase_integration.auth.currentUser.uid;
-    var TodaysDate = new Date();
-    var Address = floor + " " + address + " " + area;
-    var DishNames = [];
-    var DishQuantities = [];
+    try {
+      /* Setting order details when the confirm button is clicked. */
+      var CustomerID = firebase_integration.auth.currentUser.uid;
+      var TodaysDate = new Date();
+      var Address = floor + " " + address + " " + area;
+      var DishNames = [];
+      var DishQuantities = [];
 
-    /* Looping over the items in the cart to extract their names and quantities. */
-    orderdetails.cart.map((item) => DishNames.push(item.Name));
-    orderdetails.cart.map((item) => DishQuantities.push(item.quantity));
-    var instructions = document.getElementById("instruction-box").value;
-    if (instructions === "") {
-      instructions = "None";
-    }
-    var placeorder = await firebase_integration.database
-      .collection("RegularOrder")
-      .add({
-        CustomerID: CustomerID,
-        Date: TodaysDate,
-        Action: "Accept/Reject",
-        Address: Address,
-        Discount: discount,
-        DishName: DishNames,
-        DishQuantity: DishQuantities,
-        OrderType: deliverytype,
-        Subtotal: orderdetails.total,
-        Tracking: "Pending",
-        MobileNumber: number,
-        SpecialInstruction: instructions,
-        OrderID: "Not Assigned",
-      })
-      .then(function (docRef) {
-        let promise = new Promise(() => {
-          orderid = docRef.id;
-        });
-        promise.then(setOrderID(docRef.id));
-        firebase_integration.database
-          .collection("RegularOrder")
-          .doc(orderid.toString())
-          .update({
-            OrderID: orderid,
+      /* Looping over the items in the cart to extract their names and quantities. */
+      orderdetails.cart.map((item) => DishNames.push(item.Name));
+      orderdetails.cart.map((item) => DishQuantities.push(item.quantity));
+      var instructions = document.getElementById("instruction-box").value;
+      if (instructions === "") {
+        instructions = "None";
+      }
+      var placeorder = await firebase_integration.database
+        .collection("RegularOrder")
+        .add({
+          CustomerID: CustomerID,
+          Date: TodaysDate,
+          Action: "Accept/Reject",
+          Address: Address,
+          Discount: discount,
+          DishName: DishNames,
+          DishQuantity: DishQuantities,
+          OrderType: deliverytype,
+          Subtotal: orderdetails.total,
+          Tracking: "Pending",
+          MobileNumber: number,
+          SpecialInstruction: instructions,
+          OrderID: "Not Assigned",
+        })
+        .then(function (docRef) {
+          let promise = new Promise(() => {
+            orderid = docRef.id;
           });
+          promise.then(setOrderID(docRef.id));
+          firebase_integration.database
+            .collection("RegularOrder")
+            .doc(orderid.toString())
+            .update({
+              OrderID: orderid,
+            })
+            .catch(function (error) {
+              alert("An error occured. Please try again");
+            });
 
-        localStorage.setItem(
-          "cart",
-          []
-        ); /* Setting the cart object in the local storage and reducer to empty after the order is placed. */
-        props.FetchCart([]);
-        localStorage.setItem(
-          "total",
-          0
-        ); /* Setting the total bill in the local storage and reducer to 0 after the order is placed. */
-        props.FetchTotal(0);
-        props.history.replace(
-          "./orderconfirmed"
-        ); /*redirecting users to orderconfirmed screen */
-      });
+          localStorage.setItem(
+            "cart",
+            []
+          ); /* Setting the cart object in the local storage and reducer to empty after the order is placed. */
+          props.FetchCart([]);
+          localStorage.setItem(
+            "total",
+            0
+          ); /* Setting the total bill in the local storage and reducer to 0 after the order is placed. */
+          props.FetchTotal(0);
+          props.history.replace(
+            "./orderconfirmed"
+          ); /*redirecting users to orderconfirmed screen */
+        })
+        .catch(function (error) {
+          alert("An error occured. Please try again");
+        });
+    } catch (error) {
+      alert("An error occured. Please try again");
+    }
   }
 
   function checkInputField() {

@@ -14,7 +14,6 @@ import CheckoutContext from "../context/checkoutcontext";
 import "./orderstyles.css";
 
 function Cart(props) {
-
   /* function declarations to get Menu, Cart, and Total amount of bill from localstorage */
 
   function getMenu() {
@@ -78,20 +77,23 @@ function Cart(props) {
 
   /* reading discount available to user from database and setting state */
 
-  useEffect(() => {
-    var UserID = firebase_integration.auth.currentUser.uid;
-    firebase_integration.database
-      .collection("CustomerDatabase")
-      .where("CustomerID", "==", UserID.toString())
-      .onSnapshot((docs) => {
-        var mydata = 0;
-        docs.forEach((doc) => {
-          mydata = doc.data().Discount;
+  try {
+    useEffect(() => {
+      var UserID = firebase_integration.auth.currentUser.uid;
+      firebase_integration.database
+        .collection("CustomerDatabase")
+        .where("CustomerID", "==", UserID.toString())
+        .onSnapshot((docs) => {
+          var mydata = 0;
+          docs.forEach((doc) => {
+            mydata = doc.data().Discount;
+          });
+          setdisc(mydata);
         });
-        setdisc(mydata);
-      });
-  }, []);
-
+    }, []);
+  } catch (error) {
+    alert("An error occured. Please try again");
+  }
   discount_price = userdisc;
 
   /* maps products in cart from the reducer for display on the cart interface */

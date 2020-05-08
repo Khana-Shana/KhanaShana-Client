@@ -19,28 +19,32 @@ function Deals() {
     () => {
       /* Fetching deals information from the deals and discounts
     section on the Admin side. */
-      firebase_integration.database
-        .collection("Deals")
-        .orderBy("DealType", "desc")
-        .onSnapshot((snapshot) => {
-          var data = [];
-          snapshot.forEach((doc) => {
-            data.push(doc.data());
+      try {
+        firebase_integration.database
+          .collection("Deals")
+          .orderBy("DealType", "desc")
+          .onSnapshot((snapshot) => {
+            var data = [];
+            snapshot.forEach((doc) => {
+              data.push(doc.data());
+            });
+            setweeklydeal(data[0]);
+            setdailydeal(data[1]);
           });
-          setweeklydeal(data[0]);
-          setdailydeal(data[1]);
-        });
-      firebase_integration.database
-        .collection("DiscountWheel")
-        .onSnapshot((snapshot) => {
-          var data = [];
-          snapshot.forEach((doc) => {
-            data.push(doc.data().value);
+        firebase_integration.database
+          .collection("DiscountWheel")
+          .onSnapshot((snapshot) => {
+            var data = [];
+            snapshot.forEach((doc) => {
+              data.push(doc.data().value);
+            });
+            var data_copy = data;
+            var data = data.concat(data_copy);
+            setdiscountwheel(data);
           });
-          var data_copy = data;
-          var data = data.concat(data_copy);
-          setdiscountwheel(data);
-        });
+      } catch (error) {
+        alert("An error occured. Please try again");
+      }
     },
     dailydeal,
     weeklydeal,
@@ -94,17 +98,45 @@ function Deals() {
               )}
             </div>
           </div>
-          </div>
-          <div class="col-lg-6 col-sm">
-            <div className=" row pt-4 dailydeals">
+        </div>
+        <div class="col-lg-6 col-sm">
+          <div className=" row pt-4 dailydeals">
+            <div className="dealcard rounded">
+              <img
+                id="deal1"
+                src={dailydeal.URL}
+                className="ddealimgfirst"
+                alt="food-deal"
+              />
+
+              <Link to="/fullmenu">
+                <button
+                  id="GFG"
+                  type="button"
+                  className="button-error pure-button"
+                  style={{
+                    fontSize: "1.7rem",
+                    width: "50%",
+                    border: "none",
+                    fontFamily: "'Jost', sans-serif",
+                    marginTop: "3%",
+                    marginLeft: "25%",
+                    marginBottom: "3%",
+                  }}
+                >
+                  Daily Deal
+                </button>
+              </Link>
+            </div>
+
+            <div className="row pt-4 weeklydeals">
               <div className="dealcard rounded">
                 <img
                   id="deal1"
-                  src={dailydeal.URL}
-                  className="ddealimgfirst"
+                  src={weeklydeal.URL}
+                  className="wdealimgfirst"
                   alt="food-deal"
                 />
-
                 <Link to="/fullmenu">
                   <button
                     id="GFG"
@@ -120,42 +152,13 @@ function Deals() {
                       marginBottom: "3%",
                     }}
                   >
-                    Daily Deal
+                    Weekly Deal
                   </button>
                 </Link>
               </div>
-
-              <div className="row pt-4 weeklydeals">
-                <div className="dealcard rounded">
-                  <img
-                    id="deal1"
-                    src={weeklydeal.URL}
-                    className="wdealimgfirst"
-                    alt="food-deal"
-                  />
-                  <Link to="/fullmenu">
-                    <button
-                      id="GFG"
-                      type="button"
-                      className="button-error pure-button"
-                      style={{
-                        fontSize: "1.7rem",
-                        width: "50%",
-                        border: "none",
-                        fontFamily: "'Jost', sans-serif",
-                        marginTop: "3%",
-                        marginLeft: "25%",
-                        marginBottom: "3%",
-                      }}
-                    >
-                      Weekly Deal
-                    </button>
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
-        
+        </div>
       </div>
     </div>
   );

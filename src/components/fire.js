@@ -42,7 +42,6 @@ class firebase_integration extends Component {
     return this.auth.signOut();
   }
 
-
   /* authentication with firebase: user sign up function */
   async register(name, email, password) {
     await this.auth.createUserWithEmailAndPassword(email, password);
@@ -61,7 +60,7 @@ class firebase_integration extends Component {
         alert("Email Sent!");
       })
       .catch(function (error) {
-        alert(error.message);
+        alert("An error occured. Please try again");
       });
   }
 
@@ -104,7 +103,7 @@ class firebase_integration extends Component {
         Message: Message_par,
       })
       .catch(function (error) {
-        alert(error.message);
+        alert("An error occured. Please try again");
       });
   }
 }

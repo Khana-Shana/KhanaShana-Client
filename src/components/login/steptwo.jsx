@@ -26,26 +26,30 @@ const StepTwo = (props) => {
       var month = parseInt(values.dob.substring(5, 7) - 1).toString();
       var day = values.dob.substring(8, 10);
       var date = new Date(Date.UTC(year, month, day));
-      var customerID = firebase_integration.auth.currentUser.uid;
-      firebase_integration.database
-        .collection("CustomerDatabase")
-        .doc(customerID.toString())
-        .set({
-          ContactNo: values.number,
-          CustomerID: firebase_integration.auth.currentUser.uid,
-          DOB: date,
-          Email: values.email,
-          Gender: values.gender,
-          Name: values.name,
-          isFacebookUser: false,
-          WheelUsed: false,
-          DateWheelUsed: new Date(),
-          Discount: 0,
-        })
-        .catch(function (error) {
-          alert.show(error.message);
-        });
-      i= i+1;
+      try {
+        var customerID = firebase_integration.auth.currentUser.uid;
+        firebase_integration.database
+          .collection("CustomerDatabase")
+          .doc(customerID.toString())
+          .set({
+            ContactNo: values.number,
+            CustomerID: firebase_integration.auth.currentUser.uid,
+            DOB: date,
+            Email: values.email,
+            Gender: values.gender,
+            Name: values.name,
+            isFacebookUser: false,
+            WheelUsed: false,
+            DateWheelUsed: new Date(),
+            Discount: 0,
+          })
+          .catch(function (error) {
+            alert.show("An error occured. Please try again");
+          });
+      } catch (error) {
+        alert("An error occured. Please try again");
+      }
+      i = i + 1;
       props.nextStep();
     }
   };
@@ -137,11 +141,10 @@ const StepTwo = (props) => {
       continuefwd();
     } catch (error) {
       alert.show(
-        "An error occured while signing up. Please Try Again!",
-        error.message
+        "An error occured while signing up. Please Try Again!"
       );
     }
   }
 };
 
-export default (withAlert()(StepTwo));
+export default withAlert()(StepTwo);
