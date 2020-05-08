@@ -82,7 +82,9 @@ function OrderHistory() {
                     </div>
                 </div>
             </div>
+            <br/> <br/> <br/> <br/>
         </div>
+        
     );
 
     /* update order status in database when order gets cancelled by customer */
