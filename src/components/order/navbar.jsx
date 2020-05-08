@@ -27,7 +27,7 @@ function Header(props) {
                   style={{
                     background: "#626E60",
                     color: "white",
-                    width: "100%",
+                    width: "80%",
                     height: "20%",
                     marginTop: "3%",
                     marginRight: "100%",
@@ -66,8 +66,8 @@ function Header(props) {
                   style={{
                     background: "#626E60",
                     color: "white",
-                    width: "100%",
-                    height: "20%",
+                    width: "70%", 
+                    height: "24%",
                     paddingTop: "0",
                   }}
                 >
@@ -95,8 +95,8 @@ function Header(props) {
                       background: "#626E60",
                       color: "white",
                       paddingTop: "0",
-                      width: "100%",
-                      height: "20%",
+                      width: "70%", 
+                      height: "24%",
                     }}
                   >
                     <i
