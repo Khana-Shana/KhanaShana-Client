@@ -25,7 +25,7 @@ function Welcome() {
   }
 
   return (
-    <div className="container-fluid welcome">
+    <div style = {{width: "97.1%"}} className="container-fluid welcome">
       <div className="row">
         <div className="col-lg-6">
           <div className="left-side">

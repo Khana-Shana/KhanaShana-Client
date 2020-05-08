@@ -48,7 +48,7 @@ function Deals() {
   );
 
   return (
-    <div className=" deals container-fluid">
+    <div style = {{width:"97.1%"}} className=" deals container-fluid">
       <div className="row pb-5">
         <div className="col-lg-5 col-sm wheelitem">
           <div className="wheeltitle">TRY YOUR LUCK</div>

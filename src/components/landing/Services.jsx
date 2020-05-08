@@ -4,7 +4,7 @@ import "./services.css";
 /* component that renders services offered by the restaurant */
 function Services() {
   return (
-    <div className="container-fluid services">
+    <div style = {{width:"97.1%"}} className="container-fluid services">
       <div className="row mb-0 pb-0" style={{ paddingBottom: "0px" }}>
         <div className="col">
           <div className="rectangle"></div>

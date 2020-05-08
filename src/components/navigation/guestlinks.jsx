@@ -9,7 +9,7 @@ import "./header.css";
 function GuestLinks() {
   return (
     <div className = "nav">
-      <Navbar className="nav-link" expand="lg" style={{ paddingBottom: "0.8%", paddingTop: "0.6%", boxShadow: "none" }}>
+      <Navbar className="nav-link" expand="lg" style={{ paddingBottom: "0.8%", paddingTop: "0.6%", boxShadow: "none" , width: "97.1%"}}>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Link to="/">
