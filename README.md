@@ -67,5 +67,11 @@ For backend management of the web application, clone the [admin side repository.
 
 You can also find the list of all [contributors](https://github.com/shehryaarsharif/KhanaShana-Client/graphs/contributors) who participated in this project.
 
+### Deployment
+
+* Deployed link of [Admin Side](http://khana-shana-2020.web.app)
+
+* Deployed link of [Client Side](http://khana-shana-client.web.app)
+
 
 This project was built as part of the course Software Engineering - CS 360 at Lahore University of Management Sciences.
