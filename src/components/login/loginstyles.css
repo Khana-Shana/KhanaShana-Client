@@ -301,7 +301,8 @@ span {
 }
 .modal-body {
   width: 85%;
-  margin-left: 6.7%;
+  font-family: "Jost", sans-serif !important;
+  /* margin-left: 6.7%; */
 }
 .rightcard {
   float: left;
@@ -332,6 +333,7 @@ span {
   -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0) !important;
   -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0) !important;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0) !important;
+  font-family: "Jost", sans-serif !important;
 }
 .modal-login {
   width: 500px;
