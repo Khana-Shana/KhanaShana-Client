@@ -28,7 +28,7 @@ function Menu() {
       <div class="row">
         {menuitems.map((item) => {
           return (
-            <div style={{ marginBottom: "3%" }} class="col-md-3 col-sm-">
+            <div style={{ marginBottom: "3%" }} class="col-md-3 ml-5 col-sm-">
               <div>
                 <LandingCard
                   DishID={item.DishID}
