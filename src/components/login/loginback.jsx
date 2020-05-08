@@ -34,7 +34,7 @@ function LoginBack(props) {
       <div className="row">
         <Link to="/">
           <img
-            className="main-back"
+            className="main-back1"
             src="https://firebasestorage.googleapis.com/v0/b/khana-shana-2020.appspot.com/o/Mehreen%2Fback.svg?alt=media&token=892f9aa1-0870-4e45-8702-274068648e22"
           />
         </Link>
