@@ -1,7 +1,7 @@
 /* credit: https://codepen.io/matheusalmeida/pen/aeLMMr */
 
 import React from "react";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import firebase_integration from "../fire.js";
 import "./footer.css";
@@ -12,15 +12,18 @@ function Footer() {
   /* setting up state and reading restaurant details from database to be displayed on footer */
   const [restaurantDetails, setdetails] = React.useState({});
 
-  React.useEffect(() => {
-    firebase_integration.database
-      .collection("RestaurantDetails")
-      .doc("jOzlK1WWsNPdRrjcYLGv")
-      .onSnapshot((snapshot) => {
-        setdetails(snapshot.data());
-      });
-  }, restaurantDetails);
-
+  try {
+    React.useEffect(() => {
+      firebase_integration.database
+        .collection("RestaurantDetails")
+        .doc("jOzlK1WWsNPdRrjcYLGv")
+        .onSnapshot((snapshot) => {
+          setdetails(snapshot.data());
+        });
+    }, restaurantDetails);
+  } catch (error) {
+    alert("An error occured. Please try again");
+  }
   return (
     <div className="footerdiv">
       <footer className="footer">

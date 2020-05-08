@@ -37,11 +37,15 @@ function App(props) {
     },
   };
 
-  useEffect(() => {
-    firebase_integration.isInitialized().then((val) => {
-      setFirebaseInitialized(val);
+  try {
+    useEffect(() => {
+      firebase_integration.isInitialized().then((val) => {
+        setFirebaseInitialized(val);
+      });
     });
-  });
+  } catch (error) {
+    alert("An error occured. Please try again");
+  }
 
   /* if firestore not initialized then show loading spin */
   return firebaseInitialized !== false ? (

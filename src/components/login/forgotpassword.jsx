@@ -99,7 +99,7 @@ function ForgotPassword(props) {
       await firebase_integration.passwordreset(email);
       props.history.replace("/loginpage");
     } catch (error) {
-      alert(error.message);
+      alert("An error occured. Please try again");
     }
   }
 }

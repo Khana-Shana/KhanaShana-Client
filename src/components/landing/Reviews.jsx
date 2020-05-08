@@ -85,18 +85,22 @@ const Carousel = () => {
   React.useEffect(() => {
     var mydata = [];
     /* Retrieving details of top five customer reviews from the backend database. */
-    firebase_integration.database
-      .collection("CustomerSupport")
-      .orderBy("Date", "desc")
-      .limit(5)
-      .get()
-      .then((snapshot) => {
-        var custreviews = [];
-        snapshot.forEach((doc) => {
-          custreviews.push(doc.data());
+    try {
+      firebase_integration.database
+        .collection("CustomerSupport")
+        .orderBy("Date", "desc")
+        .limit(5)
+        .get()
+        .then((snapshot) => {
+          var custreviews = [];
+          snapshot.forEach((doc) => {
+            custreviews.push(doc.data());
+          });
+          setSlidesDetails(custreviews);
         });
-        setSlidesDetails(custreviews);
-      });
+    } catch (error) {
+      alert("An error occured. Please try again");
+    }
   }, slidesdetails);
 
   const rotate = (slidesdetails) => {

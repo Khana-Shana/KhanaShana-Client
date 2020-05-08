@@ -21,35 +21,39 @@ function CustomerProfile() {
   const [gender, setgender] = React.useState();
 
   /* reading customer profile data from database */
-  React.useEffect(() => {
-    firebase_integration.database
-      .collection("CustomerDatabase")
-      .where(
-        "CustomerID",
-        "==",
-        firebase_integration.auth.currentUser.uid.toString()
-      )
-      .onSnapshot((snapshot) => {
-        var customerdata = {};
-        snapshot.docs.forEach((doc) => {
-          customerdata = doc.data();
+  try {
+    React.useEffect(() => {
+      firebase_integration.database
+        .collection("CustomerDatabase")
+        .where(
+          "CustomerID",
+          "==",
+          firebase_integration.auth.currentUser.uid.toString()
+        )
+        .onSnapshot((snapshot) => {
+          var customerdata = {};
+          snapshot.docs.forEach((doc) => {
+            customerdata = doc.data();
+          });
+          setID(customerdata.CustomerID);
+          setname(customerdata.Name);
+          setemail(customerdata.Email);
+          setnumber(customerdata.ContactNo);
+          setdob(
+            customerdata.DOB.toDate().getDate() +
+              "-" +
+              customerdata.DOB.toDate().getMonth() +
+              1 +
+              "-" +
+              customerdata.DOB.toDate().getFullYear()
+          );
+          setpassword(customerdata.Password);
+          setgender(customerdata.Gender);
         });
-        setID(customerdata.CustomerID);
-        setname(customerdata.Name);
-        setemail(customerdata.Email);
-        setnumber(customerdata.ContactNo);
-        setdob(
-          customerdata.DOB.toDate().getDate() +
-            "-" +
-            customerdata.DOB.toDate().getMonth() +
-            1 +
-            "-" +
-            customerdata.DOB.toDate().getFullYear()
-        );
-        setpassword(customerdata.Password);
-        setgender(customerdata.Gender);
-      });
-  }, [ID]);
+    }, [ID]);
+  } catch (error) {
+    alert("An error occured. Please try again");
+  }
 
   /* functions for updating the database */
   async function updatename(value) {
@@ -63,10 +67,13 @@ function CustomerProfile() {
           .doc(firebase_integration.auth.currentUser.uid.toString())
           .update({
             Name: value,
+          })
+          .catch(function (error) {
+            alert("An error occured. Please try again");
           });
       })
       .catch(function (error) {
-        alert(error.message);
+        alert("An error occured. Please try again");
       });
   }
   async function updateemail(value) {
@@ -81,7 +88,7 @@ function CustomerProfile() {
           });
       })
       .catch(function (error) {
-        alert(error.message);
+        alert("An error occured. Please try again");
       });
   }
   async function updatenumber(value) {
@@ -90,6 +97,8 @@ function CustomerProfile() {
       .doc(firebase_integration.auth.currentUser.uid.toString())
       .update({
         ContactNo: value,
+      }).catch(function (error) {
+        alert("An error occured. Please try again");
       });
   }
   async function updatepassword(value) {
@@ -99,7 +108,7 @@ function CustomerProfile() {
         alert("Your password has been updated");
       })
       .catch(function (error) {
-        alert(error.message);
+        alert("An error occured. Please try again");
       });
   }
   async function updategender(value) {
@@ -108,6 +117,8 @@ function CustomerProfile() {
       .doc(firebase_integration.auth.currentUser.uid.toString())
       .update({
         Gender: value,
+      }).catch(function (error) {
+        alert("An error occured. Please try again");
       });
   }
 
