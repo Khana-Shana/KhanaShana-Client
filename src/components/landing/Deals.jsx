@@ -62,9 +62,9 @@ function Deals() {
   }
 
   return (
-    <div style = {{width:"97.1%"}} className=" deals container-fluid">
+    <div style = {{width:"97.1%"}} className=" deals d-flex justify-content-center container-fluid">
       <div className="row pb-5">
-        <div className="col-lg-6 col-sm wheelitem">
+        <div className="col-lg-5 col-sm wheelitem">
           <div className="wheeltitle">TRY YOUR LUCK</div>
 
           <div>
