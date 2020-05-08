@@ -76,7 +76,7 @@ function Menu(props) {
   let Dessert = [];
   function makeDesserts() {
     props.items.map((item) => {
-      if (item.Category === "Desserts") {
+      if (item.Category === "Dessert") {
         Dessert.push(item);
       }
     });
@@ -130,7 +130,7 @@ function Menu(props) {
               <Tab label="Desi">
                 <CardScreen data={Desi} />
               </Tab>
-              <Tab label="Desserts">
+              <Tab label="Dessert">
                 <CardScreen data={Dessert} />
               </Tab>
               <Tab label="Italian">
