@@ -134,8 +134,10 @@ function OrderHistory() {
                 })}
               </tbody>
             </table>
+            
           </div>
         </div>
+        <br/><br/>
       </div>
     </div>
   );

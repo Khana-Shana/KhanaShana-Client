@@ -14,6 +14,8 @@ function Deals() {
   const [dailydeal, setdailydeal] = React.useState({});
   const [weeklydeal, setweeklydeal] = React.useState({});
   const [discountwheel, setdiscountwheel] = React.useState([]);
+  const [discountval, setDiscountval] = React.useState(0);
+  const [discavail, setdiscavail] = React.useState(false);
 
   React.useEffect(
     () => {
@@ -39,7 +41,7 @@ function Deals() {
               data.push(doc.data().value);
             });
             var data_copy = data;
-            var data = data.concat(data_copy);
+            var data = data_copy;
             setdiscountwheel(data);
           });
       } catch (error) {
@@ -50,18 +52,42 @@ function Deals() {
     weeklydeal,
     discountwheel
   );
+  let value = 0;
+  let discount = 0;
+  function selectItem() {
+    value = Math.floor(Math.random() * discountwheel.length);
+    setDiscountval(discountwheel[value]);
+    setdiscavail(true);
+
+  }
 
   return (
     <div style = {{width:"97.1%"}} className=" deals container-fluid">
       <div className="row pb-5">
-        <div className="col-lg-5 col-sm wheelitem">
+        <div className="col-lg-6 col-sm wheelitem">
           <div className="wheeltitle">TRY YOUR LUCK</div>
 
           <div>
-            <Wheel setbutton={setbutton} items={discountwheel} />
+
+{discavail ?
+  <div className = "disc dealcard rounded">
+<div class = "discounts1">
+  <div class = "entry1" style = {{textAlign:"center"}}>{discountval}</div>
+</div>
+</div>
+:
+<div className = "disc dealcard rounded">
+<div class = "discounts">
+  <div class = "entry" style = {{textAlign:"center"}}>{discountwheel[0]}</div>
+  <div class = "entry" style = {{textAlign:"center"}}>{discountwheel[1]}</div>
+  <div class = "entry" style = {{textAlign:"center"}}>{discountwheel[2]}</div>
+</div>
+</div>
+}
+ 
             <div>
-              {button ? (
-                <Link to="/fullmenu">
+              {discavail ? (
+                // <Link to="/fullmenu">
                   <button
                     id="GFG"
                     type="button"
@@ -74,13 +100,14 @@ function Deals() {
                       marginTop: "8%",
                       marginLeft: "25%",
                     }}
-                  >
+                  disabled>
                     Avail Discount
                   </button>
-                </Link>
+                // </Link>
               ) : (
                 <button
                   id="GFG"
+                  onClick = {selectItem}
                   type="button"
                   className="button-error pure-button"
                   style={{
@@ -91,7 +118,6 @@ function Deals() {
                     marginTop: "8%",
                     marginLeft: "25%",
                   }}
-                  disabled
                 >
                   Avail Discount
                 </button>
