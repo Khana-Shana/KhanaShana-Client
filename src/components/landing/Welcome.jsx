@@ -51,14 +51,7 @@ function Welcome() {
                   id="GFG"
                   type="button"
                   className="button-error pure-button"
-                  style={{
-                    fontSize: "1.7rem",
-                    width: "40%",
-                    border: "none",
-                    fontFamily: "'Jost', sans-serif",
-                    marginTop: "3%",
-                    marginLeft: "1%",
-                  }}
+                  style={{ fontSize: "1.7rem", width: "40%", border: "none", fontFamily: "'Jost', sans-serif", marginTop: "3%", marginLeft: "15%"}}
                 >
                   PLACE ORDER
                 </button>
@@ -66,7 +59,7 @@ function Welcome() {
             </div>
           </div>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-4">
           <div className="right-side">
             <img
               id="womancookwelcome"

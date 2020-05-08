@@ -5,7 +5,7 @@ import "./services.css";
 function Services() {
   return (
     <div className="container-fluid services">
-      <div className="row mb-0 pb-0" style = {{paddingBottom:"0px"}}>
+      <div className="row mb-0 pb-0" style={{ paddingBottom: "0px" }}>
         <div className="col">
           <div className="rectangle"></div>
           <div className="lefttext">
@@ -18,14 +18,14 @@ function Services() {
         <div className="col">
           <div className="righttext">
             <div className="textdetailsright">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              sollicitudin quam dignissim erat mattis fringilla. Sos Vivamus
-              tincidunt non sapien non sapien non ela sagittis.
+              Our services include home delivery and takeaway of regular orders
+              as well as prebooking of catering orders, the details of which can
+              be found by clicking on the 'See Details' button below.
             </div>
           </div>
         </div>
       </div>
-      <div className="row .no-gutters " style = {{marginTop:"0%"}}>
+      <div className="row .no-gutters " style={{ marginTop: "0%" }}>
         <div className="col">
           <div className="left-services">
             <div className="takeaway">
@@ -33,7 +33,8 @@ function Services() {
                 <div className="servicestitleright">TAKEAWAY</div>
                 <div className="servicedetails">
                   Our customers can avail our takeaway services and pick up
-                  their piping hot food and luscious desserts from our doorstep. They will be notified about pick up details!
+                  their piping hot food and luscious desserts from our doorstep.
+                  They will be notified about pick up details!
                 </div>
               </div>
               <div className="two">

@@ -27,12 +27,12 @@ function Menu() {
 
   return (
     /* Creating a container that contains the six items for display. */
-    <div className="menu container-fluid">
+    <div style = {{paddingLeft:"0%"}} className="menu container-fluid">
       <div className="servicestitleleft">MENU</div>
       <div class="row">
         {menuitems.map((item) => {
           return (
-            <div style={{ marginBottom: "3%" }} class="col-md-4 col-sm-">
+            <div style={{ marginBottom: "3%" }} class="col-md-3 ml-5 col-sm-">
               <div>
                 <LandingCard
                   DishID={item.DishID}

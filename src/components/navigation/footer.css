@@ -25,21 +25,25 @@
 }
 
 .footer__addr h2 {
+  font-family: "Jost", sans-serif !important;
   margin-top: 1.3em;
   font-size: 15px;
   font-weight: 400;
 }
 
 .nav__title {
+  font-family: "Jost", sans-serif !important;
   font-weight: 400;
   font-size: 15px;
 }
 
 .footer address {
+  font-family: "Jost", sans-serif !important;
   font-style: normal;
 }
 
 .footer__btn {
+  font-family: "Jost", sans-serif !important;
   display: flex;
   align-items: center;
   justify-content: center;

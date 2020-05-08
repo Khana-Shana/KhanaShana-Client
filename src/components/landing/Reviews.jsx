@@ -189,7 +189,6 @@ const Carousel = () => {
           );
         })}
       </div>
-      <Footer />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Services from "./Services";
 import Menu from "./Menu";
 import Aboutus from "./Aboutus";
 import Carousel from "./Reviews";
+import Footer from "../navigation/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function LandingPage() {
@@ -30,6 +31,9 @@ function LandingPage() {
       </div>
       <div id="to-reviews">
         <Carousel />
+      </div>
+      <div id="to-reviews">
+        <Footer />
       </div>
     </div>
   );

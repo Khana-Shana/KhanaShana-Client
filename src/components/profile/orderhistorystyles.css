@@ -1,9 +1,4 @@
 /* css file for order history screen */
-#orderhistorypage {
-  background-color: #99aa93;
-  /* width: 100% !important; */
-  min-height: 100vh !important;
-}
 #orderhistorybox {
   margin-top: 5%;
   background-color: #f6e7e7;

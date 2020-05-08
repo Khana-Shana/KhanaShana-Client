@@ -24,9 +24,9 @@
 
 .card-content {
   background-color: #955f61;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
+  /* width: 100% !importany; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
   height: 4rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -82,3 +82,4 @@
   font-weight: bold;
   font-family: "Jost", sans-serif;
 }
+
