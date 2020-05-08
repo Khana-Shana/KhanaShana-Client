@@ -23,7 +23,7 @@ function Menu() {
 
   return (
     /* Creating a container that contains the six items for display. */
-    <div className="menu container-fluid">
+    <div style = {{paddingLeft:"10%"}} className="menu container-fluid">
       <div className="servicestitleleft">MENU</div>
       <div class="row">
         {menuitems.map((item) => {
