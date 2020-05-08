@@ -58,53 +58,64 @@ class Wheel extends React.Component {
           style={wheelVars}
           onClick={() => {
             /* check if user logged in */
-            if (!firebase.getCurrentUsername()) {
-              alert.show("Please login first");
-              this.props.history.replace("/loginpage");
-              return null;
-            } else {
-              var UserID = firebase_integration.auth.currentUser.uid;
-              firebase_integration.database
-                .collection("CustomerDatabase")
-                .where("CustomerID", "==", UserID.toString())
-                .get()
-                .then((docs) => {
-                  var mydata = 0;
-                  docs.forEach((doc) => {
-                    mydata = doc.data();
-                  });
-                  /* check if wheel already used in last 7 days */
-                  if (mydata.WheelUsed === false) {
-                    let promise = new Promise(() => {
-                      this.selectItem();
-                    });
-                    promise.then(givediscount(true));
-                    var todaysDate = new Date();
-                    var disc = parseInt(
-                      this.props.items[this.value].substring(
-                        0,
-                        this.props.items[this.value].length - 1
-                      )
-                    );
-                    firebase_integration.database
-                      .collection("CustomerDatabase")
-                      .doc(UserID.toString())
-                      .update({
-                        WheelUsed: true,
-                        DateWheelUsed: todaysDate,
-                        Discount: disc,
+            try {
+              if (!firebase.getCurrentUsername()) {
+                alert.show("Please login first");
+                this.props.history.replace("/loginpage");
+                return null;
+              } else {
+                var UserID = firebase_integration.auth.currentUser.uid;
+                firebase_integration.database
+                  .collection("CustomerDatabase")
+                  .where("CustomerID", "==", UserID.toString())
+                  .get()
+                  .then((docs) => {
+                    var mydata = 0;
+                    docs
+                      .forEach((doc) => {
+                        mydata = doc.data();
+                      })
+                      .catch(function (error) {
+                        alert("An error occured. Please try again");
                       });
-                    this.setState({ button: true });
-                  } else if (mydata.WheelUsed === true) {
-                    /* disable wheel spin */
-                    this.context.setDiscount("0%");
-                    alert.show(
-                      "Discount already availed. Try again next week!"
-                    );
+                    /* check if wheel already used in last 7 days */
+                    if (mydata.WheelUsed === false) {
+                      let promise = new Promise(() => {
+                        this.selectItem();
+                      });
+                      promise.then(givediscount(true));
+                      var todaysDate = new Date();
+                      var disc = parseInt(
+                        this.props.items[this.value].substring(
+                          0,
+                          this.props.items[this.value].length - 1
+                        )
+                      );
+                      firebase_integration.database
+                        .collection("CustomerDatabase")
+                        .doc(UserID.toString())
+                        .update({
+                          WheelUsed: true,
+                          DateWheelUsed: todaysDate,
+                          Discount: disc,
+                        })
+                        .catch(function (error) {
+                          alert("An error occured. Please try again");
+                        });
+                      this.setState({ button: true });
+                    } else if (mydata.WheelUsed === true) {
+                      /* disable wheel spin */
+                      this.context.setDiscount("0%");
+                      alert.show(
+                        "Discount already availed. Try again next week!"
+                      );
 
-                    this.setState({ button: false });
-                  }
-                });
+                      this.setState({ button: false });
+                    }
+                  });
+              }
+            } catch (error) {
+              alert("An error occured. Please try again");
             }
           }}
         >
@@ -119,9 +130,7 @@ class Wheel extends React.Component {
           ))}
         </div>
 
-        <div>
-          {this.props.setbutton(button)}
-        </div>
+        <div>{this.props.setbutton(button)}</div>
       </div>
     );
   }

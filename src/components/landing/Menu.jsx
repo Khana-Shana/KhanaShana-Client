@@ -7,7 +7,7 @@ import "./menu.css";
 function Menu() {
   /* state for setting menu read from local storage */
   const [menuitems, setmenudetails] = React.useState([]);
-
+  try{
   firebase_integration.database
     .collection("Menu")
     .limit(6)
@@ -20,6 +20,10 @@ function Menu() {
       });
       setmenudetails(menu_data);
     });
+  }
+  catch(error) {
+    alert("An error occured. Please try again");
+  };
 
   return (
     /* Creating a container that contains the six items for display. */

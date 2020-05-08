@@ -10,12 +10,16 @@ function Aboutus() {
     /* Fetching the text to be displayed on the About Us
     screen from the Restaurant Details screen on the 
     Admin side. */
-    firebase_integration.database
-      .collection("RestaurantDetails")
-      .doc("jOzlK1WWsNPdRrjcYLGv")
-      .onSnapshot((snapshot) => {
-        setdetails(snapshot.data());
-      });
+    try {
+      firebase_integration.database
+        .collection("RestaurantDetails")
+        .doc("jOzlK1WWsNPdRrjcYLGv")
+        .onSnapshot((snapshot) => {
+          setdetails(snapshot.data());
+        });
+    } catch (error) {
+      alert("An error occured. Please try again");
+    }
   }, restaurantDetails);
 
   return (

@@ -106,6 +106,9 @@ function LoginBack(props) {
                                     menudata.push(doc.data());
                                   });
                                   setMenu(menudata);
+                                })
+                                .catch(function (error) {
+                                  alert("An error occured. Please try again");
                                 });
                             }}
                           />
@@ -116,7 +119,7 @@ function LoginBack(props) {
                           <a>Forgot Your Password?</a>
                         </Link>
                       </p>
-                      
+
                       <div className="hint-text medium">
                         Don't have an account?{" "}
                         <a
