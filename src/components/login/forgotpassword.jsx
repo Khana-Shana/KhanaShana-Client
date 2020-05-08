@@ -49,7 +49,7 @@ function ForgotPassword(props) {
                       <b>ENTER YOUR EMAIL</b>
                     </h4>
                   </div>
-                  <div style={{ paddingTop: "0" }} className="modal-body">
+                  <div style={{ paddingTop: "0" }} className="modal-body1">
                     <form
                       action="/examples/actions/confirmation.php"
                       method="post"
