@@ -33,7 +33,7 @@ function OrderHistory() {
     
     /* rendering table to display user order history along with buttons for viweing order details and cancelling order */
     return (
-        <div className = "orderhistorypage" style = {{height: "110vh",backgroundColor:"#99AA93"}}>
+        <div style = {{minHeight: "100vh",backgroundColor:"#99AA93"}}>
             <Header/>
             <div id="orderhistorybox" className="container">
                 <div id="boxheading" className="row">
@@ -41,44 +41,44 @@ function OrderHistory() {
                 </div>
                 <div className="row">
                     <div class = "table-responsive">
-                    <table id="orderslist" className="table">
-                        <thead>
-                            <tr>
-                            <th style = {{color: "#576271"}} scope="col">Order ID</th>
-                            <th style = {{color: "#576271"}} scope="col">Date</th>
-                            <th style = {{color: "#576271"}} scope="col">Cost</th>
-                            <th style = {{color: "#576271"}} scope="col">Order Tracking</th>
-                            <th style = {{color: "#576271"}} scope="col">Order Details</th>
-                            <th style = {{color: "#576271"}} scope="col">Cancel</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                orders.map(
-                                    (x, i) => {
-                                        return (
-                                            <tr key = {x.OrderID}>
-                                                <td style = {{color: "#576271"}}>{orders[i].OrderID}</td>
-                                                <td style = {{color: "#576271"}}>{orders[i].Date.toDate().getDate()+"-"+orders[i].Date.toDate().getMonth()+"-"+orders[i].Date.toDate().getFullYear()}</td>
-                                                <td style = {{color: "#576271"}}>Rs. {orders[i].Subtotal}\-</td>
-                                                <td><button className = "btn btn-danger redbox" disabled>{orders[i].Tracking}</button></td>
-                                                <Link to = "/orderdetails">
-                                                <td><button onClick = {handleOrderDetails(orders[i])} className = "btn btn-danger redbox">Order Details</button></td>
-                                                </Link>
-                                                {orders[i].Tracking === "Cancelled" || orders[i].Tracking === "Completed" || orders[i].Tracking === "Done" || orders[i].Tracking === "Rejected"?
-                                                    <td><button className = "btn btn-danger redbox" disabled>Cancel</button></td>:
-                                                    <td><button className = "btn btn-danger redbox" onClick = {() => {
-                                                        updateDBcancel(orders[i])
-                                                    }}>Cancel</button></td>  
-                                                }
-                                                {/*update order in database when order is cancelled from customer end*/}
-                                            </tr>
-                                        );
-                                    }
-                                )
-                            }
-                        </tbody>
-                    </table>
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                <th style = {{color: "#576271"}} scope="col">Order ID</th>
+                                <th style = {{color: "#576271"}} scope="col">Date</th>
+                                <th style = {{color: "#576271"}} scope="col">Cost</th>
+                                <th style = {{color: "#576271"}} scope="col">Order Tracking</th>
+                                <th style = {{color: "#576271"}} scope="col">Order Details</th>
+                                <th style = {{color: "#576271"}} scope="col">Cancel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    orders.map(
+                                        (x, i) => {
+                                            return (
+                                                <tr key = {x.OrderID}>
+                                                    <td style = {{color: "#576271"}}>{orders[i].OrderID}</td>
+                                                    <td style = {{color: "#576271"}}>{orders[i].Date.toDate().getDate()+"-"+orders[i].Date.toDate().getMonth()+"-"+orders[i].Date.toDate().getFullYear()}</td>
+                                                    <td style = {{color: "#576271"}}>Rs. {orders[i].Subtotal}\-</td>
+                                                    <td><button className = "btn btn-danger redbox" disabled>{orders[i].Tracking}</button></td>
+                                                    <Link to = "/orderdetails">
+                                                    <td><button onClick = {handleOrderDetails(orders[i])} className = "btn btn-danger redbox">Order Details</button></td>
+                                                    </Link>
+                                                    {orders[i].Tracking === "Cancelled" || orders[i].Tracking === "Completed" || orders[i].Tracking === "Done" || orders[i].Tracking === "Rejected"?
+                                                        <td><button className = "btn btn-danger redbox" disabled>Cancel</button></td>:
+                                                        <td><button className = "btn btn-danger redbox" onClick = {() => {
+                                                            updateDBcancel(orders[i])
+                                                        }}>Cancel</button></td>  
+                                                    }
+                                                    {/*update order in database when order is cancelled from customer end*/}
+                                                </tr>
+                                            );
+                                        }
+                                    )
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
