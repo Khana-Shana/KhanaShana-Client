@@ -29,6 +29,7 @@ function Menu() {
     /* Creating a container that contains the six items for display. */
     <div style = {{paddingLeft:"0%", width: "97.1%"}} className="menu container-fluid">
       <div className="servicestitleleft">MENU</div>
+      <div class = "container d-flex justify-content-center">
       <div class="row">
         {menuitems.map((item) => {
           return (
@@ -45,6 +46,7 @@ function Menu() {
             </div>
           );
         })}
+      </div>
       </div>
       <div class="butt-div">
         <Link to="/fullmenu">

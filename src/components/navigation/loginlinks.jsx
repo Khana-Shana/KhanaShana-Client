@@ -11,7 +11,7 @@ function LoginLinks(props) {
   return (
     <div>
       <Navbar
-        style={{ paddingBottom: "0.8%", paddingTop: "0.6%", boxShadow: "none" ,width: "97.1%"}}
+        style={{ paddingBottom: "0.8%", paddingTop: "0.6%", boxShadow: "none" ,width: "97.9%"}}
         className="hello nav-link"
         expand="lg"
       >
